@@ -1,0 +1,26 @@
+\subsubsection{Gaussian Integral}
+\noindent
+Let's compute $\iint\limits_{D}{e^{-x^2-y^2}\mathrm{d}A}$ where $D$ is the unit disk.\\
+\indent
+$\int_{-1}^{1}{\int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}}{e^{-x^2-y^2}\mathrm{d}y}\mathrm{d}x}=\int_{0}^{1}{\int_{0}^{2\pi}{e^{-r^2}r\mathrm{d}\theta}\mathrm{d}r}=\int_{0}^{1}{re^{-r^2}\mathrm{d}r}\cdot\int_{0}^{2\pi}{\mathrm{d}\theta}$\\
+\indent
+Let $u=-r^2$, $\mathrm{d}u=-2r\mathrm{d}r$.\\
+\indent
+$=\frac{1}{2}\int_{0}^{-1}{e^u\mathrm{d}u}\cdot 2\pi$
+\indent
+$=\pi\left(1-\frac{1}{e}\right)$\\
+Now, let's have $D=\mathbb{R}^2$. This is the famous Gaussian Integral.\\
+\indent
+$=\int_{0}^{\infty}{\int_{0}^{2\pi}{re^{-r^2}\mathrm{d}\theta}\mathrm{d}r}$\\
+\indent
+$=\int_{0}^{\infty}{re^{-r^2}\mathrm{d}r}\cdot\int_{0}^{2\pi}{\mathrm{d}\theta}$\\
+\indent
+Let $u=-r^2$, $\mathrm{d}u=-2r\mathrm{d}r$.\\
+\indent
+$=-\pi\int_{0}^{-\infty}{e^{u}\mathrm{d}u}$\\
+\indent
+$=-\pi\left(\left(\lim_{a\to -\infty}{e^{a}}\right)-e^0\right)$\\
+\indent
+$=-\pi\left(0-1\right)$\\
+\indent
+$\pi$\\

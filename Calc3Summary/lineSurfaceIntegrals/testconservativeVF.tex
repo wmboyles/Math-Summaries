@@ -1,0 +1,11 @@
+\subsection{Test for a Conservative Vector Field}
+\noindent
+Since we know that all conservative vector fields have potential function, we can create a test to see if a given vector field is conservative. $\vec{F_{\text{Conservative}}}=\langle f_x, f_y \rangle$, so $f_{xy}=f_{yx}$. That is, a vector field $\vec{F}(x,y)=\langle P(x,y), Q(x,y)\rangle$ is conservative if $P_y=Q_x$.\\
+For 3D vector field, the test is a little more complicated. A vector field $\vec{F}\langle P(x,y,z), Q(x,y,z), R(x,y,z)\rangle$ is conservative if $P_y=Q_x$, $Q_z=R_y$, and $R_x=P_z$.\\
+
+\noindent
+For example, let see if $\langle yz, xz, xy\rangle$ is conservative.\\
+\indent
+$\frac{\partial}{\partial y}yz=z=\frac{\partial}{\partial x}xz$, $\frac{\partial}{\partial z}xz=x=\frac{\partial}{\partial y}xy=z$, and $\frac{\partial}{\partial y}xy=y=\frac{\partial}{\partial z}yz$\\
+\indent
+So, the vector field is conservative\\

@@ -1,0 +1,21 @@
+\subsubsection{Circulations}
+\begin{definition}
+	If $C$ is a simple, closed curve, then $\int\limits_{C}{\vec{F}\cdot\mathrm{d}\vec{r}}$ is the circulation of $\vec{F}$ on $C$.
+\end{definition}
+\noindent
+We notate that we are taking a circulation as $\oint\limits_{C}{\vec{F}\cdot\mathrm{d}\vec{r}}$.
+
+[INSERT IMAGE]
+
+\noindent
+For example, let's find the circulation of $\vec{F}(x,y,z)=\langle yz, xz, xy \rangle$ on the circle of radius 1 centered at $(0,0,1)$ in the $z=1$ plane in the counter-clockwise direction.\\
+\indent
+$\vec{r}(t)=\langle \cos{t},\sin{t},1\rangle$, $-\leq t\leq 2\pi$\\
+\indent
+$\vec{F}\circ\vec{r}=\langle \sin{t},\cos{t},\sin{t}\cos{t}\rangle$\\
+\indent
+$\left(\vec{F}\circ\vec{r}\right)\cdot\vec{r^\prime}(t)=\cos{(2t)}$\\
+\indent
+$\oint\limits_{C}{\vec{F}\cdot\mathrm{d}\vec{r}}=\int_{0}^{2\pi}{\cos{(2t)}\mathrm{d}t}$\\
+\indent
+$=\frac{1}{2}\sin{(2t)}\rvert_{0}^{2\pi}=0$\\

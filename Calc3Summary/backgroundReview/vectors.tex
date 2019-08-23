@@ -1,0 +1,54 @@
+\section{Vectors}
+\noindent
+A vector is a quantity with both direction and magnitude. One can think of it as a directed line segment. In multivariable calculus, we mostly will work with vectors in $\mathbb{R}^2$ and $\mathbb{R}^3$, but vectors can exist in other dimensions.\\
+
+\noindent
+Numerical (scalar) quantities have vector analogues, many of which show up in physics. Speed becomes velocity, distance becomes displacement, and mass becomes weight.\\
+
+\noindent
+Say we have a 2D vector, $\vec{v}=\langle v_x, v_y \rangle$.
+
+[INSERT IMAGE]
+
+\noindent
+Its length, also called magnitude or norm, is notated $\norm{\vec{v}}=\sqrt{v_x^2+v_y^2}$. This pattern of the norm being equal to the square-root of the sum of the squares of the vector's components continues into higher dimensions.\\
+
+\noindent
+The angle a 2D vector forms with the horizontal axis is $\theta = \tan^{-1}{\left(\frac{v_y}{v_x}\right)}$. There is not a useful version of this formula in higher dimensions.\\
+Using $\theta$ and $\norm{\vec{v}}$, we can see that $v_x=\norm{\vec{v}}\cos{\theta}$ and $v_y=\norm{\vec{v}}\sin{\theta}$.\\
+
+\noindent
+Vectors can be added and subtracted from each other in a way that the result is another vector. We do this numerically by adding the corresponding components of each vector.\\
+For example, if $\vec{a}=\langle 1,3 \rangle$ and $\vec{b}=\langle 4,7 \rangle$, then $\vec{a}+\vec{b}=\langle 1+4, 3+7 \rangle = \langle 5,10 \rangle$.\\
+and $\vec{b}-\vec{a}=\langle 4-1, 7-3, \rangle=\langle 3,4 \rangle$.
+
+\noindent
+Visually, you can think of $\vec{v}+\vec{w}$ as the vector connecting the tail of $\vec{v}$ with the tip of $\vec{w}$ where the tail of $\vec{v}$ is on the tip of $\vec{w}$.
+
+[INSERT IMAGE]
+
+\noindent
+We can also multiply vectors by scalars and get another vector as a result. We do this by multiplying each component of the vector by the scalar. This has the effect of stretching or shrinking the vector and possibly changing the vector's direction if the scalar is negative.
+
+[INSERT IMAGE]
+
+\noindent
+A unit vector is any vector with magnitude 1. Rather than using an arrow like for other vectors, unit vectors are notated with a carat (\^) over top, like $\hat{i}$, which is read as "i hat".\\
+We an transform any vector with non-zero magnitude into a unit vector by dividing the vector by its norm. This normalized vector will point in the same direction as the original vector.\\
+
+\noindent
+It is common in mathematics for $\hat{i}=\langle 1,0,0 \rangle$ to be the unit vector in the x-direction, $\hat{j}=\langle 0,1,0 \rangle$ to be the unit vector in the y-direction, and $\hat{k}=\langle 0,0,1 \rangle$ to be the unit vector in the z-direction.\\
+Together, $\hat{i}$, $\hat{j}$, and $\hat{k}$ are called the standard basis vectors because all other vectors can be written as linear combination of these.
+
+[INSERT IMAGE]
+
+\input{./backgroundReview/dotProducts}
+\input{./backgroundReview/crossProducts}
+
+\noindent
+Now that we have defined the dot product and cross product, we can put the two together as the scalar triple product, which gives the volume of the parallelepiped spanned by $\vec{a}$, $\vec{b}$, and $\vec{c}$.\\
+\begin{center}
+	$\vec{a}\cdot\left(\vec{b}\times\vec{c}\right)=\left|\begin{matrix}a_1 & a_2 & a_2\\b_1 & b_2 & b_3 \\ c_1 & c_2 & c_3\end{matrix}\right|$.
+\end{center}
+
+[INSERT IMAGE]

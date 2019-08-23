@@ -1,0 +1,30 @@
+\subsection{Limit \& Continuity Definitions}
+\noindent
+Finally, we have the proper tools to define a limit in higher dimensions. We say that $\lim_{p\to p_0}f(p)=L$ if $\forall N(L\epsilon)$, $\exists N(p_0,\delta)|p\in N(p_0,\delta)\implies f(p)\in N(L,\epsilon)$.\\
+That is, the limit of $f(p)$ as $p$ approaches $p_0$ is equal to $L$ if for all open delta neighborhoods around $L$, there exists an open delta neighborhood around $p_0$ such that $p$ being in the neighborhood around $p_0$ means $f(p)$ must be in the neighborhood around $L$.
+
+[INSERT IMAGE]
+
+\noindent
+Now with a limit definition, we can define continuity at a point. We say that a function $f : \mathbb{R}^n\to\mathbb{R}$ is continuous at $p_0$ if $\lim_{p\to p_0}{f(p)}=f(p_0)$.\\
+
+\noindent
+\begin{theorem}
+	Trigonometric functions, exponentials, logarithms, and sums, products, quotients, and compositions of such functions are continuous on their domain.
+\end{theorem}
+
+\noindent
+Although our definitions allow us to confirm that a value is the limit of a function, they do not give us any insight into how to find the value of the limit. We'd need to approach our point of interest from every possible direction to see if the limit from that direction is the same as all the others. If any two directions give different limit values, then the limit doesn't exist.\\
+We approach a function, $f$, by composing it with a single variable path, $\vec{r}(t)$, that goes through the point of interest, and find the limit along the path.\\
+
+\noindent
+If $f$ is some surface $f(x,y)$ and $\vec{r}(t)=\langle x(t), y(t)\rangle$, then the composition of $f$ and $\vec{r}$ is $f\circ\vec{r}=f(\vec{r}(t))=f(x(t),y(t))$.\\
+For example, let's try to find $$\lim_{(x,y)\to(0,0)}{\frac{x^2-y^3}{x^2+y^2}}$$
+\indent
+We'll choose two paths $\vec{r_1}(t)=\langle t,0\rangle$ and $\vec{r_2}(t)=\langle t,t\rangle$ and find the limit as $t\to 0$ in both cases.\\
+\indent
+$$\lim_{t\to 0}{f(\vec{r_1}(t))}=\lim_{t\to 0}{\frac{t^2}{t^2}}=1$$
+\indent
+$$\lim_{t\to 0}{f(\vec{r_2}(t))}=\lim{t\to 0}{\frac{t^2-t^3}{2t^2}}=\lim_{t\to 0}{\frac{1}{2}-\frac{t}{2}}=\frac{1}{2}$$
+\indent
+Since the limits on the two paths are not equal, we can say that $$\lim_{(x,y)\to(0,0)}{\frac{x^2-y^3}{x^2+y^2}} \text{ DNE}$$

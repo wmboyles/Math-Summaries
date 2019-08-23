@@ -1,0 +1,21 @@
+\subsection{Conservative Vector Fields}
+\begin{definition}
+	A vector field $\vec{F}$ is conservative if $\int\limits_{C}{\vec{F}\cdot\mathrm{d}\vec{r}}$ is the same for all $C$ connecting the same endpoints.
+\end{definition}
+
+\noindent
+It's east to see from this definition that vector fields of constant direction and magnitude, like $\vec{F}=\langle c,c,c\rangle$ is conservative, as its line integral only depends on the curve.\\
+
+\begin{theorem}
+	If $\vec{F}$ is conservative, then $\oint\limits_{C}{\vec{F}\cdot\mathrm{d}\vec{r}}=0$.
+\end{theorem}
+\begin{proof}
+	We can bbreak the simple, closed curve, $C$ into two simple cruves $C_1$ and $C_2$ that have the same endpoints and direction such that $C=C_1-C_2$.
+	
+	[INSERT IMAGE]
+	
+	\noindent
+	So, $\oint\limits_{C}{\vec{F}\cdot\mathrm{d}\vec{r}}=\int\limits_{C_1}{\vec{f}\cdot\mathrm{d}\vec{r}}-\int\limits_{C_2}{\vec{F}\cdot\mathrm{d}\vec{r}}$.\\
+	Since $C_1$ and $C_2$ have the same direction and endpoints, and $\vec{F}$ is conservative, the line integrals have the same value, $L$.\\
+	$\oint\limits_{C}{\vec{F}\cdot\mathrm{d}\vec{r}}=L-L=0$.
+\end{proof}

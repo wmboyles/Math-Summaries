@@ -1,0 +1,14 @@
+\subsection{Fubini's Theorem for Z-simple Regions}
+\noindent
+There is another case of Fubini’s Theorem that arises in 3D.\\
+\begin{theorem}[Fubini's Theorem for Z-simple Regions]
+	Let $D\subset\mathbb{R}^3$ and let $\Omega=\left\{(x,y,z)|(x,y)\in D, g(x,y)\leq z\leq h(x,y)\right\}$ be a z-simple region.\\
+	$$\iiint\limits_{\Omega}{f(x,y,z)\mathrm{d}V}=\iint\limits_{D}{\int_{g(x,y)}^{h(x,y)}{f(x,y,z)\mathrm{d}z}\mathrm{d}A}$$
+\end{theorem}
+
+\noindent
+In other words, dependent variables must be integrated before the independent variables on which they rely, but the order of integration of independent variables doesn't matter.\\
+
+\noindent
+For example, we an express the unit sphere as a z-simple region where $D=\left\{(x,y)|x^2+y^2\leq 1\right\}$ and $-\sqrt{1-x^2-y^2}\leq z\leq\sqrt{1-x^2-y^2}$. Note that $D$ is a Type I Region.\\
+$$V_{\text{sphere}}=\int_{-1}^{1}{\int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}}{\int_{-\sqrt{1-x^2-y^2}}^{\sqrt{1-x^2-y^2}}{\mathrm{d}z}\mathrm{d}x}\mathrm{d}x}=\frac{4\pi}{3}$$

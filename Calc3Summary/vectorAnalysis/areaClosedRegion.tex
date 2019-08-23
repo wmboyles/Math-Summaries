@@ -1,0 +1,23 @@
+\subsubsection{Area of a Closed Region}
+\noindent
+The area inside of $D$ is $A=\iint\limits_{D}{\mathrm{d}x\mathrm{d}y}$.\\
+$=\iint\limits_{D}{\left(\nabla\times\vec{F}\right)\mathrm{d}x\mathrm{d}y}$ if $\nabla\times\vec{F}=1$. One such vector field is $\vec{F}=\langle -y/2, x/2\rangle$.\\
+$=\oint_{C}{(-y/2)\mathrm{d}x+(x/2)\mathrm{d}y}$ by Green's Theorem for Circulation.\\
+$=\frac{1}{2}\oint\limits_{C}{xy^\prime-yx^\prime}$\\
+So, if we have some counter-clockwise oriented parametric function $(x(t),y(t))$ where $t_0\leq t\leq t_1$ that parameterizes $C$, then $A=\frac{1}{2}\int_{t_0}^{t_1}{\left(x\frac{\mathrm{d}y}{\mathrm{d}t}-y\frac{\mathrm{d}x}{\mathrm{d}t}\right)\mathrm{d}t}$.\\
+
+\noindent
+We can also choose different vector field where $\nabla\times\vec{F}=1$ so that\\ $A=\oint\limits_{C}{xy^\prime}=\oint\limits_{C}{yx^\prime}$.\\
+
+\noindent
+For example, let's compute the area of a circle with radius $R$.\\
+\indent
+We'll parameterize the circle as $(R\cos{t},R\sin{t}),t\in [0,2\pi]$.\\
+\indent
+$A=\frac{1}{2}\int_{0}^{2\pi}{((R\cos{t})(R\cos{t})-(R\sin{t})(-R\sin{t}))\mathrm{d}t}$\\
+\indent
+$=\frac{1}{2}\int_{0}^{2\pi}{R^2\mathrm{d}t}$\\
+\indent
+$=\frac{1}{2}R^2 2\pi$\\
+\indent
+$A=\pi R^2$

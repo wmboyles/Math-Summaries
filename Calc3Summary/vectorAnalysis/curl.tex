@@ -1,0 +1,19 @@
+\subsection{Curl}
+\noindent
+In 2D, we define the curl of a vector field $\vec{F}(x,y)=\langle P(x,y), Q(x,y)\rangle$ as\\
+$$\nabla\times\vec{F}=Q_x-P_y$$
+Note that the result is a scalar for this 2D case.\\
+If $Q_x >0$, then the field line accelerate upwards and to the left together: a counter-clockwise rotation.\\
+If $P_y >0$, then the field lines accelerate upwards and to the left together: a clockwise rotation.\\
+So, $\nabla\times\vec{F}$ tells us the net counter-clockwise rotation at a point.\\
+
+\noindent
+We use the same del operator we introduced in divergence for curl, so $\nabla\times\vec{F}=\left<\frac{\partial}{\partial x},\frac{\partial}{\partial y},...\right>\times\vec{F}$. This means that for 3D and higher dimensions, the curl is a vector that is perpendicular to the plane of net rotation.\\
+
+\noindent
+For example, let's compute the curl of $\vec{F}(x,y)=\langle -y, x\rangle$.\\
+\indent
+$\frac{\partial}{\partial x}(x)-\frac{\partial}{\partial y}(-y)=1-(-1)=2$\\
+
+\input{./vectorAnalysis/curlConservativeVFs}
+\input{./vectorAnalysis/divergenceOfCurl}

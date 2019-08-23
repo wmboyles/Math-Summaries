@@ -1,0 +1,41 @@
+\documentclass[oneside, 12pt]{book}
+
+\setcounter{tocdepth}{3} %TOC should label down to subsubsections
+\setcounter{secnumdepth}{1} %TOC should not number further than a section number
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsfonts, amsmath, amsthm} %For properly formatting symbols, theorems, lemmas, and definitions
+\usepackage{enumerate} %For listing items and sub-items
+\usepackage{hyperref} %For inserting linkss
+
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\norm}[1]{\abs{\abs{#1}}} %Use double-bar notation for vector magnitude
+
+%Theorems, Definitions, and Lemmas should not be numbered
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{definition}{Definition}
+\newtheorem*{lemma}{Lemma}
+
+\begin{document}
+
+\title{Multivariable Calculus: A Summary}
+\author{William Boyles}
+\date{}
+
+\frontmatter
+\maketitle
+\tableofcontents
+
+\mainmatter
+	\input{./backgroundReview/backgroundReview}
+	\input{./vectorValuedFunctions/vectorValuedFunctions}
+	\input{./differentialMultivariableCalculus/differentialMultivariableCalculus}
+	\input{./multipleIntegrals/multipleIntegrals}
+	\input{./curvilinearCoordinates/curvilinearCoordinates}
+	\input{./lineSurfaceIntegrals/LineSurfaceIntegrals}
+	\input{./vectorAnalysis/vectorAnalysis}
+	\input{./additionalMaterials/AdditionalMaterials}
+
+\backmatter
+\end{document}

@@ -1,0 +1,11 @@
+\subsubsection{Divergence of Curl}
+\begin{theorem}
+	Let $\vec{F}(x,y,z)=\langle P(x,y,z), Q(x,y,z), R(x,y,z)\rangle$ be a twice differentiable vector field.\\
+	$\nabla\cdot(\nabla\times\vec{F})=0$
+\end{theorem}
+\begin{proof}
+	$\nabla\times\vec{F}=\langle R_y-Q_z, P_z-R_x, Q_x-P_y\rangle$\\
+	$\nabla\cdot(\nabla\times\vec{F})=R_{yx}-Q_{zx}+P_{zy}-R_{xy}+Q_{xz}-P_{yz}$\\
+	$P_{yz}=P_{zy}$, $Q_{xz}=Q_{zx}$, and $R_{xy}=R_{yx}$ by Fubini's Theorem.\\
+	So, $\nabla\cdot(\nabla\times\vec{F})=0$
+\end{proof}

@@ -1,0 +1,31 @@
+\subsubsection{Flux}
+\noindent
+We can rewrite the surface integral because $\hat{n}=\frac{\vec{r_u}\times\vec{r_v}}{\norm{\vec{r_u}\times\vec{r_v}}}$ and $\mathrm{d}s=\norm{\vec{r_u}\times\vec{r_v}}$.
+
+[INSERT IMAGe]
+
+\noindent
+So, $\iint\limits_{S}{\vec{F}\cdot\mathrm{d}s}=\iint\limits_{D}{\left(\vec{F}\circ\vec{r}\right)\cdot\left(\vec{r_u}\times\vec{r_v}\right)\mathrm{d}u\mathrm{d}v}$, where $D$ is the domain of $S$ in uv-space (a uv-plane), and $\vec{r}(u,v)$ parameterizes the surface $S$. This quantity is called the "directed surface area integral" or "flux" through $S$.\\
+
+\noindent
+Flux tells us how much a vector field penetrates a surface. If the field is parallel to the surface (perpendicular to the normal vector) then the flux is 0. As the field and normal vector to the surface become more aligned, the flux increases. \\
+
+\noindent
+Flux has many practical applications. One of the fundamental equations governing electricity and magnetism talks about electric flux: the amount of an electric field that goes through a surface. We will investigate this equation later.\\
+
+\noindent
+For example, let an electric field be $\vec{E}=\langle x,y,0\rangle\text{ N}/\text{C}$. Compute the electric flux, $\Phi_{E}$, through the portion of the paraboloid $z=25-x^2-y^2$ above the xy-plane. Assume a unit distance of 1 meter.
+\indent
+We will take advantage of a paraboloid's radial symmetry and use cylindrical coordinates.\\
+\indent
+$\vec{r}(u,v)=\langle u\cos{v}, u\sin{v}, 25-u^2\rangle$ where $0\leq u\leq 5$ and $0\leq v\leq 2\pi$.\\
+\indent
+$\vec{r_u}=\langle \cos{v}, \sin{v}, -2u\rangle$ and $\vec{r_v}=\langle -u\sin{v}, u\cos{v}, 0\rangle$.\\
+\indent
+$\vec{r_u}\times\vec{r_v}=\langle 2u^2\cos{v}, 2u^2\sin{v}, 0\rangle$\\
+\indent
+$\vec{E}\circ\vec{r}=\langle u\cos{v}, u\sin{v}, 0\rangle$\\
+\indent
+$\left(\vec{E}\circ\vec{r}\right)\cdot(\vec{r_u})\times\vec{r_v})=2u^3$\\
+\indent
+$\Phi_{E}=\int_{0}^{2\pi}{\int_{0}^{5}{2u^3\mathrm{d}u}\mathrm{d}v}=2\pi\left(\frac{u^4}{2}\right)\rvert_{0}^{5}=625\text{ Nm}^2/\text{C}$\\

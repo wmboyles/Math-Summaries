@@ -1,0 +1,114 @@
+\subsection{Test 4}
+\begin{enumerate}
+	\item For each of the following, determine if $\vec{F}$ is conservative. Then evaluate $\int\limits_{C}{\vec{F}\cdot\mathrm{d}\vec{r}}$.
+	\begin{enumerate}[a.]
+		\item $\vec{F}=\langle xz, x^2z, xy^2z\rangle$ and $C$ given by $\vec{r}(t)=\langle t,e^{-t},e^t\rangle, 0\leq t\leq 1$.\\
+		$\nabla\times\vec{F}=\langle 2xyz-x^2,x-y^2z,2xz\rangle$\\
+		Since $\nabla\times\vec{F}\neq\vec{0}$, $\vec{F}$ isn't conservative.\\
+		$\vec{F}\circ\vec{r}=\langle te^t, t^2e^t,te^{-2t}e^t\rangle$\\
+		$=\vec{r^\prime}(t)=\langle 1,-e^{-t},e^t\rangle$\\
+		$\left(\vec{F}\circ\vec{r}\right)\cdot\vec{r^\prime}(t)=te^t-t^2+t$\\
+		$\int\limits_{C}{\vec{F}\cdot\mathrm{d}\vec{r}}=\int_{0}^{1}{\left(te^t-t^2+t\right)\mathrm{d}t}$\\
+		$=\frac{1}{2}-\frac{1}{3}+\lvert te^t\rvert_{0}^{1}-\int_{0}^{1}{e^t\mathrm{d}t}$\\
+		$=1+\frac{1}{2}-\frac{1}{3}=\frac{7}{6}$\\
+		
+		\item $\vec{F}=\left<\sqrt{\frac{yz}{x}},\sqrt{\frac{xz}{y}},\sqrt{\frac{xy}{z}}\right>$ and $C$ given by $\vec{r}=\langle\cos{t},\sin{t},\sin{(4t)}\rangle, 0\leq t\leq 2\pi$.\\
+		\indent
+		$\vec{F}=\nabla(2\sqrt{xyz})$
+		$\implies\vec{F}$ is conservative.
+		$\vec{r}(0)=\vec{r}(2\pi)$\\
+		$\implies C$ is a circulation.
+		Since $\vec{F}$ is conservative and $C$ is a circulation, $\oint\limits_{C}{\vec{F}\cdot\mathrm{d}\vec{r}}=0$\\
+		
+		\item $\vec{F}=\langle yz, xz, xy\rangle$ and $C$ given by $\vec{r}(t)=\langle 2t^2, e^{1-t^2}, \tan^{-1}{(t^2/2)}\rangle, 0\leq t\leq\sqrt{2}$.\\
+		$\vec{F}=\nabla(xyz)$\\
+		$\implies\vec{F}$ is conservative.\\
+		$\int\limits_{C}{\vec{F}\cdot\mathrm{d}\vec{r}}=\int\limits_{C}{\nabla f\cdot\mathrm{d}\vec{r}}=f(\vec{r}(\sqrt{2}))-f(\vec{r}(0))$\\
+		$=\frac{4\pi}{4e}-0=\frac{\pi}{e}$\\
+	\end{enumerate}
+	
+	\item Let the surface $S$ be the portion of the paraboloid $z=8-\frac{x^2}{2}-\frac{y^2}{2}$ that lies above the xy-plane. Let $\vec{F}(x,y,z)=\left< \frac{x}{\sqrt{x^2+y^2}}, \frac{y}{\sqrt{x^2+y^2}}, 0\right>$.
+	\begin{enumerate}[a.]
+		\item Parameterize $S=\vec{r}(u,v)$ with appropriate bounds for $u$ and $v$.\\
+		\indent
+		The paraboloid is above the xy-plane when $z\geq0$.\\
+		$8-\frac{x^2}{2}-\frac{y^2}{2}=\geq 0$\\
+		$x^2+y^2\leq 16$\\
+		This a circle with radius 4. So, we'll describe the region in polar form.\\
+		$S=\left\{(r,\theta)|0\leq r\leq 4, 0\leq\theta\leq 2\pi\right\}$\\
+		$\vec{r}(u,v)=\langle u\cos{v},u\sin{v},8-\frac{1}{2}u^2\rangle$, $0\leq u\leq 4$ and $0\leq v\leq 2\pi$.\\
+		
+		\item Compute the surface area of $S$.\\
+		\indent
+		$A-\iint\limits_{D}{\norm{\vec{r_u}\times\vec{r_v}}\mathrm{d}A}$\\
+		$\vec{r_u}=\langle\cos{v},\sin{u},-u\rangle$\\
+		$vec{r_v}=\langle -u\sin{v},u\cos{v},0\rangle$\\
+		$\vec{r_u}\times\vec{r_v}=\langle u^2\cos{v},u^2\sin{v},u\rangle$\\
+		$\norm{\vec{r_u}\times\vec{r_v}}=u\sqrt{1+u^2}$\\
+		$A=\int_{0}^{2\pi}{int_{0}^{4}{u\sqrt{1+u^2}\mathrm{d}u}\mathrm{d}v}$\\
+		$=2\pi\int_{0}^{4}{u\sqrt{1+u^2}\mathrm{d}u}$\\
+		$=\pi\int_{1}^{17}{\sqrt{w}\mathrm{d}w}$\\
+		$=\pi\frac{34\sqrt{17}-2}{3}$\\
+		
+		\item Compute the flux, $\Phi$, of $\vec{F}$ through $S$.\\
+		\indent
+		We will assume that the surface is outward-oriented, so that $\Phi$ is positive.\\
+		$\Phi=\iint\limits_{D}{\left(\vec{F}\circ\vec{r}\right)\cdot\left(\vec{r_u}\times\vec{r_v}\right)\mathrm{d}A}$\\
+		$\vec{F}\circ\vec{r}=\langle\cos{v}\sin{v},0\rangle$\\
+		$\left(\vec{F}\circ\vec{r}\right)\cdot\left(\vec{r_u}\times\vec{r_v}\right)=u^2$\\
+		$\Phi=\int_{0}^{2\pi}{\int_{0}^{4}{u^2\mathrm{d}u}\mathrm{d}v}$\\
+		$=\frac{128\pi}{3}$\\
+	\end{enumerate}
+	
+	\item Consider a 3D vector field $\vec{F}(x,y,z)=\langle P(x,y,z),Q(x,y,z),R(x,y,z)\rangle$ and a scalar function of two variables $f(x,y)$. Determine which of the following expressions is defined. If it is defined, evaluate it. If it is not defined, explain why. If you can deduce the value of the expression from a theorem, do so and state the theorem.
+	\begin{enumerate}[a.]
+		\item $$\nabla f\cdot\vec{F}$$
+		\indent
+		This operation is not defined because $\nabla f$ is a 2D vector, and the output of $\vec{F}$ is a 3D vector.\\
+		
+		\item $$\nabla\times\nabla f$$
+		\indent
+		If we allow the cross product in 2D to return a scalar that is the signed area spanned by the two vectors, then\\
+		$\nabla\times\nabla f=f_{yx}-f_{xy}=0$\\
+		
+		\item $$\nabla\times(\nabla\cdot\vec{F})$$
+		\indent
+		This operation is not defined because $\nabla\cdot\vec{F}$ results in a scalar function, and the curl of a scalar function is not defined.\\
+		
+		\item $$\nabla\cdot(\nabla\times\vec{F})$$
+		\indent
+		This operation is defined and always has a value of 0 if $\vec{F}$ is twice differentiable. The proof of which is below.\\
+		Let $\vec{F}(x,y,z)=\langle P(x,y,z),Q(x,y,z),R(x,y,z),\rangle$\\
+		$\nabla\cdot(\nabla\times\vec{F})=\nabla\cdot\langle R_y-Q_z,P_z-R_x,Q_x-P_y\rangle$\\
+		$=R_{yx}-Q_{zx}+P_{zy}-R_{xy}+Q_{xz}-P_{yz}=0$ by Fubini's Theorem\\
+	\end{enumerate}
+
+	\item Consider the vector field $\vec{F}(x,y,z)=\langle -z,2y,x\rangle$. Find the integral curve of $\vec{F}$ with initial conditions $\vec{r}(0)=\langle 5,1,0\rangle$.\\
+	\indent
+	We need to solve a system of differential equations.\\
+	$\begin{cases}
+		x^\prime = -z \\
+		y^\prime = 2y \\
+		z^\prime = x
+	\end{cases}$\\
+	$y(t)=Ce^{2t}$ and applying initial conditions, $y(t)=e^{2t}$\\
+	$\begin{cases}
+		x^\prime = -z \\
+		z^\prime = x
+	\end{cases}$\\
+	$z(t)=A\cos{t}+B\sin{t}$ and $x(t)=B\cos{t}-A\sin{t}$\\
+	Applying initial conditions, $z(t)=5\sin{t}$ and $x(t)=5\cos{t}$\\
+	So, $\vec{r}(t)=\langle 5\cos{t},e^{2t}, 5\sin{t}\rangle$\\
+	
+	\item State and prove the Fundamental Theorem of Calculus for Line Integrals.\\
+	\indent
+	\begin{theorem}[FTC for Line Integrals]
+		Let $\vec{r}(t)$ parameterize $C$ on $a\leq t\leq b$.\\
+		$\int\limits_{C}{\nabla f\cdot\mathrm{d}\vec{r}}=f(\vec{r}(b))-f(\vec{r}(a))$
+	\end{theorem}
+	\begin{proof}
+		$\int\limits_{C}{\nabla f\cdot\mathrm{d}\vec{r}}=\int_{a}^{b}{(\nabla f\circ\vec{r})\cdot\vec{r^\prime}\mathrm{d}t}$\\
+		$=\int_{a}^{b}{\frac{\mathrm{d}}{\mathrm{d}t}(f\circ\vec{r})\mathrm{d}t}$\\
+		$f(\vec{r}(b))-f(\vec{r}(a))$
+	\end{proof}
+\end{enumerate}

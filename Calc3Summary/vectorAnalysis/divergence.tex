@@ -1,0 +1,20 @@
+\subsection{Divergence}
+\noindent
+In 2D we define the divergence of a vector field $\vec{F}(x,y)=\langle P(x,y), Q(x,y)\rangle$ as $\text{div}(\vec{F})=P_x+Q_y$. This tells how the separation between particles in the vector field change over time. Positive divergence at some point means that particles tend to move away from each other, and that point is acting like a “source.” Negative divergence at some point means that particles tend to move towards each other, and that point is acting like a “sink.”
+
+[INSERT IMAGE]
+
+\noindent
+This operation extends into higher dimensions. We define the "del operator" as\\
+$\nabla = \left<\frac{\partial}{\partial x},\frac{\partial}{\partial y},...\right>$ so that $\text{div}(\vec{F})=\nabla\cdot\vec{F}$.\\
+The del operator is not coordinate system independent. The above version only works for Cartesian coordinates. For spherical coordinates,\\
+$\nabla\cdot\vec{F}=\frac{1}{\rho^2}\frac{\partial(\rho^2 F_\rho)}{\partial\rho}+\frac{1}{\rho\sin{\theta}}\frac{\partial}{\partial\theta}(F_\theta \sin{\theta})+\frac{1}{\rho\sin{\theta}}\frac{\partial}{\partial\phi}F_\phi$ where $\vec{F}=\langle F_\rho, F_\theta, F_\phi \rangle$.\\
+Thankfully, vector field in spherical coordinates are rare, and it's usually easier to convert to Cartesian coordinates before doing any calculations.\\
+
+\begin{definition}
+	If $\nabla\cdot\vec{F}=0$, then $\vec{F}$ is incompressible.
+\end{definition}
+\noindent
+This aligns with the idea of incompressible fluids in physics and can simplify or remove the need for some calculations.
+
+\input{./vectorAnalysis/laplacian}

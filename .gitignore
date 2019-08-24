@@ -1,0 +1,9 @@
+#ignore LaTeX build files
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.toc
+
+#might also want to ignore compiled pdfs (only track source)
+#*.pdf

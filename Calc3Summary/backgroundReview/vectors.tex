@@ -8,7 +8,10 @@ Numerical (scalar) quantities have vector analogues, many of which show up in ph
 \noindent
 Say we have a 2D vector, $\vec{v}=\langle v_x, v_y \rangle$.
 
-[INSERT IMAGE]
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{Images/backgroundReview/VectorAddition}
+\end{figure}
 
 \noindent
 Its length, also called magnitude or norm, is notated $\norm{\vec{v}}=\sqrt{v_x^2+v_y^2}$. This pattern of the norm being equal to the square-root of the sum of the squares of the vector's components continues into higher dimensions.\\
@@ -25,12 +28,18 @@ and $\vec{b}-\vec{a}=\langle 4-1, 7-3, \rangle=\langle 3,4 \rangle$.
 \noindent
 Visually, you can think of $\vec{v}+\vec{w}$ as the vector connecting the tail of $\vec{v}$ with the tip of $\vec{w}$ where the tail of $\vec{v}$ is on the tip of $\vec{w}$.
 
-[INSERT IMAGE]
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.33]{Images/backgroundReview/Parallelogram}
+\end{figure}
 
 \noindent
 We can also multiply vectors by scalars and get another vector as a result. We do this by multiplying each component of the vector by the scalar. This has the effect of stretching or shrinking the vector and possibly changing the vector's direction if the scalar is negative.
 
-[INSERT IMAGE]
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{Images/backgroundReview/ScalarMultiples}
+\end{figure}
 
 \noindent
 A unit vector is any vector with magnitude 1. Rather than using an arrow like for other vectors, unit vectors are notated with a carat (\^) over top, like $\hat{i}$, which is read as "i hat".\\
@@ -40,7 +49,10 @@ We an transform any vector with non-zero magnitude into a unit vector by dividin
 It is common in mathematics for $\hat{i}=\langle 1,0,0 \rangle$ to be the unit vector in the x-direction, $\hat{j}=\langle 0,1,0 \rangle$ to be the unit vector in the y-direction, and $\hat{k}=\langle 0,0,1 \rangle$ to be the unit vector in the z-direction.\\
 Together, $\hat{i}$, $\hat{j}$, and $\hat{k}$ are called the standard basis vectors because all other vectors can be written as linear combination of these.
 
-[INSERT IMAGE]
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.33]{Images/backgroundReview/UnitVectors}
+\end{figure}
 
 \input{./backgroundReview/dotProducts}
 \input{./backgroundReview/crossProducts}
@@ -48,7 +60,10 @@ Together, $\hat{i}$, $\hat{j}$, and $\hat{k}$ are called the standard basis vect
 \noindent
 Now that we have defined the dot product and cross product, we can put the two together as the scalar triple product, which gives the volume of the parallelepiped spanned by $\vec{a}$, $\vec{b}$, and $\vec{c}$.\\
 \begin{center}
-	$\vec{a}\cdot\left(\vec{b}\times\vec{c}\right)=\left|\begin{matrix}a_1 & a_2 & a_2\\b_1 & b_2 & b_3 \\ c_1 & c_2 & c_3\end{matrix}\right|$.
+	$\vec{a}\cdot\left(\vec{b}\times\vec{c}\right)=\left|\begin{matrix}a_1 & a_2 & a_2\\b_1 & b_2 & b_3 \\ c_1 & c_2 & c_3\end{matrix}\right|$
 \end{center}
 
-[INSERT IMAGE]
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.29]{Images/backgroundReview/Parallelipiped}
+\end{figure}

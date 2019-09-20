@@ -5,6 +5,4 @@
 *.synctex.gz
 *.toc
 *.project
-
-#might also want to ignore compiled pdfs (only track source)
-#*.pdf
+*.pdf

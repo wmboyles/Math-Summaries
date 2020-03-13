@@ -1,0 +1,109 @@
+\documentclass[oneside, 12pt]{book}
+
+% Setup for table of contents
+\setcounter{tocdepth}{3} % TOC should label down to subsubsections
+\setcounter{secnumdepth}{1} % TOC should not number further than a section number
+
+% General setup
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsfonts, amsmath, amsthm} % For properly formatting symbols, theorems, lemmas, and definitions
+\usepackage{enumerate} % For listing items and sub-items
+\usepackage{hyperref} % For inserting linkss
+\usepackage{graphicx} % For inserting images
+
+% Theorems, Definitions, and Lemmas should not be numbered
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{definition}{Definition}
+\newtheorem*{lemma}{Lemma}
+
+% Title page setup
+\title{Differential Equations I : A Summary}
+\author{William Boyles}
+\date{}
+
+\begin{document}
+	\frontmatter
+	\maketitle
+	\tableofcontents
+	
+	\mainmatter
+		% Background and Review
+		\input{./backgroundReview/backgroundReview}
+		
+		% Introduction / Basics		
+		\input{./basics/basics}
+			% Classifying Differential Equations
+				% Order
+				% Linearity
+				% Homogenity
+				% Ordinary / Partial
+				% Seperability
+			% Solutions to DiffEq's
+			% Initial Value Programs
+		
+		% 1st order linear ODE's
+		\input{./1stOrderLinearODE/1stOrderLinearODE}
+			% Seperable Differential Equations
+			% Method for solving (Integrating Factor)
+			% Applications
+				% Newton's Law of Cooling
+				% Logistic Equation (Viral Spread)
+				% Compound Interest
+				% RC Circuit
+			
+		% Higher (mostly 2nd) Order linear ODE's
+		\input{./higherOrderODE/higherOrderODE}
+			% Auxillary Equation
+			% Wronskian
+			% Mechanical Vibrations (Homogenous, Linear)
+				% Simple: mx'' + kx = 0
+				% Free Damped: mx'' + by' + ky = 0
+			% Non-Homogenous Linear DiffEq's
+				% Method of Undetermined Coefficients
+				% Variation of Parameters
+			% Forced Vibrations
+				% Undamped Forced
+					% 1.1 omega != gamma
+					% 1.2 omega = gamma
+				% Damped Forced
+		
+		% Linear Systems of DiffEq's
+		\input{./linearSystems/linearSystems}
+			% Motivating Example: Water Tanks
+			% Homogenous
+				% Eigenvalue Method
+					% n distinct eigenvalues
+					% repeated eigenvales with enough eigenvectors
+					% Defective matrices
+					% Complex Roots
+			% Non-Homogenous
+				% Undetermined coefficients
+				% Variation of Parameters
+			% Higher-order linear diffeq's as systems of 1st order linear diffeq's
+		
+		% Laplace Transforms
+		\input{./laplaceTransforms/laplaceTransforms}
+			% Definition
+			% Derivations
+				% constant
+				% exponential
+				% sin and cos
+				% Still linear
+				% nth derivative
+				% polynomial
+				% translation
+				% derivative of laplace transforms
+			% Inverse laplace
+			
+		% Additional Resources
+		\input{./additionalResources/additionalResources}
+			% Tests
+			% Online Resources
+				% math.lamar.edu
+				% math.ust.hk/~machas/differential-equations.pdf
+				% PatrickJMT
+		
+			
+	\backmatter
+\end{document}

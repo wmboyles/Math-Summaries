@@ -1,0 +1,46 @@
+\subsection{Factoring Polynomials}
+\noindent
+We want to break up a polynomial like $f(x) = a_0 + a_1x^1 + \ldots a_nx^n$ into linear factors so that $f(x) = c(x-b_1)\cdot \ldots \cdot(x - b_n)$. This form makes it simple to see that the roots of $f$, solutions to $f(x) = 0$, are $x = b_1 \ldots b_n$.\\
+
+\noindent
+For quadratics, $f(x) = ax^2 + bx + c$, there exists a simple formula that will give us both roots, the quadratic formula.
+\begin{equation*}
+	x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}
+\end{equation*}
+
+\noindent
+We can see that when $b^2 - 4ac < 0$, like for $f(x) = x^2 + 5x + 1$, we will get complex roots $\alpha \pm \beta i$. For any polynomial, these roots come in pairs, so if $\alpha + \beta i$ is a root, then so is $\alpha - \beta i$. This means that every conjugate pair $\alpha \pm \beta i$ has a quadratic equation with those roots. Sometimes we will not factor quadratics with complex roots into linear terms.\\
+
+\noindent
+Although there do exist explicit formulas for finding roots for cubic (degree 3) and quartic (degree 4) equations, they are too long and not useful enough to memorize. When working by hand, we instead use other tricks to find roots.\\
+
+\noindent
+There are a few useful tricks that can help. If the polynomial doesn't have a constant term, then 0 is a root. If all the coefficients sum to 0, then 1 is a root. For certain polynomials with an even number of terms, like all cubics of the form $ax^3 + bx^2 + cax + cb$ we can factor out a term from the first two and last two terms to get $x^2(ax+b)+c(ax+b) = (ax+b)(x^2+c)$. For other polynomials, we might just try guessing and checking values. However, we need a more efficient way that works in general.\\
+
+\noindent
+Since we are looking to find linear factors $f(x) = (x-b_1)\cdot \ldots \cdot(x-b_n)$, we can see that the constant term in the polynomial is the product of the roots $b_1 \ldots b_n$. In fact, since the coefficients of polynomials are completely determined by the roots and the leading coefficient, all the coefficients are sums and products of roots. You might remember when factoring quadratics that the coefficient of $x$ term is the sum of the two roots. These rules are called Vieta's formulas.\\
+
+\noindent
+So, if we have the constant term, we can check all of its integer factors to see if any are roots. If they are, we can divide, using a technique like synthetic division, to continue finding the rest of the roots. This method is especially useful on tests because the roots tend to be integers.
+
+\begin{example}
+Factor the polynomial $x^5 + x^4 -2x^3 + 4x^2 -24x$.	
+\end{example}
+\noindent
+We can immediately see that there is no constant term, so $x=0$ is a root. Now we need to work on factoring $x^4 + x^3 -2x^2 + 4x - 24$.\\
+The factors of -24 are: -24, -12, -8, -6, -4, -3, -2, -1, 1, 2, 3, 4, 6, 8, 12, and 24. Starting from roots close to 0 and working outwards, we find that $x=2$ is a root. So, we synthetic divide like so
+\begin{table}[H]
+	\centering
+	\begin{tabular}{llllll}
+		$x=2 \mid$ & 1            & 1 & -2 & 4  & -24 \\
+		& $\downarrow$ & 2 & 6  & 8  & 24  \\ \hline
+		& 1            & 3 & 4  & 12 & $\mid 0$  
+	\end{tabular}
+\end{table}
+\noindent
+to see that now we need to work on factoring $x^3+3x^2+4x+12$.
+$x^3+3x^2+4x+12 = x^2(x+3)+4(x+3) = (x+3)(x^2+4)$, so $x=-3$ is a root, and we need to work on factoring $x^2+4$.
+$x^2+4$ has two complex roots $\pm 2i$, so we'll leave it as a quadratic.
+\begin{equation*}	
+	x^5 + x^4 -2x^3 + 4x^2 -24x = x(x-2)(x-3)(x^2+4)
+\end{equation*}

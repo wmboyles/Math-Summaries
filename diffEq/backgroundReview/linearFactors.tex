@@ -1,0 +1,46 @@
+\subsubsection{Linear Factors}
+\noindent
+This is the the most basic type where the degree of the numerator is less than the degree of the denominator and the denominator factors into all linear factors with no repeated roots. In this case we can write
+\begin{equation*}
+	\frac{P(x)}{Q(x)} = \frac{A_1}{(x-a_1)} + \ldots + \frac{A_n}{(x-a_n)}
+\end{equation*}
+Multiplying each side by $Q(x)$,
+\begin{equation*}
+	P(x) = A_1(x-a_2) \ldots (x-a_n) + \ldots + A_n(x-a_1) \ldots (x-a_{n-1})
+\end{equation*}
+We can then find each $A_i$ by evaluating both sides at $x=a_i$, since every term except the ith has an $(x-a_i)$ factor that will go to 0. So,
+\begin{equation*}
+	A_i = \frac{P(a_i)}{(x-a_i) \ldots (x-a_{i-1})(x-a_{i+1}) \ldots (x-a_n)}
+\end{equation*}
+
+\begin{example}
+	Find the partial fraction decomposition of $\frac{2x-1}{x^3-6x^2+11x-6}$
+\end{example}
+\begin{equation*}
+	x^3-6x^2+11x-6 = (x-1)(x-2)(x-3)
+\end{equation*}
+so,
+\begin{equation*}
+	\frac{2x-1}{x^3-6x^2+11x-6} = \frac{A_1}{x-1}+\frac{A_2}{x-2}+\frac{A_3}{x-3}
+\end{equation*}
+Multiplying each side by the denominator,
+\begin{equation*}
+	2x-1 = A_1(x-2)(x-3)+A_2(x-1)(x-3)+A_3(x-1)(x-2)
+\end{equation*}
+at $x=1$,
+\begin{equation*}
+	1 = A_1(1-2)(1-3) \implies A_1 = \frac{1}{2}
+\end{equation*}
+at $x=2$,
+\begin{equation*}
+	3 = A_2(2-1)(2-3) \implies A_2 = -3
+\end{equation*}
+at $x=3$,
+\begin{equation*}
+	5 = A_3(3-1)(3-2) \implies A_3 = \frac{5}{2}
+\end{equation*}
+So,
+\begin{equation*}
+	\frac{2x-1}{x^3-6x^2+11x-6} = \frac{1/2}{x-1} + \frac{-3}{x-2} + \frac{5/2}{x-3}
+\end{equation*}
+just as was shown in the previous example.

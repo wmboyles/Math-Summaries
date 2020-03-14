@@ -8,6 +8,11 @@
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{amsfonts, amsmath, amsthm} % For properly formatting symbols, theorems, lemmas, and definitions
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arccsc}
+\usepackage{float}
+
 \usepackage{enumerate} % For listing items and sub-items
 \usepackage{hyperref} % For inserting linkss
 \usepackage{graphicx} % For inserting images
@@ -16,6 +21,7 @@
 \newtheorem*{theorem}{Theorem}
 \newtheorem*{definition}{Definition}
 \newtheorem*{lemma}{Lemma}
+\newtheorem*{example}{Example}
 
 % Title page setup
 \title{Differential Equations I : A Summary}
@@ -28,26 +34,13 @@
 	\tableofcontents
 	
 	\mainmatter
-		% Background and Review
-		\input{./backgroundReview/backgroundReview}
-		
-		% Introduction / Basics		
-		\input{./basics/basics}
-		
-		% 1st order linear ODE's
-		\input{./1stOrderLinearODE/1stOrderLinearODE}
-			
-		% Higher (mostly 2nd) Order linear ODE's
-		\input{./higherOrderODE/higherOrderODE}
-		
-		% Linear Systems of DiffEq's
-		\input{./linearSystems/linearSystems}
-		
-		% Laplace Transforms
-		\input{./laplaceTransforms/laplaceTransforms}
-			
-		% Additional Resources
-		\input{./additionalResources/additionalResources}
+		\input{./backgroundReview/backgroundReview} % Background and Review
+		\input{./basics/basics} % Introduction / Basics	
+		\input{./1stOrderLinearODE/1stOrderLinearODE} % 1st order linear ODE's
+		\input{./higherOrderODE/higherOrderODE} % Higher (mostly 2nd) Order linear ODE's
+		\input{./linearSystems/linearSystems} % Linear Systems of DiffEq's
+		\input{./laplaceTransforms/laplaceTransforms} % Laplace Transforms
+		\input{./additionalResources/additionalResources} % Additional Resources
 				
 	\backmatter
 \end{document}

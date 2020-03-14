@@ -1,0 +1,59 @@
+\subsubsection{Repeated Quadratic Factors}
+\noindent
+If a quadratic factor that can't be broken into linear factors is repeated, then we can write
+\begin{equation*}
+	Q(x) = R(x)(ax^2+bx+c)^k\text{, }b^2-4ac < 0\text{, }k \geq 0\text{, and }R(x)\text{ is not divisible by }(ax^2+bx+c)^k
+\end{equation*}
+Now we have to do a combination of what we did for repeated linear factors and quadratic factors. We say
+\begin{equation*}
+	\frac{P(x)}{R(x)(ax^2+bx+c)^k}=\left(\text{Decomposition of }R(x)\right)+\frac{A_1x+B_1}{ax^2+bx+c}+\ldots+\frac{A_kx+B_k}{(ax^2+bx+c)^k}
+\end{equation*}
+and then solve for the coefficients in the numerator.
+
+\begin{example}
+	Find the partial fraction decomposition of $\frac{3x^4-2x^3+6x^2-3x+3}{x^5+3x^4+4x^3+12x^2+4x+12}$.
+\end{example}
+\begin{equation*}
+	x^5+3x^4+4x^3+12x^2+4x+12 = (x+3)(x^2+2)^2
+\end{equation*}
+so,
+\begin{equation*}
+	\frac{3x^4-2x^3+6x^2-3x+3}{x^5+3x^4+4x^3+12x^2+4x+12} = \frac{A_1}{x+3}+\frac{A_2x+B_2}{x^2+2}+\frac{A_3x+B_3}{(x^2+2)^2}
+\end{equation*}
+Multiplying each side by the denominator,
+\begin{equation*}
+	3x^4-2x^3+6x^2-3x+3 = A_1(x^2+2)^2+(A_2x+B_2)(x^2+2)(x+3)+(A_3x+B_3)(x+3)
+\end{equation*}
+at $x=-3$,
+\begin{equation*}
+	363 = 121A_1 \implies A_1 = 3
+\end{equation*}
+Now, we'll use our result for $A_1$ and pick a value for $x$ that minimizes the number of things we need to solve for. We'll have to solve a linear system with 4 unknowns, so we'll need up to 4 values.\\
+At $x=0$,
+\begin{equation*}
+	3 = 3(2)^2 + B_2(2)(3)+B_3(3) \implies 2B_2 + B_3 = -3
+\end{equation*}
+at $x=1$,
+\begin{equation*}
+	7 = 3(3)^2 + (A_2+B_2)(3)(4) + (A_3+B_3)(4) \implies 3A_2 + A_3 + 3B_2 + B_3 = -5
+\end{equation*}
+at $x=-1$,
+\begin{equation*}
+17 = 3(3)^2 + (-A_2+B_2)(3)(2) + (-A_3+B_3)(2) \implies -3A_2 - A_3 + 3B_2 + B_3 = -5
+\end{equation*}
+at $x=2$,
+\begin{equation*}
+	53 = 3(6)^2 + (2A_2+B_2)(6)(5) + (2A_3+B_3)(5) \implies 12A_2 + 2A_3 + 6B_2 + B_3 = -11
+\end{equation*}
+Now we have a system of equations
+\begin{cases}
+	$0A_2  + 0A_3 + 2B_2 + B_3 = -3$ \\
+	$3A_2  + A_3  + 3B_2 + B_3 = -5$ \\
+	$-3A_2 - A_3  + 3B_2 + B_3 = -5$ \\
+	$12A_2 + 2A_3 + 6B_2 + B_3 = -11$ \\
+\end{cases}\\ 
+$\implies$ $A_2 = 0$, $A_3 = 0$, $B_2 = -2$, and $B_3 = 1$.\\
+So,
+\begin{equation*}
+	\frac{3x^4-2x^3+6x^2-3x+3}{x^5+3x^4+4x^3+12x^2+4x+12} = \frac{3}{x+3}-\frac{2}{x^2+2}+\frac{1}{(x^2+2)^2}
+\end{equation*}

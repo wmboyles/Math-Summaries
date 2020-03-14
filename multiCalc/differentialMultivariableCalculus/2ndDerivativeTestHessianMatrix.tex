@@ -1,12 +1,12 @@
 \subsubsection{Second Derivative Test \& Hessian Matrix}
 \noindent
-Recall from single-variable calculus that if we have a critical point (derivative is 0), we can find whether the point is a minimum or maximum by using the second derivative test. If the second derivative is $<0$ at the critical point, then the critical point is a maximum, and if the second derivative is $>0$ at the critical point, then the critical point is a minimum. A similar process works in higher dimensions.\\
+Recall from single-variable calculus that if we have a critical point (derivative is 0), we can find whether the point is a minimum or maximum by using the second derivative test. If the second derivative is $<0$ at the critical point, then the critical point is a maximum, and if the second derivative is $> 0$ at the critical point, then the critical point is a minimum. A similar process works in higher dimensions.\\
 
 \noindent
 In higher dimensions:
 \begin{itemize}
-	\item If $f_{xx}$ and $f_{yy}$ are $>0$ at a critical point, then the critical point is a minimum.
-	\item If $f_{xx}$ and $f_{yy}$ are $<0$ at a critical point, then the critical point is a maximum.
+	\item If $f_{xx}$ and $f_{yy}$ are $> 0$ at a critical point, then the critical point is a minimum.
+	\item If $f_{xx}$ and $f_{yy}$ are $< 0$ at a critical point, then the critical point is a maximum.
 	\item If $f_{xx}$ and $f_{yy}$ don't agree on sign, then the point is a saddle point.
 \end{itemize}
 
@@ -16,19 +16,25 @@ Although there are only 3 options for what a critical point on a surface can be,
 [INSERT IMAGE]
 
 \begin{definition}
-	The Hessian Matrix (for $f(x,y)$): $$H=\begin{bmatrix}f_{xx} & f_{xy} \\d_{yx} & f_{yy} \end{bmatrix}$$
+	The Hessian Matrix (for $f(x,y)$):
+	\begin{equation*}
+		H = \begin{bmatrix}
+			f_{xx} & f_{xy} \\
+			d_{yx} & f_{yy} 
+		\end{bmatrix}
+	\end{equation*} 
 \end{definition}
 \noindent
-Note that $\det{H}=f_{xx}f_{yy}-f_{xy}^2$.\\
+Note that $\det{H} = f_{xx}f_{yy} - f_{xy}^2$.\\
 
 \noindent
-If $(x_0,y_0)$ is a critical point:
+If $(x_0, y_0)$ is a critical point:
 \begin{itemize}
-	\item $\det{H(x_0,y_0)>0}$ means $(x_0,y_0)$ is an extrema. 
+	\item $\det{H(x_0,y_0) > 0}$ means $(x_0, y_0)$ is an extrema. 
 	\begin{itemize}
-		\item If $f_{xx}(x_0,y_0)>0$, then $(x_0,y_0)$ is a minima.
-		\item If $f_{xx}(x_0,y_0)<0$, then $(x_0,y_0)$ is a maxima.
+		\item If $f_{xx}(x_0, y_0) > 0$, then $(x_0, y_0)$ is a minima.
+		\item If $f_{xx}(x_0, y_0) < 0$, then $(x_0, y_0)$ is a maxima.
 	\end{itemize}
-	\item $\det{H(x_0,y_0)}<0$ means $(x_0,y_0)$ is a saddle point.
-	\item $\det{H(x_0,y_0)}=0$ means the 2nd derivatives test is inconclusive.
+	\item $\det{H(x_0, y_0)} < 0$ means $(x_0, y_0)$ is a saddle point.
+	\item $\det{H(x_0, y_0)} = 0$ means the 2nd derivatives test is inconclusive.
 \end{itemize}

@@ -1,29 +1,31 @@
 \subsection{Surface Integrals of Scalar Functions}
 \begin{definition}
-	The surface integral of a scalar function $f(x,y,z)$ is\\
-	$$\iint\limits_{S}{f(x,y,z)\mathrm{d}s}=\iint\limits_{D}{(f\circ\vec{r})\norm{\vec{r_u}\times\vec{r_v}}\mathrm{d}A}$$
+	The surface integral of a scalar function $f(x,y,z)$ is
+	\begin{equation*}
+		\iint\limits_{S}{f(x,y,z)\mathrm{d}s} = \iint\limits_{D}{(f\circ\vec{r})\norm{\vec{r_u} \times \vec{r_v}}\mathrm{d}A}
+	\end{equation*}
 \end{definition}
 
 \noindent
-Let’s apply a surface integral to a real problem. Let the cap of the sphere or radius $8\text{m}$ centered at the origin between $z=7$ and $z=8$ have a charge density $\sigma(x,y,z)=z\text{ }\mu\text{C}/\text{m}^2$. Find the total charge $Q$ on the cap.
+Let’s apply a surface integral to a real problem. Let the cap of the sphere or radius $8\text{m}$ centered at the origin between $z = 7$ and $z = 8$ have a charge density $\sigma(x,y,z) = z \text{ } \mu \text{C}/ \text{m}^2$. Find the total charge $Q$ on the cap.
 
 [INSERT IMAGE]
 
 \indent
 We will parameterize the cap using spherical coordinates.\\
 \indent
-$D=\left\{(\rho,\theta,\phi)|\rho=8,0\leq\theta\leq 2\pi, 0\leq\phi\leq\cos^{-1}{\left(\frac{7}{8}\right)}\right\}$\\
+$D = \left\{(\rho, \theta, \phi) \mid \rho=8, 0 \leq \theta \leq 2\pi, 0 \leq \phi \leq \cos^{-1}{\left(\frac{7}{8}\right)}\right\}$\\
 \indent
-$\vec{r}(\theta,\phi)=\langle 8\sin{\phi}\cos{\theta}, 8\sin{\phi}\sin{\theta}, 8\cos{\phi}\rangle$\\
+$\vec{r}(\theta,\phi) = \langle 8\sin{\phi}\cos{\theta}, 8\sin{\phi}\sin{\theta}, 8\cos{\phi}\rangle$\\
 \indent
-$\vec{r_\theta}=\langle -8\sin{\phi}\sin{\theta}, 8\sin{\phi}\cos{\theta}, 0\rangle$, $\vec{r_\phi}=\langle 8\cos{\phi}\cos{\theta}, 8\cos{\phi}\sin{\theta}, -8\sin{\phi}\rangle$\\
+$\vec{r_\theta} = \langle -8\sin{\phi}\sin{\theta}, 8\sin{\phi}\cos{\theta}, 0\rangle$, $\vec{r_\phi} = \langle 8\cos{\phi}\cos{\theta}, 8\cos{\phi}\sin{\theta}, -8\sin{\phi}\rangle$\\
 \indent
-$\sigma\circ\vec{r}=8\cos{\phi}$\\
+$\sigma\circ\vec{r} = 8\cos{\phi}$\\
 \indent
-$\norm{\vec{r_\theta}\times\vec{r_\phi}}=64\sin{\phi}$\\
+$\norm{\vec{r_\theta} \times \vec{r_\phi}} = 64\sin{\phi}$\\
 \indent
-$Q=\int_{0}^{2\pi}{\int_{0}^{\cos^{-1}{7/8}}{64\sin{\phi}\cdot8\mathrm{d}\phi\mathrm{d}\theta}}$\\
+$Q = \int_{0}^{2\pi}{\int_{0}^{\cos^{-1}{7/8}}{64\sin{\phi} \cdot8 \mathrm{d}\phi\mathrm{d}\theta}}$\\
 \indent
-$=8^3 2\pi\int_{0}^{\cos^{-1}{7/8}}{\sin{\phi}\mathrm{d}\phi}$\\
+$= 8^3 2\pi \int_{0}^{\cos^{-1}{7/8}}{\sin{\phi}\mathrm{d}\phi}$\\
 \indent
-$=8^3 2\phi(-\cos{\phi})\rvert_{0}^{cos^{-1}{7/8}}=8^3 2\pi\left(-7/8 + 1\right)=128\pi\text{ }\mu\text{C}$\\
+$= 8^3 2\phi(-\cos{\phi})\rvert_{0}^{cos^{-1}{7/8}} = 8^3 2\pi\left(-7/8 + 1\right) = 128\pi\text{ }\mu\text{C}$

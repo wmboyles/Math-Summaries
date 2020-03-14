@@ -3,13 +3,25 @@
 VVFs can be reparameterized to trace out the same curve at different speeds by replacing $t$ in $\vec{r}(t)$ with any non-decreasing function of $t$. This fact can come in handy to make the bounds of an integration problem more convenient.\\
 
 \noindent
-The integral of the derivative of a VVF gives the displacement vector because						$$\int_{a}^{b}{\vec{r^\prime}(t)\mathrm{d}t}=\vec{r}(b)-\vec{r}(a)$$
-This is exactly like how $\text{velocity}\cdot\text{time}=\text{displacement}$.\\
+The integral of the derivative of a VVF gives the displacement vector because
+\begin{equation*}
+	\int_{a}^{b}{\vec{r^\prime}(t)\mathrm{d}t}=\vec{r}(b)-\vec{r}(a)
+\end{equation*}
+This is exactly like how $\text{velocity}\cdot\text{time} = \text{displacement}$.\\
 
 \noindent
-If we integrate the magnitude of $\vec{r^\prime}9t)$, we can use the fact that $\text{distance}=\text{speed}\cdot\text{time}$ to find the arc length of $\vec{r}(t)$ as $$s=\int{\norm{\vec{r^\prime}(t)}\mathrm{d}t}=\int{\sqrt{\left(\frac{\mathrm{d}x}{\mathrm{d}t}\right)^2+\left(\frac{\mathrm{d}y}{\mathrm{d}t}\right)^2+\left(\frac{\mathrm{d}z}{\mathrm{d}t}\right)^2}\mathrm{d}t}$$\\
-We can also write this as an arlength function, $$s(t)=\int_{0}^{t}{\norm{\vec{r^{\prime}}(\tau)}\mathrm{d}\tau}$$\\
+If we integrate the magnitude of $\vec{r^\prime}9t)$, we can use the fact that $\text{distance} = \text{speed}\cdot\text{time}$ to find the arc length of $\vec{r}(t)$ as
+\begin{equation*}
+	s=\int{\norm{\vec{r^\prime}(t)}\mathrm{d}t}=\int{\sqrt{\left(\frac{\mathrm{d}x}{\mathrm{d}t}\right)^2+\left(\frac{\mathrm{d}y}{\mathrm{d}t}\right)^2+\left(\frac{\mathrm{d}z}{\mathrm{d}t}\right)^2}\mathrm{d}t}
+\end{equation*}
+We can also write this as an arclength function,
+\begin{equation*}
+	s(t)=\int_{0}^{t}{\norm{\vec{r^{\prime}}(\tau)}\mathrm{d}\tau}
+\end{equation*}
 
 \noindent
-If we have a function $$f(t)=s(t)=\int_{0}^{t}{\norm{\vec{r^{\prime}}(\tau)}\mathrm{d}\tau}$$ 
-where $s$ is strictly increasing, then $f$ has an inverse by the horizontal line test. That is $t(s)=f^{-1}(s)$ exists and is also non-decreasing. If we reparameterize $\vec{r}(t)$ to $\vec{r}(t(s))$, which is called the arc length parameterization, the parameterization will have a constant speed.
+If we have a function
+\begin{equation*}
+	f(t)=s(t)=\int_{0}^{t}{\norm{\vec{r^{\prime}}(\tau)}\mathrm{d}\tau}
+\end{equation*}
+where $s$ is strictly increasing, then $f$ has an inverse by the horizontal line test. That is $t(s) = f^{-1}(s)$ exists and is also non-decreasing. If we reparameterize $\vec{r}(t)$ to $\vec{r}(t(s))$, which is called the arc length parameterization, the parameterization will have a constant speed.

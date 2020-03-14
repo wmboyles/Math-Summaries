@@ -1,8 +1,12 @@
 \subsection{Linear Approximations with the Gradient}
 \noindent
-The 4th gradient property can be generalized a bit further. Suppose we have $f(x,y,z)$, $\vec{r}(u,v)=\langle x(u,v), y(u,v), z(u,v)\rangle$, and $g(u,v)=f\circ\vec{r}(u,v)$.
-$$\frac{\partial g}{\partial u}=\frac{\partial f}{\partial x}\frac{\partial x}{\partial u}+\frac{\partial f}{\partial y}\frac{\partial y}{\partial u}+\frac{\partial f}{\partial z}\frac{\partial z}{\partial u}$$
+The 4th gradient property can be generalized a bit further. Suppose we have $f(x,y,z)$, $\vec{r}(u,v) = \langle x(u,v), y(u,v), z(u,v) \rangle$, and $g(u,v) = f\circ\vec{r}(u,v)$.
+\begin{equation*}
+	\frac{\partial g}{\partial u} = \frac{\partial f}{\partial x}\frac{\partial x}{\partial u} + \frac{\partial f}{\partial y}\frac{\partial y}{\partial u} + \frac{\partial f}{\partial z}\frac{\partial z}{\partial u}
+\end{equation*}
 \noindent
 We can rewrite our linear approximation as $\Delta z\approx\nabla f\cdot\langle \Delta x, \Delta y\rangle$.\\
 In fact, we how have a way to find derivatives of $f\circ\vec{r}(t)$.
-$$\frac{\mathrm{d}f}{\mathrm{d}t}=\frac{\partial f}{\partial x}\frac{\mathrm{d}x}{\mathrm{d}t}+\frac{\partial f}{\partial y}\frac{\mathrm{d}y}{\mathrm{d}t}=\nabla f\cdot\langle x^{\prime}(t),y^{\prime}(t)\rangle$$
+\begin{equation*}
+	\frac{\mathrm{d}f}{\mathrm{d}t} = \frac{\partial f}{\partial x}\frac{\mathrm{d}x}{\mathrm{d}t} + \frac{\partial f}{\partial y}\frac{\mathrm{d}y}{\mathrm{d}t} = \nabla f \cdot \langle x^{\prime}(t), y^{\prime}(t) \rangle
+\end{equation*}

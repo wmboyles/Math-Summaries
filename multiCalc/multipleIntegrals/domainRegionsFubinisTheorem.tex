@@ -1,18 +1,18 @@
 \subsection{Fubini's Theorem \& Domain Regions}
 \begin{theorem}[Fubini's Theorem]
-	The order of integration on a domain where the variables of integration $\left(x,y,\text{etc.}\right)$ vary independently doesn't matter.
+	The order of integration on a domain where the variables of integration $\left(x, y, \text{etc.}\right)$ vary independently doesn't matter.
 \end{theorem}
 
 \noindent
-For example, let's find the volume under $f(x,y)=9-x^2-y^2, (x,y)\in[0,1]\times[1,2]$.\\
+For example, let's find the volume under $f(x,y) = 9-x^2-y^2$, $(x,y) \in [0,1] \times [1,2]$.\\
 We will do so in two ways to show that they are equivalent: one with $x$ first and then $y$ and another with $y$ first and then $x$.\\
 \begin{center}
 	\begin{tabular}{c|c}
-		$V=\int_{0}^{1}{\int_{1}^{2}{9-x^2-y^2\mathrm{d}y}\mathrm{d}x}$ & $V=\int_{2}^{1}{\int_{0}^{1}{9-x^2-y^2\mathrm{d}x}\mathrm{d}y}$ \\
-		$=\int_{0}^{1}{\left[9y-x^2y-\frac{y^2}{3}\right]_{1}^{2}\mathrm{d}x}$ & $=\int_{1}^{2}{\left[9x-\frac{x^3}{3}-xy^2\right]_{0}^{1}\mathrm{d}y}$ \\
-		$=\int_{0}^{1}{\frac{20}{3}-x^2\mathrm{d}x}$ & $=\int_{1}^{2}{\frac{26}{3}-y^2\mathrm{d}y}$ \\
-		$=\left[\frac{20}{3}x-\frac{x^3}{3}\right]_{0}^{1}$ & $=\left[\frac{26}{3}y-\frac{y^3}{3}\right]_{1}^{2}$ \\
-		$=\frac{19}{3}$ & $=\frac{19}{3}$ \\
+		$V = \int_{0}^{1}{\int_{1}^{2}{9 - x^2 - y^2\mathrm{d}y}\mathrm{d}x}$ & $V =\int_{2}^{1}{\int_{0}^{1}{9 - x^2 - y^2\mathrm{d}x}\mathrm{d}y}$ \\
+		$= \int_{0}^{1}{\left[9y - x^2y - \frac{y^2}{3}\right]_{1}^{2}\mathrm{d}x}$ & $= \int_{1}^{2}{\left[9x - \frac{x^3}{3} - xy^2\right]_{0}^{1}\mathrm{d}y}$ \\
+		$= \int_{0}^{1}{\frac{20}{3} - x^2\mathrm{d}x}$ & $= \int_{1}^{2}{\frac{26}{3} - y^2\mathrm{d}y}$ \\
+		$= \left[\frac{20}{3}x - \frac{x^3}{3}\right]_{0}^{1}$ & $= \left[\frac{26}{3}y - \frac{y^3}{3}\right]_{1}^{2}$ \\
+		$= \frac{19}{3}$ & $= \frac{19}{3}$ \\
 	\end{tabular}
 \end{center}
 
@@ -22,19 +22,23 @@ Let's look at a case where $x$ and $y$ are not independent. specifically, where 
 [INSERT IMAGE]
 
 \noindent
-This is called a Type I Region. Formally, a Type I Region is a domain $D=\left\{(x,y)|a\leq x\leq b, g(x)\leq y\leq h(x)\right\}$.\\
+This is called a Type I Region. Formally, a Type I Region is a domain $D = \left\{ (x,y) \mid a \leq x \leq b, g(x) \leq y \leq h(x) \right\}$.\\
 
 \begin{theorem}[Fubini's Theorem for Type I Regions]
 	Let $D$ be a Type I Region in $\mathbb{R}^2$.\\
-	$$\iint\limits_{D}{f(x,y)\mathrm{d}A}=\int_{a}^{b}{\int_{g(x)}^{h(x)}{f(x,y)\mathrm{d}y}\mathrm{d}x}$$
+	\begin{equation*}
+		\iint\limits_{D}{f(x,y)\mathrm{d}A} = \int_{a}^{b}{\int_{g(x)}^{h(x)}{f(x,y)\mathrm{d}y}\mathrm{d}x}
+	\end{equation*}
 \end{theorem}
 
 \noindent
-It's also possible for y to have constant bounds and the bound for $x$ to be a function of $y$. this is a Type II Region. Formally, a Type II Region is a domain $D=\left\{(x,y)|g(y)\leq x\leq h(y), a\leq y\leq b\right\}$.
+It's also possible for y to have constant bounds and the bound for $x$ to be a function of $y$. this is a Type II Region. Formally, a Type II Region is a domain $D = \left\{(x,y) \mid g(y) \leq x \leq h(y), a \leq y \leq b\right\}$.
 
 \begin{theorem}[Fubini's Theorem for Type II Regions]
-	Let $D$ be a Type II Region in $\mathbb{R}^2$.\\
-	$$\iint\limits_{D}{f(x,y)\mathrm{d}A}=\int_{a}^{b}{\int_{g(y)}^{h(y)}{f(x,y)\mathrm{d}x}\mathrm{d}y}$$
+	Let $D$ be a Type II Region in $\mathbb{R}^2$.
+	\begin{equation*}
+		\iint\limits_{D}{f(x,y)\mathrm{d}A} = \int_{a}^{b}{\int_{g(y)}^{h(y)}{f(x,y)\mathrm{d}x}\mathrm{d}y}
+	\end{equation*}
 \end{theorem}
 
 \noindent
@@ -44,8 +48,10 @@ Sometimes, a region can be describes as both Type I and Type II. You should pick
 The previous two theorems can be summarized as dependent variables need to be integrated before the variables that they depend on. This core idea extends into higher dimensions where classifying regions becomes tedious and not very helpful.\\
 
 \noindent
-One can split larger, harder to describe domains into smaller domains. Let $D_1\cup D_2=D$.
+One can split larger, harder to describe domains into smaller domains. Let $D_1 \cup D_2 = D$.
 
 [INSERT IMAGE]
 
-$$\iint\limits_{D}{f(x,y)\mathrm{d}A}=\iint\limits_{D_1}{f(x,y)\mathrm{d}A}+\iint\limits_{D_2}{f(x,y)\mathrm{d}A}-\iint\limits_{D_1\cap D_2}{f(x,y)\mathrm{d}A}$$
+\begin{equation*}
+	\iint\limits_{D}{f(x,y)\mathrm{d}A} = \iint\limits_{D_1}{f(x,y)\mathrm{d}A} + \iint\limits_{D_2}{f(x,y)\mathrm{d}A} - \iint\limits_{D_1 \cap D_2}{f(x,y)\mathrm{d}A}
+\end{equation*}

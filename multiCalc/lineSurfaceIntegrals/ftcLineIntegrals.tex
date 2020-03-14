@@ -1,19 +1,21 @@
 \subsection{FTC for Line Integrals}
 \noindent
-We saw earlier that $\mathrm{d}z=\nabla f\cdot\langle\mathrm{d}x,\mathrm{d}y\rangle$. This can be written as $\mathrm{d}z=\nabla f\cdot\mathrm{d}\vec{r}$ where $\vec{r}(t)$ parameterizes a simple curve $C$ and $a\leq t\leq b$.\\
-$\int\limits_{C}{\nabla f\cdot\mathrm{d}\vec{r}}=\int_{a}^{b}{(\nabla f\circ\vec{r})\cdot\vec{r^\prime}\mathrm{d}t}=f\circ\vec{r}\rvert_{a}^{b}=f(\vec{r}(b))-f(\vec{r}(a))$
-$$\int\limits_{C}{\nabla f\cdot\mathrm{d}\vec{r}}=f(\vec{r}(b))-f(\vec{r}(a))$$ the fundamental theorem of calculus for line integrals.\\
+We saw earlier that $\mathrm{d}z = \nabla f \cdot \langle \mathrm{d}x, \mathrm{d}y \rangle$. This can be written as $\mathrm{d}z = \nabla f \cdot \mathrm{d}\vec{r}$ where $\vec{r}(t)$ parameterizes a simple curve $C$ and $a \leq t \leq b$.\\
+$\int\limits_{C}{\nabla f \cdot \mathrm{d}\vec{r}} = \int_{a}^{b}{(\nabla f\circ\vec{r}) \cdot \vec{r^\prime}\mathrm{d}t} = f\circ\vec{r}\rvert_{a}^{b} = f(\vec{r}(b))-f(\vec{r}(a))$
+\begin{equation*}
+	\int\limits_{C}{\nabla f\cdot\mathrm{d}\vec{r}}=f(\vec{r}(b))-f(\vec{r}(a))
+\end{equation*}
+the fundamental theorem of calculus for line integrals.\\
 
 \noindent
-Let's test by computing a line integral directly and using the FTC for line integrals. Let the path be the top-half semicircle connecting $(1,0)$ to $(-1,0)$ and let $f(x,y)=12-3x-y$.
+Let's test by computing a line integral directly and using the FTC for line integrals. Let the path be the top-half semicircle connecting $(1,0)$ to $(-1,0)$ and let $f(x,y) = 12 - 3x - y$.
 \begin{center}
 	$\vec{r}(t)=\langle\cos{t},\sin{t}\rangle$, $0\leq t\leq\pi$
 	\begin{tabular}{c|c}
-		Directly & FTC \\
-		\hline
-		$\vec{r^\prime}(t)=\langle-\sin{t},\cos{t}\rangle$ & $\vec{r}(0)=\langle 1,0\rangle$, $\vec{r}(\pi)=\langle -1, 0\rangle$ \\
-		$\nabla f = \langle -3, -1 \rangle$ & $f(\vec{r}(0))=9$, $f(\vec{r}(\pi))=15$ \\
-		$\int_{0}^{\pi}{3\sin{t}-\cos{t}\mathrm{d}t}=3-\cos{t}-\sin{t}\rvert_{0}^{\pi}=6$ & $15-9=6$ \\
+		Directly & FTC \\ \hline
+		$\vec{r^\prime}(t) = \langle-\sin{t}, \cos{t}\rangle$ & $\vec{r}(0) = \langle 1, 0 \rangle$, $\vec{r}(\pi) = \langle -1, 0 \rangle$ \\
+		$\nabla f = \langle -3, -1 \rangle$ & $f(\vec{r}(0)) = 9$, $f(\vec{r}(\pi)) = 15$ \\
+		$\int_{0}^{\pi}{3\sin{t} - \cos{t}\mathrm{d}t} = 3 - \cos{t} - \sin{t}\rvert_{0}^{\pi} = 6$ & $15 - 9 = 6$ \\
 	\end{tabular}
 \end{center}
 

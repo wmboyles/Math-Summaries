@@ -1,18 +1,22 @@
 \section{Surface Integrals}
 \noindent
-We can parameterize any surface as $\vec{r}(u,v)=\langle x(u,v), y(u,v), z(u,v)\rangle$ (or using some other coordinate system). This is because we are simple taking one 2D surface, the uv-plane, and transforming it into another surface in such a way that areas ear each other in the uv-plane are near each other on the surface. This fact that areas stay close to each other allows us to make statement about the complicated surface while working with the simple uv-plane.
+We can parameterize any surface as $\vec{r}(u,v) = \langle x(u,v), y(u,v), z(u,v) \rangle$ (or using some other coordinate system). This is because we are simple taking one 2D surface, the uv-plane, and transforming it into another surface in such a way that areas ear each other in the uv-plane are near each other on the surface. This fact that areas stay close to each other allows us to make statement about the complicated surface while working with the simple uv-plane.
 
 [INSERT IMAGE]
 
 \noindent
 The change of the surface in the $u$ direction is $\frac{\partial\hat{r}}{\partial u}\mathrm{d}u$\\
 The change of the surface in the $v$ direction is $\frac{\partial\hat{r}}{\partial v}\mathrm{d}v$\\
-So, the area of the surface in relation to $u$ and $v$ is the area of the paraellogram spanned by these two surface: a cross product.\\
-$$\mathrm{d}s=\norm{\left<\frac{\partial\vec{r}}{\partial u}\mathrm{d}u\right>\times\left<\frac{\partial\vec{r}}{\partial v}\mathrm{d}v\right>}=\norm{\vec{r_u}\times\vec{r_v}}\mathrm{d}u\mathrm{d}v$$
+So, the area of the surface in relation to $u$ and $v$ is the area of the parallelogram spanned by these two surface: a cross product.
+\begin{equation*}
+	\mathrm{d}s = \norm{\left< \frac{\partial\vec{r}}{\partial u}\mathrm{d}u \right> \times \left< \frac{\partial\vec{r}}{\partial v}\mathrm{d}v \right>} = \norm{\vec{r_u} \times \vec{r_v}}\mathrm{d}u\mathrm{d}v
+\end{equation*}
 
 \begin{definition}
-	For a surface $S$ parameterized by $\vec{r}(u,v)$ and $(u,v)\subset D$, the surface area is\\
-	$$A(S)=\iint\limits_{S}{\mathrm{d}s}=\iint\limits_{D}{\norm{\vec{r_u}\times\vec{r_v}}\mathrm{d}u\mathrm{d}v}$$
+	For a surface $S$ parameterized by $\vec{r}(u,v)$ and $(u,v)\subset D$, the surface area is
+	\begin{equation*}
+		A(S) = \iint\limits_{S}{\mathrm{d}s} = \iint\limits_{D}{\norm{\vec{r_u} \times \vec{r_v}}\mathrm{d}u\mathrm{d}v}
+	\end{equation*}
 \end{definition}
 
 \input{./lineSurfaceIntegrals/surfaceIntegralsScalarFunctions}

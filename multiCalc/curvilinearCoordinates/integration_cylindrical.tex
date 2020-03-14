@@ -1,25 +1,25 @@
 \subsection{Integration}
 \noindent
-The volume element in cylindrical coordinates is $\mathrm{d}V=r\mathrm{d}r\mathrm{d}\theta\mathrm{d}z$.
+The volume element in cylindrical coordinates is $\mathrm{d}V = r\mathrm{d}r\mathrm{d}\theta\mathrm{d}z$.
 
 [INSERT IMAGE]
 
 \noindent
-For example, let's evaluate $\int_{0}^{4}{\int_{0}^{\sqrt{16-y^2}}{\int_{0}^{16-x^2-y^2}{\mathrm{d}z}\mathrm{d}x}\mathrm{d}y}$, the volume under the paraboloid $z=16-x^2-y^2$ using cylindrical coordinates.\\
+For example, let's evaluate $\int_{0}^{4}{\int_{0}^{\sqrt{16 - y^2}}{\int_{0}^{16 - x^2 - y^2}{\mathrm{d}z}\mathrm{d}x}\mathrm{d}y}$, the volume under the paraboloid $z = 16 - x^2 - y^2$ using cylindrical coordinates.\\
 \indent
-$=\int_{0}^{4}{\int_{0}^{\pi/2}{\int_{0}^{16-r^2}{r\mathrm{d}z}\mathrm{d}\theta}\mathrm{d}r}$\\
+$= \int_{0}^{4}{\int_{0}^{\pi/2}{\int_{0}^{16 - r^2}{r\mathrm{d}z}\mathrm{d}\theta}\mathrm{d}r}$\\
 \indent
-$=\int_{0}^{4}{\int_{0}^{\pi/2}{16r-r^2\mathrm{d}\theta}\mathrm{d}r}$\\
+$= \int_{0}^{4}{\int_{0}^{\pi/2}{16r - r^2\mathrm{d}\theta}\mathrm{d}r}$\\
 \indent
-$=\frac{\pi}{2}\int_{0}^{4}{16r-r^3\mathrm{d}r}$\\
+$= \frac{\pi}{2}\int_{0}^{4}{16r - r^3\mathrm{d}r}$\\
 \indent
-$=\frac{\pi}{2}\left[8r^2-\frac{r^4}{4}\right]_0^4$\\
+$= \frac{\pi}{2}\left[8r^2 - \frac{r^4}{4}\right]_0^4$\\
 \indent
-$=32\pi$\\
+$= 32\pi$\\
 
 \noindent
-For another example, let's find the average value of $f(x,y,z)=z$ on the domain $\Omega$ which is bounded by $z=\sqrt{6-x^2-y^2}$ and $z=x^2+y^2$.\\
+For another example, let's find the average value of $f(x,y,z) = z$ on the domain $\Omega$ which is bounded by $z = \sqrt{6-x^2-y^2}$ and $z = x^2+y^2$.\\
 \indent
-$\bar{f}=\frac{\int_{0}^{2\pi}{\int_{0}^{\sqrt{2}}{\int_{r^2}^{\sqrt{6-r^2}}{zr\mathrm{d}z}\mathrm{d}r}\mathrm{d\theta}}}{\int_{0}^{2\pi}{\int_{0}^{\sqrt{2}}{\int_{r^2}^{\sqrt{6-r^2}}{r\mathrm{d}z}\mathrm{d}r}\mathrm{d}\theta}}=\frac{11}{12\sqrt{6}-17}$\\
+$\bar{f} = \frac{\int_{0}^{2\pi}{\int_{0}^{\sqrt{2}}{\int_{r^2}^{\sqrt{6 - r^2}}{zr\mathrm{d}z}\mathrm{d}r}\mathrm{d\theta}}}{\int_{0}^{2\pi}{\int_{0}^{\sqrt{2}}{\int_{r^2}^{\sqrt{6 - r^2}}{r\mathrm{d}z}\mathrm{d}r}\mathrm{d}\theta}}=\frac{11}{12\sqrt{6} - 17}$\\
 \indent
-$\small{\text{Work omitted for brevity}}$\\
+$\small{\text{Work omitted for brevity}}$

@@ -1,10 +1,10 @@
 \section{Derivatives of VVFs}
 \noindent
 Just like functions from Calc I and II, we can differentiate VVFs. In fact, the limit definitions of the derivative are nearly identical.\\
-Let $\vec{r}(t)=\langle x(t), y(t), z(t) \rangle$.\\
-$\vec{r^\prime}(t)=\lim_{h\to 0}{\frac{\vec{r}(t+h)-\vec{r}(t)}{h}}$\\
-$$=\lim_{h\to 0}{\langle \frac{x(t+h)-x(t)}{h}, \frac{y(t+h)-y(t)}{h}, \frac{z(t+h)-z(t)}{h} \rangle}$$\\
-The limit distributes inside the vector, so $\vec{r^\prime}(t)=\langle x^{\prime}(t), y^{\prime}(t), z^{\prime}(t) \rangle$.\\
+Let $\vec{r}(t) = \langle x(t), y(t), z(t) \rangle$.\\
+$\vec{r^\prime}(t) = \lim_{h\to 0}{\frac{\vec{r}(t+h)-\vec{r}(t)}{h}}$\\
+$$= \lim_{h\to 0}{\langle \frac{x(t+h)-x(t)}{h}, \frac{y(t+h)-y(t)}{h}, \frac{z(t+h)-z(t)}{h} \rangle}$$\\
+The limit distributes inside the vector, so $\vec{r^\prime}(t) = \langle x^{\prime}(t), y^{\prime}(t), z^{\prime}(t) \rangle$.\\
 
 \noindent
 Like a position function from Calc I and II, the derivative of a VVF representing position gives a VVF representing velocity, and the 2nd derivative gives a VVF representing acceleration. The magnitude of the velocity VVF, the speed, if commonly notated $v(t)$.\\
@@ -13,11 +13,11 @@ Like a position function from Calc I and II, the derivative of a VVF representin
 There are 5 important properties of the derivatives of VVFs. These properties are similar to single-variable derivatives.\\
 Let $\vec{r}(t)$ and $\vec{s}(t)$ be VVFs, $a(t)$ be a scalar function, and $c$ be a scalar.\\
 \begin{enumerate}
-	\item Linearity: $\frac{\mathrm{d}}{\mathrm{d}t}c\vec{r}(t)=c\vec{r^\prime}(t)$
-	\item Product Rule for Scalar Functions: $\frac{\mathrm{d}}{\mathrm{d}t}a(t)\vec{r}(t)=a(t)\vec{r^\prime}(t)+\vec{r}(t)a^{\prime}(t)$
-	\item Dot Product Rule: $\frac{\mathrm{d}}{\mathrm{d}t}\vec{s}(t)\cdot\vec{r}(t)=\vec{s}(t)\cdot\vec{r^\prime}(t)+\vec{r}(t)\vec{s^\prime}(t)$
-	\item Cross Product Rule: $\frac{\mathrm{d}}{\mathrm{d}t}\vec{s}(t)\times\vec{r}(t)=\vec{s}(t)\times\vec{r^\prime}(t)+\vec{s^\prime}(t)\times\vec{r}(t)$
-	\item Chain Rule: $\frac{\mathrm{d}}{\mathrm{d}t}\vec{r}(a(t))=\vec{r^\prime}(a(t))a^{\prime}(t)$
+	\item Linearity: $\frac{\mathrm{d}}{\mathrm{d}t}c\vec{r}(t) = c\vec{r^\prime}(t)$
+	\item Product Rule for Scalar Functions: $\frac{\mathrm{d}}{\mathrm{d}t}a(t)\vec{r}(t) = a(t)\vec{r^\prime}(t) + \vec{r}(t)a^{\prime}(t)$
+	\item Dot Product Rule: $\frac{\mathrm{d}}{\mathrm{d}t}\vec{s}(t)\cdot\vec{r}(t) = \vec{s}(t)\cdot\vec{r^\prime}(t) + \vec{r}(t)\vec{s^\prime}(t)$
+	\item Cross Product Rule: $\frac{\mathrm{d}}{\mathrm{d}t}\vec{s}(t)\times\vec{r}(t) = \vec{s}(t)\times\vec{r^\prime}(t) + \vec{s^\prime}(t)\times\vec{r}(t)$
+	\item Chain Rule: $\frac{\mathrm{d}}{\mathrm{d}t}\vec{r}(a(t)) = \vec{r^\prime}(a(t))a^{\prime}(t)$
 \end{enumerate}
 \small{Note: A quotient rule doesn't make sense because we don't have an operation for dividing two VVFs.}
 
@@ -25,7 +25,7 @@ Let $\vec{r}(t)$ and $\vec{s}(t)$ be VVFs, $a(t)$ be a scalar function, and $c$ 
 Just like in Calc I and II, we can use the derivative of VVFs to find tangent lines to the curve. Similar to how $f^{\prime}(a)$ represents the slope of $f$ at $a$, $\vec{r^\prime}(a)$ represents the direction of the tangent line at $a$. Remembering the VVF form of a line, the tangent line to $\vec{r}$ at $t$ is $\vec{l}(t)=\vec{r}(t)+t\vec{r^\prime}(t)$.\\
 In fact, tangent lines appear so often, that we have a special unit vector representing the direction of the tangent line.
 \begin{center}
-	$\hat{T}(t)=\frac{\vec{r^\prime}(t)}{\norm{\vec{r^\prime}(t)}}$\\
+	$\hat{T}(t) = \frac{\vec{r^\prime}(t)}{\norm{\vec{r^\prime}(t)}}$\\
 	$\small{\text{You can remember }\hat{T}\text{ as the "tangent" vector.}}$
 \end{center}
 

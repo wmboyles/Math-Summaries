@@ -2,56 +2,62 @@
 \begin{enumerate}
 	\item Evaluate each of the following integrals as they appear or by changing coordinate systems. Sketch and/or describe the region geometrically to help in choosing an appropriate coordinate system.
 	\begin{enumerate}[a.]
-		\item $$\int_{0}^{3}{\int_{0}^{2}{\int_{0}^{1}{ze^{x+y+z^2}\mathrm{d}x}\mathrm{d}y}\mathrm{d}x}$$
+		\item \begin{equation*}
+			\int_{0}^{3}{\int_{0}^{2}{\int_{0}^{1}{ze^{x+y+z^2}\mathrm{d}x}\mathrm{d}y}\mathrm{d}x}
+		\end{equation*}
 		\indent
-		We can use a simple u-substution.\\
-		$u=z^2+x+y$, $\mathrm{d}u=2z\mathrm{d}z$\\
-		$=\int_{0}^{3}{\int_{0}^{2}{\int_{x+y}^{x+y+1}{\frac{1}{2}e^{u}\mathrm{d}u}\mathrm{d}y}\mathrm{d}x}$\\
-		$=\frac{1}{2}\int_{0}^{3}{\int_{0}^{2}{e^{x+y+1}-e^{x+y}\mathrm{d}y}\mathrm{d}x}$\\
-		$=\frac{1}{2}\int_{0}^{3}{\left((e^{3+x}-e^{2+x})-(e^{1+x}-e^{x})\right)\mathrm{d}x}$\\
-		$=\frac{1}{2}(e^6-e^5-e^4+e^2+e-1)$\\
+		We can use a simple u-substitution.\\
+		$u = z^2 + x + y$, $\mathrm{d}u = 2z\mathrm{d}z$\\
+		$= \int_{0}^{3}{\int_{0}^{2}{\int_{x+y}^{x+y+1}{\frac{1}{2}e^{u}\mathrm{d}u}\mathrm{d}y}\mathrm{d}x}$\\
+		$= \frac{1}{2}\int_{0}^{3}{\int_{0}^{2}{e^{x+y+1} - e^{x+y}\mathrm{d}y}\mathrm{d}x}$\\
+		$= \frac{1}{2}\int_{0}^{3}{\left((e^{3+x}-e^{2+x}) - (e^{1+x}-e^{x})\right)\mathrm{d}x}$\\
+		$= \frac{1}{2}(e^6 - e^5 - e^4 + e^2 + e - 1)$\\
 		
-		\item $$\int_{0}^{\sqrt{2}}{\int_{-\sqrt{2-x^2}}^{\sqrt{2-x^2}}{\int_{0}^{5}{z\mathrm{d}z}\mathrm{d}y}\mathrm{d}x}$$
+		\item \begin{equation*}
+			\int_{0}^{\sqrt{2}}{\int_{-\sqrt{2-x^2}}^{\sqrt{2-x^2}}{\int_{0}^{5}{z\mathrm{d}z}\mathrm{d}y}\mathrm{d}x}
+		\end{equation*}
 		\indent
 		The region we are integrating is a half-cylinder, so we will use cylindrical coordinates.\\
-		$=\int_{-\pi/2}^{\pi/2}{\int_{0}^{\sqrt{2}}{\int_{0}^{5}{rz\mathrm{d}z}\mathrm{d}r}\mathrm{d}\theta}$\\
-		$=\pi\int_{0}^{\sqrt{2}}{r\mathrm{d}r}\cdot\int_{0}^{5}{z\mathrm{d}z}$\\
-		$=\pi\left(\frac{\sqrt{2}^{2}}{2}-\frac{0^2}{2}\right)\cdot\left(\frac{5^2}{2}-\frac{0^2}{2}\right)$\\
-		$=\frac{25\pi}{2}$\\
+		$= \int_{-\pi/2}^{\pi/2}{\int_{0}^{\sqrt{2}}{\int_{0}^{5}{rz\mathrm{d}z}\mathrm{d}r}\mathrm{d}\theta}$\\
+		$= \pi\int_{0}^{\sqrt{2}}{r\mathrm{d}r}\cdot\int_{0}^{5}{z\mathrm{d}z}$\\
+		$= \pi\left(\frac{\sqrt{2}^{2}}{2} - \frac{0^2}{2}\right) \cdot \left(\frac{5^2}{2} - \frac{0^2}{2}\right)$\\
+		$= \frac{25\pi}{2}$\\
 		
-		\item $$\int_{-3}^{3}{\int_{0}^{\sqrt{9-x^2}}{\int_{0}^{\sqrt{9-x^2-y^2}}{z\mathrm{d}z}\mathrm{d}y}\mathrm{d}x}$$
+		\item \begin{equation*}
+			\int_{-3}^{3}{\int_{0}^{\sqrt{9 - x^2}}{\int_{0}^{\sqrt{9 - x^2 - y^2}}{z\mathrm{d}z}\mathrm{d}y}\mathrm{d}x}
+		\end{equation*}
 		\indent
 		The region we are integrating is a quarter sphere, so we will use spherical coordinates.\\
-		$=\int_{0}^{3}{\int_{0}^{\pi}{\int_{0}^{\pi/2}{\rho^2\sin{\phi}\cos{\phi}\mathrm{d}\phi}\mathrm{d}\theta}\mathrm{d}\rho}$\\
-		$=\int_{0}^{3}{\rho^3\mathrm{d}\rho}\cdot\int_{0}^{\pi}{\mathrm{d}\theta}\cdot\int_{0}^{\pi/2}{\sin{\phi}\cos{\phi}\mathrm{d}\phi}$\\
-		$=\frac{3^4}{4}\cdot\pi\cdot\frac{1}{2}=\frac{81\pi}{8}$\\
+		$= \int_{0}^{3}{\int_{0}^{\pi}{\int_{0}^{\pi/2}{\rho^2\sin{\phi}\cos{\phi}\mathrm{d}\phi}\mathrm{d}\theta}\mathrm{d}\rho}$\\
+		$= \int_{0}^{3}{\rho^3\mathrm{d}\rho}\cdot\int_{0}^{\pi}{\mathrm{d}\theta} \cdot \int_{0}^{\pi/2}{\sin{\phi}\cos{\phi}\mathrm{d}\phi}$\\
+		$= \frac{3^4}{4} \cdot \pi \cdot \frac{1}{2} = \frac{81\pi}{8}$\\
 	\end{enumerate}
 	
-	\item Let $\Omega\subset\mathbb{R}^3$ be a spherical ball of radius $R$ centered at the origin. Set up and evaluate $\iiint\limits_{\Omega}{\mathrm{d}V}$.\\
+	\item Let $\Omega \subset \mathbb{R}^3$ be a spherical ball of radius $R$ centered at the origin. Set up and evaluate $\iiint\limits_{\Omega}{\mathrm{d}V}$.\\
 	\indent
 	Since we are finding the volume of a ball, we'll use spherical coordinates.\\
-	$\mathrm{d}V=\rho^2\sin{\phi}\mathrm{d}\rho\mathrm{d}\theta\mathrm{d}\phi$\\
-	$=\int_{0}^{R}{\int_{0}^{2\pi}{\int_{0}^{\pi}{\rho^2\sin{\phi}\mathrm{d}\phi}\mathrm{d}\theta}\mathrm{d}\rho}$\\
-	$=\int_{0}^{R}{\rho^2\mathrm{d}\rho}\cdot\int_{0}^{2\pi}{\mathrm{d}\theta}\cdot\int_{0}^{\pi}{\sin{\phi}\mathrm{d}\phi}$\\
-	$=\frac{R^3}{3}\cdot 2\pi\cdot 2=\frac{4\pi}{3}R^3$\\
+	$\mathrm{d}V = \rho^2\sin{\phi}\mathrm{d}\rho\mathrm{d}\theta\mathrm{d}\phi$\\
+	$= \int_{0}^{R}{\int_{0}^{2\pi}{\int_{0}^{\pi}{\rho^2\sin{\phi}\mathrm{d}\phi}\mathrm{d}\theta}\mathrm{d}\rho}$\\
+	$= \int_{0}^{R}{\rho^2\mathrm{d}\rho} \cdot \int_{0}^{2\pi}{\mathrm{d}\theta} \cdot \int_{0}^{\pi}{\sin{\phi}\mathrm{d}\phi}$\\
+	$= \frac{R^3}{3} \cdot 2\pi \cdot 2 = \frac{4\pi}{3}R^3$\\
 	
-	\item A plane lamina with density $\sigma(x,y)=\sqrt{x^2+y^2}$ occupies the region $D$, the region bounded by the Archimedian spiral $r=\theta$ and the half line $\theta=\alpha, r\geq 0$, where $\alpha$ is an unknown angle in radians. Find $\alpha$ such that the average density $\bar{\sigma}$ of the lamina is $\pi/2$.\\
+	\item A plane lamina with density $\sigma(x,y) = \sqrt{x^2+y^2}$ occupies the region $D$, the region bounded by the Archimedian spiral $r = \theta$ and the half line $\theta = \alpha, r \geq 0$, where $\alpha$ is an unknown angle in radians. Find $\alpha$ such that the average density $\bar{\sigma}$ of the lamina is $\pi / 2$.\\
 	\indent
-	$\bar{\sigma}=\frac{\iint\limits_{D}{\sigma\mathrm{d}A}}{\iint\limits_{D}{\mathrm{d}A}}=\frac{\pi}{2}$\\
-	$D=\left\{(r,\theta)|0\leq\theta\leq\alpha,0\leq r\leq\theta\right\},\sigma(r,\theta)=r$\\
-	$\bar{\sigma}=\frac{\int_{0}^{\alpha}{\int_{0}^{\theta}{r^2\mathrm{d}r}\mathrm{d}\theta}}{\int_{0}^{\alpha}{\int_{0}^{\theta}{r\mathrm{d}r}\mathrm{d}\theta}}$\\
-	$=\frac{\int_{0}^{\alpha}{\frac{\theta^3}{3}\mathrm{d}\theta}}{\int_{0}^{\alpha}{\frac{\theta^2}{2}\mathrm{d}\theta}}$\\
-	$=\frac{\alpha^4/12}{\alpha^3/6}=\frac{\alpha}{2}$\\
-	$\frac{\alpha}{2}=\frac{\pi}{2}$\\
-	$\implies\alpha=\pi$\\
+	$\bar{\sigma} = \frac{\iint\limits_{D}{\sigma\mathrm{d}A}}{\iint\limits_{D}{\mathrm{d}A}} = \frac{\pi}{2}$\\
+	$D = \left\{(r,\theta) \mid 0 \leq \theta \leq \alpha, 0 \leq r \leq \theta \right\}, \sigma(r,\theta) = r$\\
+	$\bar{\sigma} = \frac{\int_{0}^{\alpha}{\int_{0}^{\theta}{r^2\mathrm{d}r}\mathrm{d}\theta}}{\int_{0}^{\alpha}{\int_{0}^{\theta}{r\mathrm{d}r}\mathrm{d}\theta}}$\\
+	$= \frac{\int_{0}^{\alpha}{\frac{\theta^3}{3}\mathrm{d}\theta}}{\int_{0}^{\alpha}{\frac{\theta^2}{2}\mathrm{d}\theta}}$\\
+	$= \frac{\alpha^4/12}{\alpha^3/6} = \frac{\alpha}{2}$\\
+	$\frac{\alpha}{2} = \frac{\pi}{2}$\\
+	$\implies \alpha = \pi$\\
 	
-	\item Consider the 2D Gaussian function $f(x,y)=e^{-(x^2+y^2)}$. Evaluate $\iint\limits_{D}{f(x,y)\mathrm{d}A}$, where $D$ is a disk of radius $a$ centered at the origin. Use the results to evaluate $\iint\limits_{\mathbb{R}^2}{f(x,y)\mathrm{d}A}$.\\
+	\item Consider the 2D Gaussian function $f(x,y) = e^{-(x^2+y^2)}$. Evaluate $\iint\limits_{D}{f(x,y)\mathrm{d}A}$, where $D$ is a disk of radius $a$ centered at the origin. Use the results to evaluate $\iint\limits_{\mathbb{R}^2}{f(x,y)\mathrm{d}A}$.\\
 	\indent
-	$D=\left\{(r,\theta)|0\leq r\leq a, 0\leq\theta\leq 2\pi\right\}$\\
-	$f(x,y)=\exp{(-x^2-y^2)}=\exp{(-r^2)}$\\
-	$\iint\limits_{D}{f(x,y)\mathrm{d}A}=\int_{0}^{2\pi}{\int_{0}^{a}{e^{-r^2}r\mathrm{d}r}\mathrm{d}\theta}$\\
-	$=\int_{0}^{2\pi}{\mathrm{d}\theta}\cdot\frac{-1}{2}\int_{0}^{-a^2}{e^{u}\mathrm{d}u}$\\
-	$=2\pi\cdot\frac{-1}{2}\cdot\left(e^{-a^2}-1\right)$\\
-	$=\pi\left(1-e^{-a^2}\right)$\\
-	$\iint\limits_{\mathbb{R}^2}{f(x,y)\mathrm{d}A}=\lim_{a\to\infty}{\pi\left(1-e^{-a^2}\right)}=\pi$\\
+	$D = \left\{(r,\theta) \mid 0 \leq r \leq a, 0 \leq \theta \leq 2\pi \right\}$\\
+	$f(x,y) = \exp{(-x^2-y^2)} = \exp{(-r^2)}$\\
+	$\iint\limits_{D}{f(x,y)\mathrm{d}A} = \int_{0}^{2\pi}{\int_{0}^{a}{e^{-r^2}r\mathrm{d}r}\mathrm{d}\theta}$\\
+	$= \int_{0}^{2\pi}{\mathrm{d}\theta} \cdot \frac{-1}{2}\int_{0}^{-a^2}{e^{u}\mathrm{d}u}$\\
+	$= 2\pi \cdot \frac{-1}{2} \cdot \left(e^{-a^2} - 1\right)$\\
+	$= \pi\left(1 - e^{-a^2}\right)$\\
+	$\iint\limits_{\mathbb{R}^2}{f(x,y)\mathrm{d}A} = \lim_{a \to \infty}{\pi\left(1 - e^{-a^2}\right)} = \pi$\\
 \end{enumerate}

@@ -18,11 +18,13 @@ The determinant is only defined for square matrices. It's easiest to understand 
 		c & d
 	\end{array} = ad - bc
 \end{equation*}
-We can define $a_{ij}$ as the entry in the ith row and jth column of matrix $A$ and $A_{ij}$ as the adjudicate matrix, which is the matrix $A$ if row $i$ and column $j$ were removed. This allows us to write a general formula for the determinant.\\
-\begin{equation*}
-	\det{A} = \sum_{j=1}^{n}{\left(-1\right)^{i+j}a_{ij}A_{ij}} \text{ (for fixed i)} = 
-	\sum_{i=1}^{n}{\left(-1\right)^{i+j}a_{ij}A_{ij}} \text{ (for fixed j)}
-\end{equation*}
+We can define $a_{ij}$ as the entry in the ith row and jth column of matrix $A$ and $A_{ij}$ as the adjudicate matrix, which is the matrix $A$ if row $i$ and column $j$ were removed. This allows us to write a general formula for the determinant.
+\begin{definition}
+	\begin{equation*}
+		\det{A} = \sum_{j=1}^{n}{\left(-1\right)^{i+j}a_{ij}A_{ij}} \text{ (for fixed i)} = \sum_{i=1}^{n}{\left(-1\right)^{i+j}a_{ij}A_{ij}} \text{ (for fixed j)}
+	\end{equation*}
+\end{definition}
+\noindent
 This formula allows us to use any row or column to calculate the determinant, which is especially useful if a certain row contains lots of 0's.\\
 
 \noindent
@@ -50,4 +52,4 @@ Below are some properties of the determinant for some $n \times n$ matrix $A$ an
 		\end{equation*}
 \end{enumerate}
 
-\ifodd\includeBackgroundReviewExamples\input{./backgroundReview/determinants_example}\fi
+\ifodd\includeBackgroundReviewExamples\input{./backgroundReview/matrices/determinants_example}\fi

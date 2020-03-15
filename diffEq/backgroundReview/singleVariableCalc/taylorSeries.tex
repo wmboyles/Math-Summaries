@@ -1,13 +1,13 @@
 \subsection{Taylor Series}
 \noindent
-A Taylor series as a way of approximating a function about a point $x=a$ using polynomials. The first approximation just keeps the same value at $x=a$, the second approximation keep the same value and first derivative, etc. The definition is
-\begin{equation*}
-	f(x) = f(a)+f^\prime(a)(x-a) + \frac{f^{\prime\prime}(a)}{2!}(x-a)^2 + \ldots +  \frac{f^{(n)}(a)}{n!}(x-a)^n + \ldots
-\end{equation*}
-If we approximate a function about $x=0$, we call this a Maclaurin series.\\
-
+A Taylor series as a way of approximating a function about a point $x=a$ using polynomials. The first approximation just keeps the same value at $x=a$, the second approximation keep the same value and first derivative, etc.
+\begin{definition}
+	\begin{equation*}
+		f(x) = f(a)+f^\prime(a)(x-a) + \frac{f^{\prime\prime}(a)}{2!}(x-a)^2 + \ldots +  \frac{f^{(n)}(a)}{n!}(x-a)^n + \ldots
+	\end{equation*}
+\end{definition}
 \noindent
-Below are some common Maclaurin series, and their radii of convergence if applicable.
+If we approximate a function about $x=0$, we call this a Maclaurin series. Below are some common Maclaurin series, and their radii of convergence if applicable.
 \begin{enumerate}[label=]
 	\item \begin{equation*}
 		e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \ldots
@@ -26,4 +26,4 @@ Below are some common Maclaurin series, and their radii of convergence if applic
 	\end{equation*}
 \end{enumerate}
 
-\input{./backgroundReview/eulersIdentity}
+\input{./backgroundReview/singleVariableCalc/eulersIdentity}

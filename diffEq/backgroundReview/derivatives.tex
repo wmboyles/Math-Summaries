@@ -1,0 +1,59 @@
+\subsubsection{Derivatives}
+The derivative of a function $y = f(x)$, notated $f^\prime(x)$, gives the slope of the tangent line to $f$ at $x$. It's defined as
+\begin{equation*}
+f^\prime(x) = \lim\limits_{h \to 0}{\frac{f(x+h) - f(x)}{h}}
+\end{equation*}
+
+\noindent
+Below are some properties of the derivative. Let $f$ and $g$ be functions of $x$ and $p$ a scalar.
+\begin{enumerate}[]
+	\item Linearity
+	\begin{equation*}
+	\left( pf \pm g \right)^\prime = pf^\prime \pm g^\prime
+	\end{equation*}
+	\item Product Rule
+	\begin{equation*}
+	\left( fg \right)^\prime = f^\prime g + f g^\prime
+	\end{equation*}
+	\item Quotient Rule
+	\begin{equation*}
+	\left( \frac{f}{g} \right)^\prime = \frac{f^\prime g - f g^\prime}{g^2}
+	\end{equation*}
+	\item Chain Rule
+	\begin{equation*}
+	\left( f \circ g \right)^\prime = \left( f^\prime \circ g \right) \cdot g^\prime
+	\end{equation*}
+	\item Power Rule
+	\begin{equation*}
+	\dd{x} p^x = px^{p-1} \text{, } p \neq 0
+	\end{equation*}
+	\item Exponent Rule
+	\begin{equation*}
+	\dd{x} p^x = p^x \ln{p} \text{, } p > 0
+	\end{equation*}
+	\item The Power Rule and Exponent Rule are two cases of the same rule
+	\begin{equation*}
+	\dd{x} f^g = gf^{g-1}f^\prime + f^g\ln{f}g^\prime
+	\end{equation*}
+\end{enumerate}
+Using the definition of the derivative and these rules, we can find the derivatives to some common functions
+\begin{enumerate}[]
+	\item \begin{equation*}
+	\dd{x} p = 0
+	\end{equation*}
+	\item \begin{equation*}
+	\dd{x} e^x = e^x
+	\end{equation*}
+	\item \begin{equation*}
+	\dd{x} \ln{x} = \frac{1}{x}
+	\end{equation*}
+	\item \begin{equation*}
+	\dd{x} \sin{x} = \cos{x}
+	\end{equation*}
+	\item \begin{equation*}
+	\dd{x} \cos{x} = -\sin{x}
+	\end{equation*}
+	\item \begin{equation*}
+	\dd{x} \tan{x} = \sec^2{x}
+	\end{equation*}
+\end{enumerate}

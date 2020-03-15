@@ -1,23 +1,19 @@
 \documentclass[oneside, 12pt]{book}
 
 % Setup for table of contents
-\setcounter{tocdepth}{3} % TOC should label down to subsubsections
-\setcounter{secnumdepth}{2} % TOC should not number further than a subsection number
+\setcounter{tocdepth}{3} 	% TOC should label down to subsubsections
+\setcounter{secnumdepth}{2}	% TOC should not number further than a subsection number
 
 % General setup
-\usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
-\usepackage{amsfonts, amsmath, amsthm} % For properly formatting symbols, theorems, lemmas, and definitions
-\DeclareMathOperator{\arcsec}{arcsec}
-\DeclareMathOperator{\arccot}{arccot}
-\DeclareMathOperator{\arccsc}{arccsc}
-\usepackage{float}
+\usepackage{amsfonts, amsmath, amsthm}	% For properly formatting symbols, theorems, lemmas, and definitions
+\usepackage{float}						% For making sure tables and figures stay in place
 
-\usepackage{enumitem}
-\usepackage{hyperref} % For inserting linkss
-\usepackage{graphicx} % For inserting images
+\usepackage{enumitem}	% For custom labels on enumerations
+\usepackage{hyperref}	% For inserting links
+\usepackage{graphicx} 	% For inserting images
 
-% Theorems, Definitions, and Lemmas should not be numbered
+% Theorems, definitions, lemmas, and examples should not be numbered
 \newtheorem*{theorem}{Theorem}
 \newtheorem*{definition}{Definition}
 \newtheorem*{lemma}{Lemma}
@@ -26,11 +22,25 @@
 % Shortcuts
 \newcommand{\dd}[1]{\frac{\mathrm{d}}{\mathrm{d} #1}}
 \newcommand{\abs}[1]{\lvert #1 \rvert}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arccsc}
 
 % Title page setup
 \title{Intro to Differential Equations: A Summary}
 \author{William Boyles}
 \date{}
+
+% Macros for including certain parts of the document.
+% 1 for true, 0 for false
+\def\includeBackgroundReview{1}				% Should the background/review chapter be included?
+	\def\includeBackgroundReviewExamples{0}	% Should examples be included in the background/review chapter?
+\def\includeBasics{1}						% Should the introduction/basics chapter be included?
+\def\includeFirstOrderLinearODE{1}			% Should the 1st order linear ODE chapter be included?
+\def\includeHigherOrderODE{1}				% Should the higher order ODE chapter be included?
+\def\includeLinearSystems{1}				% Should the linear systems of DiffEq's chapter be included?
+\def\includeLaplaceTransforms{1}			% Should the laplace transforms chapter be included?
+\def\includeAdditionalResources{1}			% Should the additional resources chapter be included?	
 
 \begin{document}
 	\frontmatter
@@ -38,13 +48,13 @@
 	\tableofcontents
 	
 	\mainmatter
-		\input{./backgroundReview/backgroundReview} % Background and Review
-		\input{./basics/basics} % Introduction / Basics	
-		\input{./1stOrderLinearODE/1stOrderLinearODE} % 1st order linear ODE's
-		\input{./higherOrderODE/higherOrderODE} % Higher (mostly 2nd) Order linear ODE's
-		\input{./linearSystems/linearSystems} % Linear Systems of DiffEq's
-		\input{./laplaceTransforms/laplaceTransforms} % Laplace Transforms
-		\input{./additionalResources/additionalResources} % Additional Resources
+		\ifodd\includeBackgroundReview\input{./backgroundReview/backgroundReview}\fi 			% Background and Review
+		\ifodd\includeBasics\input{./basics/basics} 											% Introduction / Basics	
+		\ifodd\includeFirstOrderLinearODE\input{./1stOrderLinearODE/1stOrderLinearODE}\fi 		% 1st order linear ODE's
+		\ifodd\includeHigherOrderODE\input{./higherOrderODE/higherOrderODE}\fi 					% Higher (mostly 2nd) Order linear ODE's
+		\ifodd\includeLinearSystems\input{./linearSystems/linearSystems}\fi 					% Linear Systems of DiffEq's
+		\ifodd\includeLaplaceTransforms\input{./laplaceTransforms/laplaceTransforms}\fi 		% Laplace Transforms
+		\ifodd\includeAdditionalResources\input{./additionalResources/additionalResources}\fi	% Additional Resources
 				
 	\backmatter
 \end{document}

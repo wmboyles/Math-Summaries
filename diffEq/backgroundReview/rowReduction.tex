@@ -1,0 +1,107 @@
+\subsection{Row Reduction}
+\noindent
+Row reduction is a way of solving a system of linear equations by representing the system as a matrix and altering the rows of the matrix until we get as close as possible to an identity matrix.\\
+
+\noindent
+Below is a list of legal row operations. Doing these does not change the solution to the system of equations.
+\begin{enumerate}[label=]
+	\item Multiplying or dividing each item in a row by a scalar.
+		\begin{equation*}
+			\begin{bmatrix}
+				1 & 3 & 7 \\
+				0 & 2 & -1 \\
+				2 & 7 & 9
+			\end{bmatrix}
+			\stackrel{R_2 = R_2/2}{\to}
+			\begin{bmatrix}
+				1 & 3 & 7 \\
+				0 & 1 & -1/2 \\
+				2 & 7 & 9
+			\end{bmatrix}
+		\end{equation*}
+	\item Adding a multiple of one row to another row.
+		\begin{equation*}
+			\begin{bmatrix}
+				1 & 3 & 7 \\
+				0 & 2 & -1 \\
+				2 & 7 & 9
+			\end{bmatrix}
+			\stackrel{R_3 = R_3 - 2R_1}{\to}
+			\begin{bmatrix}
+				1 & 3 & 7 \\
+				0 & 2 & -1 \\
+				0 & 1 & -5
+			\end{bmatrix}
+		\end{equation*}
+	\item Swapping two rows.
+		\begin{equation*}
+			\begin{bmatrix}
+				1 & 3 & 7 \\
+				0 & 2 & -1 \\
+				0 & 1 & -5
+			\end{bmatrix}
+			\stackrel{\text{swap } R_2 \text{, } R_3}{\to}
+			\begin{bmatrix}
+				1 & 3 & 7 \\
+				0 & 1 & -5 \\
+				0 & 2 & -1
+			\end{bmatrix}
+		\end{equation*}
+\end{enumerate}
+
+\noindent
+Using these rules, we solve a system of linear equations using a process called Gauss-Jordan Elimination.\\
+
+\noindent
+A system may have a contradiction, meaning no solution exists. This will look like a row of 0's on the left and a non-zero term on the far right of the row.
+\begin{equation*}
+	\left[
+		\begin{array}{cc|c}
+		1 & 0 & 1 \\
+		0 & 1 & 0
+		\end{array}
+	\right]
+	\implies
+	\text{No solution}
+\end{equation*}
+
+\noindent
+A system may be underdetermined, meaning one or more variables can be any number. This will look a non-zero column on the left without a leading 1 (bolded).
+\begin{equation*}
+	\left[
+		\begin{array}{ccccc|c}
+			1 & \textbf{-2} & 0 & 0 & \textbf{-3} & 2 \\
+			0 & \textbf{0} & 1 & 0 & \textbf{1} & 5 \\
+			0 & \textbf{0} & 0 & 1 & \textbf{2} & 4 \\
+			0 & \textbf{0} & 0 & 0 & \textbf{0} & 0
+		\end{array}
+	\right]
+	\implies
+	\begin{bmatrix}
+		x_1 \\
+		x_2 \\
+		x_3 \\
+		x_4 \\
+		x_5 \\
+	\end{bmatrix} = \begin{bmatrix}
+		2 \\
+		0 \\
+		5 \\
+		4 \\
+		0
+	\end{bmatrix} + \alpha \begin{bmatrix}
+		2 \\
+		1 \\
+		0 \\
+		0 \\
+		0
+	\end{bmatrix} + \beta \begin{bmatrix}
+		3 \\
+		0 \\
+		-4 \\
+		-2 \\
+		1
+	\end{bmatrix} \text{, }\alpha\text{, }\beta \in \R
+\end{equation*}
+
+\ifodd\includeBackgroundReviewExamples\input{./backgroundReview/rowReduction_example}\fi

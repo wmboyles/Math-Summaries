@@ -1,0 +1,24 @@
+\begin{example}
+	Find the determinant of the following 3 x 3 matrix.
+	\begin{equation*}
+		A = \begin{bmatrix}
+			1 & 3 & 7 \\
+			0 & 2 & -1 \\
+			2 & 7 & 9
+		\end{bmatrix}
+	\end{equation*}
+\end{example}
+We'll use the first column since it has only two non-zero entries.
+\begin{equation*}
+	\begin{bmatrix}
+	1 & 3 & 7 \\
+	0 & 2 & -1 \\
+	2 & 7 & 9
+	\end{bmatrix} = 1 \text{ } \begin{array}{|cc|}
+		2 & -1 \\
+		7 & 9
+	\end{array} + 2 \text{ } \begin{array}{|cc|}
+		3 & 7 \\
+		2 & -1
+	\end{array} = (18+7) + 2(-3-14) = -9
+\end{equation*}

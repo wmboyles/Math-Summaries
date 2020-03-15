@@ -1,0 +1,67 @@
+\subsection{Types of Matrices}
+\noindent
+Below is a list of different types of matrices and their special properties.
+\begin{enumerate}[label=]
+	\item A square matrix has the same number of rows as columns.
+		\begin{equation*}
+			\begin{bmatrix}
+				1 & 3 & 7 \\
+				0 & 2 & -1 \\
+				2 & 7 & 9
+			\end{bmatrix}
+		\end{equation*}
+	\item Row vectors have one column. Column vectors have one row.
+		\begin{equation*}
+			\begin{bmatrix}
+			1 & 3 & 0
+			\end{bmatrix} \text{, } \begin{bmatrix}
+			1 \\
+			3 \\
+			0
+			\end{bmatrix}
+		\end{equation*}
+	\item Upper triangular matrices have all 0's below the main diagonal. Lower triangular matrices have all 0's above the main diagonal.
+		\begin{equation*}
+			\begin{bmatrix}
+				1 & 3 & 7 \\
+				0 & 2 & -1 \\
+				0 & 0 & 9
+			\end{bmatrix} \text{, } \begin{bmatrix}
+				1 & 0 & 0 \\
+				0 & 2 & 0 \\
+				2 & 7 & 9
+			\end{bmatrix}
+		\end{equation*}
+	\item Diagonal matrices are both upper and lower triangular. They only have non-zero entries on the main diagonal.
+		\begin{equation*}
+			\begin{bmatrix}
+				1 & 0 & 0 \\
+				0 & 2 & 0 \\
+				0 & 0 & 9
+			\end{bmatrix}
+		\end{equation*}
+	\item The identity matrix is one of the most common matrices. It is square, diagonal, and has all 1's on the main diagonal. It's the multiplicative identity for matrices.
+		\begin{equation*}
+			I_3 = \begin{bmatrix}
+				1 & 0 & 0 \\
+				0 & 1 & 0 \\
+				0 & 0 & 1
+			\end{bmatrix}
+		\end{equation*}
+	\item The inverse matrix of $A$, $A^{-1}$, is such that
+		\begin{equation*}
+			A^{-1}A = AA^{-1} = I
+		\end{equation*}
+	\item The transpose matrix of $A$, $A^T$, is where the rows and columns of $A$ are swapped.
+		\begin{equation*}
+			A = \begin{bmatrix}
+				1 & 3 & 2 & -1 \\
+				-5 & 7 & 3 & 0 \\
+			\end{bmatrix} \implies A^T = \begin{bmatrix}
+				1 & -5 \\
+				3 & 7 \\
+				2 & 3 \\
+				-1 & 0
+			\end{bmatrix}
+		\end{equation*}
+\end{enumerate}

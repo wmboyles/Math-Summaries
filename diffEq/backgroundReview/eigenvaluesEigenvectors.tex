@@ -1,0 +1,19 @@
+\subsection{Eigenvalues \& Eigenvectors}
+\begin{definition}
+	Let $A$ be an $n \times n$ matrix. A scalar $\lambda$ and a vector $\vec{v}$ are an eigenvalue and eigenvector of $A$ if
+	\begin{equation*}
+		A\vec{v} = \lambda\vec{v}
+	\end{equation*}
+\end{definition}
+\noindent
+We call $p(\lambda) = \det{(A - \lambda I)}$ the characteristic polynomial of $A$. The eigenvalues for $A$ are the solutions to the equation
+\begin{equation*}
+	p(\lambda) = \det{(A - \lambda I)} = 0
+\end{equation*}
+Once we have an eigenvalue, we can find the basis vectors for the corresponding eigenspace by solving the equation
+\begin{equation*}
+	\left( A - \lambda I \right)\vec{v} = \vec{0}
+\end{equation*}
+The basis vectors of the eigenspace for $A$ are the union of the basis vectors of each eigenspace corresponding to each eigenvalue.
+
+\ifodd\includeBackgroundReviewExamples\input{./backgroundReview/eigenvaluesEigenvectors_example}\fi

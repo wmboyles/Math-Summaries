@@ -1,0 +1,53 @@
+\subsection{Determinants}
+\noindent
+The determinant of a matrix is a signed number that tells by how much the transformation represented by a matrix scales volumes in a space. The number is negative if the space was "flipped" during a transformation. The number is negative if the dimension of the output space is less than that of the input space.\\
+
+\noindent
+The determinant is only defined for square matrices. It's easiest to understand the definition of a determinant recursively.
+\begin{equation*}
+	\det{\left[ a \right]} = \lvert a \rvert = a
+\end{equation*}
+\begin{equation*}
+	\det{\left[
+		\begin{array}{cc}
+			a & b \\
+			c & d
+		\end{array}
+	\right]} = \begin{array}{|cc|}
+		a & b \\
+		c & d
+	\end{array} = ad - bc
+\end{equation*}
+We can define $a_{ij}$ as the entry in the ith row and jth column of matrix $A$ and $A_{ij}$ as the adjudicate matrix, which is the matrix $A$ if row $i$ and column $j$ were removed. This allows us to write a general formula for the determinant.\\
+\begin{equation*}
+	\det{A} = \sum_{j=1}^{n}{\left(-1\right)^{i+j}a_{ij}A_{ij}} \text{ (for fixed i)} = 
+	\sum_{i=1}^{n}{\left(-1\right)^{i+j}a_{ij}A_{ij}} \text{ (for fixed j)}
+\end{equation*}
+This formula allows us to use any row or column to calculate the determinant, which is especially useful if a certain row contains lots of 0's.\\
+
+\noindent
+Below are some properties of the determinant for some $n \times n$ matrix $A$ and scalar $\lambda$.
+\begin{enumerate}[label=]
+	\item \begin{equation*}
+		\det{I_n} = 1
+	\end{equation*}
+	\item \begin{equation*}
+		\det{(A^T)} = \det{A}
+	\end{equation*}
+	\item If $A$ is invertable,
+		\begin{equation*}
+			\det{(A^{-1})} = \frac{1}{\det{A}}
+		\end{equation*}
+	\item \begin{equation*}
+		\det{(\lambda A)} = \lambda^n\det{A}
+	\end{equation*}
+	\item \begin{equation*}
+		\det{(AB)} = \det{A}\det{B}
+	\end{equation*}
+	\item If $A$ is triangular,
+		\begin{equation*}
+			\det{A} = \prod_{i=1}^{n}{a_{ii}}
+		\end{equation*}
+\end{enumerate}
+
+\ifodd\includeBackgroundReviewExamples\input{./backgroundReview/determinants_example}\fi

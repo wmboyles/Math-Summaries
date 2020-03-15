@@ -2,7 +2,7 @@
 
 % Setup for table of contents
 \setcounter{tocdepth}{3} % TOC should label down to subsubsections
-\setcounter{secnumdepth}{1} % TOC should not number further than a section number
+\setcounter{secnumdepth}{2} % TOC should not number further than a subsection number
 
 % General setup
 \usepackage[utf8]{inputenc}
@@ -13,7 +13,7 @@
 \DeclareMathOperator{\arccsc}{arccsc}
 \usepackage{float}
 
-\usepackage{enumerate} % For listing items and sub-items
+\usepackage{enumitem}
 \usepackage{hyperref} % For inserting linkss
 \usepackage{graphicx} % For inserting images
 
@@ -23,8 +23,12 @@
 \newtheorem*{lemma}{Lemma}
 \newtheorem*{example}{Example}
 
+% Shortcuts
+\newcommand{\dd}[1]{\frac{\mathrm{d}}{\mathrm{d} #1}}
+\newcommand{\abs}[1]{\lvert #1 \rvert}
+
 % Title page setup
-\title{Differential Equations I : A Summary}
+\title{Intro to Differential Equations: A Summary}
 \author{William Boyles}
 \date{}
 

@@ -1,0 +1,24 @@
+\subsubsection{Euler's Identity}
+\noindent
+Let's see what happens when we look at the Maclaurin series for $e^{ix}$.
+\begin{equation*}
+	e^{ix} = 1 + (ix) + \frac{(ix)^2}{2!} + \frac{(ix)^3}{3!} + \frac{(ix)^4}{4!} + \frac{(ix)^5}{5!} \ldots
+\end{equation*}
+\begin{equation*}
+	= 1 + ix - \frac{x^2}{2!} - i\frac{x^3}{3!} + \frac{x^4}{4!} + i\frac{x^5}{5!} - \ldots
+\end{equation*}
+\begin{equation*}
+	= \left(1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \ldots \right) + i\left(x - \frac{x^3}{3!} + \frac{x^5}{5!} - \ldots \right)
+\end{equation*}
+The two expressions in parenthesis are exactly the Maclaurin series for $\cos{x}$ and $\sin{x}$. So,
+\begin{equation*}
+	e^{ix} = \cos{x} + i\sin{x}
+\end{equation*}
+In the case that $x = \pi$,
+\begin{equation*}
+	e^{i\pi} = \cos{\pi} + i\sin{\pi} = -1 + 0
+\end{equation*}
+So,
+\begin{equation*}
+	e^{i\pi} + 1 = 0
+\end{equation*}

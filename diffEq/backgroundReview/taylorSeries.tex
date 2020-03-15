@@ -1,0 +1,29 @@
+\subsection{Taylor Series}
+\noindent
+A Taylor series as a way of approximating a function about a point $x=a$ using polynomials. The first approximation just keeps the same value at $x=a$, the second approximation keep the same value and first derivative, etc. The definition is
+\begin{equation*}
+	f(x) = f(a)+f^\prime(a)(x-a) + \frac{f^{\prime\prime}(a)}{2!}(x-a)^2 + \ldots +  \frac{f^{(n)}(a)}{n!}(x-a)^n + \ldots
+\end{equation*}
+If we approximate a function about $x=0$, we call this a Maclaurin series.\\
+
+\noindent
+Below are some common Maclaurin series, and their radii of convergence if applicable.
+\begin{enumerate}[]
+	\item \begin{equation*}
+		e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \ldots
+	\end{equation*}
+	\item \begin{equation*}
+		\sin{x} = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \ldots
+	\end{equation*}
+	\item \begin{equation*}
+		\cos{x} = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \ldots
+	\end{equation*}
+	\item \begin{equation*}
+		\frac{1}{1+x} = 1 - x + x^2 - \ldots \text{, where } \abs{x} < 1
+	\end{equation*}
+	\item \begin{equation*}
+		\ln{(1+x)} = x - \frac{x^2}{2} + \frac{x^3}{3} - \ldots \text{, where } \abs{x} < 1
+	\end{equation*}
+\end{enumerate}
+
+\input{./backgroundReview/eulersIdentity}

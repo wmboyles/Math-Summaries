@@ -36,12 +36,13 @@
 % Macros for including certain parts of the document.
 % 1 for true, 0 for false
 \def\includeBackgroundReview{1}					% Should the background/review chapter be included?
-	\def\includeBackgroundReviewExamples{0}		% Should examples be included in the background/review chapter?
+	\def\includeBackgroundReviewExamples{1}		% Should examples be included in the background/review chapter?
 \def\includeBasics{1}							% Should the introduction/basics chapter be included?
 	\def\includeBasicsExamples{1}				% Should examples be included in the basics chapter?
 \def\includeFirstOrderLinearODE{1}				% Should the 1st order linear ODE chapter be included?
 	\def\includeFirstOrderLinearODEExamples{1}	% Should examples be included in the 1st order linear ODEs chapter?
-\def\includeHigherOrderODE{1}					% Should the higher order ODE chapter be included?
+\def\includeHigherOrder{1}						% Should the higher order ODE chapter be included?
+	\def\includeHigherOrderExamples{1}			% Should examples be included in the higher order ODE chapter?
 \def\includeLinearSystems{1}					% Should the linear systems of DiffEq's chapter be included?
 \def\includeLaplaceTransforms{1}				% Should the laplace transforms chapter be included?
 \def\includeAdditionalResources{1}				% Should the additional resources chapter be included?	
@@ -55,7 +56,7 @@
 		\ifodd\includeBackgroundReview\input{./backgroundReview/backgroundReview}\fi 			% Background and Review
 		\ifodd\includeBasics\input{./basics/basics} 											% Introduction / Basics	
 		\ifodd\includeFirstOrderLinearODE\input{./1stOrderLinearODE/1stOrderLinearODE}\fi 		% 1st order linear ODE's
-		\ifodd\includeHigherOrderODE\input{./higherOrderODE/higherOrderODE}\fi 					% Higher (mostly 2nd) Order linear ODE's
+		\ifodd\includeHigherOrder\input{./higherOrder/higherOrder}\fi 					% Higher (mostly 2nd) Order linear ODE's
 		\ifodd\includeLinearSystems\input{./linearSystems/linearSystems}\fi 					% Linear Systems of DiffEq's
 		\ifodd\includeLaplaceTransforms\input{./laplaceTransforms/laplaceTransforms}\fi 		% Laplace Transforms
 		\ifodd\includeAdditionalResources\input{./additionalResources/additionalResources}\fi	% Additional Resources

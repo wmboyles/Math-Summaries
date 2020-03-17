@@ -1,0 +1,22 @@
+\begin{example}
+	Find the general solution to the following differential equation.
+	\begin{equation*}
+		y^{(4)} + 2y^{\prime\prime} + y = 0
+	\end{equation*}
+\end{example}
+First we extract the auxiliary equation and find its roots.
+\begin{equation*}
+	r^4 + 2r^2 + 1 = 0 \implies r = i (\text{double root}), -i (\text{double root})
+\end{equation*}
+Since we have complex roots $0 \pm 1i$, we know that the following are fundamental solutions
+\begin{equation*}
+	C_1e^{0x}\cos{1x} \to C_1\cos{x} \text{ and } C_2e^{0x}\sin{1x} \to C_2\sin{x}
+\end{equation*}
+Since both roots are double roots the following are also fundamental solutions.
+\begin{equation*}
+	C_3x\cos{x} \text{ and } C_4x\sin{x}
+\end{equation*}
+So, the general solution is
+\begin{equation*}
+	y = C_1\cos{x} + C_2\sin{x} + C_3x\cos{x} + C_4x\sin{x}
+\end{equation*}

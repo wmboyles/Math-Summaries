@@ -1,0 +1,41 @@
+\section{Integrating Factor Method}
+All 1st order linear differential equations have the form
+\begin{equation*}
+	a_1(x)\dd{y}{x} + a_0(x)y = b_1(x)
+\end{equation*}
+which can be rewritten as
+\begin{equation*}
+	\dd{y}{x} + a(x)y = b(x)
+\end{equation*}
+
+\noindent
+This equation isn't always separable, and we can't just integrate both sides unless $a_1(x)y$ = 0.\\
+
+\noindent
+If $a_0(x) = a_1^\prime(x)$, then we could rewrite the equation and solve by doing the product rule in reverse.
+\begin{equation*}
+	\left(a_1(x)y\right)^\prime = b_1(x) \implies y = \frac{\int{b_1(x) \mathrm{d}x}}{a_1(x)}
+\end{equation*}
+
+\noindent
+It's possible to rearrange into this form by multiplying the equation by some function. Specifically, what were looking for is a function $\mu(x)$ such that
+\begin{equation*}
+	\mu(x)\dd{y}{x} + \mu(x)a(x)y = \mu(x)b(x) \text{ and } \mu^\prime(x) = \mu(x)a(x)
+\end{equation*}
+This equation involving $\mu(x)$ is one that we know how to solve because it's separable.\footnote{Although we are taking an indefinite integral to find $\mu(x)$, we do not have a $+ C$ term.}
+\begin{equation*}
+	\mu^\prime(x) = \mu(x)a(x) \implies \mu(x) = e^{\int{a(x) \mathrm{d}x}}
+\end{equation*}
+Substituting the solution for $\mu(x)$ back,
+\begin{equation*}
+	e^{\int{a(x) \mathrm{d}x}}\dd{y}{x} + e^{\int{a(x) \mathrm{d}x}}a(x)y = e^{\int{a(x) \mathrm{d}x}}b(x) \implies e^{\int{a(x) \mathrm{d}x}}\dd{y}{x} + \mu^\prime(x)y = e^{\int{a(x) \mathrm{d}x}}b(x)
+\end{equation*}
+Applying the product rule in reverse,
+\begin{equation*}
+	y = \frac{\int{\mu(x)} b(x) \mathrm{d}x}{\mu(x)} \text{, } \mu(x) = e^{\int{a(x) \mathrm{d}x}}
+\end{equation*}
+
+%\noindent
+%This method gives us a way to solve all first-order linear ODE's.
+
+\ifodd\includeFirstOrderLinearODEExamples\input{./1stOrderLinearODE/integratingFactor/integratingFactor_example}\fi

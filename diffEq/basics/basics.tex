@@ -1,9 +1,23 @@
 \chapter{The Basics of Differential Equations}
+\noindent
+A differential equation is an equation that relates a function to its derivatives.
+
 % Classifying Differential Equations
-	% Order
-	% Linearity
-	% Homogenity
-	% Ordinary / Partial
-	% Seperability
+\input{./basics/classification/classification}
+
+\noindent
+The three classes of order, linearity, and type are how we describe differential equations in words. Equation 1 would be described as a "1st order linear ODE". These definitions also allow us to define explicitly how an nth order linear ODE looks.
+
+
+\begin{definition}
+	An nth order linear ODE has the form
+	\begin{equation*}
+	a_n(x)\frac{\mathrm{d}^n y}{\mathrm{d} x^n} + a_{n-1}(x)\frac{\mathrm{d}^{n-1} y}{\mathrm{d} x^{n-1}} + \ldots + a_0(x)y = b(x)
+	\end{equation*}
+\end{definition}
+
 % Solutions to DiffEq's
+\input{./basics/solutions/solutions}
+
 % Initial Value Programs
+\input{./basics/IVPs/IVPs}

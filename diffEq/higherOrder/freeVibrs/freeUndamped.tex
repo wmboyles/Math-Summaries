@@ -1,0 +1,46 @@
+\subsection{Free Undamped Vibrations ($b = 0$)}
+\noindent
+In this case, our equation simplifies to
+\begin{equation*}
+	my^{\prime\prime} + ky = 0
+\end{equation*}
+The two roots of ou auxiliary equation are
+\begin{equation*}
+	r = \pm i \sqrt{\frac{k}{m}} = \pm i\omega
+\end{equation*}
+So, our solution becomes
+\begin{equation*}
+	y = C_1\cos{(\omega t)} + C_2\sin{(\omega t)}
+\end{equation*}
+This is the same $\omega$ from physics that means angular frequency, so the same physics formulas apply, like $T = \frac{2\pi}{\omega}$.\\
+
+\noindent
+We can simplify this a bit further. If we think of the $\cos$ and $\sin$ components as being sides of a right triangle like so,
+\begin{center}
+	\includegraphics[width=0.5\textwidth]{./higherOrder/freeVibrs/triangle.png}
+\end{center}
+then we rewrite our equation as
+\begin{equation*}
+	y = A\left( \frac{C_1}{\sqrt{C_1^2 + C_2^2}}\cos{(\omega t)} + \frac{C_2}{\sqrt{C_1^2 + C_2^2}}\sin{(\omega t)} \right)
+\end{equation*}
+Note that since $\left(\frac{C_1}{A}\right)^2 + \left(\frac{C_2}{A}\right)^2 = 1$, we can rewrite these coefficients as $\cos{\phi}$ and $\sin{\phi}$ respectively where
+\begin{equation*}
+	\phi = \begin{cases}
+		\arctan{(\frac{C_2}{C_1})} & C_1 > 0 \\
+		\arctan{(\frac{C_2}{C_1})} + \pi & C_1 \leq 0
+	\end{cases}
+\end{equation*} 
+So, our equation becomes
+\begin{equation*}
+	y = A\left(\cos{(\omega t)}\cos{\phi} + \sin{(\omega t)}\sin{\phi}\right)
+\end{equation*}
+Using the $\cos$ angle addition formula
+\begin{equation*}
+	y = A\cos{(\omega t - \phi)}
+\end{equation*}
+\begin{center}
+	\includegraphics[width=0.5\textwidth]{./higherOrder/freeVibrs/undampedfree.png}
+\end{center}
+As we can see, an undamped free vibration will simply oscillate back and forth without decay.
+
+\ifodd\includeHigherOrderExamples\input{./higherOrder/freeVibrs/undampedFreeVibrs_example}\fi

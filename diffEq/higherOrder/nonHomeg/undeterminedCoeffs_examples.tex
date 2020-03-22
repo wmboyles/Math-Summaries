@@ -1,0 +1,112 @@
+\noindent
+When solving, we'll first solve the homogeneous equation to find the general homogeneous solution $y_h$. Then, we'll guess a form for the particular solution $y_p$ based on the form of $b(x)$ and solve. Finally, we'll add these two solutions together to get the full general solution. We'll see that the constants come from $y_h$ and not $y_p$.
+
+\begin{example}
+	Find the general solution to the following equation.
+	\begin{equation*}
+		y^{\prime\prime} + 2y^\prime + y = 27e^{2x}
+	\end{equation*}
+\end{example}
+\noindent
+First, we'll solve the homogeneous equation
+\begin{equation*}
+	y^{\prime\prime} + 2y^\prime + y = 0
+\end{equation*}
+Extracting the auxiliary equation and finding the roots,
+\begin{equation*}
+	r^2 + 2r + 1 = \left(r+1\right)^2 \implies r = -1 \left(\text{double root}\right)
+\end{equation*}
+So, our general solution is
+\begin{equation*}
+	y_h = e^{-x}\left(C_1 + C_2x\right)
+\end{equation*}
+Since $b(x)$ is an exponential with a power of $2x$, it's safe guess to say that the particular solution is also an exponential with a power of $2x$. So, we'll guess that $y_p = Ae^{2x}$ and solve for $A$.
+\begin{equation*}
+	\left(Ae^{2x}\right)^{\prime\prime} + 2\left(Ae^{2x}\right)^\prime + Ae^{2x} = 2te^{2x}
+\end{equation*}
+\begin{equation*}
+	A\left(4e^{2x} + 4e^{2x} + e^{2x}\right) = 27e^{2x} \implies A = 3
+\end{equation*}
+So,
+\begin{equation*}
+	y_p = 3e^{2x}
+\end{equation*}
+Putting $y_h$ and $y_p$ together,
+\begin{equation*}
+	y = y_h + y_p = e^{-x}\left(C_1 + C_2x\right) + 3e^{2x}
+\end{equation*}
+
+\noindent
+There are a couple of catches we need to think about with it comes to guessing the form of the particular solution.
+\begin{example}
+	Find the general solution to the following equation.
+	\begin{equation*}
+		y^{\prime\prime} + 2y^\prime + y = 2e^{-x}
+	\end{equation*}
+\end{example}
+\noindent
+We already know from the previous example what $y_h$ is.
+\begin{equation*}
+	y_h = C_1e^{-x} + C_2xe^{-x}
+\end{equation*}
+However, even though $b(x)$ is an exponential with power $-x$, guessing that $y_p$ is of the form $Ae^{-x}$ won't work, since that is already covered in $y_h$. So, we instead include factors of $x$ until we hit a factor not already covered by $y_h$. In this case, we need up to $x^2$, so we guess that $y_p = Ax^2e^{-x}$.
+\begin{equation*}
+	y_p^{\prime\prime} + 2y_p^\prime + y_p = 2Ae^{-x} = 2e^{-x} \implies A = 1
+\end{equation*}
+So, the general solution is
+\begin{equation*}
+	y = y_h + y_p = C_1e^{-x} + C_2xe^{-x} + x^2e^{-x}
+\end{equation*}
+
+\noindent
+For certain forms of $b(x)$, like $\sin{x}$ or $\cos{x}$, our guess for $y_p$ will have multiple terms. We also need to make sure that these terms aren't already in $y_h$ and include factors of $x$.
+\begin{example}
+	Find the general solution to the following equation
+	\begin{equation*}
+		y^{\prime\prime} + 4y = 8\cos{(2t)}
+	\end{equation*}
+	given that $y_h = C_1\cos{(2t)} + C_2\sin{(2t)}$.
+\end{example}
+\noindent
+When $b(x)$ has a $\sin$ or $\cos$ term in it, we need our guess for $y_p$ to include both a $\sin$ and $\cos$ part in it, meaning there are two unknowns we'll have to solve for. However, since $y_h$ already has these $\sin$ and $\cos$ terms, we need to include an extra factor of $x$. So, our guess is that $y_p = Ax\cos{(2x)} + Bx\sin{(2x)}$.
+\begin{equation*}
+	y_p^{\prime\prime} + 4y_p = -4A\sin{(2x)} + 4B\cos{(2x)} = 8\cos{(2t)} \implies A = 0 \text{, } B = 2
+\end{equation*}
+Note how the $\sin$ and $\cos$ terms that have a factor of $x$ cancel each other out. This is expected since $b(x)$ does not have any terms with a factor of $x$.\\
+
+\noindent
+So, the general solution is
+\begin{equation*}
+	y = y_h + y_p = C_1\cos{(2t)} + C_2\sin{(2t)} + 2x\sin{(2x)}
+\end{equation*}
+
+\noindent
+If $b(x)$ has multiple terms, we need to include each term fully in our guess. For times when $b(x)$ has a factor that is a polynomial of degree $n$, our guess will also have a factor that is a polynomial of degree $n$ and $n$ coefficients to solve for.
+\begin{example}
+	Find the general solution to the following equation
+	\begin{equation*}
+		y^{\prime\prime} - 3y^{\prime} - 4y = 4x^2 - 1
+	\end{equation*}
+	given that $y_h = C_1e^{-x} + C_2e^{4x}$.
+\end{example}
+\noindent
+Since $b(x)$ is a degree 2 polynomial, we'll guess that $y_p = Ax^2 + Bx + C$.
+\begin{equation*}
+	y_p^{\prime\prime} - 3y_p^{\prime} - 4y_p = x^2(-4A) + x(-6A-4B) + (2A-3B-4C) = 4x^2 - 1
+\end{equation*}
+So, we have a system of linear equations,
+\begin{equation*}
+	\begin{cases}
+		-4A = 4 \\
+		-6A - 4B = 0 \\
+		2A - 3B - 4C = -1 \\
+	\end{cases} \implies \begin{cases}
+		A = -1 \\
+		B = 3/2 \\
+		C = -11/8
+	\end{cases}
+\end{equation*}
+So, our general solution is
+\begin{equation*}
+	y = C_1e^{-x} + C_2e^{4x} - x^2 + \frac{3}{2}x - \frac{11}{8}
+\end{equation*}

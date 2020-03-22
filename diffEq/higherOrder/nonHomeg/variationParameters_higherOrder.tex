@@ -1,0 +1,95 @@
+\subsubsection{Higher Order Variation of Parameters}
+\noindent
+We are trying to find a solution to the nth order linear ODE
+\begin{equation*}
+	a_n(x)y^{(n)} + \ldots + a_0(x)y = g(x)
+\end{equation*}
+assuming that we already know the fundamental solutions for the corresponding homogeneous equation
+\begin{equation*}
+	y_h = C_1y_1 + \ldots + C_ny_n
+\end{equation*}\\
+
+\noindent
+For this method, we'll assume that $y$ can be written as
+\begin{equation*}
+	y = v_1(x)y_1 + \ldots + v_n(x)y_n
+\end{equation*}
+and we'll try to find $v_1, \ldots, v_n$.\\
+
+\noindent
+Since there are $n$ unknown functions, we'll need $n$ equations to find them all. We can generate these by differentiating $y_p$.
+\begin{equation*}
+	y^\prime = \left(v_1y_1^\prime + \ldots + v_ny_n^\prime\right) + \left(v_1^\prime y_1 + \ldots + v_n^\prime y_n\right)
+\end{equation*}
+to avoid second derivatives of $v_1, \ldots, v_n$ from entering the formula for $y^{\prime\prime}$, we also have the condition
+\begin{equation*}
+	v_1^\prime y_1 + \ldots +v_n^\prime y_n = 0
+\end{equation*}
+We can now continue differentiating to get $n-2$ more equations involving $v_1^\prime, \ldots, v_n^\prime$. We also impose a final $n^{\text{th}}$ condition that
+\begin{equation*}
+	v_1^\prime y^{(n-1)} + \ldots + v_n^\prime y_n^{(n-1)} = g
+\end{equation*}
+This gets us a system of $n$ equations,
+\begin{equation*}
+	\begin{cases}
+		v_1^\prime y_1 + \ldots + v_n^\prime y_n & = 0 \\
+		\vdots & \vdots \\
+		v_1^\prime y_1^{(n-2)} + \ldots + v_n^\prime y_n^{(n-2)} & = 0 \\
+		v_1^\prime y_1^{(n-1)} + \ldots + v_n^\prime y_n^{(n-1)} & = g
+	\end{cases} 
+\end{equation*}
+Hopefully this system look familiar from second order equations.\\
+
+\noindent
+We can rewrite this system in terms of matrices and vectors.
+\begin{equation*}
+	\begin{bmatrix}
+		y_1 & \ldots & y_n \\
+		\vdots & & \vdots\\
+		y_1^{(n-2)} & \ldots & y_n^{(n-2)} \\
+		y_1^{(n-1)} & \ldots & y_n^{(n-1)}
+	\end{bmatrix} \begin{bmatrix}
+		v_1^\prime \\
+		\vdots \\
+		v_{n-1}^\prime \\
+		v_n^\prime
+	\end{bmatrix} = \begin{bmatrix}
+		0 \\
+		\vdots \\
+		0 \\
+		g
+	\end{bmatrix}
+\end{equation*}
+It's sufficient to show that a to this system solution exists if the determinant of the square matrix on the left is non-zero. The determinant of this matrix actually has a special name.
+
+\begin{definition}
+	The Wronskian of $n$ $n-1$ times differentiable functions $\left\{f_1, \ldots, f_n\right\}$ on an interval $I$ is
+	\begin{equation*}
+		W[f_1, \ldots, f_n](x) = \begin{vmatrix}
+			f_1(x) & \ldots & f_n(x) \\
+			f_1^\prime(x) & \ldots & f_n^\prime(x) \\
+			\vdots &        & \vdots \\
+			f_1^{(n-1)}(x) & \ldots & f_n^{(n-1)}(x)
+		\end{vmatrix} \text{, } x \in I
+	\end{equation*}
+\end{definition} 
+
+\noindent
+Using the Wronskian, we can solve the system using Cramer's Rule.
+\begin{equation*}
+	v^\prime_i(x) = \frac{g(x)W_i(x)}{W[y_1, \ldots, y_n](x)} \text{, } i = 1, \ldots, n
+\end{equation*}
+where $W_i(x)$ is the determinant of the matrix obtained from the Wronskian $W(x)$ by replacing the $i^{\text{th}}$ column with $\text{col}[0, \ldots, 1]$. Using the cofactor expansion along this column, we can write $W_i(x)$ as
+\begin{equation*}
+	W_i(x) = (-1)^{n-i}W[y_1, \ldots, y_{i-1}, y_{i+1}, \ldots, y_n](x) \text{, } i = 1, \ldots, n
+\end{equation*}
+Now with a solution for $v_i^\prime$, we can integrate to get $v_i$.
+\begin{equation*}
+	v_i = \int{\frac{g(x)W_i(x)}{W[y_1, \ldots, y_n](x)} \mathrm{d}x}
+\end{equation*}
+Now with a solution for $v_i$, we can substitute back to find $y(x)$.
+\begin{equation*}
+	y(x) = \sum_{i=1}^{n}{y_i(x)\int{\frac{g(x)W_i(x)}{W[y_1, \ldots, y_n](x)} \mathrm{d}x}}
+\end{equation*}
+
+\ifodd\includeHigherOrderExamples\input{./higherOrder/nonHomeg/variationParameters_higherOrder_example.tex}\fi

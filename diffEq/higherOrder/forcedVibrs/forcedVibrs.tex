@@ -1,0 +1,19 @@
+\section{Forced Vibrations}
+\noindent
+Now that we have some powerful methods for solving higher order equations, we can think about forced vibrations and understand ideas like beats and resonance.\\
+
+\noindent
+The equation we're trying to solve is
+\begin{equation*}
+	my^{\prime\prime} + by^{\prime} + ky = F_{\text{ext}}(t)
+\end{equation*}
+We'll assume that $F_{\text{ext}}(t) = F_0\cos{(\gamma t)}$ so our equation becomes.
+\begin{equation*}
+	my^{\prime\prime} + by^{\prime} + ky = F_0\cos{\gamma}
+\end{equation*}
+
+\noindent
+We'll look at the undamped and damped cases separately.
+
+\input{./higherOrder/forcedVibrs/undampedForcedVibrs.tex}
+\input{./higherOrder/forcedVibrs/dampedForcedVibrs.tex}

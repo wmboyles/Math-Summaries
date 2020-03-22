@@ -8,6 +8,7 @@
 \usepackage[english]{babel}
 \usepackage{amsfonts, amsmath, amsthm}	% For properly formatting symbols, theorems, lemmas, and definitions
 \usepackage{float}						% For making sure tables and figures stay in place
+\usepackage{geometry}[margins=1in]
 
 \usepackage{enumitem}	% For custom labels on enumerations
 \usepackage{hyperref}	% For inserting links
@@ -53,13 +54,13 @@
 	\tableofcontents
 	
 	\mainmatter
-		\ifodd\includeBackgroundReview\input{./backgroundReview/backgroundReview}\fi 			% Background and Review
-		\ifodd\includeBasics\input{./basics/basics} 											% Introduction / Basics	
-		\ifodd\includeFirstOrderLinearODE\input{./1stOrderLinearODE/1stOrderLinearODE}\fi 		% 1st order linear ODE's
-		\ifodd\includeHigherOrder\input{./higherOrder/higherOrder}\fi 					% Higher (mostly 2nd) Order linear ODE's
-		\ifodd\includeLinearSystems\input{./linearSystems/linearSystems}\fi 					% Linear Systems of DiffEq's
-		\ifodd\includeLaplaceTransforms\input{./laplaceTransforms/laplaceTransforms}\fi 		% Laplace Transforms
-		\ifodd\includeAdditionalResources\input{./additionalResources/additionalResources}\fi	% Additional Resources
+		\ifodd\includeBackgroundReview\input{./backgroundReview/backgroundReview.tex}\fi 			% Background and Review
+		\ifodd\includeBasics\input{./basics/basics.tex} 											% Introduction / Basics	
+		\ifodd\includeFirstOrderLinearODE\input{./1stOrderLinearODE/1stOrderLinearODE.tex}\fi 		% 1st order linear ODE's
+		\ifodd\includeHigherOrder\input{./higherOrder/higherOrder.tex}\fi 					% Higher (mostly 2nd) Order linear ODE's
+		\ifodd\includeLinearSystems\input{./linearSystems/linearSystems.tex}\fi 					% Linear Systems of DiffEq's
+		\ifodd\includeLaplaceTransforms\input{./laplaceTransforms/laplaceTransforms.tex}\fi 		% Laplace Transforms
+		\ifodd\includeAdditionalResources\input{./additionalResources/additionalResources.tex}\fi	% Additional Resources
 				
 	\backmatter
 \end{document}

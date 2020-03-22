@@ -1,7 +1,7 @@
 \begin{example}
 	Find the general solution to the following equation
 	\begin{equation*}
-		y^{\prime\prime} + y = \csc{x}
+		y'' + y = \csc{x}
 	\end{equation*}
 	given that $y_h = C_1\cos{x} + C_2\sin{x}$.
 \end{example}
@@ -16,20 +16,20 @@ $y_h$ gives us our two fundamental solutions
 So, our system of equations is
 \begin{equation*}
 	\begin{cases}
-		A^\prime\cos{x} + B^\prime\sin{x} = 0 \\
-		-A^\prime\sin{x} + B^\prime\cos{x} = \csc{x}
+		A'\cos{x} + B'\sin{x} = 0 \\
+		-A'\sin{x} + B'\cos{x} = \csc{x}
 	\end{cases} \to \begin{cases}
-		A^\prime\cos{x} + B^\prime\sin{x} = 0 \\
-		-A^\prime\cos{x} + B^\prime\frac{\cos^{2}{x}}{\sin{x}} = \frac{\cos{x}}{\sin^{2}{x}}
+		A'\cos{x} + B'\sin{x} = 0 \\
+		-A'\cos{x} + B'\frac{\cos^{2}{x}}{\sin{x}} = \frac{\cos{x}}{\sin^{2}{x}}
 	\end{cases}
 \end{equation*}
 So, 
 \begin{equation*}
-	B^\prime\frac{1}{\sin{x}} = \frac{\cos{x}}{\sin^{2}{x}} \implies B^\prime = \frac{\cos{x}}{\sin{x}} = \cot{x} \implies B = \ln{\abs{\sin{x}}} + C_2
+	B'\frac{1}{\sin{x}} = \frac{\cos{x}}{\sin^{2}{x}} \implies B' = \frac{\cos{x}}{\sin{x}} = \cot{x} \implies B = \ln{\abs{\sin{x}}} + C_2
 \end{equation*}
 and
 \begin{equation*}
-	A^\prime\cos{x} + \cos{x} = 0 \implies A^\prime = -1 \implies A = -x + C_1
+	A'\cos{x} + \cos{x} = 0 \implies A' = -1 \implies A = -x + C_1
 \end{equation*}
 So, our general solution is
 \begin{equation*}

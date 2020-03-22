@@ -1,12 +1,12 @@
 \begin{example}
-	A 250g mass is attached to a spring with a constant of $k = 10\text{N/m}$. The mechanical impedance is 3$\text{kg}{s}$. Initially, the mass is at $y(0)=-1\text{m}$ and $y^\prime(0)=2\text{m/s}$. Find an expression for $y(t)$, the position of the mass at time $t$. Write any oscillations as a $\cos$ and a phase shift. Is the system underdamped, critically damped, or overdamped?
+	A 250g mass is attached to a spring with a constant of $k = 10\text{N/m}$. The mechanical impedance is 3$\text{kg}{s}$. Initially, the mass is at $y(0)=-1\text{m}$ and $y'(0)=2\text{m/s}$. Find an expression for $y(t)$, the position of the mass at time $t$. Write any oscillations as a $\cos$ and a phase shift. Is the system underdamped, critically damped, or overdamped?
 \end{example}
 The IVP describing this scenario is
 \begin{equation*}
 	\begin{cases}
-		\frac{1}{4}y^{\prime\prime} + 3y^\prime + 10y = 0 \\
+		\frac{1}{4}y'' + 3y' + 10y = 0 \\
 		y(0) = -1 \\
-		y^\prime(0) = 2
+		y'(0) = 2
 	\end{cases}
 \end{equation*}
 Solving the auxiliary equation,
@@ -22,10 +22,10 @@ Solving for $C_1$ and $C_2$,
 	y(0) = -1 = C_1 \implies C_1 = -1
 \end{equation*}
 \begin{equation*}
-	y^\prime = e^{-6t}\left(-2C_1\sin{(2t)} + 2C_2\cos{(2t)}\right) + \left(C_1\cos{(2t)} + C_2\sin{(2t)}\right) \cdot -6e^{-6t}
+	y' = e^{-6t}\left(-2C_1\sin{(2t)} + 2C_2\cos{(2t)}\right) + \left(C_1\cos{(2t)} + C_2\sin{(2t)}\right) \cdot -6e^{-6t}
 \end{equation*}
 \begin{equation*}
-	y^\prime(0) = 2 = -6C_1 + 2C_2 \implies 2C_2 = -4 \implies C_2 = -2
+	y'(0) = 2 = -6C_1 + 2C_2 \implies 2C_2 = -4 \implies C_2 = -2
 \end{equation*}
 Solving for $\phi$, keeping in mind that $C_1 < 0$,
 \begin{equation*}

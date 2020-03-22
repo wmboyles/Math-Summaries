@@ -8,7 +8,7 @@ The definite integral of a function $f(x)$ from $x=a$ to $x=b$ where $a \leq b$ 
 
 We also define an indefinite integral, or antiderivative of $f(x)$, notated $F(x)$ where
 \begin{equation*}
-F^\prime(x) = f(x) \implies \int{f(x)\mathrm{d}x} = F(x)
+F'(x) = f(x) \implies \int{f(x)\mathrm{d}x} = F(x)
 \end{equation*}
 Note that there are infinitely many such functions $F$, since adding a constant to $F$ does not affect its derivative. To notate this, we add a constant $C$ to the indefinite integral. Given an initial condition for $f$, we can solve for $C$.\\
 
@@ -17,31 +17,31 @@ Below are some properties of the integral. Let $f$ and $g$ be functions of $x$ a
 \begin{enumerate}[label=]
 	\item Linearity
 	\begin{equation*}
-	\int{(pf \pm g) \mathrm{d}x} = p\int{f \mathrm{d}x} \pm \int{g \mathrm{d}x}
+		\int{(pf \pm g) \mathrm{d}x} = p\int{f \mathrm{d}x} \pm \int{g \mathrm{d}x}
 	\end{equation*}
 	\item Flipped Bounds
 	\begin{equation*}
-	\int_{a}^{b}{f \mathrm{d}x} = -\int_{b}^{a}{f \mathrm{d}x}
+		\int_{a}^{b}{f \mathrm{d}x} = -\int_{b}^{a}{f \mathrm{d}x}
 	\end{equation*}
 	\item Union of Intervals
 	\begin{equation*}
-	\int_{a}^{b}{f \mathrm{d}x} + \int_{b}^{c}{f \mathrm{d}x} = \int_{a}^{c}{f \mathrm{d}x}
+		\int_{a}^{b}{f \mathrm{d}x} + \int_{b}^{c}{f \mathrm{d}x} = \int_{a}^{c}{f \mathrm{d}x}
 	\end{equation*}
 	\item Power Rule
 	\begin{equation*}
-	\int{x^n \mathrm{d}x} = \frac{x^{n+1}}{n+1} + C \text{, }n \neq -1
+		\int{x^n \mathrm{d}x} = \frac{x^{n+1}}{n+1} + C \text{, }n \neq -1
 	\end{equation*}
 	\item U-Substitution
 	\begin{equation*}
-	\int{\left(f^\prime\circ g\right) g^\prime \mathrm{d}x} = f\circ g+ C
+		\int{\left(f'\circ g\right) g' \mathrm{d}x} = f\circ g+ C
 	\end{equation*}
 	\item Integration by Parts
 	\begin{equation*}
-	\int{f^\prime g \mathrm{d}x} = fg - \int{fg^\prime \mathrm{d}x}
+		\int{f' g \mathrm{d}x} = fg - \int{fg' \mathrm{d}x}
 	\end{equation*}
 	\item Fundamental Theorem of Calculus
 	\begin{equation*}
-	\dd{x}\int_{a}^{x}{f(s) \mathrm{d}s} = f(x)
+		\dd{x}\int_{a}^{x}{f(s) \mathrm{d}s} = f(x)
 	\end{equation*}
 \end{enumerate}
 Using the definition of the integral and the above rules, we can find the indefinite integral of some common functions.

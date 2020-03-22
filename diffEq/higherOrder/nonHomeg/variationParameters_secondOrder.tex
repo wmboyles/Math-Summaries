@@ -1,8 +1,8 @@
 \subsubsection{Second Order Variation of Parameters}
 \noindent
-We'll modify our second order equation of have a 1 as the coefficient of the $y^{\prime\prime}$ term by dividing to get an equation of the form
+We'll modify our second order equation of have a 1 as the coefficient of the $y''$ term by dividing to get an equation of the form
 \begin{equation*}
-	y^{\prime\prime} + py^\prime + qy = g(x)
+	y'' + py' + qy = g(x)
 \end{equation*}
 Just like for undetermined coefficients, we'll find homogeneous and particular solutions $y = y_h + y_p$. Since the equation is second-order, the solution to the homogeneous equation will yield two fundamental solutions $y_1$ and $y_2$ where $y_h = C_1y_1 + C_2y_2$.\\
 
@@ -14,10 +14,10 @@ So, we can write $y$ as
 where
 \begin{equation*}
 	\begin{cases}
-		A^\prime y_1 + B^\prime y_2 = 0 \\
-		A^\prime y_1^\prime + B^\prime y_2^\prime = g(x)
+		A'y_1  + B'y_2  = 0 \\
+		A'y_1' + B'y_2' = g(x)
 	\end{cases}
 \end{equation*}
-We will then solve this system to solve for $A^\prime$ and $B^\prime$ and integrate.
+We will then solve this system to solve for $A'$ and $B'$ and integrate.
 
 \ifodd\includeHigherOrderExamples\input{./higherOrder/nonHomeg/variationParameters_secondOrder_example.tex}\fi

@@ -12,23 +12,23 @@ which can be rewritten as
 This equation isn't always separable, and we can't just integrate both sides unless $a_1(x)y$ = 0.\\
 
 \noindent
-If $a_0(x) = a_1^\prime(x)$, then we could rewrite the equation and solve by doing the product rule in reverse.
+If $a_0(x) = a_1'(x)$, then we could rewrite the equation and solve by doing the product rule in reverse.
 \begin{equation*}
-	\left(a_1(x)y\right)^\prime = b_1(x) \implies y = \frac{\int{b_1(x) \mathrm{d}x}}{a_1(x)}
+	\left(a_1(x)y\right)' = b_1(x) \implies y = \frac{\int{b_1(x) \mathrm{d}x}}{a_1(x)}
 \end{equation*}
 
 \noindent
 It's possible to rearrange into this form by multiplying the equation by some function. Specifically, what were looking for is a function $\mu(x)$ such that
 \begin{equation*}
-	\mu(x)\dd{y}{x} + \mu(x)a(x)y = \mu(x)b(x) \text{ and } \mu^\prime(x) = \mu(x)a(x)
+	\mu(x)\dd{y}{x} + \mu(x)a(x)y = \mu(x)b(x) \text{ and } \mu'(x) = \mu(x)a(x)
 \end{equation*}
 This equation involving $\mu(x)$ is one that we know how to solve because it's separable.\footnote{Although we are taking an indefinite integral to find $\mu(x)$, we do not have a $+ C$ term.}
 \begin{equation*}
-	\mu^\prime(x) = \mu(x)a(x) \implies \mu(x) = e^{\int{a(x) \mathrm{d}x}}
+	\mu'(x) = \mu(x)a(x) \implies \mu(x) = e^{\int{a(x) \mathrm{d}x}}
 \end{equation*}
 Substituting the solution for $\mu(x)$ back,
 \begin{equation*}
-	e^{\int{a(x) \mathrm{d}x}}\dd{y}{x} + e^{\int{a(x) \mathrm{d}x}}a(x)y = e^{\int{a(x) \mathrm{d}x}}b(x) \implies e^{\int{a(x) \mathrm{d}x}}\dd{y}{x} + \mu^\prime(x)y = e^{\int{a(x) \mathrm{d}x}}b(x)
+	e^{\int{a(x) \mathrm{d}x}}\dd{y}{x} + e^{\int{a(x) \mathrm{d}x}}a(x)y = e^{\int{a(x) \mathrm{d}x}}b(x) \implies e^{\int{a(x) \mathrm{d}x}}\dd{y}{x} + \mu'(x)y = e^{\int{a(x) \mathrm{d}x}}b(x)
 \end{equation*}
 Applying the product rule in reverse,
 \begin{equation*}

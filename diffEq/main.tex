@@ -20,14 +20,18 @@
 \newtheorem*{lemma}{Lemma}
 \newtheorem*{example}{Example}
 
-% Shortcuts
+% Shortcuts ------------------------------------------------
 \newcommand{\dd}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
 \newcommand{\pp}[2]{\frac{\partial #1}{\partial #2}}
+
 \newcommand{\abs}[1]{\lvert #1 \rvert}
+
 \DeclareMathOperator{\arcsec}{arcsec}
 \DeclareMathOperator{\arccot}{arccot}
 \DeclareMathOperator{\arccsc}{arccsc}
+
 \newcommand{\R}{\mathbb{R}}
+% ----------------------------------------------------------
 
 % Title page setup
 \title{Intro to Differential Equations: A Summary}
@@ -58,7 +62,7 @@
 		\ifodd\includeBackgroundReview\input{./backgroundReview/backgroundReview.tex}\fi 			% Background and Review
 		\ifodd\includeBasics\input{./basics/basics.tex} 											% Introduction / Basics	
 		\ifodd\includeFirstOrderLinearODE\input{./1stOrderLinearODE/1stOrderLinearODE.tex}\fi 		% 1st order linear ODE's
-		\ifodd\includeHigherOrder\input{./higherOrder/higherOrder.tex}\fi 					% Higher (mostly 2nd) Order linear ODE's
+		\ifodd\includeHigherOrder\input{./higherOrder/higherOrder.tex}\fi 							% Higher (mostly 2nd) Order linear ODE's
 		\ifodd\includeLinearSystems\input{./linearSystems/linearSystems.tex}\fi 					% Linear Systems of DiffEq's
 		\ifodd\includeLaplaceTransforms\input{./laplaceTransforms/laplaceTransforms.tex}\fi 		% Laplace Transforms
 		\ifodd\includeAdditionalResources\input{./additionalResources/additionalResources.tex}\fi	% Additional Resources

@@ -1,6 +1,32 @@
 \chapter{Linear Systems of Differential Equations}
-% Motivating Example: Water Tanks
+Although we have a good idea on how to solve many single linear differential equations, it's often useful to think about linear systems of equations, like
+\begin{equation*}
+	\begin{cases}
+		x_1^\prime = 3tx_1 - x_2 + t^2 \\
+		x_2^\prime = -x_1 + e^tx_2 - e^{2t}
+	\end{cases}
+	\to
+	\begin{bmatrix}
+		x_1 \\ 
+		x_2
+	\end{bmatrix}^\prime = \begin{bmatrix}
+		3t & -1 \\
+		-1 & e^t
+	\end{bmatrix} \begin{bmatrix}
+		x_1 \\
+		x_2
+	\end{bmatrix} + \begin{bmatrix}
+		t^2 \\
+		-e^{2t}
+	\end{bmatrix}
+\end{equation*}
+This matrix form, $\vec{x}^\prime = A\vec{x} + \vec{f}$, where $A$ is a square matrix, is called normal form.\\
+
+% Solutions to systems
+\input{./linearSystems/solutions/solutions.tex}
+
 % Homogenous
+\input{./linearSystems/homogeneousSystems/homogeneousSystems.tex}
 	% Eigenvalue Method
 		% n distinct eigenvalues
 		% repeated eigenvales with enough eigenvectors

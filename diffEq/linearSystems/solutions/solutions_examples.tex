@@ -1,0 +1,158 @@
+\begin{example}
+	Check that 
+	\begin{equation*}
+		\vec{a} = \begin{bmatrix}
+			e^{-2t} \\
+			-e^{-2t}
+		\end{bmatrix} \text{ and } \vec{b} = \begin{bmatrix}
+			3e^{6t} \\
+			5e^{6t}
+		\end{bmatrix}
+	\end{equation*} 
+	are the two fundamental solutions and that
+	\begin{equation*}
+		\vec{c} = \begin{bmatrix}
+			3t - 4 \\
+			-5t + 6
+		\end{bmatrix}
+	\end{equation*}
+	is the particular solution to the system
+	\begin{equation*}
+		\vec{x}^\prime = \begin{bmatrix}
+			1 & 3 \\
+			5 & 3
+		\end{bmatrix} \vec{x} + \begin{bmatrix}
+			12t - 11 \\
+			-3
+		\end{bmatrix}
+	\end{equation*}
+	Use these results to write the general solution to the equation.
+\end{example}
+\noindent
+We'll check that $\vec{a}$ is a fundamental solution.
+\begin{equation*}
+	\begin{bmatrix}
+		e^{-2t} \\
+		-e^{-2t}
+	\end{bmatrix}^\prime = \begin{bmatrix}
+		1 & 3 \\
+		5 & 3
+	\end{bmatrix} \begin{bmatrix}
+		e^{-2t} \\
+		-e^{-2t}
+	\end{bmatrix}
+\end{equation*}
+\begin{equation*}
+	\begin{bmatrix}
+		-2e^{-2t} \\
+		2e^{-2t}
+	\end{bmatrix} = \begin{bmatrix}
+		e^{-2t} - 3e^{-2t} \\
+		5e^{-2t} - 3e^{-2t}
+	\end{bmatrix}
+\end{equation*}
+\begin{equation*}
+	\begin{bmatrix}
+	-2e^{-2t} \\
+	2e^{-2t}
+	\end{bmatrix} = \begin{bmatrix}
+		-2e^{-2t} \\
+		2e^{-2t}
+	\end{bmatrix}
+\end{equation*}
+Now we'll check that $\vec{b}$ is a fundamental solution.
+\begin{equation*}
+	\begin{bmatrix}
+		3e^{6t} \\
+		5e^{6t}
+	\end{bmatrix}^\prime = \begin{bmatrix}
+		1 & 3 \\
+		5 & 3
+	\end{bmatrix} \begin{bmatrix}
+		3e^{6t} \\
+		5e^{6t}
+	\end{bmatrix}
+\end{equation*}
+\begin{equation*}
+	\begin{bmatrix}
+		18e^{6t} \\
+		30e^{6t}
+	\end{bmatrix} = \begin{bmatrix}
+		3e^{6t} + 15e^{6t} \\
+		15e^{6t} + 15e^{6t}
+	\end{bmatrix}
+\end{equation*}
+\begin{equation*}
+	\begin{bmatrix}
+		18e^{6t} \\
+		30e^{6t}
+	\end{bmatrix} = \begin{bmatrix}
+		18e^{6t} \\
+		30e^{6t}
+	\end{bmatrix}
+\end{equation*}
+These two true results give us the homogeneous solution $\vec{x_h}$.
+We know that $\vec{a}$ and $\vec{b}$ make up the full homogeneous solution because the system is made up of two first order equations and thus has two fundamental solutions.
+\begin{equation*}
+	\vec{x_h} = C_1\begin{bmatrix}
+		e^{-2t} \\
+		-e^{-2t}
+	\end{bmatrix} + C_2\begin{bmatrix}
+		3e^{6t} \\
+		5e^{6t}
+	\end{bmatrix}
+\end{equation*}
+Now we'll check that $\vec{c}$ is the particular solution.
+\begin{equation*}
+	\begin{bmatrix}
+		3t-4 \\
+		-5t+6
+	\end{bmatrix}^\prime = \begin{bmatrix}
+		1 & 3 \\
+		5 & 3
+	\end{bmatrix} \begin{bmatrix}
+		3t - 4 \\
+		-5t + 6
+	\end{bmatrix} + \begin{bmatrix}
+		12t - 11 \\
+		-3
+	\end{bmatrix}
+\end{equation*}
+\begin{equation*}
+	\begin{bmatrix}
+		3 \\
+		-5
+	\end{bmatrix} = \begin{bmatrix}
+		(3t-4) + 3(-5t+6) + (12t-11) \\
+		5(3t-4) + 3(-5t+6) + (-3)
+	\end{bmatrix}
+\end{equation*}
+\begin{equation*}
+	\begin{bmatrix}
+		3 \\
+		-5
+	\end{bmatrix} = \begin{bmatrix}
+		3 \\
+		-5
+	\end{bmatrix}
+\end{equation*}
+This true result gives us the particular solution $\vec{x_p}$.
+\begin{equation*}
+	\vec{x_p} = \begin{bmatrix}
+		3t - 4 \\
+		-5t + 6
+	\end{bmatrix}
+\end{equation*}
+Putting $\vec{x_h}$ and $\vec{x_p}$ together gives us our general solution $\vec{x}$.
+\begin{equation*}
+	\vec{x} = \vec{x_h} + \vec{x_p} = C_1\begin{bmatrix}
+		e^{-2t} \\
+		-e^{-2t}
+	\end{bmatrix} + C_2\begin{bmatrix}
+		3e^{6t} \\
+		5e^{6t}
+	\end{bmatrix} + \begin{bmatrix}
+		3t - 4 \\
+		-5t + 6
+	\end{bmatrix}
+\end{equation*}

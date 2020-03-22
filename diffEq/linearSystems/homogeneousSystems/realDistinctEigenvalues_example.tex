@@ -1,0 +1,55 @@
+\begin{example}
+	Find the general solution to the system
+	\begin{equation*}
+		\vec{x}^\prime = \begin{bmatrix}
+			3 & 0 & 0 \\
+			-5 & -2 & 0 \\
+			1 & 1 & -1
+		\end{bmatrix} \vec{x}
+	\end{equation*}
+\end{example}
+\noindent
+For a triangular matrix, the eigenvalues are simply the diagonal entries.
+\begin{equation*}
+	\lambda = 3, -2, -1
+\end{equation*}
+Finding the eigenvector for $\lambda = 3$,
+\begin{equation*}
+	(A - 3I)\vec{v} = \vec{0} \implies \vec{v} = C_1\begin{bmatrix}
+		-1 \\
+		1 \\
+		0
+	\end{bmatrix}
+\end{equation*}
+Finding the eigenvector for $\lambda = -2$,
+\begin{equation*}
+	(A + 2I)\vec{v} = \vec{0} \implies \vec{v} = C_2\begin{bmatrix}
+		0 \\
+		-1 \\
+		1
+	\end{bmatrix}
+\end{equation*}
+Finding the eigenvector for $\lambda = -1$,
+\begin{equation*}
+	(A + I)\vec{v} = \vec{0} \implies \vec{v} = C_3\begin{bmatrix}
+		0 \\
+		0 \\
+		1
+	\end{bmatrix}
+\end{equation*}
+So, our general solution is
+\begin{equation*}
+	\vec{x} = C_1e^{3t}\begin{bmatrix}
+		-1 \\
+		1 \\
+		0
+	\end{bmatrix} + C_2e^{-2t}\begin{bmatrix}
+		0 \\
+		-1 \\
+		1
+	\end{bmatrix} + C_3e^{-t}\begin{bmatrix}
+		0 \\
+		0 \\
+		1
+	\end{bmatrix}
+\end{equation*}

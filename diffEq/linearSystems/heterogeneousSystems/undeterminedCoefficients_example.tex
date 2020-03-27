@@ -1,0 +1,190 @@
+\begin{example}
+	Find the particular solution to the system
+	\begin{equation*}
+		\vec{x}' = \begin{bmatrix}
+			1 & 2 \\
+			3 & 2
+		\end{bmatrix}\vec{x} + \begin{bmatrix}
+			2e^t \\
+			4e^t
+		\end{bmatrix}
+	\end{equation*}
+\end{example}
+\noindent
+All entries in $\vec{f}$ are exponentials, so we'll guess that
+\begin{equation*}
+	\vec{x_p} = e^t\begin{bmatrix}
+		A \\
+		B
+	\end{bmatrix} = e^t\vec{a}
+\end{equation*}
+Plugging our guess into the equation
+\begin{equation*}
+	\left(e^t\vec{a}\right)' = \begin{bmatrix}
+		1 & 2 \\
+		3 & 2
+	\end{bmatrix}e^t\vec{a} + \begin{bmatrix}
+		2e^t \\
+		4e^t
+	\end{bmatrix}
+\end{equation*}
+\begin{equation*}
+	e^t\begin{bmatrix}
+		A \\
+		B
+	\end{bmatrix} = e^t\begin{bmatrix}
+		1 & 2 \\
+		3 & 2
+	\end{bmatrix}\begin{bmatrix}
+		A \\ 
+		B
+	\end{bmatrix} + e^t\begin{bmatrix}
+		2 \\
+		4
+	\end{bmatrix}
+\end{equation*}
+Dividing by $e^t$, which is never 0,
+\begin{equation*}
+	\begin{bmatrix}
+		A \\
+		B
+	\end{bmatrix} = \begin{bmatrix}
+		A + 2B \\
+		3A + 2B 
+	\end{bmatrix} + \begin{bmatrix}
+		2 \\
+		4
+	\end{bmatrix}
+\end{equation*}
+Rearranging,
+\begin{equation*}
+	\begin{bmatrix}
+		0 & 2 \\
+		3 & 1
+	\end{bmatrix}\begin{bmatrix}
+		A \\
+		B
+	\end{bmatrix} = \begin{bmatrix}
+		-2 \\
+		-4
+	\end{bmatrix} \implies \begin{bmatrix}
+		A \\
+		B
+	\end{bmatrix} = \begin{bmatrix}
+		-1 \\
+		-1
+	\end{bmatrix}
+\end{equation*}
+So,
+\begin{equation*}
+	\vec{x_p} = e^t\begin{bmatrix}
+		-1 \\
+		-1
+	\end{bmatrix}
+\end{equation*}
+
+\noindent
+It's possible that we'll have to solve for multiple vectors of scalars to find $\vec{x_p}$.
+\begin{example}
+	Find the particular solution to the system
+	\begin{equation*}
+		\vec{x}' = \begin{bmatrix}
+			2 & 2 \\
+			2 & 2
+		\end{bmatrix}\vec{x} + \begin{bmatrix}
+			-4\cos{t} \\
+			-\sin{t}
+		\end{bmatrix}
+	\end{equation*}
+\end{example}
+Just like when dealing with $\sin$ and $\cos$ in single equations, we need both $\sin$ and $\cos$ in our guess.
+\begin{equation*}
+	\vec{x_p} = \sin{t}\vec{a} + \cos{t}\vec{b}
+\end{equation*}
+Plugging into the equation where $A$ is the matrix of all 2's,
+\begin{equation*}
+	\cos{t}\vec{a} - \sin(t)\vec{b} = \sin{t}A\vec{a} + \cos{t}A\vec{b} + \sin{t}\begin{bmatrix}
+		0 \\
+		-1
+	\end{bmatrix} + \cos{t}\begin{bmatrix}
+		-4 \\
+		0
+	\end{bmatrix}
+\end{equation*}
+This gives us a system
+\begin{equation*}
+	\begin{cases}
+		-\vec{b} = A\vec{a} + \begin{bmatrix}
+			0 \\
+			-1
+		\end{bmatrix} \\
+		\vec{a} = A\vec{b} + \begin{bmatrix}
+			-4 \\
+			0
+		\end{bmatrix}
+	\end{cases}
+\end{equation*}
+Substituting,
+\begin{equation*}
+	-\vec{b} = A\left(A\vec{b} + \begin{bmatrix}
+		-4 \\
+		0
+	\end{bmatrix}\right) + \begin{bmatrix}
+		0 \\
+		-1
+	\end{bmatrix} \implies (A^2 + I)\vec{b} = -A\begin{bmatrix}
+		-4 \\
+		0
+	\end{bmatrix} - \begin{bmatrix}
+		0 \\
+		-1
+	\end{bmatrix}
+\end{equation*}
+\begin{equation*}
+	A^2 + I = \begin{bmatrix}
+		9 & 8 \\
+		8 & 9
+	\end{bmatrix} \text{ and } -A\begin{bmatrix}
+	-4 \\
+	0
+	\end{bmatrix} - \begin{bmatrix}
+	0 \\
+	-1
+	\end{bmatrix} = \begin{bmatrix}
+		8 \\
+		9
+	\end{bmatrix}
+\end{equation*}
+So,
+\begin{equation*}
+	\begin{bmatrix}
+		9 & 8 \\
+		8 & 9
+	\end{bmatrix}\vec{b} = \begin{bmatrix}
+		8 \\
+		9
+	\end{bmatrix} \implies \vec{b} = \begin{bmatrix}
+		0 \\
+		1
+	\end{bmatrix}
+\end{equation*}
+and
+\begin{equation*}
+	\vec{a} = A\vec{b} + \begin{bmatrix}
+		-4 \\
+		0
+	\end{bmatrix} \implies \vec{a} = \begin{bmatrix}
+		-2 \\
+		2
+	\end{bmatrix}
+\end{equation*}
+Finally we have $\vec{x_p}$,
+\begin{equation*}
+	\vec{x_p} = \sin{t}\begin{bmatrix}
+		-2 \\
+		2
+	\end{bmatrix} + \cos{t}\begin{bmatrix}
+		0 \\
+		1
+	\end{bmatrix}
+\end{equation*}

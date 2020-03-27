@@ -1,62 +1,85 @@
 \documentclass[a4paper, oneside, 12pt]{book}
 
+% ------------------------------------------------------------------------------
 % Setup for table of contents
 \setcounter{tocdepth}{3} 	% TOC should label down to subsubsections
 \setcounter{secnumdepth}{2}	% TOC should not number further than a subsection number
+% ------------------------------------------------------------------------------
 
-% General setup
+
+% ------------------------------------------------------------------------------
+% General Setup
 \usepackage[english]{babel}
-\usepackage{amsfonts, amsmath, amsthm}	% For properly formatting symbols, theorems, lemmas, and definitions
+\usepackage{amsfonts, amsmath, amsthm}	% Formatting symbols, theorems, lemmas, definitions, and examples
+
 \usepackage{float}						% For making sure tables and figures stay in place
-\usepackage{geometry}[margins=1in]
+\usepackage{geometry}[margins=1in]		% Create 1'' margins
 
-\usepackage{enumitem}	% For custom labels on enumerations
-\usepackage{hyperref}	% For inserting links
-\usepackage{graphicx} 	% For inserting images
+\setcounter{chapter}{-1}				% Start with chapter 0
 
-% Theorems, definitions, lemmas, and examples should not be numbered
+\usepackage{enumitem}					% For custom labels on enumerations
+\usepackage{hyperref}					% For inserting links
+\usepackage{graphicx} 					% For inserting images
+% ------------------------------------------------------------------------------
+
+
+% ------------------------------------------------------------------------------
+% Theorems, lemmas, definitions and examples should not be numbered
 \newtheorem*{theorem}{Theorem}
 \newtheorem*{definition}{Definition}
 \newtheorem*{lemma}{Lemma}
 \newtheorem*{example}{Example}
+% ------------------------------------------------------------------------------
 
-% Shortcuts ------------------------------------------------
-\newcommand{\dd}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
-\newcommand{\pp}[2]{\frac{\partial #1}{\partial #2}}
 
-\newcommand{\abs}[1]{\lvert #1 \rvert}
+% ------------------------------------------------------------------------------
+% Shortcuts
+\newcommand{\dd}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}	% d[] / d[]
+\newcommand{\pp}[2]{\frac{\partial #1}{\partial #2}}		% partial[] / partial[]
 
-\DeclareMathOperator{\arcsec}{arcsec}
-\DeclareMathOperator{\arccot}{arccot}
-\DeclareMathOperator{\arccsc}{arccsc}
+\newcommand{\abs}[1]{\lvert #1 \rvert}						% absolute value
 
-\newcommand{\R}{\mathbb{R}}
-% ----------------------------------------------------------
+\DeclareMathOperator{\arcsec}{arcsec}						% arc-secant
+\DeclareMathOperator{\arccot}{arccot}						% arc-cotangent
+\DeclareMathOperator{\arccsc}{arccsc}						% arc-cosecant
 
-% Title page setup
-\title{Intro to Differential Equations: A Summary}
-\author{William Boyles}
-\date{}
+\newcommand{\R}{\mathbb{R}}									% Real numbers
+% ------------------------------------------------------------------------------
 
-% Macros for including certain parts of the document.
-% 1 for true, 0 for false
+
+% ------------------------------------------------------------------------------
+% Macros for including certain parts of the document. 1 for true, 0 for false.
 \def\includeBackgroundReview{1}					% Should the background/review chapter be included?
 	\def\includeBackgroundReviewExamples{1}		% Should examples be included in the background/review chapter?
+	
 \def\includeBasics{1}							% Should the introduction/basics chapter be included?
 	\def\includeBasicsExamples{1}				% Should examples be included in the basics chapter?
+	
 \def\includeFirstOrderLinearODE{1}				% Should the 1st order linear ODE chapter be included?
 	\def\includeFirstOrderLinearODEExamples{1}	% Should examples be included in the 1st order linear ODEs chapter?
+	
 \def\includeHigherOrder{1}						% Should the higher order ODE chapter be included?
 	\def\includeHigherOrderExamples{1}			% Should examples be included in the higher order ODE chapter?
+	
 \def\includeLinearSystems{1}					% Should the linear systems of DiffEq's chapter be included?
 	\def\includeLinearSystemsExamples{1}		% Should example be included in the linear systems chapter?
+	
 \def\includeLaplaceTransforms{1}				% Should the laplace transforms chapter be included?
+
 \def\includeAdditionalResources{1}				% Should the additional resources chapter be included?	
 
-\begin{document}	
+% ------------------------------------------------------------------------------
+
+
+\begin{document}
+	% Title page setup
+	\title{Intro to Differential Equations: A Summary}
+	\author{William Boyles}
+	\date{}
+		
 	\frontmatter
-	\maketitle
-	\tableofcontents
+		\maketitle
+		\tableofcontents
 	
 	\mainmatter
 		\ifodd\includeBackgroundReview\input{./backgroundReview/backgroundReview.tex}\fi 			% Background and Review

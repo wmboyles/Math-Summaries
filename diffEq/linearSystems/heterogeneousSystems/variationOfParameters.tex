@@ -1,0 +1,65 @@
+\subsection{Variation of Parameters for Systems}
+\noindent
+Let $X$ be a fundamental matrix for the homogeneous system.
+\begin{equation*}
+	\vec{x_h}' = A\vec{x_h}
+\end{equation*}
+That is,
+\begin{equation*}
+	\vec{x_h} = X\vec{c}
+\end{equation*}
+where
+\begin{equation*}
+	\vec{c} = \begin{bmatrix}
+	C_1 \\
+	\vdots \\
+	C_n
+	\end{bmatrix}
+\end{equation*}
+and the entries of matrix $A$ can be any continuous functions of $t$.
+
+\noindent
+We are looking for the particular solution $\vec{x_p}$, to the system
+\begin{equation*}
+	\vec{x} = A\vec{x} + \vec{f}
+\end{equation*}
+where $\vec{x_p}$ is of the form
+\begin{equation*}
+	\vec{x_p} = X\vec{v}
+\end{equation*}
+where $\vec{v}$ is a vector of functions of $t$ that we'll have to find.
+
+\noindent
+Differentiating $\vec{x_p}$,
+\begin{equation*}
+	\vec{x_p}' = X\vec{v}' + X'\vec{v}
+\end{equation*}
+From the system we're trying to solve we know that
+\begin{equation*}
+	X\vec{v}' + X'\vec{v} = A(X\vec{v}) + \vec{f}
+\end{equation*}
+Since $X' = AX$,
+\begin{equation*}
+	X\vec{v}' = \vec{f}
+\end{equation*}
+
+\noindent
+Since the columns of $X$ are always linearly independent, we know that $X^{-1}$ always exists.\\
+Multiplying by $X^{-1}$,
+\begin{equation*}
+	\vec{v}' = X^{-1}\vec{f}
+\end{equation*}
+Integrating with respect to $t$,
+\begin{equation*}
+	\vec{v} = \int{X^{-1}\vec{f} \mathrm{d}t}
+\end{equation*}
+So,
+\begin{equation*}
+	\vec{x_p} = X\int{X^{-1}\vec{f} \mathrm{d}t}
+\end{equation*}
+and
+\begin{equation*}
+	\vec{x} = X\vec{c} + X\int{X^{-1}\vec{f} \mathrm{d}t}
+\end{equation*}
+
+\ifodd\includeLinearSystemsExamples\input{./linearSystems/heterogeneousSystems/variationOfParameters_example.tex}\fi

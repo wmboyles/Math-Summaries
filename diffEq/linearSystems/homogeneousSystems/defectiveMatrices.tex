@@ -1,3 +1,19 @@
 \subsubsection{Defective Matrix}
-If $A$ has an eigenvalue $\lambda$ with multiplicity $k$ that does not generate $k$ corresponding linearly independent eigenvectors, the the matrix $A$ is defective.
-TODO -- Generalized eigenvectors
+If $A$ has an eigenvalue $\lambda$ with multiplicity $k$ that does not generate $k$ corresponding linearly independent eigenvectors, the the matrix $A$ is defective. To generate enough vectors, we need to extend eigenvectors.
+\begin{definition}
+	Let $A$ be a square matrix. A nonzero vector $\vec{v}$ satisfying
+	\begin{equation*}
+		(A-\lambda I)^n \vec{v} = \vec{0}
+	\end{equation*}
+	for some eigenvalue $\lambda$ and some positive integer $n$ is a generalized eigenvector or rank $n$.
+\end{definition}
+These generalized eigenvectors also make up solutions.
+\begin{theorem}
+	Let $\vec{v}$ be an generalized eigenvector of a square matrix $A$ corresponding to an eigenvalue $\lambda$ with multiplicity $k$. Then
+	\begin{equation*}
+		e^{At}\vec{v} = e^{\lambda t}\left(\vec{v} + t(A-\lambda I)\vec{v} + \frac{t^2}{2!}(A-\lambda I)^2\vec{v} + \ldots\right)
+	\end{equation*}
+	is the corresponding fundamental solution. Further, the above sequence will terminate after $k$ or fewer terms (all subsequent terms are 0).
+\end{theorem}
+
+\ifodd\includeLinearSystemsExamples\input{./linearSystems/homogeneousSystems/defectiveMatrices_example.tex}\fi

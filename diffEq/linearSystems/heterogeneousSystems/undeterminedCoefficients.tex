@@ -1,0 +1,44 @@
+\subsection{Method of Undetermined Coefficients}
+\noindent
+The rules for undetermined coefficients are very similar for systems and single equations. Let's say we have a heterogeneous system of the form
+\begin{equation*}
+	\begin{cases}
+		x_1' = a_{11}x_1 + \ldots + a_{1n}x_n + f_1(t) \\
+		\vdots \\
+		x_n' = a_{n1}x_n + \ldots + a_{nn}x_n + f_n(t)
+	\end{cases}
+\end{equation*}
+written in a matrix form,
+\begin{equation*}
+	\begin{bmatrix}
+		x_1' \\
+		\vdots \\
+		x_n'
+	\end{bmatrix} = \begin{bmatrix}
+		a_{11} & \ldots & a_{1n} \\
+		\vdots & \ddots & \vdots \\
+		a_{n1} & \ldots & a_{nn}
+	\end{bmatrix} \begin{bmatrix}
+		x_1 \\
+		\vdots \\
+		x_n
+	\end{bmatrix} + \begin{bmatrix}
+		f_1(t) \\
+		\vdots \\
+		f_n(t)
+	\end{bmatrix}
+\end{equation*}
+or more compactly as
+\begin{equation*}
+	\vec{x}' = A\vec{x} + \vec{f}
+\end{equation*}
+All we need to do is look at each $f_i(t)$ and write in the $i^{th}$ blank the corresponding guess. This is like doing undetermined coefficients on each equation in the system.\\
+
+\noindent
+This is especially nice when all the $f_i(t)$'s have a similar form because we can write our guess as
+\begin{equation*}
+	\vec{g}(t) = f_c(t)\vec{v}
+\end{equation*}
+where $f_c(t)$ is the guess corresponding to $f$ and $\vec{c}$ is a vector of undetermined scalars.
+
+\ifodd\includeLinearSystemsExamples\input{./linearSystems/heterogeneousSystems/undeterminedCoefficients_example.tex}\fi

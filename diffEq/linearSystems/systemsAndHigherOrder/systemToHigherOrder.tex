@@ -1,0 +1,19 @@
+\subsection{System to Higher Order}
+Let's say we have the linear system
+\begin{equation*}
+	\vec{x}' = A\vec{x} + \vec{f}
+\end{equation*}
+Writing the system using $x_1, \ldots x_n$ as the components of $\vec{x}$, $f_1, \ldots f_n$ as the components of $\vec{f}$, and $a_{ij}$ as the entry in $A$ on the $i^{th}$ row and $j^{th}$ column,
+\begin{equation*}
+	\begin{cases}
+		x_1' = a_{11}x_1 + \ldots a_{1n}x_n + f_1 \\
+		\vdots \\
+		x_n' = a_{n1}x_1 + \ldots a_{nn}x_n + f_n
+	\end{cases}
+\end{equation*}
+Let's arbitrarily assign $x_1 = y$. This will allow us to find expressions for $x_2, \ldots x_n$ in terms of $y$ and its derivatives. When we find $x_n$ in these terms and equate $x_n'$ with what's given in the system, we'll have an linear $n^{th}$ order equation.
+
+\ifodd\includeLinearSystemsExamples\input{./linearSystems/systemsAndHigherOrder/systemToHigherOrder_example.tex}\fi
+
+\noindent
+The auxiliary polynomial of this higher order equation $p(r)$ and the characteristic polynomial $p(\lambda)$ of the linear system will have exactly the same roots.

@@ -1,0 +1,53 @@
+\begin{example}
+	Convert the following system of equations to a single equation.
+	\begin{equation*}
+		\vec{x}' = \begin{bmatrix}
+			1 & 1 & 1 \\
+			1 & 0 & 1 \\
+			0 & 1 & 1
+		\end{bmatrix}\vec{x} + \begin{bmatrix}
+			1 \\
+			t \\
+			t^2
+		\end{bmatrix}
+	\end{equation*}
+\end{example}
+\noindent
+Expanding the system out of matrix form,
+\begin{equation*}
+	\begin{cases}
+		x_1' = x_1 + x_2 + x_3 + 1 \\
+		x_2' = x_1 + x_3 + t \\
+		x_3' = x_2 + x_3 + t^2 
+	\end{cases}
+\end{equation*}
+Assuming $x_1 = y$,
+\begin{equation*}
+	y' = y + x_2 + x_3 + 1
+\end{equation*}
+\begin{equation*}
+	\implies x_2 = y' - y - x_3 - 1
+\end{equation*}
+Taking the derivative of $x_2$ and equating it with what's given in the system,
+\begin{equation*}
+	x_2' = y'' - y' - x_3' = y + x_3 + t
+\end{equation*}
+Solving for $x_3'$ and equating it with what's given in the system,
+\begin{equation*}
+	x_3' = y'' - y' - t - x_3 = y' - y + t^2 - 1
+\end{equation*}
+Putting this expression for $x_3'$ back into our expression for $x_2'$,
+\begin{equation*}
+	x_2' = y'' - 2y' + y - t^2 + 1 = y + x_3 + t
+\end{equation*}
+\begin{equation*}
+	\implies x_3 = y'' - 2y' - t^2 - t + 1
+\end{equation*}
+Taking the derivative of $x_3$ and equating it to what's given in the system,
+\begin{equation*}
+	x_3' = y''' - 2y'' - 2t - 1 = y' - y - 1 + t^2
+\end{equation*}
+So, we have our order 3 equation,
+\begin{equation*}
+	y''' - 2y'' - y' + y = t^2 + 2t
+\end{equation*}

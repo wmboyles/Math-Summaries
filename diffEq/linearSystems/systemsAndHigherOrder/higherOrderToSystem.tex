@@ -1,0 +1,37 @@
+\subsection{Higher Order to System}
+\noindent
+Let's say we have the linear, $n^{th}$ order differential equation
+\begin{equation*}
+	a_ny^{(n)} + \ldots + a_0y = f
+\end{equation*}
+where $a_0, \ldots a_n$ and $f$ are functions.\\
+
+\noindent
+If we let $x_1 = y, x_2 = y', \ldots x_n = y^{(n-1)}$, then we have a system of equations,
+\begin{equation*}
+	\begin{cases}
+		x_1' &= y' = x_2 \\
+		\vdots \\
+		x_{n-1}' &= y^{(n-1)} = x_n \\
+		x_n' &= y^{(n)} = \frac{1}{a_n}\left(f - a_{n-1}x_n - \ldots - a_0x_1\right)
+	\end{cases}
+\end{equation*}
+Rewriting in matrix form,
+\begin{equation*}
+	\vec{x}' = \begin{bmatrix}
+		0 & 1 & 0 & \ldots & 0 \\
+		0 & 0 & 1 & \ldots & 0 \\
+		\vdots & \vdots	& \vdots & \ddots & \vdots \\
+		0 & 0 & 0 & \ldots & 1 \\
+		\frac{-a_0}{a_n} & \frac{-a_1}{a_n} & \frac{-a_2}{a_n} & \ldots & \frac{-a_{n-1}}{a_n} 
+	\end{bmatrix} \vec{x} + \begin{bmatrix}
+		0 \\
+		\vdots \\
+		0 \\
+		\frac{f}{a_n}
+	\end{bmatrix}
+\end{equation*}
+The square matrix has characteristic polynomial $p(\lambda) = \frac{(-1)^{n}}{a_n}\left(a_n\lambda^n + a_{n-1}\lambda^{n-1} + \ldots + a_0\right)$ which has the same zeroes as the the auxiliary equation $a_nr^n + \ldots + a_0$.\\
+
+\noindent
+Note that if one starts with a higher order equation, converts it to a system, and the converts the system back to a higher order equation, the result is the original equation. This does not hold true when converting a system to an equation and back to a system. The two solutions will have the same eigenvalues but different eigenvectors.

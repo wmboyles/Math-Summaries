@@ -25,7 +25,10 @@ The chapters are:
 7. Additional Resources
 
 ## How to Compile (make into a PDF)
-Simply download the folders for each work you like to build and compile the main.tex file using a tool like pdfLaTeX. Most LaTeX IDEs (like TeXStudio) have this functionality built-in.
+Simply download the folders for each work you like to build and compile the main.tex file using a tool like pdflatex. Most LaTeX IDEs (like TeXStudio) have this functionality built-in. You can also use pdflatex to compile directly from the commandline by running 
+```bash
+$pdflatex main.tex
+```
 
 ## How to Contribute
 The easiest way to contribute is to fork the repository, make your changes in the LaTeX documents, and submit a pull request. However, if you don't know LaTeX, there are till other ways to contribute. One of the most-needed non-LaTeX items are figures: to avoid copyright claims, images should either be created by contributors themselves the public domain.

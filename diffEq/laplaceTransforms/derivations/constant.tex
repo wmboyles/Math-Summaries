@@ -1,0 +1,19 @@
+\subsection{Constant}
+Let $a$ be a constant.\\
+By definitions of a Laplace transform and an improper integral,
+\begin{equation*}
+	\Laplace{a} = \lim\limits_{n\to\infty}{\int_{0}^{n}{ae^{-st}\mathrm{d}t}}
+\end{equation*}
+\begin{equation*}
+	= \frac{a}{s}\lim\limits_{n\to\infty}\left[-e^{-st}\right]_{0}^{n} \text{, } s \neq 0
+\end{equation*}
+\begin{equation*}
+	= \frac{a}{s}\lim\limits_{n\to\infty}{\left(1-e^{-sn}\right)} \text{, } s \neq 0
+\end{equation*}
+\begin{equation*}
+	= \frac{a}{s} \text{, } s > 0 
+\end{equation*}
+So,
+\begin{equation*}
+	\Laplace{a} = \frac{a}{s} \text{, } s > 0
+\end{equation*}

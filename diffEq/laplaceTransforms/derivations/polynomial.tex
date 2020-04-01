@@ -1,0 +1,33 @@
+\subsection{Polynomials}
+\noindent
+We'll use our derivative formula and induction to show that
+\begin{equation*}
+	\Laplace{t^n} = \frac{n!}{s^{n+1}} \text{, } n \geq 0
+\end{equation*}
+Although the formula for $n = 0$ is clearly the same as $\Laplace{1}$, we'll use $n = 1$ as a base case to get a little more insight into where the formula comes from.\\
+\begin{equation*}
+	\Laplace{1} = \Laplace{t'} = \frac{1}{s}
+\end{equation*}
+Using our derivative formula,
+\begin{equation*}
+	\frac{1}{s} = s\Laplace{t} - 0^{1}
+\end{equation*}
+\begin{equation*}
+	\implies \Laplace{t} = \frac{1}{s^2}
+\end{equation*}
+Assuming the following is true,
+\begin{equation*}
+	\Laplace{t^n} = \frac{n!}{s^{n+1}} \text{, } n \geq 0
+\end{equation*}
+we'll show that the $n+1$ case follows.
+\begin{equation*}
+	\Laplace{t^n} = \Laplace{\left(\frac{t^{n+1}}{n+1}\right)'} = \frac{n!}{s^{n+1}}
+\end{equation*}
+Using our derivative formula and the linearity of the Laplace transform,
+\begin{equation*}
+	\frac{n!}{s^{n+1}} = \frac{s}{n+1}\Laplace{t^{n+1}} - 0^{n+1}
+\end{equation*}
+\begin{equation*}
+	\implies \Laplace{t^{n+1}} = \frac{(n+1)!}{s^{n+2}}
+\end{equation*}
+which is the $n+1$ case, meaning we have proven the general formula as correct.

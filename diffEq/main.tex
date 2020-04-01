@@ -34,16 +34,18 @@
 
 % ------------------------------------------------------------------------------
 % Shortcuts
-\newcommand{\dd}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}	% d[] / d[]
-\newcommand{\pp}[2]{\frac{\partial #1}{\partial #2}}		% partial[] / partial[]
+\newcommand{\dd}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}							% d[] / d[]
+\newcommand{\pp}[2]{\frac{\partial #1}{\partial #2}}								% partial[] / partial[]
 
-\newcommand{\abs}[1]{\lvert #1 \rvert}						% absolute value
+\newcommand{\abs}[1]{\lvert #1 \rvert}												% absolute value
 
-\DeclareMathOperator{\arcsec}{arcsec}						% arc-secant
-\DeclareMathOperator{\arccot}{arccot}						% arc-cotangent
-\DeclareMathOperator{\arccsc}{arccsc}						% arc-cosecant
+\DeclareMathOperator{\arcsec}{arcsec}												% arc-secant
+\DeclareMathOperator{\arccot}{arccot}												% arc-cotangent
+\DeclareMathOperator{\arccsc}{arccsc}												% arc-cosecant
 
-\newcommand{\R}{\mathbb{R}}									% Real numbers
+\newcommand{\R}{\mathbb{R}}															% Real numbers
+\newcommand{\Laplace}[1]{\mathcal{L}\left\{ #1 \right\}\left(s\right)}				% Laplace Transform
+\newcommand{\inverseLaplace}[1]{\mathcal{L}^{-1}\left\{ #1 \right\}\left(t\right)}	% Inverse Laplace Transform
 % ------------------------------------------------------------------------------
 
 
@@ -62,9 +64,10 @@
 	\def\includeHigherOrderExamples{1}			% Should examples be included in the higher order ODE chapter?
 	
 \def\includeLinearSystems{1}					% Should the linear systems of DiffEq's chapter be included?
-	\def\includeLinearSystemsExamples{1}		% Should example be included in the linear systems chapter?
+	\def\includeLinearSystemsExamples{1}		% Should examples be included in the linear systems chapter?
 	
-\def\includeLaplaceTransforms{1}				% Should the laplace transforms chapter be included?
+\def\includeLaplaceTransforms{1}				% Should the Laplace transforms chapter be included?
+	\def\includeLaplaceTransformExamples{1}		% Should examples be included in the Laplace transforms chapter?
 
 \def\includeAdditionalResources{1}				% Should the additional resources chapter be included?	
 

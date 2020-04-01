@@ -1,0 +1,24 @@
+\noindent
+\subsubsection{$\textbf{Sin}$}
+Let $a$ be a constant.\\
+By definitions of a Laplace transform and an improper integral,
+\begin{equation*}
+	\Laplace{\sin{(at)}} = \lim\limits_{n\to\infty}{\int_{0}^{n}{\sin{(at)}e^{-st}\mathrm{d}t}}
+\end{equation*}
+\begin{equation*}
+	= \frac{-1}{s^2 + a^2}\lim\limits_{n\to\infty}{\left[e^{-st}\left(s\sin{(at)} + a\cos{(at)}\right)\right]_{0}^{n}}
+\end{equation*}
+\begin{equation*}
+	 = \frac{-1}{s^2 + a^2}\left(\lim\limits_{n\to\infty}\left(e^{-sn}\left(s\sin{(an)} + a\cos{(an)}\right)\right) - \left(e^{-s\cdot 0}\left(s\sin{(a\cdot 0)} + a\cos{(a\cdot 0)}\right)\right)\right)
+\end{equation*}
+Both $\sin$ and $\cos$ have maximum values of 1, so we can say that the left part of them expression has a maximum value at most $s + a$. For positive $s$, the exponential dominates and the expression goes to 0 in the limit.
+\begin{equation*}
+	 = \frac{-1}{s^2 + a^2}\left(0 - a\right) \text{, } s > 0
+\end{equation*}
+\begin{equation*}
+	 = \frac{a}{s^2 + a^2} \text{, } s > 0
+\end{equation*}
+So,
+\begin{equation*}
+	\Laplace{\sin{(at)}} = \frac{a}{s^2 + a^2} \text{, } s > 0
+\end{equation*}

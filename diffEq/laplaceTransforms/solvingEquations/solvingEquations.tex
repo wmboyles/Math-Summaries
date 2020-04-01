@@ -1,0 +1,15 @@
+\section{Solving Equations}
+\noindent
+Now that we can take the Laplace transform and its inverse of most of the common functions we've seen when solving differential equations, we can use Laplace transforms as another tool to solve differential equations.\\
+
+\noindent
+There is a general pattern to how we'll use Laplace transforms to solve differential equations.
+\begin{enumerate}[label=\arabic*)]
+	\item If needed, arrange the equation into a convenient form in the $t$ domain.
+	\item Take the Laplace transform of both sides.
+	\item Use algebra, especially partial fraction decomposition and completing the square, to arrange items into a convenient form in the $s$ domain.
+	\item Take the inverse Laplace transform of both sides and solve.
+\end{enumerate}
+
+% Examples
+\ifodd\includeLaplaceTransformExamples\input{./laplaceTransforms/solvingEquations/solvingEquations_examples.tex}\fi

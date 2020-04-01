@@ -1,0 +1,21 @@
+\subsection{Derivative of a Laplace Transform}
+\noindent
+Consider the $n^{th}$ derivative of the Laplace transform of $f$,
+\begin{equation*}
+	\frac{\mathrm{d}^n}{\mathrm{d}s^n}\left(\Laplace{f(t)}\right) = \frac{\mathrm{d}^n}{\mathrm{d}s^n}\left(\int_{0}^{\infty}{f(t)e^{-st} \mathrm{d}t}\right)
+\end{equation*}
+We're able to change the order of differentiation and integration here without affecting the result.
+\begin{equation*}
+	 = \int_{0}^{\infty}{f(t)\frac{\mathrm{d}^n}{\mathrm{d}s^n}\left(e^{-st}\right) \mathrm{d}t}
+\end{equation*}
+\begin{equation*}
+	= \int_{0}^{\infty}{f(t)(-t)^ne^{-st} \mathrm{d}t}
+\end{equation*}
+\begin{equation*}
+	 = (-1)^n\Laplace{t^nf(t)}
+\end{equation*}
+So,
+\begin{equation*}
+	\frac{\mathrm{d}^n}{\mathrm{d}s^n}\left(\Laplace{f(t)}\right) = (-1)^n\Laplace{t^nf(t)}
+\end{equation*}
+This formula is useful in both directions: finding the derivatives of Laplace transforms, and finding the Laplace transforms of funtions multiplied by $t^n$.

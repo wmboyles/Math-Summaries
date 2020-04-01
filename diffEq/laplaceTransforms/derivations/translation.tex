@@ -1,0 +1,11 @@
+\subsection{Translation}
+\noindent
+Let $a$ be a constant.
+\begin{equation*}
+	\Laplace{e^{at}f(t)} = \int_{0}^{\infty}{e^{at}f(t)e^{-st} \mathrm{d}t} = \int_{0}^{\infty}{f(t)e^{-(s-a)t} \mathrm{d}t} = \mathcal{L}\left\{f(t)\right\}\left(s-a\right)
+\end{equation*}
+So,
+\begin{equation*}
+	\Laplace{e^{at}f(t)} = \mathcal{L}\left\{f(t)\right\}\left(s-a\right)
+\end{equation*}
+This illustrates how multiplying by $e^{at}$ in the $t$ domain corresponds to a translation by $a$ in the $s$ domain.

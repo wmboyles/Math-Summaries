@@ -1,0 +1,26 @@
+\subsection{Exponential}
+\noindent
+Let $a$ be a constant.\\
+By definitions of a Laplace transform and an improper integral,
+\begin{equation*}
+\Laplace{e^{at}} = \lim\limits_{n\to\infty}{\int_{0}^{n}{e^{at}e^{-st}\mathrm{d}t}}
+\end{equation*}
+\begin{equation*}
+ = \lim\limits_{n\to\infty}{\int_{0}^{\infty}{e^{(a-s)t} \mathrm{d}t}}
+\end{equation*}
+\begin{equation*}
+	= \frac{1}{a-s}\lim\limits_{n\to\infty}{\left[e^{(a-s)n}\right]}_{0}^{n} \text{, } s \neq a
+\end{equation*}
+\begin{equation*}
+	= \frac{1}{a-s}\lim\limits_{n\to\infty}{\left(e^{(a-s)n} - 1\right)} \text{, } s \neq a
+\end{equation*}
+\begin{equation*}
+	= \begin{cases}
+		\frac{-1}{a-s} & s > a \\
+		\text{DNE} & s \leq a
+	\end{cases}
+\end{equation*}
+So,
+\begin{equation*}
+	\Laplace{e^{at}} = \frac{-1}{a-s} \text{, } s > a
+\end{equation*}

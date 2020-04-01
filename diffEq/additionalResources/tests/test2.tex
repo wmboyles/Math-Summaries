@@ -1,0 +1,84 @@
+\subsection{Test 2}
+
+\begin{enumerate}[label=\arabic*.]
+	\item 
+		Find the general form of a particular solution to the differential equation
+		\begin{equation*}
+			y'' + 10y' + 25y = f(t)
+		\end{equation*}
+		for each of the following cases:
+		\begin{enumerate}[label=(\alph*)]
+			\item 
+				$f(t) = \cos{(-5t)} + 7t\sin{(-5t)}$
+			\item
+				$f(t) = te^{-5t}$
+		\end{enumerate}
+	\item
+		Consider the matrix $A = \begin{bmatrix}
+			1  & 0 & 6 \\
+			3  & 1 & 3 \\
+			-3 & 3 & -8
+		\end{bmatrix}$. Compute its characteristic polynomial and find all its eigenvalues. Pick one of the eigenvalues and compute a corresponding eigenvector.
+	\item
+		Choose one of the two parts.
+		\begin{enumerate}[label=(\alph*)]
+			\item 
+				Compute the general solution for the equation $y'' - 5y' + 6y = 6e^{4t} - 10e^{t}$.
+			\item Use the method of variation of parameters to find a particular solution to $y'' + 9y = \csc{(3t)}$.
+		\end{enumerate}
+	\item
+		A 1kg mass is attached to a spring with stiffness 8N/m. The damping constant is 6Ns/m. At time $t=0$, an external force $F(t) = 8\sin{(2t)}$ is applied to the system as the mass is pushed rightward from equilibrium with a velocity of 1m/s.
+		\begin{enumerate}[label=(\alph*)]
+			\item
+				Find the displacement function of the mass.
+			\item
+				Determine the steady-state solution for the system.
+			\item
+				Write the steady-state solution in the form $A\cos{(\omega t - \phi)}$ indicating the amplitude, frequency, period, and phase-shift.
+		\end{enumerate}
+	\item
+		Choose one of the following two parts.
+		\begin{enumerate}[label=(\alph*)]
+			\item 
+				Consider the following linear system of differential equations with given initial conditions:
+				\begin{equation*}
+					\begin{cases}
+						x_1' = 2x_1 - 3x_2 \\
+						x_2' = x_1 - 2x^2
+					\end{cases} \text{, } x_1(0)=2 \text{, } x_2(0)=3
+				\end{equation*}
+				\begin{enumerate}[label=(\roman*)]
+					\item
+						Write the system in normal form.
+					\item
+						Show that the vectors $\begin{bmatrix}
+							3e^t \\
+							e^t
+						\end{bmatrix}$ and $\begin{bmatrix}
+							e^{-t} \\
+							e^{-t} 
+						\end{bmatrix}$ are solutions to the homogeneous system.
+					\item
+						Write the general solution for the system and then compute the unique solution satisfying the initial conditions.
+				\end{enumerate}
+			\item
+				The matrix $A = \begin{bmatrix}
+					-1 & 2 \\
+					-1 & 3
+				\end{bmatrix}$ has eigenvalues $\lambda = -2 \pm i$. Find the general solution to the system $\vec{x}' = A\vec{x}$.
+		\end{enumerate}
+	\item
+		Consider the system $\vec{x}' = \begin{bmatrix}
+			2 & -1 \\
+			3 & -2
+		\end{bmatrix}\vec{x} + \begin{bmatrix}
+			2t \\
+			3t + 3
+		\end{bmatrix}$. It is known that the corresponding homogeneous sysstem has general solution $\vec{x_h} = C_1e^t\begin{bmatrix}
+			1 \\
+			1
+		\end{bmatrix} + C_2e^{-t}\begin{bmatrix}
+			1 \\
+			3
+		\end{bmatrix}$. Find the general solution for the given heterogeneous system.
+\end{enumerate}

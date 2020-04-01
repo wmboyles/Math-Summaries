@@ -11,6 +11,7 @@
 % General Setup
 \usepackage[english]{babel}
 \usepackage{amsfonts, amsmath, amsthm}	% Formatting symbols, theorems, lemmas, definitions, and examples
+\usepackage{eucal}						% Makes the Laplace transform L look a little better
 
 \usepackage{float}						% For making sure tables and figures stay in place
 \usepackage{geometry}[margins=1in]		% Create 1'' margins
@@ -30,7 +31,6 @@
 \newtheorem*{lemma}{Lemma}
 \newtheorem*{example}{Example}
 % ------------------------------------------------------------------------------
-
 
 % ------------------------------------------------------------------------------
 % Shortcuts
@@ -92,6 +92,20 @@
 		\ifodd\includeLinearSystems\input{./linearSystems/linearSystems.tex}\fi 					% Linear Systems of DiffEq's
 		\ifodd\includeLaplaceTransforms\input{./laplaceTransforms/laplaceTransforms.tex}\fi 		% Laplace Transforms
 		\ifodd\includeAdditionalResources\input{./additionalResources/additionalResources.tex}\fi	% Additional Resources
-				
+		
+		% Other possible sections
+			% "Real World" Applications
+				% Viral spread / logistic function
+				% Circuits
+			% Numerical methods
+				% Euler's method
+				% Picard's method
+				% Taylor series
+				% Ranga Kutta
+			% Chaos
+				% Period doubling
+				% Strange attractor
+		% Notes / TODOS
+			% I don't put periods after equations that are in the middle of a sentence. Apparently this is a mortal sin. I'm pretty sure I obeyed capitalization rules, so you can see when a new sentence starts after an equation because the new sentence will begin with a capital letter.
 	\backmatter
 \end{document}

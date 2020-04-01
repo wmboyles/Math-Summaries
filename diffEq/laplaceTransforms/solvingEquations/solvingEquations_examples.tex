@@ -98,3 +98,39 @@ Taking the inverse Laplace transform of both sides,
 \begin{equation*}
 	y = \frac{1}{4}e^{-t} + \frac{3}{4}e^{-t}\cos{(2t)} + 3e^{-t}\sin{(2t)}
 \end{equation*}
+
+\begin{example}
+	Solve the following IVP using a Laplace transform.
+	\begin{equation*}
+		\begin{cases}
+			8\cos{(2t)} - y'' = 4y\\
+			y(0) = 1\\
+			y'(0) = 0
+		\end{cases}
+	\end{equation*}
+\end{example}
+\noindent
+Rearranging the equation into the standard form for a linear heterogeneous ODE,
+\begin{equation*}
+	y'' + 4y = 8\cos{(2t)}
+\end{equation*}
+Taking the Laplace transform of both sides
+\begin{equation*}
+	s^2\Laplace{y} - y'(0) - sy(0) + 4\Laplace{y} = 8\frac{s}{s^2 + 2^2}
+\end{equation*}
+Plugging in the values given by the IVP and rearranging,
+\begin{equation*}
+	\Laplace{y}\left(s^2 + 4\right) = \frac{s^3 + 12s}{s^2 + 2^2}
+\end{equation*}
+Dividing to solve for $\Laplace{y}$,
+\begin{equation*}
+	\Laplace{y} = \frac{s^3 + 12s}{(s^2 + 2^2)(s^2 + 2^2)}
+\end{equation*}
+Rearranging the right side into partial fractions,
+\begin{equation*}
+	\Laplace{y} = \frac{s}{s^2 + 2^2} + 2\frac{2^2s}{(s^2+2^2)^2}
+\end{equation*}
+Taking the inverse Laplace transform of both sides,
+\begin{equation*}
+	y = \cos{(2t)} + 2t\sin{(2t)}
+\end{equation*}

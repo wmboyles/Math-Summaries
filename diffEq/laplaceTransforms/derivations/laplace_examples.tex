@@ -1,0 +1,82 @@
+\begin{example}
+	Find the Laplace transform of $e^{-t}\sin{(3t)}$.
+\end{example}
+\noindent
+Using the translation property,
+\begin{equation*}
+	\Laplace{e^{-t}\sin{(3t)}} = \mathcal{L}\left\{\sin{(3t)}\right\}(s+1)
+\end{equation*}
+We from our $\sin$ formula that
+\begin{equation*}
+	\Laplace{\sin{(3t)}} = \frac{3}{s^2 + 3^2}
+\end{equation*}
+, so
+\begin{equation*}
+	\Laplace{e^{-t}\sin{(3t)}} = \mathcal{L}\left\{\sin{(3t)}\right\}(s+1) = \frac{3}{(s+1)^2 + 3^2}
+\end{equation*}
+
+\begin{example}
+	Find the Laplace transform of $t^2(t^2 + 1)(t - 1)(t + 2)$.
+\end{example}
+\noindent
+Using the derivative of the Laplace transform property,
+\begin{equation*}
+	\Laplace{t^2(t^2 + 1)(t - 1)(t + 2)} = (-1)^2\frac{\mathrm{d}^2}{\mathrm{d}s^2}\Laplace{(t^2 + 1)(t - 1)(t + 2)}
+\end{equation*}
+Expanding out the polynomial,
+\begin{equation*}
+	 = \frac{\mathrm{d}^2}{\mathrm{d}s^2}\Laplace{t^4 + t^3 - t^2 + t - 2}
+\end{equation*}
+Using the polynomial formula,
+\begin{equation*}
+	 = \frac{\mathrm{d}^2}{\mathrm{d}s^2}\left(\frac{4!}{s^5} + \frac{3!}{s^4} - \frac{2!}{s^3} + \frac{1!}{s^2} + \frac{2\cdot 0!}{s^1}\right)
+\end{equation*}
+Taking the second derivative,
+\begin{equation*}
+	 \Laplace{t^2(t^2 + 1)(t - 1)(t + 2)} = \frac{6!}{s^7} + \frac{5!}{s^6} - \frac{4!}{s^5} + \frac{3!}{s^4} + \frac{2\cdot 2!}{s^3}
+\end{equation*}
+
+\begin{example}
+	Find the Laplace transform of $\left(x^2\right)''$ using the derivative formula. Show it's equal to $\Laplace{2}$.
+\end{example}
+\noindent
+Using the derivative formula,
+\begin{equation*}
+	\Laplace{\left(x^2\right)''} = s^2\Laplace{x^2} - s\left(x^2\right)'_{x=0} - \left(x^2\right)_{x=0}
+\end{equation*}
+Using the polynomial formula,
+\begin{equation*}
+ 	= s^2\frac{2!}{s^3} - 0 - 0
+\end{equation*}
+Simplifying,
+\begin{equation*}
+	\Laplace{\left(x^2\right)''} = \frac{2}{s} = \Laplace{2}
+\end{equation*}
+
+\begin{example}
+	Find the Laplace transform of $e^{it}$. Show that it's equal to $\Laplace{\cos{t} + i\sin{t}}$.
+\end{example}
+Using the exponential formula,
+\begin{equation*}
+	\Laplace{e^{it}} = \frac{1}{s - i}
+\end{equation*}
+Now we'll work on $\cos{t} + i\sin{t}$. Using the linearity of the Laplace transform,
+\begin{equation*}
+	\Laplace{\cos{\theta} + i\sin{\theta}} = \Laplace{\cos{t}} + i\Laplace{\sin{t}}
+\end{equation*}
+Using the $\sin$ and $\cos$ formulas,
+\begin{equation*}
+	= \frac{s}{s^2 + 1^2} + i\frac{1}{s^2 + 1^2}
+\end{equation*}
+Combining into one fraction,
+\begin{equation*}
+	= \frac{s+i}{s^2 + 1^2}
+\end{equation*}
+Although we normally avoid it, we can factor the denominator into its two complex roots.
+\begin{equation*}
+	= \frac{s+i}{(s+i)(s-i)}
+\end{equation*}
+Canceling out common factors we see that we get the same Laplace transform as $e^{it}$.
+\begin{equation*}
+		\Laplace{\cos{\theta} + i\sin{\theta}} = \frac{1}{s-i} = \Laplace{e^{it}}
+\end{equation*}

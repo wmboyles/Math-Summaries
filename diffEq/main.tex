@@ -10,11 +10,12 @@
 % ------------------------------------------------------------------------------
 % General Setup
 \usepackage[english]{babel}
-\usepackage{amsfonts, amsmath, amsthm}	% Formatting symbols, theorems, lemmas, definitions, and examples
-\usepackage{eucal}						% Makes the Laplace transform L look a little better
+\usepackage{amsfonts, amsmath, amsthm}		%Formatting symbols, theorems, lemmas, definitions, and examples
+\usepackage{eucal}							% Makes the Laplace transform L look a little better
 
-\usepackage{float}						% For making sure tables and figures stay in place
-\usepackage{geometry}[margins=1in]		% Create 1'' margins
+\usepackage{float}							% For making sure tables and figures stay in place
+\usepackage{fullpage}						% Create ~1" margins
+\usepackage[bottom,flushmargin]{footmisc}	% Put footnotes at bottom of page; don't intent footnotes
 
 \setcounter{chapter}{-1}				% Start with chapter 0
 
@@ -23,6 +24,10 @@
 \usepackage{graphicx} 					% For inserting images
 % ------------------------------------------------------------------------------
 
+
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary{calc,patterns,decorations.pathmorphing,decorations.markings}
 
 % ------------------------------------------------------------------------------
 % Theorems, lemmas, definitions and examples should not be numbered

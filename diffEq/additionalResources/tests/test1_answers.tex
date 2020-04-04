@@ -1,2 +1,141 @@
 \subsection{Test 1 Answers}
-TODO
+\begin{enumerate}[label=\arabic*.]
+	\item 
+		Using implicit differentiation,
+		\begin{equation*}
+			\dd{y}{x}-\frac{1}{y}\dd{y}{x} = 2x
+		\end{equation*}
+		so
+		\begin{equation*}
+			\dd{y}{x} = \frac{2x}{1-1/y} = \frac{2xy}{1-y}
+		\end{equation*}
+		So, $y - \ln{y} = x^2 + 1$ is an implicit solution to $\dd{y}{x} = \frac{2x}{y-1}$ as we have demonstrated by differentiating and checking.
+	\item
+		We will use the integrating factor method. Rewriting the equation so all terms involving $y$ are on the left,
+		\begin{equation*}
+			y' + 4y = e^{-x}
+		\end{equation*}
+		In this case,
+		\begin{equation*}
+			a(x) = 4 \text{ and } b(x) = e^{-x}
+		\end{equation*}
+		so,
+		\begin{equation*}
+			\mu(x) = e^{\int{a(x) \mathrm{d}x}} = e^{4x}
+		\end{equation*}
+		Multiplying both sides by $\mu(x)$,
+		\begin{equation*}
+			\left(e^{4x}y\right)' = e^{3x}
+		\end{equation*}
+		Integrating both sides,
+		\begin{equation*}
+			e^{4x}y = \frac{1}{3}e^{3x} + C_1
+		\end{equation*}
+		Solving for $y$,
+		\begin{equation*}
+			y = \frac{1}{3}e^{-x} + C_1e^{-4x}
+		\end{equation*}
+		Plugging in $x = 0$ and $y=\frac{4}{3}$ to solve for $C_1$,
+		\begin{equation*}
+			\frac{4}{3} = \frac{1}{3} + C_1 \implies C_1 = 1
+		\end{equation*}
+		So, our answer to the IVP is
+		\begin{equation*}
+			y = \frac{1}{3}e^{-x} + e^{-4x}
+		\end{equation*}
+	\item
+		The equation is separable and can be rewritten as
+		\begin{equation*}
+			\frac{x+2}{x} \mathrm{d}x = (t-3)^2 \mathrm{d}t \text{, } x\neq 0
+		\end{equation*}
+		We'll come back later to see if $x = 0$ is a solution.
+		Integrating both sides,
+		\begin{equation*}
+			x + 2\ln{\abs{x}} = \frac{(t-3)^3}{3} + C_1 \text{, } x\neq 0
+		\end{equation*}
+		Plugging in $x = -1$ and $t = 3$ to solve for $C_1$,
+		\begin{equation*}
+			1 + 2\ln{1} = 0 + C_1 \implies C_1 = -1 \text{, } x\neq 0
+		\end{equation*}
+		So, our solution to the IVP is
+		\begin{equation*}
+			x + 2\ln{\abs{x}} = \frac{(t-3)^3}{3} - 1 \text{, } x\neq 0
+		\end{equation*}
+		Checking if $x = 0$ is a solution,
+		\begin{equation*}
+			0 = 0\frac{(t-3)^2}{2}
+		\end{equation*}
+		So, $x = 0$ is a general solution. However for our solution $x(t) = 0$, $x(3) \neq -1$, to $x = 0$ is not a solution to the IVP. So, our solution to the IVP remains.
+	\item
+		This equation is linear and homogeneous, so we can find the general solution using the auxiliary equation. Extracting the auxiliary equation and finding the roots,
+		\begin{equation*}
+			r^3 + r^2 - 2 = 0 \implies r = 1, -1 \pm i
+		\end{equation*}
+		So, the general solution is
+		\begin{equation*}
+			y = C_1e^{x} + C_2e^{-x}\cos{x} + C_3e^{-x}\sin{x}
+		\end{equation*}
+	\item
+		\begin{enumerate}[label=(\alph*)]
+			\item
+				As stated in the problem, 90kg of salt is in the tank initially.
+			\item
+				So find the amount of salt in the tank after 2 hours we'll need to set up a differential equation that models the situation.
+				Let $y(t)$ be the number of kgs of salt in the tank after $t$ minutes. Let $V(t)$ be the volume of brine in the tank after $t$ minutes.
+				Modeling the salt,
+				\begin{equation*}
+					\dd{y}{t} = \text{salt rate in} - \text{salt rate out} = 0 - \text{salt rate out}
+				\end{equation*}
+				Modeling the volume,
+				\begin{equation*}
+					\dd{V}{t} = \text{brine rate in} - \text{brine rate out} = 3\frac{L}{min} - 6\frac{L}{min} = -3\frac{L}{min}
+				\end{equation*}
+				We're also given that $V(0) = 2000L$, so be can find that
+				\begin{equation*}
+					V(t) = 2000 - 3t
+				\end{equation*}
+				Now we can write an equation to find $\text{salt rate out}$.
+				\begin{equation*}
+					\text{salt rate out} = \frac{y \text{kg of salt}}{V \text{L of brine}}*\frac{6L}{\text{min}} = \frac{6y}{2000-3t}
+				\end{equation*}
+				This allows us to write a differential equation for $y(t)$.
+				\begin{equation*}
+					\dd{y}{t} = -\text{salt rate out} = \frac{-6y}{2000-3t} = \frac{6y}{3t-2000}
+				\end{equation*}
+				This eqation is seperable and can be rewritten as
+				\begin{equation*}
+					\frac{\mathrm{d}y}{y} = \frac{6\mathrm{d}t}{3t-200}
+				\end{equation*}
+				Integrating both sides,
+				\begin{equation*}
+					\ln{\abs{y}} = 2\ln{\abs{3t-2000}}+C_1
+				\end{equation*}
+				We know that $y > 0$ always because we can't have a negative amount of salt. Further, we're concerned with the time between $t= 0$ and $t = 120 < \frac{2000}{3}$, so $3t-2000 < 0$. This means we can rewrite our equation as
+				\begin{equation*}
+					\ln{y} = 2\ln{(2000-3t)} + C_1
+				\end{equation*}
+				Exponentiating both sides,\footnote{$C_1$ is different from the $C_1$ previously, but it's still a constant.}
+				\begin{equation*}
+					y = C_1(2000-3t)^2
+				\end{equation*}
+				Applying our initial condition of $y(0)=90$ to solve for $C_1$,
+				\begin{equation*}
+					90 = C_1(2000)^2 \implies C_1 = \frac{2000^2}{90}
+				\end{equation*}
+				Plugging our solution for $C_1$ back into our general solution,
+				\begin{equation*}
+					y = 90\left(\frac{2000-3t}{2000}\right)^2
+				\end{equation*}
+		\end{enumerate}
+	\item
+		Newton's law of cooling is
+		\begin{equation*}
+			\dd{T}{t} = k\left(T_e - T\right)
+		\end{equation*}
+		where $k$ is some constant, $T_e$ is the temperature of the environment, and $T$ is the current temperature of the object. In the detective's case, $T_e = 16$, so
+		\begin{equation*}
+			\dd{T}{t} = k(16-T)
+		\end{equation*}
+		with initial conditions $T(12) = 34$ and $T(13) = 32$. One could then solve this equation and apply the inital conditions to solve for $k$ and the constant of integration $C$. Then one would need to solve for $x$ in $T(x) = 37$. This value of $x$ will tell you the number of hours after midnight one the same day that the murder took place\footnote{For those that do solve the equation, $x \approx 10.691$, so the murder should have took place at about 10:41am.}.
+		
+\end{enumerate}

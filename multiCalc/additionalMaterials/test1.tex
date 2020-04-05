@@ -59,28 +59,40 @@
 	\item A cannon fires cannonballs with a speed of $20 \text{ m} / \text{s}$. Take acceleration due to gravity to be $g = 10 \text{m} / \text{s}^2$.
 	\begin{enumerate}[label=\alph*.]
 		\item Starting with a constant acceleration function $\vec{a} = \langle 0, -g \rangle$, find the velocity and position functions ($\vec{r^\prime}(t) \text{ and } \vec{r}(t)$ respectively) of the cannonball if the cannon is fired from an angle $\theta$ with respect to the horizontal. Assume the cannonball is initially positioned at the origin.\\
-		\indent
-		We know that velocity is the integral of acceleration.\\
-		$\vec{v}(t) = \vec{r^\prime}(t) = \langle c_1, c_2-gt \rangle$\\
-		We are given that the initial speed is $20 \text{ m} / \text{s}$ at an angle $\theta$.\\
-		$\vec{v_0} = 20\langle \cos{\theta}, \sin{\theta} \rangle$\\
-		$\vec{v}(t) = \langle 20\cos{\theta}, 20\sin{\theta}-gt \rangle$\\
-		We know that position is the integral of velocity.\\
-		$\vec{r}(t) = \langle 20t\cos{\theta} + c_1, 20t\sin{\theta} - \frac{1}{2}gt^2 + c_2 \rangle$\\
-		We are given that the cannonball starts at the origin.\\
-		$\vec{r}(t) = \langle 20t\cos{\theta}, 20t\sin{\theta} - \frac{1}{2}gt^2 \rangle$\\
+		We know that velocity is the integral of acceleration.
+		\begin{equation*}
+			\vec{v}(t) = \vec{r^\prime}(t) = \langle c_1, c_2-gt \rangle	
+		\end{equation*}
+		We are given that the initial speed is $20 \text{ m} / \text{s}$ at an angle $\theta$.
+		\begin{equation*}
+			\vec{v_0} = 20\langle \cos{\theta}, \sin{\theta} \rangle	
+		\end{equation*}
+		\begin{equation*}
+			\vec{v}(t) = \langle 20\cos{\theta}, 20\sin{\theta}-gt \rangle	
+		\end{equation*}
+		We know that position is the integral of velocity.
+		\begin{equation*}
+			\vec{r}(t) = \langle 20t\cos{\theta} + c_1, 20t\sin{\theta} - \frac{1}{2}gt^2 + c_2 \rangle
+		\end{equation*}
+		We are given that the cannonball starts at the origin.
+		\begin{equation*}
+			\vec{r}(t) = \langle 20t\cos{\theta}, 20t\sin{\theta} - \frac{1}{2}gt^2 \rangle	
+		\end{equation*}
 		Taking $g = 10 \text{m} / \text{s}^2$,\\
-		$\vec{r}(t) = \langle 20t\cos{\theta}, 20t\sin{\theta}-5t^2 \rangle$\\
+		\begin{equation*}
+			\vec{r}(t) = \langle 20t\cos{\theta}, 20t\sin{\theta}-5t^2 \rangle	
+		\end{equation*}
 			
 		\item What angle $\theta$ should the cannon be fired to hit a target on the ground at a distance $40\text{ m}$ away?\\
-		\indent
 		We want to find a point on the trajectory where $y = 0$ and $x = 40$.
 		$y = 0$ when $t = 0, 4\sin{\theta}$. We can reasonably eliminate $t = 0$ because this is when the cannon first fires and $x = 0$.\\
-		Plugging in $t = 4\sin{\theta}$ to the x-component of position when $x = 40$,\\
-		$20\cos{\theta} \cdot 4\sin{\theta} = 40$\\
-		$2\sin{\theta}\cos{\theta} = 1$\\
-		$\sin{(2\theta)}=1, 2\theta = \pi/2$\\
-		$\implies \theta = \pi/4$\\
+		Plugging in $t = 4\sin{\theta}$ to the x-component of position when $x = 40$,
+		\begin{align*}
+			20\cos{\theta} \cdot 4\sin{\theta} &= 40 \\
+			2\sin{\theta}\cos{\theta} &= 1 \\
+			\sin{(2\theta)}=1, 2\theta &= \pi/2 \\
+			\implies \theta &= \pi/4			
+		\end{align*}
 	\end{enumerate}
 	
 	\item Consider the following particle trajectory: $\vec{r}(t) = \langle R\cos{e^t}, R\sin{e^t}, \frac{h}{2\pi}e^t \rangle$ for $t \geq 0$. The shape of the trajectory is a helix with radius $R$ and vertical spacing $h$. Find the arc length function $s(t)$ of the trajectory starting with $s(0) = 0$. Give the arc length reparameterization of the helix.
@@ -104,10 +116,22 @@
 	\end{equation*}
 	
 	\item Let $\vec{r}(t)$ be the position function of a particle trapped on the surface of a sphere centered at the origin. Show that $\vec{r}(t)\perp\frac{\mathrm{d}}{\mathrm{d}t}\vec{r}(t)$ for all $t$.\\
-	\indent
-	Since $\vec{r}(t)$ is on a sphere, $\norm{\vec{r}(t)} = R$ and $\vec{r}(t) \cdot \vec{r}(t) = R^2$.\\
-	$\frac{\mathrm{d}}{\mathrm{d}t}(\vec{r}(t) \cdot \vec{r}(t)) = 2\vec{r}(t) \cdot \vec{r^\prime}(t)$\\
-	$\frac{\mathrm{d}}{\mathrm{d}t}(\vec{r}(t) \cdot \vec{r}(t)) = \frac{\mathrm{d}}{\mathrm{d}t}R^2 = 0$\\
-	So, $2\vec{r}(t) \cdot \vec{r^\prime}(t) = 0$ and $\vec{r}(t) \cdot \vec{r^\prime}(t) = 0$\\
-	$\implies \vec{r}(t)\perp\vec{r^\prime}(t)$\\
+	Since $\vec{r}(t)$ is on a sphere, $\norm{\vec{r}(t)} = R$ and $\vec{r}(t) \cdot \vec{r}(t) = R^2$.
+	\begin{equation*}
+		\frac{\mathrm{d}}{\mathrm{d}t}(\vec{r}(t) \cdot \vec{r}(t)) = 2\vec{r}(t) \cdot \vec{r^\prime}(t)	
+	\end{equation*}
+	\begin{equation*}
+		\frac{\mathrm{d}}{\mathrm{d}t}(\vec{r}(t) \cdot \vec{r}(t)) = \frac{\mathrm{d}}{\mathrm{d}t}R^2 = 0
+	\end{equation*}
+	So, 
+	\begin{equation*}
+		2\vec{r}(t) \cdot \vec{r^\prime}(t) = 0
+	\end{equation*}
+	and 
+	\begin{equation*}
+		\vec{r}(t) \cdot \vec{r^\prime}(t) = 0	
+	\end{equation*}
+	\begin{equation*}
+		\implies \vec{r}(t)\perp\vec{r^\prime}(t)	
+	\end{equation*}
 \end{enumerate}

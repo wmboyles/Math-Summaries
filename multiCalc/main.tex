@@ -3,30 +3,32 @@
 \setcounter{tocdepth}{3} % TOC should label down to subsubsections
 \setcounter{secnumdepth}{1} % TOC should not number further than a section number
 
-\usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
-\usepackage{amsfonts, amsmath, amsthm} % For properly formatting symbols, theorems, lemmas, and definitions
-\usepackage{enumerate} % For listing items and sub-items
-\usepackage{hyperref} % For inserting linkss
-\usepackage{graphicx} % For inserting images
+\usepackage{amsfonts, amsmath, amsthm}	% For properly formatting symbols, theorems, lemmas, and definitions
+\usepackage{enumitem} 					% For listing items and sub-items
+\usepackage{hyperref} 					% For inserting linkss
+\usepackage{fullpage}					% For setting up reasonable margins
+\usepackage{graphicx} 					% For inserting images
 
-\newcommand{\abs}[1]{\left|#1\right|}
-\newcommand{\norm}[1]{\abs{\abs{#1}}} % Use double-bar notation for vector magnitude
+% Some useful commands
+\newcommand{\abs}[1]{\left|#1\right|}	% Absolute value
+\newcommand{\norm}[1]{\abs{\abs{#1}}} 	% Use double-bar notation for vector magnitude
+\newcommand{\R}{\mathbb{R}}
 
 % Theorems, Definitions, and Lemmas should not be numbered
 \newtheorem*{theorem}{Theorem}
 \newtheorem*{definition}{Definition}
 \newtheorem*{lemma}{Lemma}
 
+\begin{document}
 % Title page setup
 \title{Multivariable Calculus: A Summary}
 \author{William Boyles}
 \date{}
 
-\begin{document}
-
 \frontmatter
 \maketitle
+
 \tableofcontents
 
 \mainmatter

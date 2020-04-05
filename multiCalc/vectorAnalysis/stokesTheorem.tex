@@ -5,26 +5,43 @@ Let $C$ be a closed, counter-clockwise oriented curve in $\mathbb{R}^2$, and let
 [INSERT IMAGE]
 
 \noindent
-Finding the flux of $\nabla \times \vec{F}$,\\
-$\oint\limits_{\tilde{S}}\oint{\nabla \times \vec{F}} = \iiint\limits_{V}{\nabla \cdot (\nabla \times \vec{F})\mathrm{d}V}$ by Divergence Theorem.\\
-Since $\nabla \cdot (\nabla \times \vec{F}) = 0$, $\iint\limits_{D}{\nabla \times \vec{F}\mathrm{d}A} = \iint\limits_{S}{\nabla \times \vec{F} \cdot \mathrm{d}\vec{s}}$.\\
-$\oint\limits_{C}{\vec{F} \cdot \mathrm{d}\vec{r}} = \iint\limits_{S}{\nabla \times \vec{F} \cdot \mathrm{d}\vec{s}}$ by Green's Theorem for Circulation. This is Stokes's Theorem.\\
+Finding the flux of $\nabla \times \vec{F}$,
+\begin{equation*}
+	\oint\limits_{\tilde{S}}\oint{\nabla \times \vec{F}} = \iiint\limits_{V}{\nabla \cdot (\nabla \times \vec{F})\mathrm{d}V}
+\end{equation*}
+by Divergence Theorem. Since $\nabla \cdot (\nabla \times \vec{F}) = 0$, 
+\begin{equation*}
+	\iint\limits_{D}{\nabla \times \vec{F}\mathrm{d}A} = \iint\limits_{S}{\nabla \times \vec{F} \cdot \mathrm{d}\vec{s}}	
+\end{equation*}
+\begin{equation*}
+	\oint\limits_{C}{\vec{F} \cdot \mathrm{d}\vec{r}} = \iint\limits_{S}{\nabla \times \vec{F} \cdot \mathrm{d}\vec{s}}
+\end{equation*}
+by Green's Theorem for Circulation. This is Stokes's Theorem.\\
 
 \noindent
-For example, let's use Stokes's Theorem to evaluate $\iint\limits_{S}{\nabla \times \vec{F} \cdot \mathrm{d}\vec{s}}$ where $S$ is the hemisphere $x^2 + y^2 + z^2 = 4, x \geq 0$ and $\vec{F}(x,y,z) = \langle yz, x\sin{z}, xyz^2 \rangle$.\\
-\indent
-$S = \left\{(x,y,z) \mid x^2 + y^2 + z^2 = 2^2, x \geq 0 \right\}$\\
-\indent
-$C = \left\{(y,z) \mid y^2 + z^2 = 2^2 \right\} = \left\{(r,\theta) \mid r = 2, 0 \leq \theta \leq 2\pi \right\}$ where $\theta$ is in the yz-plane.\\
-\indent
-$C = \vec{r}(t) = \langle 0, 2\cos{t}, 2\sin{t} \rangle, 0 \leq t \leq 2\pi$.\\
-\indent
-$\vec{F}\circ\vec{r} = \langle 4\cos{t}\sin{t}, 0, 0 \rangle$\\
-\indent
-$\vec{r^\prime}(t) = \langle 0, -2\sin{t}, 2\cos{t}\rangle$\\
-\indent
-$\left(\vec{F}\circ\vec{r}\right) \cdot \vec{r^\prime} = 0$\\
-\indent
-So, $\iint\limits_{S}{\nabla \times\ vec{F}\mathrm{d}A} = \oint_{0}^{2\pi}{0\mathrm{d}t} = 0$
+For example, let's use Stokes's Theorem to evaluate $\iint\limits_{S}{\nabla \times \vec{F} \cdot \mathrm{d}\vec{s}}$ where $S$ is the hemisphere $x^2 + y^2 + z^2 = 4, x \geq 0$ and $\vec{F}(x,y,z) = \langle yz, x\sin{z}, xyz^2 \rangle$.
+\begin{equation*}
+	S = \left\{(x,y,z) \mid x^2 + y^2 + z^2 = 2^2, x \geq 0 \right\}	
+\end{equation*}
+\begin{equation*}
+	C = \left\{(y,z) \mid y^2 + z^2 = 2^2 \right\} = \left\{(r,\theta) \mid r = 2, 0 \leq \theta \leq 2\pi \right\}
+\end{equation*}
+where $\theta$ is in the yz-plane.
+\begin{equation*}
+	C = \vec{r}(t) = \langle 0, 2\cos{t}, 2\sin{t} \rangle, 0 \leq t \leq 2\pi
+\end{equation*}
+\begin{equation*}
+	\vec{F}\circ\vec{r} = \langle 4\cos{t}\sin{t}, 0, 0 \rangle	
+\end{equation*}
+\begin{equation*}
+	\vec{r^\prime}(t) = \langle 0, -2\sin{t}, 2\cos{t}\rangle
+\end{equation*}
+\begin{equation*}
+	\left(\vec{F}\circ\vec{r}\right) \cdot \vec{r^\prime} = 0	
+\end{equation*}
+So, 
+\begin{equation*}
+	\iint\limits_{S}{\nabla \times\ vec{F}\mathrm{d}A} = \oint_{0}^{2\pi}{0\mathrm{d}t} = 0
+\end{equation*}
 
 \input{./vectorAnalysis/faradaysLawInductionAmperesLaw}

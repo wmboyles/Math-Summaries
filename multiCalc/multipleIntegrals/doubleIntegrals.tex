@@ -5,7 +5,7 @@ Similar to how the limit of a Riemann Sum, the sum of the areas of small rectang
 [INSERT IMAGE]
 
 \noindent
-In 2D (single variabe): $\Delta x = \frac{b-a}{n}$, $int_{a}^{b}{f(x)\mathrm{d}x} = \lim_{n \to \infty}{\sum_{i = 0}^{n-1}{f(a+i\Delta x)\Delta a}}$.\\
+In 2D (single variabe): $\Delta x = \frac{b-a}{n}$, $\int_{a}^{b}{f(x)\mathrm{d}x} = \lim_{n \to \infty}{\sum_{i = 0}^{n-1}{f(a+i\Delta x)\Delta a}}$.\\
 In 3D: $\Delta x = \frac{b-a}{n}$, $\Delta y = \frac{d-c}{n}$,
 \begin{equation*}
 	\int_{c}^{d}{\int_{a}^{b}{f(x,y)\mathrm{d}x}\mathrm{d}y} = \lim_{m \to \infty}{\sum_{j = 0}^{m-1}{\left(\lim_{n \to \infty}{\sum_{i = 0}^{n-1}{f(a+i\Delta a, c+j\Delta y)\Delta x}}\right)\Delta y}}

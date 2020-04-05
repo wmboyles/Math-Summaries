@@ -11,21 +11,24 @@ Let’s apply a surface integral to a real problem. Let the cap of the sphere or
 
 [INSERT IMAGE]
 
-\indent
-We will parameterize the cap using spherical coordinates.\\
-\indent
-$D = \left\{(\rho, \theta, \phi) \mid \rho=8, 0 \leq \theta \leq 2\pi, 0 \leq \phi \leq \cos^{-1}{\left(\frac{7}{8}\right)}\right\}$\\
-\indent
-$\vec{r}(\theta,\phi) = \langle 8\sin{\phi}\cos{\theta}, 8\sin{\phi}\sin{\theta}, 8\cos{\phi}\rangle$\\
-\indent
-$\vec{r_\theta} = \langle -8\sin{\phi}\sin{\theta}, 8\sin{\phi}\cos{\theta}, 0\rangle$, $\vec{r_\phi} = \langle 8\cos{\phi}\cos{\theta}, 8\cos{\phi}\sin{\theta}, -8\sin{\phi}\rangle$\\
-\indent
-$\sigma\circ\vec{r} = 8\cos{\phi}$\\
-\indent
-$\norm{\vec{r_\theta} \times \vec{r_\phi}} = 64\sin{\phi}$\\
-\indent
-$Q = \int_{0}^{2\pi}{\int_{0}^{\cos^{-1}{7/8}}{64\sin{\phi} \cdot8 \mathrm{d}\phi\mathrm{d}\theta}}$\\
-\indent
-$= 8^3 2\pi \int_{0}^{\cos^{-1}{7/8}}{\sin{\phi}\mathrm{d}\phi}$\\
-\indent
-$= 8^3 2\phi(-\cos{\phi})\rvert_{0}^{cos^{-1}{7/8}} = 8^3 2\pi\left(-7/8 + 1\right) = 128\pi\text{ }\mu\text{C}$
+\noindent
+We will parameterize the cap using spherical coordinates.
+\begin{equation*}
+	D = \left\{(\rho, \theta, \phi) \mid \rho=8, 0 \leq \theta \leq 2\pi, 0 \leq \phi \leq \cos^{-1}{\left(\frac{7}{8}\right)}\right\}
+\end{equation*}
+\begin{equation*}
+	\vec{r}(\theta,\phi) = \langle 8\sin{\phi}\cos{\theta}, 8\sin{\phi}\sin{\theta}, 8\cos{\phi}\rangle
+\end{equation*}
+\begin{equation*}
+	\vec{r_\theta} = \langle -8\sin{\phi}\sin{\theta}, 8\sin{\phi}\cos{\theta}, 0\rangle \text{, }
+	\vec{r_\phi} = \langle 8\cos{\phi}\cos{\theta}, 8\cos{\phi}\sin{\theta}, -8\sin{\phi}\rangle
+\end{equation*}
+\begin{equation*}
+	\sigma\circ\vec{r} = 8\cos{\phi} \text{, }
+	\norm{\vec{r_\theta} \times \vec{r_\phi}} = 64\sin{\phi}	
+\end{equation*}
+\begin{align*}
+	Q &= \int_{0}^{2\pi}{\int_{0}^{\cos^{-1}{7/8}}{64\sin{\phi} \cdot8 \mathrm{d}\phi\mathrm{d}\theta}} \\
+	& = 8^3 2\pi \int_{0}^{\cos^{-1}{7/8}}{\sin{\phi}\mathrm{d}\phi} \\
+	&= 8^3 2\phi(-\cos{\phi})\rvert_{0}^{cos^{-1}{7/8}} = 8^3 2\pi\left(-7/8 + 1\right) = 128\pi\text{ }\mu\text{C}
+\end{align*}

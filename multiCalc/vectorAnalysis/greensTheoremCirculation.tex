@@ -1,6 +1,10 @@
 \subsection{Green's Theorem for Circulation}
 \begin{theorem}[Green's Theorem for Circulation]
-	Let $C$ be a closed, counter-clockwise oriented curve in $\mathbb{R}^2$. For any differentiable vector field $\vec{F}(x,y) = \langle Q(x,y), R(x,y) \rangle$, $\oint\limits_{C}{R\mathrm{d}x + Q\mathrm{d}y} = \iint\limits_{D}{\left(\frac{\partial Q}{\partial x} - \frac{\partial R}{\partial y}\right)\mathrm{d}x\mathrm{d}y}$, where $D$ is the interior of $C$.
+	Let $C$ be a closed, counter-clockwise oriented curve in $\mathbb{R}^2$. For any differentiable vector field,
+	\begin{equation*}
+		\vec{F}(x,y) = \langle Q(x,y), R(x,y) \rangle \text{, } \oint\limits_{C}{R\mathrm{d}x + Q\mathrm{d}y} = \iint\limits_{D}{\left(\frac{\partial Q}{\partial x} - \frac{\partial R}{\partial y}\right)\mathrm{d}x\mathrm{d}y}
+	\end{equation*}
+	where $D$ is the interior of $C$.
 \end{theorem}
 \noindent
 Or, in more modern notation,
@@ -40,16 +44,21 @@ This theorem also relates the idea of path independence and curl of a conservati
 \end{proof}
 
 \noindent
-For example, let's use Green's Theorem for Circulation to compute $\oint\limits_{C}{\vec{F} \cdot \mathrm{d}\vec{r}}$ where $\vec{F} = \langle x^2, xy + x^2 \rangle$ and $C$ is the unit circle.\\
-\indent
-$\oint\limits_{C}{\vec{F} \cdot \mathrm{d}\vec{r}} = \iint\limits_{D}{\nabla \times \vec{F}\mathrm{d}A}$\\
-\indent
-$\nabla \times \vec{F} = y+2x$\\
-Since $C$ is the unit circle, we'll evaluate the integral using polar coordinates. So $\mathrm{d}A = r\mathrm{d}r\mathrm{d}\theta$.\\
-$\iint\limits_{D}{\nabla \times \vec{F}\mathrm{d}A} = \int_{0}^{2\pi}{\int_{0}^{1}{(r\sin{\theta} + 2r\cos{\theta})r\mathrm{d}r}\mathrm{d}\theta}$\\
-\indent
-$= \int_{0}^{2\pi}{\left(\frac{\sin{\theta}}{3} + \frac{2\cos{\theta}}{3}\right)\mathrm{d}\theta} = 0$\\
-\indent
+For example, let's use Green's Theorem for Circulation to compute $\oint\limits_{C}{\vec{F} \cdot \mathrm{d}\vec{r}}$ where $\vec{F} = \langle x^2, xy + x^2 \rangle$ and $C$ is the unit circle.
+\begin{equation*}
+	\oint\limits_{C}{\vec{F} \cdot \mathrm{d}\vec{r}} = \iint\limits_{D}{\nabla \times \vec{F}\mathrm{d}A}	
+\end{equation*}
+\begin{equation*}
+	\nabla \times \vec{F} = y+2x	
+\end{equation*}
+Since $C$ is the unit circle, we'll evaluate the integral using polar coordinates. So 
+\begin{equation*}
+	\mathrm{d}A = r\mathrm{d}r\mathrm{d}\theta	
+\end{equation*}
+\begin{align*}
+	\iint\limits_{D}{\nabla \times \vec{F}\mathrm{d}A} &= \int_{0}^{2\pi}{\int_{0}^{1}{(r\sin{\theta} + 2r\cos{\theta})r\mathrm{d}r}\mathrm{d}\theta} \\
+	&= \int_{0}^{2\pi}{\left(\frac{\sin{\theta}}{3} + \frac{2\cos{\theta}}{3}\right)\mathrm{d}\theta} = 0
+\end{align*}
 Note that although this particular circulation is 0, we know that the vector field is not conservative because the curl is not 0.
 
 \input{./vectorAnalysis/areaClosedRegion}

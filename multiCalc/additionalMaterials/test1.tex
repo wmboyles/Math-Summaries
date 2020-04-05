@@ -19,29 +19,45 @@
 		\includegraphics[scale=.5]{Images/additionalMaterials/test1_plane}
 	\end{figure}
 	
-	\item Given the VVF $\vec{r}(t)\langle 10t, 7\cos{t}, 7\sin{t} \rangle$...\\
-	\begin{enumerate}[a.]
-		\item Compute the unit tangent vector $\hat{T}(t)$ and the unit normal vector $\hat{N}(t)$.\\
-		\indent
-		$\hat{T} = \frac{\vec{r^\prime}(t)}{\norm{\vec{r^\prime}(t)}}$\\
-		$\vec{r^\prime}(t) = \langle 10, -7\sin{t}, 7\cos{t} \rangle$\\
-		$\norm{\vec{r^\prime}(t)} = \sqrt{10^2 + (-7\sin{t})^2 + (7\cos{t})^2} = \sqrt{149}$\\
-		$\hat{T}(t) = \frac{1}{\sqrt{149}}\langle 10, -7\sin{t}, 7\cos{t} \rangle$\\
-		$\hat{N}(t) = \frac{\mathrm{d}\hat{T}/\mathrm{d}t}{\norm{\mathrm{d}\hat{T}/\mathrm{d}t}}$\\
-		$\frac{\mathrm{d}\hat{T}}{\mathrm{d}t} = \frac{1}{\sqrt{149}} \langle 0, -7\cos{t}, -7\sin{t} \rangle$\\
-		$\norm{\frac{\mathrm{d}\hat{T}}{\mathrm{d}t}} = \frac{1}{\sqrt{149}}\sqrt{(-7\cos{t})^2 + (-7\sin{t})^2} = \frac{7}{\sqrt{149}}$\\
-		$\hat{N}(t) = \langle 0, -\cos{t},-\sin{t}\rangle$
+	\item Given the VVF $\vec{r}(t)\langle 10t, 7\cos{t}, 7\sin{t} \rangle$...
+	\begin{enumerate}[label=\alph*.]
+		\item Compute the unit tangent vector $\hat{T}(t)$ and the unit normal vector $\hat{N}(t)$.
+		\begin{equation*}
+			\hat{T} = \frac{\vec{r^\prime}(t)}{\norm{\vec{r^\prime}(t)}}	
+		\end{equation*}
+		\begin{equation*}
+			\vec{r^\prime}(t) = \langle 10, -7\sin{t}, 7\cos{t} \rangle	
+		\end{equation*}
+		\begin{equation*}
+			\norm{\vec{r^\prime}(t)} = \sqrt{10^2 + (-7\sin{t})^2 + (7\cos{t})^2} = \sqrt{149}	
+		\end{equation*}
+		\begin{equation*}
+			\hat{T}(t) = \frac{1}{\sqrt{149}}\langle 10, -7\sin{t}, 7\cos{t} \rangle	
+		\end{equation*}
+		\begin{equation*}
+			\hat{N}(t) = \frac{\mathrm{d}\hat{T}/\mathrm{d}t}{\norm{\mathrm{d}\hat{T}/\mathrm{d}t}}	
+		\end{equation*}
+		\begin{equation*}
+			\frac{\mathrm{d}\hat{T}}{\mathrm{d}t} = \frac{1}{\sqrt{149}} \langle 0, -7\cos{t}, -7\sin{t} \rangle	
+		\end{equation*}
+		\begin{equation*}
+			\norm{\frac{\mathrm{d}\hat{T}}{\mathrm{d}t}} = \frac{1}{\sqrt{149}}\sqrt{(-7\cos{t})^2 + (-7\sin{t})^2} = \frac{7}{\sqrt{149}}
+		\end{equation*}
+		\begin{equation*}
+			\hat{N}(t) = \langle 0, -\cos{t},-\sin{t}\rangle
+		\end{equation*}
 		
-		\item Show that $\hat{T}\perp\hat{N}$ for all $t$.
-		\indent
+		\item Show that $\hat{T}\perp\hat{N}$ for all $t$.\\
 		If $\hat{T}\perp\hat{N}$, then $\hat{T}\cdot\hat{N} = 0$ for all $t$.\\
-		$\hat{T} \cdot \hat{N} = \frac{1}{\sqrt{149}}\langle 10, -7\sin{t}, 7\cos{t} \rangle \cdot \langle 0, -\cos{t}, -\sin{t}\rangle$\\
-		$= \frac{1}{\sqrt{149}}(0 + 7\sin{t}\cos{t} - 7\sin{t}\cos{t}) = 0$\\
-		$\implies \hat{T}\perp\hat{N}$\\
+		\begin{align*}
+			\hat{T} \cdot \hat{N} &= \frac{1}{\sqrt{149}}\langle 10, -7\sin{t}, 7\cos{t} \rangle \cdot \langle 0, -\cos{t}, -\sin{t}\rangle	\\
+			&= \frac{1}{\sqrt{149}}(0 + 7\sin{t}\cos{t} - 7\sin{t}\cos{t}) = 0 \\
+			&\implies \hat{T}\perp\hat{N}
+		\end{align*}
 	\end{enumerate}
 	
 	\item A cannon fires cannonballs with a speed of $20 \text{ m} / \text{s}$. Take acceleration due to gravity to be $g = 10 \text{m} / \text{s}^2$.
-	\begin{enumerate}[a.]
+	\begin{enumerate}[label=\alph*.]
 		\item Starting with a constant acceleration function $\vec{a} = \langle 0, -g \rangle$, find the velocity and position functions ($\vec{r^\prime}(t) \text{ and } \vec{r}(t)$ respectively) of the cannonball if the cannon is fired from an angle $\theta$ with respect to the horizontal. Assume the cannonball is initially positioned at the origin.\\
 		\indent
 		We know that velocity is the integral of acceleration.\\
@@ -67,16 +83,25 @@
 		$\implies \theta = \pi/4$\\
 	\end{enumerate}
 	
-	\item Consider the following particle trajectory: $\vec{r}(t) = \langle R\cos{e^t}, R\sin{e^t}, \frac{h}{2\pi}e^t \rangle$ for $t \geq 0$. The shape of the trajectory is a helix with radius $R$ and vertical spacing $h$. Find the arc length function $s(t)$ of the trajectory starting with $s(0) = 0$. Give the arc length reparameterization of the helix.\\
-	\indent
-	$s(t) = \int_{0}^{t}{\norm{\vec{r^\prime}(\tau)}\mathrm{d}\tau}$\\
-	$\vec{r^\prime}(t) = \langle -Re^{t}\sin{e^t}, Re^{t}\cos{e^t}, \frac{h}{2\pi}e^{t} \rangle$\\
-	$\norm{\vec{r^\prime}(t)} = \sqrt{(-Re^{t}\sin{e^t})^2 + (Re^{t}\cos{e^t})^2 + (\frac{h}{2\pi}e^t)^2}$\\
-	$= e^{t}\sqrt{R^2 + \frac{h^2}{4\pi^2}}$\\
-	$s(t) = \int_{0}^{t}{e^{\tau}\sqrt{R^2 + \frac{h^2}{4\pi^2}}\mathrm{d}\tau} = \sqrt{R^2 + \frac{h^2}{4\pi^2}(e^{t} - 1)}$\\
-	Solving for $t$,\\
-	$t = \ln{\left(\frac{s}{\sqrt{R^2 + \frac{h^2}{4\pi^2}}} + 1\right)}$\\
-	$\vec{r}(s) = \left< R\cos{\left(\frac{s}{\sqrt{R^2 + \frac{h^2}{4\pi^2}}} + 1\right)}, R\sin{\left(\frac{s}{\sqrt{R^2 + \frac{h^2}{4\pi^2}}} + 1\right)}, \frac{h}{2\pi}\left(\frac{s}{\sqrt{R^2 +\frac{h^2}{4\pi^2}}} + 1\right) \right>$\\
+	\item Consider the following particle trajectory: $\vec{r}(t) = \langle R\cos{e^t}, R\sin{e^t}, \frac{h}{2\pi}e^t \rangle$ for $t \geq 0$. The shape of the trajectory is a helix with radius $R$ and vertical spacing $h$. Find the arc length function $s(t)$ of the trajectory starting with $s(0) = 0$. Give the arc length reparameterization of the helix.
+	\begin{align*}
+		s(t) &= \int_{0}^{t}{\norm{\vec{r^\prime}(\tau)}\mathrm{d}\tau}\\
+		\vec{r^\prime}(t) &= \langle -Re^{t}\sin{e^t}, Re^{t}\cos{e^t}, \frac{h}{2\pi}e^{t} \rangle
+	\end{align*}
+	\begin{align*}
+		\norm{\vec{r^\prime}(t)} &= \sqrt{(-Re^{t}\sin{e^t})^2 + (Re^{t}\cos{e^t})^2 + (\frac{h}{2\pi}e^t)^2} \\
+		&= e^{t}\sqrt{R^2 + \frac{h^2}{4\pi^2}}
+	\end{align*}
+	\begin{equation*}
+		s(t) = \int_{0}^{t}{e^{\tau}\sqrt{R^2 + \frac{h^2}{4\pi^2}}\mathrm{d}\tau} = \sqrt{R^2 + \frac{h^2}{4\pi^2}(e^{t} - 1)}
+	\end{equation*}
+	Solving for $t$,
+	\begin{equation*}
+		t = \ln{\left(\frac{s}{\sqrt{R^2 + \frac{h^2}{4\pi^2}}} + 1\right)}	
+	\end{equation*}
+	\begin{equation*}
+		\vec{r}(s) = \left< R\cos{\left(\frac{s}{\sqrt{R^2 + \frac{h^2}{4\pi^2}}} + 1\right)}, R\sin{\left(\frac{s}{\sqrt{R^2 + \frac{h^2}{4\pi^2}}} + 1\right)}, \frac{h}{2\pi}\left(\frac{s}{\sqrt{R^2 +\frac{h^2}{4\pi^2}}} + 1\right) \right>
+	\end{equation*}
 	
 	\item Let $\vec{r}(t)$ be the position function of a particle trapped on the surface of a sphere centered at the origin. Show that $\vec{r}(t)\perp\frac{\mathrm{d}}{\mathrm{d}t}\vec{r}(t)$ for all $t$.\\
 	\indent

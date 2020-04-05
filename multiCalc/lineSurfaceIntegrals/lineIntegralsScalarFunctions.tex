@@ -1,26 +1,23 @@
 \subsection{Line Integrals of Scalar Functions}
 \noindent
-Let's say we have a a simple (non-self-intersecting) curve in the xy-plane $C$ parameterized by $\vec{r}(t) = \langle x(t), y(t)\rangle$ and a surface $z = f(x,y)$ above $C$. We can extrude $C$ up to $f$, forming a "curtain" with an area $A$ that can be found through integration.\\
-\indent
-$\mathrm{d}A = f(x,y) \cdot \mathrm{d}s$\\
-\indent
-$\mathrm{d}A = f(x,y) \cdot \mathrm{d}s$\\
-\indent
-$s = \int{\norm{\vec{r^\prime}(t)}\mathrm{d}t}$\\
-\indent
-$\mathrm{d}s = \norm{\vec{r^\prime}()}\mathrm{d}t$\\
-\indent
-$\implies A = \int\limits_{C}{f(x,y)\mathrm{d}s} = \int{(f\circ\vec{r})(t) \cdot \norm{\vec{r^\prime}(t)}\mathrm{d}t}$\\
-\indent
-$\small{\text{This is the line integral of }\vec{r}\text{ on }f\text{. }(f\circ\vec{r})\text{ is called the "pullback."}}$\\
+Let's say we have a a simple (non-self-intersecting) curve in the xy-plane $C$ parameterized by $\vec{r}(t) = \langle x(t), y(t)\rangle$ and a surface $z = f(x,y)$ above $C$. We can extrude $C$ up to $f$, forming a "curtain" with an area $A$ that can be found through integration.
+\begin{align*}
+	\mathrm{d}A &= f(x,y) \cdot \mathrm{d}s	\\
+	s &= \int{\norm{\vec{r^\prime}(t)}\mathrm{d}t} \\
+	\mathrm{d}s &= \norm{\vec{r'}(t)}\mathrm{d}t \\
+	\implies A &= \int\limits_{C}{f(x,y)\mathrm{d}s} = \int{(f\circ\vec{r})(t) \cdot \norm{\vec{r^\prime}(t)}\mathrm{d}t}
+\end{align*}
+This is the line integral of $\vec{r}$ on $f$. $(f\circ\vec{r})$ is called the "pullback."
 
 \noindent
-For example, let's find the line integral of $y = x^2$ for $x \leq x \leq \sqrt{2}$ in $f(x,y) = 2x$.\\
-\indent
-$\vec{r}(t) = \langle t, t^2 \rangle$, $0 \leq t \leq \sqrt{2}$\\
-\indent
-$\int\limits_{C}{f(x,y)\mathrm{d}s} = \int_{0}^{\sqrt{2}}{(2x \circ \langle t, t^2\rangle) \cdot \norm{\vec{r^\prime}(t)}\mathrm{d}t} = \int_{0}^{\sqrt{2}}{2t\sqrt{1 + 4t^2}\mathrm{d}t}$\\
-\indent
-Let $u = 1+4t^2$, $\mathrm{d}u = 8t\mathrm{d}t$\\
-\indent
-$= \frac{1}{4}\int_{1}^{9}{\sqrt{u}\mathrm{d}u} = \frac{13}{3}$
+For example, let's find the line integral of $y = x^2$ for $x \leq x \leq \sqrt{2}$ in $f(x,y) = 2x$.
+\begin{equation*}
+	\vec{r}(t) = \langle t, t^2 \rangle, 0 \leq t \leq \sqrt{2}	
+\end{equation*}
+\begin{equation*}
+	\int\limits_{C}{f(x,y)\mathrm{d}s} = \int_{0}^{\sqrt{2}}{(2x \circ \langle t, t^2\rangle) \cdot \norm{\vec{r^\prime}(t)}\mathrm{d}t} = \int_{0}^{\sqrt{2}}{2t\sqrt{1 + 4t^2}\mathrm{d}t}
+\end{equation*}
+Let $u = 1+4t^2$, $\mathrm{d}u = 8t\mathrm{d}t$.
+\begin{equation*}
+	= \frac{1}{4}\int_{1}^{9}{\sqrt{u}\mathrm{d}u} = \frac{13}{3}
+\end{equation*}

@@ -59,11 +59,15 @@ Together, $\hat{i}$, $\hat{j}$, and $\hat{k}$ are called the standard basis vect
 
 \noindent
 Now that we have defined the dot product and cross product, we can put the two together as the scalar triple product, which gives the volume of the parallelepiped spanned by $\vec{a}$, $\vec{b}$, and $\vec{c}$.\\
-\begin{center}
-	$\vec{a}\cdot\left(\vec{b}\times\vec{c}\right) = \left|\begin{matrix}a_1 & a_2 & a_2\\b_1 & b_2 & b_3 \\ c_1 & c_2 & c_3\end{matrix}\right|$
-\end{center}
+\begin{equation*}
+	\vec{a}\cdot\left(\vec{b}\times\vec{c}\right) = \det\begin{bmatrix}
+		a_1 & a_2 & a_2 \\
+		b_1 & b_2 & b_3 \\
+		c_1 & c_2 & c_3
+	\end{bmatrix}
+\end{equation*}
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.29]{Images/backgroundReview/Parallelipiped}
+	\includegraphics[scale=0.33]{Images/backgroundReview/Parallelipiped}
 \end{figure}

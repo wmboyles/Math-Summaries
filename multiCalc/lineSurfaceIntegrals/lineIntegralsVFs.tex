@@ -1,23 +1,24 @@
 \subsection{Line Integrals of Vector Fields}
 \noindent
-One can think of line integral of vector fields as the total work done by the vector field as it moves along some simple path.\\
-\indent
-$W = \int\limits_{C}{\left(\vec{F}\circ\vec{r}\right) \cdot \hat{T}\mathrm{d}s} = \int\limits_{C}{\frac{\vec{r^\prime}(t)}{\norm{\vec{r^\prime}(t)}} \cdot \norm{\vec{r^\prime}(t)}\mathrm{d}t}$\\
-\indent
-$= \int\limits_{C}{\left(\vec{F}\circ\vec{r}\right) \cdot \vec{r^\prime}(t)\mathrm{d}t} = \int\limits_{C}{\vec{F} \cdot \mathrm{d}\vec{r}}$\\
+One can think of line integral of vector fields as the total work done by the vector field as it moves along some simple path.
+\begin{align*}
+	W &= \int\limits_{C}{\left(\vec{F}\circ\vec{r}\right) \cdot \hat{T}\mathrm{d}s} \\
+	&= \int\limits_{C}{\frac{\vec{r^\prime}(t)}{\norm{\vec{r^\prime}(t)}} \cdot \norm{\vec{r^\prime}(t)}\mathrm{d}t} \\
+	&= \int\limits_{C}{\left(\vec{F}\circ\vec{r}\right) \cdot \vec{r^\prime}(t)\mathrm{d}t} = \int\limits_{C}{\vec{F} \cdot \mathrm{d}\vec{r}}
+\end{align*}
 
 \noindent
-For example, let's find the line integral of $\vec{r}(t) = \langle t, t^2, t \rangle$ for $0 \leq t \leq 1$ in the vector field $\vec{F}(x,y,z) = \langle e^z, \sqrt{1-x^2}, \sin{x} \rangle$.\\
-\indent
-$\vec{F}\circ\vec{r} = \langle e^t, \sqrt{1-t^2}, \sin{t}\rangle$\\
-\indent
-$\vec{r^\prime}(t) = \langle 1, 2t, 1 \rangle$\\
-\indent
-$\int_{0}^{1}{\langle e^t, \sqrt{1-t^2}, \sin{t} \rangle \cdot \langle 1, 2t, 1 \rangle\mathrm{d}t}$\\
-\indent
-$= \int_{0}^{1}{e^t + 2t\sqrt{1 - t^2} + \sin{t}\mathrm{d}t}$\\
-\indent
-$= e - \cos{1} + \frac{2}{3}$\\
+For example, let's find the line integral of $\vec{r}(t) = \langle t, t^2, t \rangle$ for $0 \leq t \leq 1$ in the vector field $\vec{F}(x,y,z) = \langle e^z, \sqrt{1-x^2}, \sin{x} \rangle$.
+\begin{equation*}
+	\vec{F}\circ\vec{r} = \langle e^t, \sqrt{1-t^2}, \sin{t}\rangle	
+\end{equation*}
+\begin{equation*}
+	\vec{r^\prime}(t) = \langle 1, 2t, 1 \rangle	
+\end{equation*}
+\begin{align*}
+	\int_{0}^{1}{\langle e^t, \sqrt{1-t^2}, \sin{t} \rangle \cdot \langle 1, 2t, 1 \rangle\mathrm{d}t} &= \int_{0}^{1}{e^t + 2t\sqrt{1 - t^2} + \sin{t}\mathrm{d}t} \\
+	&= e - \cos{1} + \frac{2}{3}
+\end{align*}
 
 \input{./lineSurfaceIntegrals/directionMatters}
 \input{./lineSurfaceIntegrals/circulations}

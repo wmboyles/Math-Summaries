@@ -6,10 +6,14 @@ We can use $\hat{T}$ to find the curvature at a point on $\vec{r}(t)$.\\
 \end{equation*}
 
 \noindent
-For example, let's find $\kappa(t)$ for the circle in the yz-plane: $\vec{r}(t)=\langle 7, R\sin{t}, R\cos{t} \rangle$.\\
-\indent
-$\vec{r^\prime}(t)=\langle 0, R\cos{t}, -R\sin{t}\rangle$ and $v(t)=\sqrt{0^2+(R\cos{t})^2+(-R\sin{t})^2}=R$\\
-\indent
-$\hat{T}(t)=\frac{1}{R}\vec{r}(t)=\langle0,\cos{t},-\sin{t}\rangle$, $\frac{\mathrm{d}\hat{T}}{\mathrm{d}t}=\langle 0,\sin{t},-\cos{t}\rangle$, $\norm{\frac{\mathrm{d}\hat{T}}{\mathrm{d}t}}=1$\\
-\indent
-$\kappa(t)=\frac{1}{R}$. This relationship is true for all circles.
+For example, let's find $\kappa(t)$ for the circle in the yz-plane: $\vec{r}(t)=\langle 7, R\sin{t}, R\cos{t} \rangle$.
+\begin{align*}
+	\vec{r^\prime}(t) &= \langle 0, R\cos{t}, -R\sin{t}\rangle
+	\text{ and }
+	v(t) = \sqrt{0^2+(R\cos{t})^2+(-R\sin{t})^2} = R \\
+	\hat{T}(t) &= \frac{1}{R}\vec{r}(t) = \langle0,\cos{t},-\sin{t}\rangle \\
+	\frac{\mathrm{d}\hat{T}}{\mathrm{d}t} &= \langle 0,\sin{t},-\cos{t}\rangle \\
+	\norm{\frac{\mathrm{d}\hat{T}}{\mathrm{d}t}} &= 1 \\
+	\kappa(t) &= \frac{1}{R}
+\end{align*}
+This relationship is true for all circles.

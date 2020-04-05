@@ -14,24 +14,21 @@ This says that the flux through a closed surface is equal to the sum of the dive
 Intuitively, divergence describes how much a vector field is going in or out at a point, so summing it up inside some solid would tell us the amount the vector field is going in or out on the solid’s boundary, which is flux.\\
 
 \noindent
-For example, let’s find the flux through the unit sphere centered at the origin from the vector field $\vec{F}(x,y,z) = \langle x, y, z^2 \rangle$.\\
-\indent
-$S = \left\{(\rho, \theta, \phi) \mid \rho=1, 0 \leq \theta \leq 2\pi, 0 \leq \phi \leq \pi \right\}$\\
-\indent
-$V = \left\{(\rho, \theta, \phi) \mid 0 \leq \rho \leq 1, 0 \leq\ theta \leq 2\pi, 0 \leq \phi \leq \pi \right\}$\\
-\indent
-$\text{Flux} = \oint\limits_{S}{\oint{\vec{F} \cdot \mathrm{d}\vec{s}}}$\\
-\indent
-$= \int_{0}^{1}{\int_{0}^{\pi}{\int_{0}^{2\pi}{\nabla \cdot \langle x, y, z^2 \rangle\rho^2\sin{\phi}\mathrm{d}\theta}\mathrm{d}\phi}\mathrm{d}\rho}$\\
-\indent
-$= \int_{0}^{1}{\int_{0}^{\pi}{\int_{0}^{2\pi}{(2 + 2z)\rho^2\sin{\phi}\mathrm{d}\theta}\mathrm{d}\phi}\mathrm{d}\rho}$\\
-\indent
-$= \int_{0}^{1}{\int_{0}^{\pi}{\int_{0}^{2\pi}{(2 + 2\rho\sin{\phi})\rho^2\sin{\phi}\mathrm{d}}\mathrm{d}}\mathrm{d}}$\\
-\indent
-$= 2\pi\int_{0}^{1}{\int_{0}^{\pi}{2\rho^2\sin{\phi} + 2\rho^3\sin{\phi}\cos{\phi}\mathrm{d}\phi}\mathrm{d}\rho}$\\
-\indent
-$= 4\pi\int_{0}^{\pi}{\frac{1}{3}\sin{\phi} + \frac{1}{4}\sin{\phi}\cos{\phi}\mathrm{d}\phi}$\\
-\indent
-$= \frac{8\pi}{3}$
+For example, let’s find the flux through the unit sphere centered at the origin from the vector field $\vec{F}(x,y,z) = \langle x, y, z^2 \rangle$.
+\begin{equation*}
+	S = \left\{(\rho, \theta, \phi) \mid \rho=1, 0 \leq \theta \leq 2\pi, 0 \leq \phi \leq \pi \right\}	
+\end{equation*}
+\begin{equation*}
+	V = \left\{(\rho, \theta, \phi) \mid 0 \leq \rho \leq 1, 0 \leq\ theta \leq 2\pi, 0 \leq \phi \leq \pi \right\}	
+\end{equation*}
+\begin{align*}
+	\text{Flux} &= \oint\limits_{S}{\oint{\vec{F} \cdot \mathrm{d}\vec{s}}}	\\
+	&= \int_{0}^{1}{\int_{0}^{\pi}{\int_{0}^{2\pi}{\nabla \cdot \langle x, y, z^2 \rangle\rho^2\sin{\phi}\mathrm{d}\theta}\mathrm{d}\phi}\mathrm{d}\rho} \\
+	&= \int_{0}^{1}{\int_{0}^{\pi}{\int_{0}^{2\pi}{(2 + 2z)\rho^2\sin{\phi}\mathrm{d}\theta}\mathrm{d}\phi}\mathrm{d}\rho} \\
+	&= \int_{0}^{1}{\int_{0}^{\pi}{\int_{0}^{2\pi}{(2 + 2\rho\sin{\phi})\rho^2\sin{\phi}\mathrm{d}}\mathrm{d}}\mathrm{d}} \\
+	&= 2\pi\int_{0}^{1}{\int_{0}^{\pi}{2\rho^2\sin{\phi} + 2\rho^3\sin{\phi}\cos{\phi}\mathrm{d}\phi}\mathrm{d}\rho} \\
+	&= 4\pi\int_{0}^{\pi}{\frac{1}{3}\sin{\phi} + \frac{1}{4}\sin{\phi}\cos{\phi}\mathrm{d}\phi} \\
+	&= \frac{8\pi}{3}
+\end{align*}
 
 \input{./vectorAnalysis/gausssLaws}

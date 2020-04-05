@@ -10,24 +10,25 @@
 % ------------------------------------------------------------------------------
 % General Setup
 \usepackage[english]{babel}
-\usepackage{amsfonts, amsmath, amsthm}		%Formatting symbols, theorems, lemmas, definitions, and examples
+\usepackage{amsfonts, amsmath, amsthm}		% Formatting symbols, theorems, lemmas, definitions, and examples
 \usepackage{eucal}							% Makes the Laplace transform L look a little better
 
 \usepackage{float}							% For making sure tables and figures stay in place
 \usepackage{fullpage}						% Create ~1" margins
 \usepackage[bottom,flushmargin]{footmisc}	% Put footnotes at bottom of page; don't intent footnotes
+\usepackage[titletoc]{appendix}
 
 \setcounter{chapter}{-1}				% Start with chapter 0
 
 \usepackage{enumitem}					% For custom labels on enumerations
 \usepackage{hyperref}					% For inserting links
 \usepackage{graphicx} 					% For inserting images
-% ------------------------------------------------------------------------------
 
-
+% Tikz stuff
 \usepackage{tikz}
 \usetikzlibrary{patterns}
 \usetikzlibrary{calc,patterns,decorations.pathmorphing,decorations.markings}
+% ------------------------------------------------------------------------------
 
 % ------------------------------------------------------------------------------
 % Theorems, lemmas, definitions and examples should not be numbered
@@ -74,7 +75,9 @@
 \def\includeLaplaceTransforms{1}				% Should the Laplace transforms chapter be included?
 	\def\includeLaplaceTransformExamples{1}		% Should examples be included in the Laplace transforms chapter?
 
-\def\includeAdditionalResources{1}				% Should the additional resources chapter be included?	
+\def\includeAdditionalResources{1}				% Should the additional resources chapter be included?
+
+\def\includeAppendix{1}							% Should the appendix be included?
 
 % ------------------------------------------------------------------------------
 
@@ -98,19 +101,23 @@
 		\ifodd\includeLaplaceTransforms\input{./laplaceTransforms/laplaceTransforms.tex}\fi 		% Laplace Transforms
 		\ifodd\includeAdditionalResources\input{./additionalResources/additionalResources.tex}\fi	% Additional Resources
 		
-		% Other possible sections
-			% "Real World" Applications
-				% Viral spread / logistic function
-				% Circuits
-			% Numerical methods
-				% Euler's method
-				% Picard's method
-				% Taylor series
-				% Ranga Kutta
-			% Chaos
-				% Period doubling
-				% Strange attractor
-		% Notes / TODOS
-			% I don't put periods after equations that are in the middle of a sentence. Apparently this is a mortal sin. I'm pretty sure I obeyed capitalization rules, so you can see when a new sentence starts after an equation because the new sentence will begin with a capital letter.
+	\appendix
+		\ifodd\includeAppendix\input{./appendix/appendixA.tex}\fi	%  Appendix
+		
 	\backmatter
 \end{document}
+
+% Other possible sections
+	% "Real World" Applications
+		% Viral spread / logistic function
+		% Circuits
+	% Numerical methods
+		% Euler's method
+		% Picard's method
+		% Taylor series
+		% Ranga Kutta
+	% Chaos
+		% Period doubling
+		% Strange attractor
+% Notes / TODOS
+% I don't put periods after equations that are in the middle of a sentence. Apparently this is a mortal sin. I'm pretty sure I obeyed capitalization rules, so you can see when a new sentence starts after an equation because the new sentence will begin with a capital letter.

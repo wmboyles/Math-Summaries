@@ -1,0 +1,24 @@
+\section{Table of Laplace Transforms}
+\noindent
+Below is a brief table of Laplace transforms. Although most differential equations textbooks have a longer table, this table covers all Laplace transforms done in this text.
+\renewcommand{\arraystretch}{1.75}
+\begin{table}[h]
+	\centering
+	\begin{tabular}{ l | l }
+		$f(t)$  & $F(s) = \Laplace{f}$	\\
+		\hline
+		$f(at)$ & $\frac{1}{a}F\left(\frac{s}{a}\right)$	\\
+		$f'(t)$ & $sF(s) - f(0)$	\\
+		$f^{(n)}(t)$ & $s^nF(s) - \sum_{i=0}^{n-1}{s^{n-i-1}f^{(i)}}(0)$	\\
+		$t^nf(t)$ & $(-1)^nF^{(n)}(s)$	\\
+		$\frac{1}{t}f(t)$ & $\int_s^\infty{F(u) \mathrm{d}u}$	\\
+		$a$ & $\frac{a}{s}\text{, } s > 0$ \\
+		$e^{at}$ & $\frac{1}{s-a}\text{, } s > a$	\\
+		$t^n, n = 1,2,\ldots$ & $\frac{n!}{s^{n+1}}\text{, } s < 0$	\\
+		$e^{at}t^n, n = 1,2,\ldots$ & $\frac{n!}{(s-a)^{n+1}}\text{, } s > a$	\\
+		$\sin{(bt)}$ & $\frac{b}{s^2 + b^2}\text{, } s > 0$ \\
+		$\cos{(bt)}$ & $\frac{s}{s^2 + b^2}\text{, } s > 0$ \\
+		$e^{at}\sin{(bt)}$ & $\frac{s}{(s-a)^2 + b^2}\text{, } s > a$ \\
+		$e^{at}\cos{(bt)}$ & $\frac{s-a}{(s-a)^2 + b^2}\text{, } s > a$ \\
+	\end{tabular}
+\end{table}

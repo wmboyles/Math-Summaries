@@ -1,0 +1,64 @@
+\subsection{Test 3}
+
+\begin{enumerate}[label=\arabic*.]
+	\item
+		Write the integral definition of the Laplace transform.
+	\item 
+		Find the Laplace transform of the following functions. Be sure to give the domains. Use the integral definition for (a) and (e). Be sure to state the domain of the transformed function and any rules of Laplace transforms you use.
+		\begin{enumerate}[label = (\alph*)]
+			\item
+				\begin{equation*}
+					f(x) = e^x
+				\end{equation*}
+			\item
+				\begin{equation*}
+					h(t) = \sin{t} + 2\cos{3t}
+				\end{equation*}
+			\item
+				\begin{equation*}
+					j(t) = e^{3t}\left(t^2 + 3t + 2\right)
+				\end{equation*}
+			\item
+				\begin{equation*}
+					b(t) = \dd{}{t}{(e^{3t+1} + e^{1-t})}
+				\end{equation*}
+%			\item
+%				\begin{equation*}
+%					\delta(x) = \lim\limits_{a \to 0}{\frac{1}{\abs{x}\sqrt{\pi}}e^{(x/a)^2}}
+%				\end{equation*}
+		\end{enumerate}
+	\item
+		Find the inverse Laplace transform of the following functions.
+		\begin{enumerate}[label=(\alph*)]
+			\item
+				\begin{equation*}
+					F(s) = \frac{1}{1+s}
+				\end{equation*}
+			\item
+				\begin{equation*}
+					H(s) = \frac{s^2+2s+1}{s^3 - 4s^2 + 5s - 2}					
+				\end{equation*}
+			\item
+				\begin{equation*}
+					J(s) = \frac{s-4}{s^2 -8s + 32}
+				\end{equation*}
+			\item
+				\begin{equation*}
+					A(s) = \frac{768}{(2s+3)^5}
+				\end{equation*}
+		\end{enumerate}
+	\item
+		Find the general solution to the following differential equation using one of the methods you learned previously and by Laplace transform. Show that the two methods give the same answer.
+		\begin{equation*}
+			2y'' - 3y' + y = 10\sin{x}
+		\end{equation*}
+	\item
+		Solve the following IVP by Laplace transform.
+		\begin{equation*}
+			\begin{cases}
+				2y'' + 4y' - 6y = te^{-3t} \\
+				y'(0) = 0 \\
+				y(0) = 1
+			\end{cases}
+		\end{equation*}
+\end{enumerate}

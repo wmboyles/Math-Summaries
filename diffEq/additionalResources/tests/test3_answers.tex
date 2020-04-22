@@ -1,0 +1,160 @@
+\subsection{Test 3 Answers}
+
+\begin{enumerate}[label=\arabic*.]
+	\item
+		Let $f(t)$ be a function defined for $t \geq 0$.
+		\begin{equation*}
+			\Laplace{f} = \int_{0}^{\infty}{e^{-st}f(t) \mathrm{d}t}
+		\end{equation*}
+	\item
+		\begin{enumerate}[label = (\alph*)]
+			\item
+				\begin{align*}
+					\Laplace{e^{x}} &= \int_{0}^{\infty}{e^{-st}e^{t} \mathrm{d}t} \\
+					&= \int_{0}^{\infty}{e^{t(1-s)} \mathrm{d}t} \\
+					&= \frac{1}{1-s}e^{t(1-s)} \bigg\rvert_{0}^{\infty} \\
+					&= \frac{1}{1-s}\left(\lim_{a \to \infty}{e^{a(1-s)}} - e^{0(1-s)} \right) \\
+					&= \frac{1}{1-s}\left(0 - 1\right) \text{, }  s > 1\\
+					&= \frac{1}{s-1} \text{, } s > 1
+				\end{align*}		
+			\item
+				\begin{equation*}
+					\Laplace{\sin{t} + 2\cos{3t}} = \Laplace{\sin{t}} + 2\Laplace{\cos{3t}}
+				\end{equation*}
+				by the linearity of the Laplace transform.
+				\begin{equation*}
+					 = \Laplace{\sin{t}} + \frac{2}{3}\mathcal{L}\left\{\cos{t}\right\}{(\frac{s}{3})}
+				\end{equation*}
+				as specified in the table of Laplace transforms for $\sin$ and $\cos$.
+				\begin{align*}
+					&= \frac{1}{s^2 + 1^2} + \frac{2}{3}\left(\frac{s/3}{(s/3)^2 + 1^2}\right) \\
+					&= \frac{1}{s^2 + 1^2} + \frac{2}{3}\frac{3s}{s^2 + 3^2} \\
+					&= \frac{1}{s^2+1^2} + \frac{2s}{s^2 + 3^2} \\
+					&= \frac{2s^3 + s^2 + 2s + 9}{\left(s^2 + 1\right)\left(s^2+9\right)}
+				\end{align*}
+			\item
+				\begin{equation*}
+					\Laplace{e^{3t}\left(t^2+3t+2\right)} = \Laplace{e^{3t}t^2} + 3\Laplace{e^{3t}x} + 2\Laplace{e^{3t}}
+				\end{equation*}
+				by the linearity of the Laplace transform.
+				\begin{equation*}
+					 = \frac{2!}{(s-3)^{2+1}} + 3\frac{1!}{(s-3)^{1+1}} + 2\frac{0!}{(s-3)^{0+1}}
+				\end{equation*}
+				as specified in the table of Laplace transforms for an exponential and power of $t$.
+				\begin{align*}
+					 &= \frac{2}{(s-3)^3} + \frac{3}{(s-3)^2} + \frac{2}{(s-3)} \\
+					 &= \frac{2(s-3)^2 + 3(s-3) + 2}{(s-3)^3} \\
+					 &= \frac{2s^2 - 9s + 11}{(s-3)^3}
+				\end{align*}
+			\item
+				\begin{equation*}
+					\Laplace{\dd{}{t}{(e^{3t+1} + e^{1-t})}} = s\Laplace{e^{3t+1} + e^{1-t}} - \left(e^{3\cdot 0 + 1} + e^{1-0}\right)
+				\end{equation*}
+				by the Laplace transform of a derivative.
+				\begin{equation*}
+					= s\left(e\Laplace{e^{3t}} + e\Laplace{e^{-t}}\right) - 2e
+				\end{equation*}
+				by the linearity of the Laplace transform.
+				\begin{equation*}
+					 = s\left(e\frac{1}{s-3} + e\frac{1}{s+1}\right) - 2e
+				\end{equation*}
+				as specified in the table of Laplace trasforms for the Laplace transform of an exponential.
+				\begin{align*}
+					&= \frac{se}{s-3} + \frac{se}{s+1} - 2e \\
+					&= \frac{se(s+1) + se(s-3) -2e(s+1)(s-3)}{(s+1)(s-3)} \\
+					&= \frac{2e(s+3)}{(s+1)(s-3)}
+				\end{align*}
+%			\item
+%				\begin{align*}
+%					\Laplace{\lim\limits_{a \to 0}{\frac{1}{\abs{t}\sqrt{\pi}}e^{(t/a)^2}}} &= \int_{0}^{\infty}{e^{-st}\lim\limits_{a \to 0}{\frac{1}{\abs{t}\sqrt{\pi}}e^{(t/a)^2}} \mathrm{d}t} \\
+%					&= \frac{1}{\sqrt{\pi}}\int_{0}^{\infty}{\lim\limits_{a\to 0}\frac{e^{(t/a)^2 - s}}{t} \mathrm{d}t} \text{, } t > 0
+%				\end{align*}
+%				Let $u = (t/a)^2 - s$, so $\mathrm{d}u = \frac{2}{a^2}t\mathrm{d}t$.
+%				\begin{align*}
+%					&= \frac{1}{\sqrt{\pi}}\int_{-s}^{\infty}{}
+%				\end{align*}
+		\end{enumerate}
+	\item
+		\begin{enumerate}[label=(\alph*)]
+			\item 
+				\begin{equation*}
+					\inverseLaplace{\frac{1}{1+s}} = e{-t}
+				\end{equation*}
+			\item
+				\begin{align*}
+					\inverseLaplace{\frac{s^2+2s+1}{s^3-4s^2+5s-2}} &= \inverseLaplace{\frac{-8}{s-1}}-\inverseLaplace{\frac{4}{(s-1)^2}}+\inverseLaplace{\frac{9}{s-2}} \\
+					&= -8e^{t} - 4e^{t}t + 9e^{2t}
+				\end{align*}
+			\item
+				\begin{align*}
+					\inverseLaplace{\frac{s-4}{s^2-8s+32}} &= \inverseLaplace{\frac{s-4}{(s-4)^2 + 4^2}} \\
+					&= e^{4t}\cos{(4t)}
+				\end{align*}
+			\item
+				\begin{align*}
+					\inverseLaplace{\frac{768}{(2s+3)^5}} &= \inverseLaplace{\frac{4!}{(s+\frac{3}{2})^{4+1}}} \\
+					&= e^{-\frac{3}{2}t}t^4
+				\end{align*}
+		\end{enumerate}
+	\item
+		We'll use method of undetermined coefficients. Extracting and solving the axillary equation,
+		\begin{equation*}
+			2r^2 - 3r + 1 = 0 \implies r = \frac{1}{2} \text{, } 1
+		\end{equation*}
+		So, our homogeneous solution is
+		\begin{equation*}
+			y_h = C_1e^{\frac{x}{2}} + C_2e^{x}
+		\end{equation*}
+		We'll guess that the particular solution has the form
+		\begin{equation*}
+			y_p = A\sin{x} + B\cos{x}
+		\end{equation*}
+		\begin{equation*}
+			2y_p'' - 3y_p' + y_p = 10\sin{x} \implies A = -1 \text{, } B = 3 
+		\end{equation*}
+		So,
+		\begin{equation*}
+			y_p = -\sin{x} + 3\cos{x}
+		\end{equation*}
+		And our general solution is
+		\begin{equation*}
+			y = C_1e^{\frac{x}{2}} + C_2e^{x} -\sin{x} + 3\cos{x}
+		\end{equation*}
+		Now we'll use Laplace transform. Taking the Laplace transform of both sides,
+		\begin{align*}
+			\Laplace{2y'' - 3y' + y} &= \Laplace{10\sin{x}} \\
+			\Laplace{y} \cdot (2s^2 - 3s + 1) &= \frac{10}{s^2+1} + 2y'(0) + 3y(0) -2sy(0) \\
+			\Laplace{y} \cdot (2s^2 - 3s + 1) &= \frac{10 + 3y(0)s^2 + 3y(0) - 2s^3y(0) - 2sy(0) + 2s^2y'(0) + 2y'(0)}{s^2+1} \\
+%			& = \frac{C_1s^3 + C_1s^2 + C_2s^2 + C_1s + C_1 + C_2 + 10}{s^2+1} \\
+			\Laplace{y} &= \frac{-2y(0)s^3 + (3y(0)+2y'(0))s^2 -2sy(0) + 3y(0) + 2y'(0) + 10}{\left(s^2+1\right)\left(2s^2-3s+1\right)} \\
+			&= \frac{-2y(0)s^3 + (3y(0)+2y'(0))s^2 -2sy(0) + 3y(0) + 2y'(0) + 10}{\left(s^2+1\right)\left(2s-1\right)\left(s-1\right)} \\
+			&= \frac{-4(y(0)+y'(0)+4)}{2s-1} + \frac{y(0)+2y'(0)+5}{s-1} + \frac{3s-1}{s^2+1}
+		\end{align*}
+		Let $C_1 = -2(y(0)+y'(0)+4)$ and $C_2 = y(0) + 2y'(0) + 5$.
+		\begin{equation*}
+			\Laplace{y} = \frac{2C_1}{2s-1} + \frac{C_2}{s-1} - \frac{1}{s^2+1} + 3\frac{s}{s^2+1}
+		\end{equation*}
+		Taking the inverse Laplace transform of both sides,
+		\begin{equation*}
+			y = C_1e^{\frac{x}{2}} + C_2e^x -\sin{x} + 3\cos{x}
+		\end{equation*}
+		We can see that we have the same solution for $y$ in both methods.
+	\item
+		Taking the Laplace transform of both sides and solving for the Laplace transform of $y$,
+		\begin{align*}
+			\Laplace{2y'' + 4y' - 6y} &= \Laplace{te^{-3t}} \\
+			\Laplace{y} \cdot (2s^2 + 4s - 6) - 2sy(0) - 2y'(0) - 4y(0) &= \frac{1}{(s+3)^2} \\
+			\Laplace{y} \cdot (2s^2 + 4s - 6) - 2s - 4 &= \frac{1}{(s+3)^2} \\
+			\Laplace{y} \cdot (2s^2 + 4s - 6) &= \frac{1}{(s+3)^2} + 2s + 4 \\
+			&= \frac{2s^3 + 16s^2 + 42s + 37}{(s+3)^2} \\
+			\Laplace{y} &= \frac{2s^3 + 16s^2 + 42s + 37}{2(s+3)^3(s-1)}
+		\end{align*}
+		Converting the right side to partial fractions,
+		\begin{equation*}
+			\Laplace{y} = \frac{31}{128(s+3)} - \frac{1}{32(s+3)^2} - \frac{1}{8(s+3)^3} + \frac{97}{128(s-1)}
+		\end{equation*}
+		Taking the inverse Laplace transform of both sides to solve for $y$,
+		\begin{equation*}
+			y = \frac{31}{128}e^{-3t} - \frac{1}{32}te^{-3t} - \frac{1}{16}t^2e^{-3t} + \frac{97}{128}e^{t}
+		\end{equation*}
+\end{enumerate}

@@ -1,0 +1,42 @@
+\section{Continuity Definition}
+When we were looking at limits, we noticed that we can't always substitute to find the limit, even if the function is defined there.
+In the example given to show that substitution and the limit can give different results, we saw a special type of function that seemed to have a "hole" at the point we were interested in finding the limit of.
+This function is said to be discontinuous at this point, and in this section we'll define when a function is or isn't continuous at a point based on this idea of the limit and substitution giving different values.
+
+\begin{definition}
+	Let $f(x)$ be a real-valued function defined over $D \subseteq \R$.
+	$f(x)$ is continuous at some point $x = c$ if all of the following hold.
+	\begin{enumerate}
+		\item $\lim_{x \to c}{f(x)}$ exists
+		\item $f(c)$ is defined
+		\item $\lim_{x \to c}{f(x)} = f(c)$ (substitution works)
+	\end{enumerate}
+	Otherwise, $f(x)$ is discontinuous at $c$.\footnote{Note that it's not necessary for $c \in D$.}
+\end{definition}
+
+\noindent
+We say that a function is continuous on an interval if it's continuous on every point in that interval.\footnote{If the interval is closed on one or both sides, we check continuity on the open interval. Then, we check the closed endpoints by looking at the limit from only one side.}
+
+\begin{example}
+	Find the points of continuity and discontinuity of the following functions
+	\begin{table}[H]
+	\begin{center}
+	\begin{tabular}{ l l }
+		1. $\begin{aligned}
+			f(x) = \frac{1}{x^2+1}
+		\end{aligned}$ &
+		2. $\begin{aligned}
+			g(x) = e^{1/x}
+		\end{aligned}$
+	\end{tabular}
+	\end{center}
+	\end{table}
+\end{example}
+\begin{enumerate}
+	\item There are no points where $f(x)$ or its limit are undefined.
+		Further, there are no points where $f$ and its limit at that point are different.
+		So, $f$ is continuous on $(-\infty, \infty)$ and discontinuous on $\emptyset$.
+	\item Since $1/x$ is undefined at $x = 0$, $g(x)$ is also undefined at $x=0$.
+		At every other point, $g$ and its limit are defined and are equal.
+		So, $g$ is continuous on $(\infty, 0) \cup (0, \infty)$ and discontinuous on $[0]$.
+\end{enumerate}

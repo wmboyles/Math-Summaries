@@ -1,0 +1,17 @@
+\section{Intermediate Value Theorem}
+\begin{theorem}[Intermediate Value Theorem (IVT)]
+	If $f$ is continuous on the closed interval $[a,b]$, then for all $c \in [f(a), f(b)]$, there exists $x \in [a,b]$ such that $f(x) = c$.
+\end{theorem}
+\noindent
+That is, if $f$ is continuous on $[a,b]$, then $f$ must take on every value between $f(a)$ and $f(b)$.
+This encapsulates the idea that if a function is continuous on some interval, then it is "connected" on that interval.
+
+\begin{example}
+	Use the IVT to show that $e^{-x} = x$ has at least one solution.
+\end{example}
+Let $f(x) = e^{-x} - x$.
+We are looking for $x$ where $f(x) = 0$.
+$f(0) = 1$ and $f(1) = \frac{1}{e} - 1$.
+Since $f$ is continuous on the closed interval $[0,1]$, it must take on every value between $1$ and $\frac{1}{e} - 1$.
+Since $1$ is positive and $\frac{1}{e} - 1$ is negative, 0 is between these two values.
+Thus, by the IVT, there must exist a solution between $x=0$ and $x=1$.

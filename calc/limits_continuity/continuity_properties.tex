@@ -1,0 +1,33 @@
+\section{Continuity Properties}
+These properties should look very similar to the properties of limits.
+Let $f$ and $g$ be continuous functions at $c$.
+\begin{align*}
+	\textbf{Sum and Difference Rule: }& f \pm g \text{ is continuous at } c. \\
+	\textbf{Product Rule: }& f \cdot g \text{ is continuous at } c. \\
+	\textbf{Constant Multiple Rule: }& kf \text{ is continous at } c \text{ for all real } k. \\
+	\textbf{Quotient Rule: }& \frac{f}{g} \text{ is continuous at } c \text{ as long as the value of the extended function of } \\
+		g \text{ at } c \text{ is not } 0. \\
+	\textbf{Composition Rule: }& f \circ g \text{ is continuous at } c \text{ if } f \text{ is continuous at } g(c). \\
+	\textbf{Absolute Value Rule: }& \abs{f} \text{ is continuous at } c.
+\end{align*}
+
+The following types of functions are continuous on their domains
+\begin{itemize}
+	\item Polynomials
+	\item Rational functions, except where the denominator is 0
+	\item Trigonometric functions where defined
+\end{itemize}
+
+\begin{example}
+	Show that the following function is continuous.
+	\begin{equation*}
+		f(x) = \tan{\left(\frac{x^2}{x^2+4}\right)}.
+	\end{equation*}
+\end{example}
+We can write $f$ as the composition of $\tan{x}$ and $\frac{x^2}{x^2+4}$.
+$\tan{x}$ is continuous on its domain because it is a trigometric function.
+The only points not in its domain are $(2n+1)\frac{\pi}{2}$, where $n$ is an integer.
+$\frac{x^2}{x^2+4}$ is a rational function, but it's denominator is never $0$, so it is continuous over all real numbers.
+Now, we just need to check that all points in the range of $\frac{x^2}{x^2+4}$ are in the domain of $\tan{x}$.
+The range of $\frac{x^2}{x^2+4}$ is $[0,1)$.
+None of the points in this interval are not in the domain of $\tan{x}$, so the composition is continuous over all real numbers.

@@ -1,0 +1,32 @@
+\section{Limit Properties}
+Limit have many nice properties all allow us to make useful simplifications when evaluating a limit.
+Let
+\begin{equation*}
+	\lim_{x \to c}{f(x)} = L \text{ and } \lim_{x \to c}{g(x)} = M.
+\end{equation*}
+\begin{align*}
+	\textbf{Sum and Difference Rule: }& \lim_{x\to c}{\left(f(x) \pm g(x)\right)} = L \pm M \\
+	\textbf{Product Rule: }& \lim_{x\to c}{\left(f(x)g(x) \right)} = LM \\
+	\textbf{Constant Multiple Rule: }& \lim_{x \to c}{k\cdot f(x)} = k \lim_{x \to c}{f(x)} = kL \\
+	\textbf{Quotient Rule: }& \lim_{x \to c}{\frac{f(x)}{g(x)}} = \frac{\lim_{x \to x}{f(x)}}{\lim_{x \to c}{g(x)}} = \frac{L}{M} \text{, if} M \neq 0 \\
+	\textbf{Power Rule: }& \text{If } n \neq  \in \R \text{, } \lim_{x\to c}{\left(f(x)\right)^n} = \left(\lim_{x \to c}{f(x)}\right)^n = L^n
+\end{align*}
+
+\subsection{``Substitution Rule''}
+Although it may seem obvious from our idea that limits describe behavior at a point that if $f(x)$ is defined at $x=c$, then $\lim_{x\to c}{f(x)} = f(c)$.
+However, this is \textit{not} always the case.
+Remember that our definition of a limit required these $\epsilon$ and $\delta$ neighborhoods around the limit point.
+If $f(x)$ is defined at $x=c$, but $(c, f(c))$ is not a point in these neighborhoods for any $\epsilon > 0$, then the limit will not evaluate to $f(c)$.
+
+\begin{example}
+	Find the limit of $f(x)$ as $x$ approaches $2$ for the following function.
+	\begin{equation*}
+		f(x) = \begin{cases}
+			x^2 & x \neq 2 \\
+			0 & x = 2
+		\end{cases}.
+	\end{equation*}
+\end{example}
+We can clearly see that $f(2) =  0$, but for $\epsilon = 0.1$ for example, there is no $\delta$ that can satisfy our definition, as points like $(2 - \delta, 4 - 2\delta + \delta^2)$ would outside the neighborhood around $(2,0)$.
+In fact, the correct limit value is $4$, the same as if $f(x) = x^2$ for all $x$.
+There are some more nuances we'll need to describe before we can say when it's OK to substitute to evaluate a limit.

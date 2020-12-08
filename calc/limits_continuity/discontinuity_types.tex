@@ -1,0 +1,41 @@
+\section{Discontinuity Types}
+There are four major types of discontinuity.
+\begin{enumerate}[label=]
+	\item \textbf{Removable: } If $f$ is discontinuous at $c$ but we can remove the discontinuity by setting $f$ equal to its limit at $c$, then $f$ has a removable discontinuity at $c$.
+	\item \textbf{Jump: } If $f$ is discontinuous at $c$, and both of the one-sided limits exist but are different, then $f$ has a jump discontinuity at $c$.
+	\item \textbf{Infinite: } If $f$ has a vertical asymptote at $c$, meaning one or both sides go to $\pm\infty$, then $f$ has an infinite discontinuity at $c$.
+	\item \textbf{Oscillating: } If $f$ oscillates without limit at $c$, then $f$ has an oscillating discontinuity at $c$. An example of such a function would be $\sin{\frac{1}{x}}$ at $x=0$.
+\end{enumerate}
+
+\noindent
+It might seem strange that $\sin{\frac{1}{x}}$ has an oscillating discontinuity at $x=0$ because we were able to find the limit as $x$ approaches of 0 of $x\sin{\frac{1}{x}}$, a very similar function.
+However, remembering how we applied the Ham Sandwich Theorem to find this limit, we see that the $x$ term bounds the amplitude of the oscillations, allowing the limit to be $0$.
+
+\begin{example}
+	For the following function state the following: its domain, any discontinuities and their types, what values should redefine the function to remove any removable discontinuities (give the extended function).
+	\begin{equation*}
+		f(x) = \frac{x^3-7x-6}{x^2-9}
+	\end{equation*}
+\end{example}
+Polynomials are continuous on their entire domain of all real numbers.
+So, rational functions like $f$ can only be discontinuous when the denominator is equal to $0$.
+This happens in two places: $x=3$ and $x=-3$.
+We'll check the limits from each side at each of these points to determine the type of discontinuity.
+For $x=3$,
+\begin{equation*}
+	\lim_{x\to 3^+}{f(x)} = \lim_{x\to 3^-}{f(x)} = \lim_{x\to 3}{f(x)} = \lim_{x\to 3}{\frac{(x+2)(x+1)(x-3)}{(x+3)(x-3)}} = \lim_{x\to 3}{\frac{(x+2)(x+1)}{(x+3)}} = \frac{20}{6} = \frac{10}{3}.
+\end{equation*}
+So, $f$ has a removable discontinuity at $x=3$ because the left and right limits are the same.
+For $x=3$,
+\begin{equation*}
+	\lim_{x\to -3^+}{f(x)} = -\infty \text{ and } \lim_{x\to -3^+}{f(x)} = \infty.
+\end{equation*}
+So, $f$ has an infinite discontinuity at $x=-3$ because both of the left and right limits go to $\pm\infty$.
+The value we got from the limits at $x=3$ gives us the value we need to redefine $f$ as to remove the discontinuity.
+The extended function is therefore
+\begin{equation*}
+	f_{e}(x) = \begin{cases}
+		f(x) & x \neq 3 \\
+		\frac{10}{3} & x = 3
+	\end{cases}
+\end{equation*}

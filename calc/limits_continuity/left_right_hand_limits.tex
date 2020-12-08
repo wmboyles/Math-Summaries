@@ -1,0 +1,21 @@
+\section{Left \& Right Hand Limits}
+Our definition of the limit requires that the function get arbitrarily close to the limit value when approaching from both the left and right hand sides.
+However, we can evaluate limits by specifying that we only approach from one side.
+We usually notate this with a superscript $+$ or $-$ next to the $x$ limit value.
+So,
+\begin{equation*}
+	\lim_{x \to 0^+}{f(x)}
+\end{equation*}
+would mean ``the limit of $f(x)$ as $x$ approaches $0$ from the right", while
+\begin{equation*}
+	\lim_{x \to 0^-}{f(x)}
+\end{equation*}
+would mean ``the limit of $f(x)$ as $x$ approaches $0$ from the left."
+
+\noindent
+Our definition of the limit from both sides requires the left and right sides to be the same.
+If they are different, the the limit does not exist.
+\begin{align*}
+	\lim_{x \to c^+}{f(x)} = \lim_{x \to c^-}{f(x)} &\implies \lim_{x \to c^+}{f(x)} = \lim_{x \to c^-}{f(x)} = \lim_{x \to c}{f(x)} \\
+	\lim_{x \to c^+}{f(x)} \neq \lim_{x \to c^-}{f(x)} &\implies \lim_{x \to c}{f(x)} \text{ does not exist (DNE)}.
+\end{align*}

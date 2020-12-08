@@ -1,0 +1,79 @@
+\section{Infinite Limits}
+Although our limit definition works for finite values of $c$, it's also useful to think about what happens as $c$ goes to $\pm\infty$.
+We'll need to add to our limit definition to incorporate infinite values, since it doesn't make sense to talk about neighborhoods at infinity.
+\begin{definition}
+	Let $f$ be a real-valued function defined on some subset $D \subseteq \R$ that contains arbitrarily large values.
+	\begin{equation*}
+		\lim_{x \to \infty}{f(x)} = L
+	\end{equation*}
+	if for every real $\epsilon > 0$, there is a real number $N > 0$ such that for all $x \in D$,
+	\begin{equation*}
+		x > N \implies \abs{f(x) - L} < \epsilon.
+	\end{equation*}
+\end{definition}
+\noindent
+All the same properties that we described for finite limits, like the Sum and Difference Rule, still hold for infinite limits.
+
+\subsection{End Behavior Model}
+When x is numerically large, we can often model the behavior of a complicated function with a simplier one that behaves roughly the same for numerically large input values and is the same in the limit.
+There are a few rules that these follow.
+\begin{enumerate}
+	\item For a polynomial, the end-behavior is highest-degree term.
+	\item For a rational function, like a ratio of polynomials, the end behavior is the ratio of the highest degree terms.
+	\item For more complicated functions, we may need to use some reasoning about the graph of the function and limit properties to determine end-behavior.
+\end{enumerate}
+
+\subsection{Horizontal Asymptotes}
+Horizontal Asymptotes are a special type of end-behavior model.
+\begin{definition}
+	The line $y=b$ is a horizontal asymptote of $y = f(x)$ if $\lim_{x\to \infty}{f(x)} = b$ or $\lim_{x \to -\infty}{f(x)} = b$.
+\end{definition}
+
+We can determine horizontal asymptotes for rational functions (usually quotient of polynomials).
+There are a few cases to consider
+\begin{enumerate}
+	\item If the numerator is a higher degree than the denominator, there is no horizontal asymptote, so we'll need a different method to calculate what happens at $\pm\infty$.
+	\item If the denominator is a higher degree than the numerator, then there is a horizontal asymptote at $y = 0$.
+	\item If the numerator and denominator have the same degree, there is a horizontal asymptote at $y = k$ where k is the ratio of the highest degree terms.
+\end{enumerate}
+
+\begin{example}
+	Find the following limits, if they exist.\\
+	\begin{table}[H]
+	\begin{center}
+	\begin{tabular}{ l l l}
+		1. $\begin{aligned}[t]
+			\lim_{x \to \infty}{\frac{x^3 - 6x + 1}{x^2 + 2x - 3}}
+		\end{aligned}$ & 
+		2. $\begin{aligned}[t]
+			\lim_{x\to -\infty}{\frac{x-9}{2x-x^2}}
+		\end{aligned}$ &
+		3. $\begin{aligned}[t]
+			\lim_{x\to \infty}{\frac{6x^2-4x^5+7x-1}{12x^5-3x^2+2}}
+		\end{aligned}$ \\
+		\hspace{1pt} & \hspace{1pt}\\
+		4. $\begin{aligned}[t]
+			\lim_{x\to \infty}{\frac{3x+1}{\abs{x}+2}}
+		\end{aligned}$ &
+		5. $\begin{aligned}[t]
+			\lim_{x \to \infty}{x + e^{-x}}
+		\end{aligned}$ &
+		6. $\begin{aligned}[t]
+			\lim_{x \to -\infty}{x + e^{-x}}
+		\end{aligned}$
+	\end{tabular}
+	\end{center}
+	\end{table}
+\end{example}
+\begin{enumerate}
+	\item Since the numerator degree is bigger than the denominator degree, we'll need to use the end behavior model.
+		The end behavior model tells us that the numerator term dominates and has positive values, so the limit evaluates to $\infty$.
+	\item Since the denominator has higher degree than the numerator, there is a HA at $y=0$, so the limit evaluates to $0$.
+	\item Since the numerator and denominator have the same degree, the limit is the ratio of the highest-degree coefficients, $\frac{-1}{3}$.
+	\item The numerator and denominator have the same degree. For $x > 0$, $\abs{x}+2 = x+2$, so the limit is the ratio of highest-degree coefficients, $3$.
+	\item Looking at the two terms, we can see that as $x$ gets large, $e^{-x}$ gets very small, contributing less and less to the overall value.
+		So, we can say that this function as a right end behavior model of $x$, so the limit is $\infty$.
+	\item Looking at the two terms, we that that as $x$ gets very large and negative, $e^{-x}$ changes much faster than $x$.
+		That is, $e^{-x}$ contributes more and more to the overall value of the function compared to $x$.
+		So, we can say that this function has a left end behavior model of $e^{-x}$, so the limit is $\infty$.
+\end{enumerate}

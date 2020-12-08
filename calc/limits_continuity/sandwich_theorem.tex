@@ -1,0 +1,31 @@
+\section{Sandwich Theorem}
+We can use the Sandwich Theorem to indirectly find limits by "sandwiching" the function in question between two functions we do know the limit of.
+If these two sandwiching functions go to the same value in the limit, then so to must the function in question.
+\begin{theorem}[The Sandwich Theorem]
+	If $g(x) \leq f(x) \leq h(x)$ and $\lim_{x \to c}{g(x)} = \lim_{x\to c}{h(x)} = L$, then $\lim_{x \to c}{f(x)} = L$.
+\end{theorem}
+
+\begin{example}
+	Evaluate the following limit: $\lim_{x \to 0}{x\sin{\frac{1}{x}}}$.
+\end{example}
+We know that one of the properties of $\sin$ is that it oscillates between values of $-1$ and $-1$ for all input values.
+So,
+\begin{equation*}
+	-1 \leq \sin{\frac{1}{x}} \leq 1.
+\end{equation*}
+Multiplying all terms by $x$,
+\begin{equation*}
+	-x \leq x\sin{\frac{1}{x}} \leq x.
+\end{equation*}
+Adding the limits,
+\begin{equation*}
+	\lim_{x\to 0}{-x} \leq \lim_{x \to 0}{x\sin{\frac{1}{x}}} \leq \lim_{x \to 0}{x}.
+\end{equation*}
+Evaluating the outer limits of the inequality,
+\begin{equation*}
+	0 \leq \lim_{x \to 0}{x\sin{\frac{1}{x}}} \leq 0
+\end{equation*}
+So, by the Sandwich Theorem,
+\begin{equation*}
+	\lim_{x \to 0}{x\sin{\frac{1}{x}}} = 0.
+\end{equation*}

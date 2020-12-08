@@ -1,0 +1,71 @@
+\documentclass[oneside, 12pt]{book}
+
+% ------------------------------------------------------------------------------
+% Setup for table of contents
+\setcounter{tocdepth}{3} 	% TOC should label down to subsubsections
+\setcounter{secnumdepth}{2}	% TOC should not number further than a subsection number
+% ------------------------------------------------------------------------------
+
+
+% ------------------------------------------------------------------------------
+% General Setup
+\usepackage[english]{babel}
+\usepackage{amsfonts, amsmath, amsthm}		% Formatting symbols, theorems, lemmas, definitions, and examples
+
+\usepackage{float}							% For making sure tables and figures stay in place
+\usepackage{fullpage}						% Create ~1" margins
+\usepackage[bottom,flushmargin]{footmisc}	% Put footnotes at bottom of page; don't intent footnotes
+\usepackage[titletoc]{appendix}
+
+\setcounter{chapter}{-1}				% Start with chapter 0
+
+\usepackage{enumitem}					% For custom labels on enumerations
+\usepackage{hyperref}					% For inserting links
+\usepackage{graphicx} 					% For inserting images
+
+% Tikz stuff
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary{calc,patterns,decorations.pathmorphing,decorations.markings}
+% ------------------------------------------------------------------------------
+
+% ------------------------------------------------------------------------------
+% Theorems, lemmas, definitions and examples should not be numbered
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{definition}{Definition}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{example}{Example}
+% ------------------------------------------------------------------------------
+
+% ------------------------------------------------------------------------------
+% Shortcuts
+\newcommand{\dd}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}							% d[] / d[]
+
+\newcommand{\abs}[1]{\lvert #1 \rvert}												% absolute value
+
+\DeclareMathOperator{\arcsec}{arcsec}												% arc-secant
+\DeclareMathOperator{\arccot}{arccot}												% arc-cotangent
+\DeclareMathOperator{\arccsc}{arccsc}												% arc-cosecant
+
+\newcommand{\R}{\mathbb{R}}															% Real numbers
+% ------------------------------------------------------------------------------
+
+\begin{document}
+	% Title page setup
+	\title{Single Variable Calculus: A Summary}
+	\author{William Boyles}
+	\date{}
+	
+	\frontmatter
+		\maketitle
+		\tableofcontents
+		
+	\mainmatter
+		\input{./backgroundReview/backgroundReview.tex}
+		\input{./limits_continuity/limits_continuity.tex}
+		
+	\appendix
+	
+	\backmatter
+\end{document}
+

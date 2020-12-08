@@ -1,0 +1,31 @@
+\begin{example}
+	Find the partial fraction of $\frac{x^2+5x-6}{x^3-7x^2+16x-12}$.
+\end{example}
+\begin{equation*}
+	x^3-7x^2+16x-12 = (x-3)(x-2)^2.
+\end{equation*}
+So,
+\begin{equation*}
+	\frac{x^2+5x-6}{x^3-7x^2+16x-12} =  \frac{A_1}{x-3} + \frac{A_2}{x-2} + \frac{A_3}{(x-2)^2}.
+\end{equation*}
+Multiplying each side by the denominator,
+\begin{equation*}
+	x^2+5x-6 = A_1(x-2)^2 + A_2(x-2)(x-3) + A_3(x-3).
+\end{equation*}
+At $x=2$,
+\begin{equation*}
+	8 = A_3(2-3) \implies A_3 = -8.
+\end{equation*}
+At $x=3$,
+\begin{equation*}
+	18 = A_1(3-2)^2 \implies A_1 = 18.
+\end{equation*}
+Now we'll use our results for $A_1$ and $A_3$ to find $A_2$ using a value for $x$ that isn't 2 or 3 so the $A_2$ term doesn't become 0. A good choice is $x=0$.\\
+At $x=0$,
+\begin{equation*}
+	-6 = 18(0-2)^2 + A_2(0-2)(0-3) + -8(0-3) \implies A_2 = -17.
+\end{equation*}
+So,
+\begin{equation*}
+	\frac{x^2+5x-6}{x^3-7x^2+16x-12} = \frac{18}{x-3} - \frac{17}{x-2} - \frac{8}{(x-2)^2}.
+\end{equation*}

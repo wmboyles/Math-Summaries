@@ -1,0 +1,32 @@
+\begin{example}
+	Find the partial fraction decomposition of $\frac{x^3+3}{x^2-2x-3}$.
+\end{example}
+\noindent
+First we do polynomial long division to find that
+\begin{equation*}
+	\frac{x^3+3}{x^2-2x-3} = x + 2 + \frac{7x+9}{x^2-2x-3}.
+\end{equation*}
+Now that the numerator is of a lesser degree than the denominator, we can decompose it normally.
+\begin{equation*}
+	x^2-2x-3 = (x-3)(x+1).
+\end{equation*}
+So,
+\begin{equation*}
+	\frac{7x+9}{x^2-2x-3} = \frac{A_1}{x-3} + \frac{A_2}{x+1}.
+\end{equation*}
+Multiplying each side by the denominator,
+\begin{equation*}
+	7x+9 = A_1(x+1) + A_2(x-3).
+\end{equation*}
+At $x=-1$,
+\begin{equation*}
+	2 = -4A_2 \implies A_2 = \frac{-1}{2}.
+\end{equation*}
+At $x=3$,
+\begin{equation*}
+	30 = 4A_1 \implies A_1 = \frac{15}{2}.
+\end{equation*}
+So,
+\begin{equation*}
+	\frac{x^3+3}{x^2-2x-3} = x + 2 + \frac{15/2}{x-3} + \frac{-1/2}{x+1}
+\end{equation*}

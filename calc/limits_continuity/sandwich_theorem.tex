@@ -6,30 +6,39 @@ If these two sandwiching functions go to the same value in the limit, then so to
 \end{theorem}
 
 \begin{example}
-	Evaluate the following limit: $\lim_{x \to 0}{x\sin{\frac{1}{x}}}$.
+	Evaluate the following limit
+	\begin{equation*}
+		\lim_{\theta \to 0}{\frac{\sin{\theta}}{\theta}}
+	\end{equation*}
 \end{example}
-We know that one of the properties of $\sin$ is that it oscillates between values of $-1$ and $-1$ for all input values.
-So,
+We'll need to use some geometric ideas to solve this limit.
+Consider the following on a unit circle.
+
+\begin{figure}[H]
+	\label{sin_limit_proof}
+	\centering
+	\includegraphics[width = 0.5\textwidth]{./limits_continuity/sin_limit_proof.png}
+	\caption{\hyperref{}{}{}{Triangle with internal angle $\theta$ inside a unit circle.}}
+\end{figure}
+
+We can see that the length of the arc is between the length of the two bases of the triangles.
+So, we can write the following inequality.
 \begin{equation*}
-	-1 \leq \sin{\frac{1}{x}} \leq 1.
+	\sin{\theta} \leq \theta \leq \frac{\sin{\theta}}{\cos{\theta}}.
 \end{equation*}
 \indent
-Multiplying all terms by $x$,
+Taking the reciprocal of each part and multiplying by $\sin{\theta}$,
 \begin{equation*}
-	-x \leq x\sin{\frac{1}{x}} \leq x.
+	1 \geq \frac{\sin{\theta}}{\theta} \geq \cos{\theta}.
 \end{equation*}
 \indent
-Adding the limits,
-\begin{equation*}
-	\lim_{x\to 0}{-x} \leq \lim_{x \to 0}{x\sin{\frac{1}{x}}} \leq \lim_{x \to 0}{x}.
-\end{equation*}
-\indent
-Evaluating the outer limits of the inequality,
-\begin{equation*}
-	0 \leq \lim_{x \to 0}{x\sin{\frac{1}{x}}} \leq 0
-\end{equation*}
+Taking the limit of as $\theta$ approaches 0 of each term,
+\begin{align*}
+	1 \geq & \lim_{\theta \to 0}{\frac{\sin{\theta}}{\theta}} \geq \lim_{\theta\to 0}{\cos{\theta}} \\
+	1 \geq & \lim_{\theta \to 0}{\frac{\sin{\theta}}{\theta}} \geq 1.
+\end{align*}
 \indent
 So, by the Sandwich Theorem,
 \begin{equation*}
-	\lim_{x \to 0}{x\sin{\frac{1}{x}}} = 0.
+	\lim_{\theta \to 0}{\frac{\sin{\theta}}{\theta}} = 1.
 \end{equation*}

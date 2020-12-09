@@ -1,0 +1,73 @@
+\section{Derivatives of Inverse Trig Functions}
+Inverse trig functions are defined so that composing them with their corresponding trig function gives you the identity.
+For example $\arcsin{(\sin{x})} = x$.
+The inverse of a function $f$ can be obtained by reflecting the graph of $f$ across the line $y=x$, effectively swapping the $x$ and $y$ coordinates of each point along the graph.
+For functions that repeat $y$ values (i.e are not injective), we have to limit the domain of the inverse functions so they don't repeat $x$ values.
+Since the trig functions don't have any cusps or corners, neither will the inverse trig functions.
+The slope $f^{-1}$ will the the reciprocal of the slope of $f$, since the change in $x$ in $f$ becomes the change in $y$ of $f^{-1}$ and the change in $y$ of $f$ becomes the change in $x$ of $f^{-1}$.
+\begin{equation*}
+	\dd{f^{-1}}{x}\biggr\rvert_{f(a)} = \frac{1}{\dd{f}{a}\bigr\rvert_{a}}
+\end{equation*}
+
+\noindent
+This leads us to a theorem that will help us derive the derivatives of the inverse trig functions.
+\begin{theorem}
+	If $f$ is differentiable at every point along an interval $I$ and its derivative is never 0 along $I$, then $f^{-1}$ exists and is differentiable on every point in $f(I)$.
+\end{theorem}
+
+\subsection{$\arcsin$, $\arctan$, and $\arcsec$}
+Let's apply this theorem and our differentiation rules to find the derivative of $y = \arcsin{x}$.
+From $-\frac{\pi}{2} < x < \frac{\pi}{2}$, the derivative of $f(x)=\sin{x}$, $f^\prime(x)=\cos{x}$ is never 0.
+So, we know by the previous theorem that $f^{-1}(x)=\arcsin{x}$ exists and is differentiable along every point in $\sin(-\frac{\pi}{2} < x < \frac{\pi}{2}) = -1 < x < 1$.
+So, we can rearrange the equation and implicitly differentiate to find the derivative of $\arcsin{x}$ in this interval.
+\begin{align*}
+	y &= \arcsin{x} \\
+	\sin{y} &= x \\
+	\cos{(y)}y^\prime &= 1 \\
+	y^\prime &= \frac{1}{\cos{y}} \\
+	&= \frac{1}{\sqrt{1-\sin^2{y}}} \\
+	&= \frac{1}{\sqrt{1-x^2}}, -1 < x < 1.
+\end{align*}
+
+\noindent
+We can use the same method to find the derivative of $\arctan{x}$, which is differentiable for all real numbers.
+\begin{align*}
+	y &= \arctan{x} \\
+	\tan{y} &= x \\
+	\sec^2{(y)}y^\prime &= 1 \\
+	y^\prime &= \frac{1}{\sec^2{y}} \\
+	&= \frac{1}{1+\tan^2{y}} \\
+	&= \frac{1}{1+x^2}.
+\end{align*}
+
+\noindent
+Although we generally use the same method for $\arcsec$, which is differentiable for $\abs{x}>1$, we have to be careful with out trig identities.
+\begin{align*}
+	y &= \arcsec{x} \\
+	\sec{y} &= x \\
+	\sec{(y)}\tan{(y)}y^\prime &= 1 \\
+	y^\prime &= \frac{1}{\sec{(y)}\tan{(y)}} \\
+	&= \frac{1}{x\tan{(y)}} \\
+	&= \frac{1}{\pm x\sqrt{\sec^2{y}-1}} \\
+	&= \frac{1}{\pm x\sqrt{x^2-1}} \\
+	&= \begin{cases}
+		\frac{1}{x\sqrt{1-x^2}} & x > 1 \\
+		\frac{-1}{x\sqrt{1-x^2}} & x < -1
+	\end{cases} \\
+	&= \frac{1}{\abs{x}\sqrt{1-x^2}}, \abs{x} > 1.
+\end{align*}
+
+\subsection{$\arccos$, $\arccot$, and $\arccsc$}
+Now that we've derived derivatives of $\arcsin$, $\arctan$, and $\arcsec$, finding the derivatives of the arc-co-functions is much easier.
+Since trig functions and their co-functions are $\pi/2$ radians different on the $x$-axis, arc-trig functions will be $\pi/2$ radians different on the y-axis.
+\begin{equation*}
+	\text{arccxx{($x$)}} = \frac{\pi}{2} - \text{arcxxx}{(x)}.
+\end{equation*}
+Using our constant and sum and difference derivative rules, we can derive that the derivatives of the arc-co-functions are simply the opposite of the derivatives of their corresponding arc-functions.
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{ l l l }
+			$\begin{aligned}\dd{}{x}\arccos{x}=\frac{-1}{\sqrt{1-x^2}},-1<x<1\end{aligned}$ & $\begin{aligned}\dd{}{x}\arccot{x}=\frac{-1}{1+x^2}\end{aligned}$ & $\begin{aligned}\dd{}{x}\arccsc{x}=\frac{-1}{\abs{x}\sqrt{1-x^2}},\abs{x}>1\end{aligned}.$ \\
+		\end{tabular}
+	\end{center}
+\end{table}

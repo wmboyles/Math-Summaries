@@ -1,0 +1,28 @@
+\subsection{Quotient Rule}
+\begin{lemma}
+	Let $f$ and $g$ be differentiable functions where $g \neq 0$. Then
+	\begin{equation}
+		\left(\frac{f}{g}\right)^\prime = \frac{gf^\prime - fg^\prime}{g^2}.
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	Using the definition of the derivative and limit properties,
+	\begin{align*}
+		\left(\frac{f}{g}\right)^\prime &= \lim_{h\to 0}{\frac{\frac{f(x+h)}{g(x+h)} - \frac{f(x)}{g(x)}}{h}} \\
+		&= \lim_{h\to 0}{\frac{1}{h}\frac{f(x+h)g(x) - f(x)g(x+h)}{g(x+h)g(x)}} \\
+		&= \lim_{h\to 0}{\frac{1}{h}\hspace{3pt}\frac{f(x+h)g(x) - f(x)g(x) + f(x)g(x) - f(x)g(x+h)}{g(x+h)g(x)}} \\
+		&= \lim_{h \to 0}{\frac{1}{g(x+h)g(x)}\hspace{3pt}\frac{f(x+h)g(x)-f(x)g(x)+f(x)g(x)-f(x)g(x+h)}{h}} \\
+		&= \lim_{h \to 0}{\frac{1}{g(x+h)g(x)}\left(\frac{f(x+h)g(x)-f(x)g(x)}{h}+\frac{f(x)g(x)-f(x)g(x+h)}{h}\right)} \\
+		&= \lim_{h \to 0}{\frac{1}{g(x+h)g(x)}} \left(g(x)\lim_{h \to 0}{\frac{f(x+h)-f(x)}{h}} - f(x)\lim_{h\to 0}{\frac{g(x+h)-g(x)}{h}}\right) \\
+		&= \frac{1}{g^2(x)}\left(g(x)f^\prime(x) - f(x)g^\prime(x)\right) \\
+		&= \frac{gf^\prime - fg^\prime}{g^2}.
+	\end{align*}
+\end{proof}
+
+\begin{example}
+	Given that the derivative of $\sin{(x)}$ is $\cos{(x)}$, find the derivative of $\frac{\sin{(x)}}{x^2}$.
+\end{example}
+Applying the quotient and power rules,
+\begin{equation*}
+	f^\prime(x) = \frac{x^2\cos{(x) - 2x\sin{(x)}}}{x^4} = \frac{x\cos{(x)}-2\sin{(x)}}{x^3}.
+\end{equation*}

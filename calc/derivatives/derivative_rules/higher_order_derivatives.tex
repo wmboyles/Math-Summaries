@@ -1,0 +1,30 @@
+\subsection{Higher Order Derivatives}
+\begin{definition}
+	Let $n$ be a positive integer. The $n^{th}$ derivative of $f$ is
+	\begin{equation*}
+		f^{(n)}(x) = \dd{}{x}{f^{(n-1)}}(x),
+	\end{equation*}
+	where $f^{(n-1)}(x)$ is the ${n-1}^{th}$ derivative of $f$.
+	Using equivalent notation,
+	\begin{equation*}
+		\dd{{}^n}{x^n}f = \dd{{}^{n-1}}{x^{n-1}}f.
+	\end{equation*}
+\end{definition}
+
+\begin{example}
+	Find the third derivative of $f(x) = x^3 + x^2$.
+\end{example}
+Taking the derivative once using the power rule and sum and difference rule,
+\begin{equation*}
+	f^\prime(x) = 3x^2 + 2x.
+\end{equation*}
+\indent
+Taking the derivative a second time using the power, constant multiple rules, and sum and difference rules,
+\begin{equation*}
+	f^{\prime\prime}(x) = 6x + 2.
+\end{equation*}
+\indent
+Taking the derivative a final time using the power, constant multiple, constant, and sum and difference rules,
+\begin{equation*}
+	f^{\prime\prime\prime}(x) = 6.
+\end{equation*}

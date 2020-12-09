@@ -10,7 +10,7 @@
 % ------------------------------------------------------------------------------
 % General Setup
 \usepackage[english]{babel}
-\usepackage{amsfonts, amsmath, amsthm}		% Formatting symbols, theorems, lemmas, definitions, and examples
+\usepackage{amsfonts, amsmath, amsthm, amssymb}		% Formatting symbols, theorems, lemmas, definitions, and examples
 
 \usepackage{float}							% For making sure tables and figures stay in place
 \usepackage{fullpage}						% Create ~1" margins
@@ -40,7 +40,7 @@
 % ------------------------------------------------------------------------------
 % Shortcuts
 \newcommand{\dd}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}							% d[] / d[]
-
+\renewcommand{\qedsymbol}{$\blacksquare$}
 \newcommand{\abs}[1]{\lvert #1 \rvert}												% absolute value
 
 \DeclareMathOperator{\arcsec}{arcsec}												% arc-secant
@@ -63,6 +63,7 @@
 	\mainmatter
 		\input{./backgroundReview/backgroundReview.tex}
 		\input{./limits_continuity/limits_continuity.tex}
+		\input{./derivatives/derivatives.tex}
 		
 	\appendix
 	

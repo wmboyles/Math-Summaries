@@ -1,0 +1,25 @@
+\subsection{Product Rule}
+\begin{lemma}
+	Let $f$ and $g$ be differentiable functions. Then
+	\begin{equation}
+		(fg)^\prime = fg^\prime + gf^\prime.
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	Applying the definition of the derivative and limit properties,
+	\begin{align*}
+		(fg)^\prime &= \lim_{h \to 0}{\frac{f(x+h)g(x+h) - f(x)g(x)}{h}} \\
+		&= \lim_{h \to 0}{\frac{f(x+h)g(x+h)-f(x+h)g(x)+f(x+h)g(x)-f(x)g(x)}{h}} \\
+		&= \lim_{h \to 0}{\frac{f(x+h)\left(g(x+h)-g(x)\right)}{h}} + \lim_{h \to 0}{\frac{g(x)\left(f(x+h)-f(x)\right)}{h}} \\
+		&= \lim_{h \to 0}{f(x+h)} \lim_{h \to 0}{\frac{g(x+h)-g(x)}{h}} + g(x)\lim_{h \to 0}{\frac{f(x+h)-f(x)}{h}} \\
+		&= fg^\prime + gf^\prime
+	\end{align*}.
+\end{proof}
+
+\begin{example}
+	Given the the derivative of $\sin{(x)}$ is $\cos{(x)}$, find the derivative of $x^2\sin{(x)}$.
+\end{example}
+Using the product rule and power rule,
+\begin{equation*}
+	f^\prime(x) = x^2\cos{(x)} + \sin{(x)}2x.
+\end{equation*}

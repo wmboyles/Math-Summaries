@@ -1,0 +1,57 @@
+\subsection{Exponential Rule}
+Let's find the derivative of the most natural exponential function: $f(x) = e^x$.
+Using the limit definition of the derivative,
+\begin{align*}
+	f^\prime(x) &= \lim_{h \to 0}{\frac{e^{x+h}-e^x}{h}} \\
+	&= \lim_{h \to 0}{\frac{e^x\left(e^h - 1\right)}{h}} \\
+	&= e^x \lim_{h \to 0}{\frac{e^h - 1}{h}}
+\end{align*}
+Remembering the following definition of $e$,
+\begin{equation*}
+	e = \lim_{n \to \infty}{\left(1+\frac{1}{n}\right)^n}.
+\end{equation*}
+Substituting $h = 1/n$,
+\begin{equation*}
+	e = \lim_{h \to 0}{\left(1+h\right)^{1/h}}.
+\end{equation*}
+Putting substituting this definition for $e$ into our work,
+\begin{align*}
+	f^\prime(x) &= e^x \lim_{h \to 0}{\frac{\left(\left(1+h\right)^{1/h}\right)^h-1}{h}} \\
+	&= e^x \lim_{h \to 0}{\frac{\left(1+h\right)-1}{h}} \\
+	&= e^x \lim_{h \to 0}{\frac{h}{h}} \\
+	&= e^x.
+\end{align*}
+Amazingly, this function is equal to it's own derivative. In fact, aside from the trivial example of $0$, $e^x$ is the only function with this property. \\
+
+\noindent
+We can apply the chain rule to find the derivative of $b^x$ for real, positive values of $b$.
+\begin{equation*}
+	f(x) = b^x	= e^{x\ln{b}}.
+\end{equation*}
+Let $u(x) = x\ln{b}$.
+\begin{equation*}
+	f(x) = b^x = e^{u(x)}.
+\end{equation*}
+Applying the chain rule,
+\begin{align*}
+	f^\prime(x) &= \dd{}{u}e^u \hspace{3pt} \dd{}{x}x\ln{b}. \\
+	&= e^u \ln{b} \\
+	&= e^{x\ln{b}} \ln{b} \\
+	&= b^x \ln{b}.
+\end{align*}
+
+\begin{example}
+	Find the derivative of $f(x) = 2^{x^2}$.
+\end{example}
+Let $u(x) = x^2$
+\begin{equation*}
+	f(x) = e^u(x).
+\end{equation*}
+Using the exponential and chain rules,
+\begin{align*}
+	f^\prime(x) &= \dd{f}{u} \hspace{3pt} \dd{u}{x} \\
+	&= \dd{}{u}e^u \hspace{3pt} \dd{}{x}x^2 \\
+	&= 2^u \ln{(2)} 2x \\
+	&= 2^{x^2} \ln{(2)} 2x \\
+	&=  2x\ln{(2)}2^{x^2}.
+\end{align*}

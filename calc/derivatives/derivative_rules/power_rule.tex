@@ -1,0 +1,21 @@
+\subsection{Power Rule}
+\begin{lemma}
+	Let $f(x) = x^n$ where $n$ is a positive integer. Then
+	\begin{equation}
+		f^\prime(x) = nx^{n-1}.
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	Applying the limit definition of the derivative,
+	\begin{equation*}
+		f^\prime(x) = \lim_{h \to 0}{\frac{(x+h)^n - x^n}{h}}.
+	\end{equation*}
+	Applying the binomial theorem (think Pascal's Triangle),
+	\begin{align*}
+		f^\prime(x) &= \lim_{h \to 0}{\frac{x^n + nhx^{n-1} + \ldots + {n \choose k}h^{k}x^{n-k} + \ldots + h^n - x^n}{h}} \\
+		&= \lim_{h \to 0}{nx^{n-1} + \ldots + {n \choose k}h^{k-1}x^{n-k} + \ldots + h^{n-1}} \\
+		&= nx^{n-1}.
+	\end{align*}
+\end{proof}
+\noindent
+We'll revisit the power rule after we discover some more detailed rules to show that $n$ can be any real number, not just a positive integer.

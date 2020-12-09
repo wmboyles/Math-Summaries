@@ -1,0 +1,123 @@
+\subsection{Implicit Differentiation}
+Although we normally have equations of the form $y = f(x)$, some equations might be given in are are more convenient to write in different forms.
+Using our understanding of the chain rule, we can still work with these forms and find $y^\prime$. There are generally three steps to finding $y^\prime$ when equations are given in these different forms.
+\begin{enumerate}
+	\item Get all terms involving $y$ to one side of the equation. This step is technically optional but usually makes the step 3 more convenient.
+	\item Take the derivatives of both sides of the equation, using the chain rule.
+	\item Rearrange to solve for $y^\prime$, making substitutions for $y$ to get the answer in terms of input parameters (e.g $x$).
+\end{enumerate}
+It's possible that you can get multiple solutions for $y^\prime$.
+You'll need to check if 
+
+\begin{example}
+	Given that $y^2 = x$, find $y^\prime$ using implicit differentiation.
+\end{example}
+Step 1 is already complete by what's given.
+Taking the derivative of both sides, remembering to use the chain rule,
+\begin{equation*}
+	2yy^\prime = 1.
+\end{equation*}
+\indent
+Solving for $y^\prime$,
+\begin{equation*}
+	y^\prime = \frac{1}{2y}.
+\end{equation*}
+\indent
+Looking back at our original equation, we see $y = \pm\sqrt{x}$.
+Substituting back into our work,
+\begin{equation*}
+	y^\prime = \pm\frac{1}{2\sqrt{x}}.
+\end{equation*}
+
+\noindent
+Sometimes, it's not possible or is not necessary for what you're working on to complete step 3, meaning you leave your answer for $y^\prime$ in terms of $y$ and input parameters.
+\begin{example}
+	Find the derivative for $y$ with respect to $x$ at $(1,1)$ if $y^4 = x^3 + x + y$.
+\end{example}
+Rearranging to complete step 1,
+\begin{equation*}
+	y^4 - y = x^3 + x.
+\end{equation*}
+\indent
+Taking the derivative of both sides,
+\begin{equation*}
+	(4y^3 - 1)y^\prime = 3x^2 + 1.
+\end{equation*}
+\indent
+Solving for $y^\prime$ and completing step 2,
+\begin{equation*}
+	y^\prime = \frac{3x^2 + 1}{4y^3 - 1}.
+\end{equation*}
+\indent
+Since we have both the $x$ and $y$ coordinates of where we're looking for the slope, we don't need to complete step 3.
+We can simply substitute to find our numerical answer for $y^\prime$.
+\begin{equation*}
+	y^\prime_{(1,1)} = \frac{3 + 1}{4 - 1} = \frac{4}{3}.
+\end{equation*}
+
+Sometimes, we might already be given a formula for $y$, but rearranging and then doing implicit differentiation is easier.
+\begin{example}
+	Find the derivative with respect to $x$ of $y = \ln{x}$.
+\end{example}
+We don't have any way to find the derivative of $\ln$ directly, but we do know how $\ln$ relates to exponential functions, a form we do know how to differentiate.
+Exponentiating both sides with base $e$,
+\begin{equation*}
+	e^y = e^{\ln{x}} = x.
+\end{equation*}
+\indent 
+Implicitly differentiating,
+\begin{equation*}
+	e^{y}y^\prime = 1.
+\end{equation*}
+\indent
+Solving for $y^\prime$,
+\begin{equation*}
+	y^\prime = \frac{1}{e^y}.
+\end{equation*}
+\indent
+Substituting what we were given for $y$,
+\begin{equation*}
+	y^\prime = \frac{1}{e^{\ln{x}}} = \frac{1}{x}.
+\end{equation*}
+
+\subsubsection{Logarithmic Differentiation}
+Logarithmic differentiation is a certain type of differentiation where you take to natural log of both sides and then implicitly differentiate.
+It's especially useful when input parameters appear in both the base and exponent.
+\begin{example}
+	Find the derivative with respect to $x$ of $y = x^{\ln{x}}$.
+\end{example}
+Taking the natural log of both sides,
+\begin{equation*}
+	\ln{y} = \ln^2{x}.
+\end{equation*}
+\indent
+Implicitly differentiating,
+\begin{align*}
+	\frac{1}{y}y^\prime &= \frac{2\ln{x}}{x} \\
+	y^\prime &= y\frac{2\ln{x}}{x} \\
+	&= x^{\ln{x}}\frac{2\ln{x}}{x}.
+\end{align*}
+
+\noindent
+We now have the tools to prove the power rule for all real exponents.
+\begin{proof}
+	Let $n$ be an real number.
+	\begin{align*}
+		y &= x^n \\
+		\ln{y} &= n\ln{x} \\
+		\frac{1}{y}y^\prime &= n\frac{1}{x} \\
+		y^\prime &= \frac{ny}{x} \\
+		&= \frac{nx^n}{x} \\
+		&= nx^{n-1}.
+	\end{align*}
+\end{proof}
+
+\subsubsection{Combining Power and Exponential Rule}
+We can also find the derivative of $f(x)^{g(x)}$, which combines the power and exponential rules and is something you'll likely won't see in a standard calculus course.
+\begin{align*}
+	y &= f^g \\
+	\ln{y} &= g\ln{f} \\
+	\frac{1}{y}y^\prime &= g\frac{1}{f}f^\prime + \ln{f}g^\prime \\
+	y^\prime &= f^g\left(g\frac{1}{f}f^\prime + \ln{f}g^\prime\right) \\
+	&= f^{g-1}\left(gf^\prime + fg^\prime\ln{f}\right).
+\end{align*}

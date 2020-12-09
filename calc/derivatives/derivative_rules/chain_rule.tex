@@ -1,0 +1,56 @@
+\subsection{Chain Rule}
+\begin{lemma}
+	Let $f$ and $g$ be differentiable functions. Then
+	\begin{equation}
+		\dd{}{x}f(g(x)) = f^\prime(g(x))g^\prime(x).
+	\end{equation}
+	Equivalently, if $f$ is a function of $g$ and $g$ is a function of $x$,
+	\begin{equation}
+		\dd{f}{x} = \dd{f}{g}\hspace{3pt}\dd{g}{x}.
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	Applying the limit definitions of the derivative,
+	\begin{align*}
+		\dd{f}{x} &= \lim_{h \to 0}{\frac{f(g(x+h))-f(g(x))}{h}} \\
+		&= \lim_{h\to 0}{\frac{f(g(x+h))-f(g(x))}{g(x+h)-g(x)}\hspace{3pt}\frac{g(x+h)-g(x)}{h}} \\
+		&= \lim_{h\to 0}{\frac{f(g(x+h))-f(g(x))}{g(x+h)-g(x)}} \hspace{3pt} \lim_{h\to 0}{\frac{g(x+h)-g(x)}{h}} \\
+		&= \left(\lim_{h\to 0}{\frac{f(g(x+h))-f(g(x))}{g(x+h)-g(x)}}\right) \hspace{3pt} \dd{g}{x} \\
+		&= \dd{f}{g}\hspace{3pt}\dd{g}{x}.
+	\end{align*}
+\end{proof}
+
+\begin{example}
+	Find the derivative of $y = (x^2 + 1)^5$ using the chain rule.
+\end{example}
+$y$ is a composition of the two functions $x^5$ and $x^2 + 1$.
+Applying the chain rule, 
+\begin{equation*}
+	y^\prime = \dd{}{(x^2+1)}(x^2+1)^5 \hspace{3pt} \dd{}{x}(x^2+1)
+\end{equation*}
+\indent
+Making the substitution $u = x^2 + 1$,
+\begin{align*}
+	y^\prime &= \dd{}{u}u^5 \hspace{3pt} \dd{}{x}(x^2+1) \\
+	&= 5u^{4}2x
+\end{align*}
+\indent
+Substituting back,
+\begin{align*}
+	y^\prime &= 5(x^2+1)^{4}2x \\
+	&= 10x(x^2+1)^4.
+\end{align*}
+
+\subsubsection{$u$ Substitutions}
+As we did in the example, we can substitute a variable, usually called $u$ when applying the chain rule.
+\begin{example}
+	Given that the derivative of $\sin{x}$ is $\cos{x}$, find the derivative of $f(x)=\sin^5{x}$.
+\end{example}
+$f$ is a composition of $x^5$ and $\sin$.
+Substituting $u=\sin{x}$, we can rewrite $f$ as $u^5$.
+Applying the chain rule,
+\begin{align*}
+	\dd{f}{x} &= \dd{f}{u} \hspace{3pt} \dd{u}{x} \\
+	&= 5u^4 \hspace{3pt} \cos{x} \\
+	&= 5\sin^4{x}\cos{x}.
+\end{align*}

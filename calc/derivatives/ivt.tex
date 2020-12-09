@@ -1,0 +1,16 @@
+\section{Intermediate Value Theorem for Derivatives}
+\begin{theorem}[IVT for Derivatives]
+	If $f$ is differentiable on the closed interval $[a,b]$, then $f^\prime$ takes on every value between $f^\prime(a)$ and $f^\prime(b)$.
+\end{theorem}
+
+\begin{example}
+	Show that any function that has the following function as it derivative cannot be differentiable on the interval $-1 \leq x \leq 1$.
+	\begin{equation*}
+		f(x) = \begin{cases}
+			0 & -1 \leq x < 0 \\
+			1 & 0 \leq x \leq 1
+		\end{cases}.
+	\end{equation*}
+\end{example}
+$f$ does not take all values between $f(-1)=0$ and $f(1)=1$.
+So, by the contrapositive of the IVT for Derivatives, any function that has $f$ as its derivative will not be differentiable on $[-1,1]$.

@@ -1,0 +1,52 @@
+\section{Derivatives of Trig Functions}
+Let's find the derivative of $f(x) = \sin{x}$.
+Using the limit definition of the derivative,
+\begin{align*}
+	f^\prime(x) &= \lim_{h \to 0}{\frac{\sin{(x+h)}-\sin{x}}{h}} \\
+	&= \lim_{h\to 0}{\frac{\sin{x}\cos{h} + \cos{x}\sin{h} - \sin{x}}{h}} \\
+	&= \lim_{h \to 0}{\frac{\sin{x}\left(\cos{h}-1\right) + \cos{x}\sin{h}}{h}} \\
+	&= \sin{x}\lim_{h\to 0}{\frac{\cos{h}-1}{h}} + \cos{x}\lim_{h\to 0}{\frac{\sin{h}}{h}} \\
+	&= \sin{x}\cdot 0 + \cos{x}\cdot{1} \\
+	&= \cos{x}.
+\end{align*}
+
+\noindent
+We can now use the chain rule to get the derivative of $\cos{x}$.
+\begin{align*}
+	f(x) &= \cos{x} \\
+	&= \sin{\left(\frac{\pi}{2}-x\right)} \\
+	f^\prime(x) &= \cos{\left(\frac{\pi}{2}-x\right)}\cdot -1 \\
+	&= -\sin{x}.
+\end{align*}
+
+\noindent
+The rest of the derivatives of the common trig functions follow from these results and the quotient rule.
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{ l l l }
+			$\begin{aligned}\dd{}{x}\sin{x}=\cos{x}\end{aligned}$ & $\begin{aligned}\dd{}{x}\sec{x}=\sec{x}\tan{x}\end{aligned}$ & $\begin{aligned}\dd{}{x}\tan{x}=\sec^2{x}\end{aligned}$ \\
+			& & \\
+			$\begin{aligned}\dd{}{x}\cos{x}=-\sin{x}\end{aligned}$ & $\begin{aligned}\dd{}{x}\csc{x}=-\csc{x}\cot{x}\end{aligned}$ & $\begin{aligned}\dd{}{x}\cot{x}=-\csc^2{x}\end{aligned}$
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\begin{example}
+	Use the identity $\cos{2x} = \cos^2{x} - \sin^2{x}$ to find the derivative of $\cos{2x}$. Express your answer in terms of $\sin{2x}$. Does this answer the same as what you'd expect by finding the derivative using the chain rule?
+\end{example}
+Taking the derivative of $\cos^2{x}$,
+\begin{equation*}
+	\dd{}{x}\cos^2{x} = \cos{x}\cdot-\sin{x} + \cos{x}\cdot-\sin{x} = -2\sin{x}\cos{x} = -\sin{2x}.
+\end{equation*}
+\indent
+Taking the derivative of $\sin^2{x}$,
+\begin{equation*}
+	\dd{}{x}\sin^2{x} = \sin{x}\cos{x} + \sin{x}\cos{x} = 2\sin{x}\cos{x} = \sin{2x}.
+\end{equation*}
+\indent
+Combining these results to get the derivative of $\cos{2x}$,
+\begin{equation*}
+	\dd{}{x}\cos{2x} = \dd{}{x}\cos^2{x} - \dd{}{x}\sin^2{x} = -\sin{2x} - \sin{2x} = -2\sin{2x}.
+\end{equation*}
+\indent
+This answer is indeed the same one we'd expect using the chain rule.

@@ -1,0 +1,58 @@
+\section{Extreme Values}
+Extreme values of a function are the minimum and maximum values it attains on an interval.
+The absolute extreme values would the the extreme values accross the function's entire domain.
+
+\begin{example}
+	Find the extreme values of $x^2$ over the following intervals.
+	\begin{enumerate}
+		\item $(-\infty, \infty)$
+		\item $[0,2]$
+		\item $(0,2]$
+		\item $(0,2)$
+	\end{enumerate}
+\end{example}
+\begin{enumerate}
+	\item For the max, there is no maximum value because we can keep increasing $x$ to get a larger output.
+		The min is 0 when $x=0$.
+	\item The max is 4 when $x=2$.
+		The min is 0 when $x=0$.
+	\item The max is 4 when $x=2$.
+		Although the function approaches 0 in the limit as $x$ approaches 0, there is no min because 0 itself is not a value $x^2$ can take on the interval.
+	\item Although the function approaches 4 as $x$ approaches 2, there is no max because 4 itself is not a value $x^2$ can take on the interval.
+		Like in the previous question, there is no min.
+\end{enumerate}
+We see that a function can fail to have a max or min value, but this cannot happen on a finite, closed interval.
+
+\begin{theorem}[Extreme Value Theorem]
+	If $f$ is continuous on some finite, closed interval $[a,b]$, then $f$ must have both a minimum and maximum value on the interval.
+\end{theorem}
+
+\noindent
+We can find these extreme values by following these steps.
+\begin{enumerate}
+	\item Find any relative/local minima and maxima.
+	\item Find the function values for these local minima and maxima.
+	\item Find the function values at the endpoints of the interval, $a$ and $b$.
+	\item The smallest such function value will be the absolute minima, while the largest such function value will be the absolute maxima.
+\end{enumerate}
+
+\begin{theorem}
+	If a function $f$ has a local extrema at a point $c$ interior to its domain and $f^\prime$ exists at $c$, then
+	\begin{equation*}
+		f^\prime(c) = 0.
+	\end{equation*}
+\end{theorem}
+\noindent
+So, the only candidate values we need to check are the endpoints and where the derivative is 0.
+Such points are called critical points.
+
+\begin{example}
+	Find the absolute extrema of $y = x^3 + x^2 - 8x + 5$ on the interval $[-3,2]$.
+\end{example}
+\begin{enumerate}
+	\item We'll take the derivative to find all the critical points.
+			$y^\prime = 3x^2 + 2x - 8$, which is 0 when $x=-2$ and $x=4/3$.
+	\item $(-2)^3 + (-2)^2 - 8(-2) + 5 = 17$ and $(4/3)^3 + (4/3)^2 - 8(4/3) + 5 = -41/27$.
+	\item $(-3)^3 + (-3)^2 - 8(-3) + 5 = 11$ and $(2)^3 + (2)^2 - 8(2) + 5 = 1$.
+	\item Of these values, $(-2,17)$ is the absolute maxima and $(4/3, -41/27)$ is the absolute minima.
+\end{enumerate}

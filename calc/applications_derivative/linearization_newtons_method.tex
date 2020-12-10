@@ -1,0 +1,70 @@
+\section{Linearization \& Newton's Method}
+
+\subsection{Linearization}
+As we've seen, tangent lines intersect their function at most once: at the point of tangency.
+However, we know that differentiable functions are locally linear, so we'd expect the tangent line to be a decent approximation of the function near the point of tangency.
+
+\begin{definition}
+	If $f$ is differentiable at $a$, then the approximating function
+	\begin{equation*}
+		L(x) = f^\prime(a)(x-a) + f(a)
+	\end{equation*}
+	is the linearization of $f$ at $a$.
+\end{definition}
+
+\begin{example}
+	Find the linearization of $f(x) = \ln{(x+1)}$ at $x=0$.
+	How accurate is this approximation at $x=0.1$?
+\end{example}
+Following the definition,
+\begin{align*}
+	f(0) = \ln{(0+1)} = 0 \\
+	f^\prime(x) &= \frac{1}{x+1} \\
+	f^\prime(0) &= \frac{1}{0+1} = 1 \\
+	L(x) &= 1(x-0) + 0 = x.
+\end{align*}
+\indent
+Calculating the error at $x=0.1$,
+\begin{align*} 
+	L(0.1) &= 0.1 \\
+	f(0.1) &\approx .0953 \\
+	\text{\% error} &= \frac{\abs{L(0.1)-f(0.1)}}{L(0.1)}100\text{\%} \approx 4.7\text{\%}.
+\end{align*}
+\indent
+So, we can see the linear approximation is pretty good.
+
+\noindent
+We call the difference in $x$ between the point of tangency and the point we're trying to approximate the differential.
+\begin{definition}
+	Let $y=f(x)$ be a differentiable function.
+	The differential $\mathrm{d}x$ is an independent variable.
+	The differential $\mathrm{d}y$ is $\mathrm{d}y = f^\prime(x)\mathrm{d}x$.
+\end{definition}
+\noindent
+$\mathrm{d}y$ is the approximated change in $y$ expected by the linearization for some given change in $x$, $\mathrm{d}x$.
+
+\begin{example}
+	Find $\mathrm{d}y$ for $y=\frac{2x}{1+x^2}$, $x=-2$, and $\mathrm{d}x = 0.1$.
+\end{example}
+\begin{align*}
+	y^\prime &= \frac{-4x^2}{\left(1+x^2\right)^2} + \frac{2}{1+x^2} \\
+	y^\prime(-2) &= -6/25 \\
+	\mathrm{d}y &= (-6/25)(0.1) = -0.024.
+\end{align*}
+
+\subsection{Newton's Method}
+We can use the fact that the tangent line approximates the function to find the zeroes of functions.
+Starting with an initial guess $x_0$ for the $x$ value of the zero, we look at the the tangent line at $x_0$ and find where it intersects the $x-axis$.
+\begin{align*}
+	L_0(x) &= f^\prime(x_0)(x - x_0) + f(x_0) \\
+	0 &= f^\prime(x_0)(x - x_0) + f(x_0) \\
+	-f^\prime(x_0)(x - x_0) &= f(x_0) \\
+	x - x_0 &= -\frac{f(x_0)}{f^\prime(x_0)} \\
+	x &= x_0 - \frac{f(x_0)}{f^\prime(x_0)}.
+\end{align*}
+This $x$ value serves as our next guess for the zero.
+We repeat this process, until we find the zero or are satisfied with our error\footnote{For most well-behaved functions, Newton's Method can get within a small margin of error or a zero relatively quickly. There is also a generalized, sometimes faster version of Newton's Method that approximates the function with higher-order polynomials than just lines.}.
+This yields a recursive formula
+\begin{equation*}
+	x_{n+1} = x_n - \frac{f(x_n)}{f^\prime(x_n)}.
+\end{equation*}

@@ -1,0 +1,113 @@
+\section{Related Rates}
+In related rates problems, we generally have two related functions and want to know and answer questions about the rate of change of one function given that we know the rate of change of the other. The same problem solving steps as in modeling and optimization apply, but we'll usually be taking derivatives using implicit differentiation with respect to some variable like time.
+
+\begin{example}
+	Let $A$ be the area of a square with side length $x$.
+	Assume that $x$ varies with time.
+	How are $\dd{A}{t}$ and $\dd{x}{t}$ related?
+	At a certain instant, the sides are 3 feet and growing at a rate of 2 feet per minute.
+	How quickly is the area changing at this instant.
+\end{example}
+Starting with the area of the square and implicitly differentiating with respect to $t$,
+\begin{align*}
+	A &= x^2 \\
+	\dd{A}{t} = 2x\dd{x}{t}.
+\end{align*}
+\indent
+When $x=3\text{ft}$ and $\dd{x}{t}=3\text{ft/min}$,
+\begin{equation*}
+	\dd{A}{t} = 2(3\text{ft})(3\text{ft/min}) = 12\text{ft$^2$/min}.
+\end{equation*}
+
+\begin{example}
+	The top of a 13 foot ladder propped against a vertical wall begins falling towards the ground at 12ft/s.
+	When the top of the ladder is 5 feet off the ground, how quickly is the bottom of the ladder moving away from the wall?
+	How how is the angle between the ladder and the ground changing?
+\end{example}
+Let $h$ be the height of the top of the ladder of the ground.
+Then $\dd{h}{t} = -12\text{ft/s}$.
+Let $b$ the the distance from the base of the ladder to the wall.
+We can relate $b$ and $h$ using the Pythagorean Theorem, where the 13-foot long ladder is the hypotenuse.
+\begin{equation*}
+	b^2 + h^2 = 13^2.
+\end{equation*}
+\indent
+We can also use this relationship to see that when $h=5\text{ft}$, $b=12\text{ft}$.
+Implicitly differentiating,
+\begin{equation*}
+	2b\dd{b}{t} + 2h\dd{h}{t} = 0.
+\end{equation*}
+\indent
+Plugging in what we know and solving for $\dd{b}{t}$,
+\begin{align*}
+	2(12\text{ft})\dd{b}{t} + 2(5\text{ft})(-12\text{ft/s}) &= 0 \\
+	24\text{ft}\dd{b}{t} &= 120\text{ft$^2$/s} \\
+	\dd{b}{t} &= 5\text{ft/s}.
+\end{align*}
+\indent
+So, the base of the ladder is moving away from the wall at a rate of 5ft/s.
+Let $\theta$ be the angle between the ladder and the ground.
+We can use $\sin$ to relate $\theta$ to $b$.
+\begin{equation*}
+	13\sin{\theta} = b.
+\end{equation*}
+\indent
+Implicitly differentiating,
+\begin{equation*}
+	13\text{ft}\cos{(\theta)}\dd{\theta}{t} = \dd{b}{t}.
+\end{equation*}
+\indent
+When $\cos$ is adjacent divided by hypotenuse, so $\cos{\theta} = 12/13$.
+Plugging in what we know and solving for $\dd{\theta}{t}$,
+\begin{align*}
+	13\text{ft}(12/13)\dd{\theta}{t} &= -12\text{ft/s} \\
+	\dd{\theta}{t} &= -1\text{/s}.
+\end{align*}
+\indent
+So, the angle between the ladder and ground is decreasing at at rate of 1 rad/s.
+
+\begin{example}
+	Grain is is poured at a rate of 10ft$^3$/min and falls into a cone-shaped pile whose bottom radius is half its altitude.
+	How fast will the circumference of the base be increasing when the pile is 8 ft tall?
+\end{example}
+Let $h$ the the altitude of the cone.
+At the instant we care about $h=8\text{ft}$.
+Let $r$ be the bottom radius of the cone.
+At the instant we care about, $r=h/2=4\text{ft}$.
+Let $V$ be the volume of the cone.
+We know that $\dd{V}{t}=10\text{ft$^3$/s}$.
+We can relate these three quantites using the formula for the volume of a cone.
+\begin{equation*}
+	V = \frac{1}{3}\pi r^2 h.
+\end{equation*}
+\indent
+Since we know that $2r = h$, we can simplify to get rid of $h$.
+\begin{equation*}
+	V = \frac{2}{3}\pi r^3
+\end{equation*} 
+\indent
+Implicitly differentiating,
+\begin{equation*}
+	\dd{V}{t} = 2\pi r^2 \dd{r}{t}.
+\end{equation*}
+\indent
+We know the formula for the circumference $C$ of the circular base.
+\begin{equation*}
+	C = 2\pi r.
+\end{equation*}
+\indent
+Implicitly differentiating,
+\begin{equation*}
+	\dd{C}{t} = 2\pi \dd{r}{t}.
+\end{equation*}
+\indent
+We can substitute into our equation involving $\dd{V}{t}$.
+\begin{equation*}
+	\dd{V}{t} = r^2\dd{C}{t}.
+\end{equation*}
+\indent
+Plugging in what we know,
+\begin{align*}
+	10\text{ft}^3\text{/s} &= (4\text{ft})^2\dd{C}{t} \\
+	\dd{C}{t} &= \frac{5}{8}\text{ft/s}.
+\end{align*}

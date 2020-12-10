@@ -1,0 +1,77 @@
+\section{Modeling \& Optimization}
+Now that we know some ways to find extreme values, we can apply them to answer optimization problems.
+The general steps needed to solve an optimization problem are:
+\begin{enumerate}
+	\item Write an equation that represents what you're trying to maximize/minimize. This is called your primary equation.
+	\item Use additional information to eliminate excess variables.
+	\item Find extreme values.
+	\item Select the extreme values that fit the problem's constraints. Make sure your answer is what the problem is asking for.
+\end{enumerate}
+
+\begin{example}
+	A farmer has 1000 linear feet of fence and wants to create a rectangular pasture.
+	The pasture borders a river, which doesn't need a fence.
+	What is the maximum area he can enclose?
+\end{example}
+\begin{enumerate}
+	\item Since the pasture is rectangular, we know the two lengths of fence perpendicular to the river will be the same length, which we'll call $x$.
+		We'll say the remaining side parallel to the river has length $y$.
+		So, the area enclosed is
+		\begin{equation*}
+			A(x,y) = xy.
+		\end{equation*}
+	\item There is no reason for the farmer not to use all 1000 linear feet of fence, so we'd expect the sum of the lengths of the 3 fenced sides to be equal to 1000 feet: $2x + y = 1000$, or $y = 1000 - 2x$.
+		We can then substitute back into our primary equation to get it in terms of just $x$.
+		\begin{equation*}
+			A(y) = x(1000-2x) = 1000x - 2x^2.
+		\end{equation*}
+	\item We'll do a first derivative test to find extreme values.
+	\begin{align*}
+		A^\prime(y) &= 1000 - 4x \\
+		A^\prime(y) &= 0 \text{ at } x = 250 \\
+		A^\prime(200) &= 200 > 0 \\
+		A^\prime(300) &= -200 < 0.
+	\end{align*}
+	\item So, $x=250 \implies y = 500$ is a local maximum.
+		This corresponds to an area of $A = 250\cdot 500 = 125000\text{ft}^2$.
+\end{enumerate}
+
+\begin{example}
+	What is the maximum area of a rectangle that has two vertices on the $x-axis$ and two vertices on the portion of the graph $y=8-x^2$ where $y > 0$?
+\end{example}
+\begin{enumerate}
+	\item We can define any such trapeziod (which include all such rectangles) by the $x$ values of the vertices on the $x$ axis.
+		We'll call these two values $x_1$ and $x_2$.
+		We'll say arbitrarily that $x_1 < x_2$.
+		So, the area enclosed is
+		\begin{equation*}
+			A(x_1, x_2) = (x_2 - x_1)\frac{f(x_1) + f(x_2)}{2}.
+		\end{equation*}
+	\item However, the problem specifically restricts us to a rectangle, not a trapezoid.
+		So, the heights of each side must be equal.
+		\begin{align*}
+			f(x_1) &= f(x_2) \\
+			8 - x_1^2 &= 8 - x_2^2 \\
+			x_1^2 &= x_2^2 \\
+			\pm x_1 &\ \pm x_2 \\
+			-x_1 &= x_2 \text{ because $x_1 \neq x_2$}.
+		\end{align*}
+		Substituting back into our primary equation,
+		\begin{equation*}
+			A(x_2) = (x_2 - (-x_2))\frac{f(x_2) + f(-x_2)}{2} = 2x_2f(x_2) = 16x_2 - 2x_2^3.
+		\end{equation*}
+	\item We'll do a second derivative test for fin extreme values.
+		\begin{align*}
+			A^\prime(x_2) &= 16 - 6x_2^2 \\
+			A^\prime(x_2) &= 0 \text{ at } x = \pm\frac{4}{\sqrt{6}} \\
+			A^{\prime\prime}(x_2) &= -12x_2 \\
+			A^{\prime\prime}\left(-\frac{4}{\sqrt{6}}\right) &= 8\sqrt{6} > 0 \\
+			A^{\prime\prime}\left(\frac{4}{\sqrt{6}}\right) &= -8\sqrt{6} < 0.
+		\end{align*}
+	\item So, $x_2 = 4/\sqrt{6}$ is a local maximum, and $x_2 = -4/\sqrt{6}$ is a local minimum.
+		The problem asks for a maximum, so we select $x_2 = 4/\sqrt{6}$.
+		The problem asks for a maximum area, so
+		\begin{equation*}
+			A_{max} = 16\left(\frac{4}{\sqrt{6}}\right) - 2\left(\frac{4}{\sqrt{6}}\right)^3 = \frac{128}{3\sqrt{6}} \approx 17.419.
+		\end{equation*}
+\end{enumerate}

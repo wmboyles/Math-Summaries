@@ -1,0 +1,67 @@
+\section{Indefinite Integrals}
+
+\subsection{Definition of an Indefinite Integral}
+We've seen in the previous section from the Fundamental Theorem of Calculus how we can let the upper bound of a definite integral be a variable, giving us a new function that is an antiderivative of the function being integrated.
+Anti-differentiation is a useful operation, so notationally we drop the bounds from the definite integral, which we call an indefinite integral.
+\begin{definition}
+	The indefinite integral of some continuous function $f$ is
+	\begin{equation*}
+		\int{f(x)\d{x}} = \int_{a}^{x}{f(t)\d{t}} = F(x) - F(a) = F(x) + C,
+	\end{equation*}
+	where $F(x)$ is the antiderivative of $f$.
+\end{definition}
+\noindent
+Rather than choose a particular value for $C$, we just write ``$+C$" when integrating to capture all antiderivatives.
+Note that since we defined an indefinite integral in terms of a definite integral, all the basic properties of definite integrals still apply.
+
+\begin{example}
+	Solve the following indefinite integral:
+	\begin{equation*}
+		\int{\cos{x}\d{x}}.
+	\end{equation*}
+\end{example}
+We derived previously that the derivative of $\sin{x}$ is $\cos{x}$.
+So, for any real constant $C$, $\sin{x} + C$ is the antiderivative of $\cos{x}$.
+\begin{equation*}
+	\int{\cos{x}\d{x}} = \sin{x} + C.
+\end{equation*}
+
+\subsection{Indefinite Integrals Properties \& Strategies}
+Knowing that the indefinite integral give us the antiderivative, we can simply apply the rules we derived for derivatives in reverse.
+
+\subsubsection{Power Rule \& Integral of $1/x$}
+\begin{lemma}
+	Let $n \neq -1$ be a real number.
+	Then
+	\begin{equation*}
+		\int{x^n \d{x}} = \frac{x^{n+1}}{n+1} + C.
+	\end{equation*}
+\end{lemma}
+
+\noindent
+$n = -1$ has to be a special case, otherwise the denominator would be 0. \\
+
+\noindent
+We derived earlier that that the derivative of $\ln{x}$ was $1/x$.
+However, we have to be a little more careful before we write the integral of $1/x$.
+$1/x$ is defined for all real values except 0, but $\ln{x}$ is only defined for positive values.
+So, we need a different antiderivative, which would have to be equal to $\ln{x}$ for positive $x$, that's defined everywhere that $1/x$ is defined.
+$\ln{\abs{x}}$ works nicely because it's defined everywhere that $1/x$ is defined, it's the antiderivative for positive $x$, and its slope for negative values of $x$ corresponds exactly to how $1/x$ is negative for negative values of $x$.
+\begin{lemma}
+	\begin{equation*}
+		\int{\frac{1}{x}\d{x}} = \ln{\abs{x}} + C.
+	\end{equation*}
+\end{lemma}
+
+\subsubsection{Exponential Rule}
+Since $e^x$ is its own derivative, it's also its own antiderivative.
+A similar idea applies for any base.
+\begin{lemma}
+	\begin{equation*}
+		\int{b^x\d{x}} = \frac{b^x}{\ln{b}} + C.
+	\end{equation*}
+\end{lemma}
+
+
+\input{./integrals/usub.tex}
+\input{./integrals/integration_by_parts/integration_by_parts.tex}

@@ -1,0 +1,111 @@
+\section{Physics}
+\subsection{Position, Velocity, \& Acceleration}
+Since we know by the FTC that integration is the opposite of differentiation, we can also interpret integrals in a similar physical sense as derivatives.
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{ l l }
+			$\begin{aligned}\int{v(t)\d{t}}=x(t) + C\end{aligned}$ & $\begin{aligned}\int{a(t)\d{t}}=v(t)\end{aligned}$
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\begin{example}
+	A particle starts at $t=0$ with an initial velocity of 5m/s and accelerates for 8 seconds.
+	It's acceleration is given by $a(t)=2.4t$ m/s$^2$.
+	What is the particle's velocity after the 8 seconds pass?
+	What is the particle's displacement after the 8 seconds pass?
+\end{example}
+We can integrate acceleration to get velocity.
+\begin{equation*}
+	v(t) = \int{2.4t\d{t}} = 1.2t^2 + C.
+\end{equation*}
+\indent
+We know that $v(0)=5$m/s so we can solve\footnote{When we solve for $C$ like this, we're solving what's called an "inital value problem," which we'll do more of when talking about differential equations.} for $C$.
+\begin{align*}
+	1.2(0) + C &= 5 \\
+	C &= 5 \\
+	v(t) = 1.2t^2 + 5.
+\end{align*}
+\indent
+So, at $t=8$, $v(8) = 1.2(8)^2 + 5 = 81.8$m/s.
+We can now integrate velocity to get displacement
+\begin{equation*}
+	x(t) = \int{1.2t^2 + 5 \d{t}} = 0.4t^3 + 5t + C.
+\end{equation*}
+\indent
+We know that $x(0)=0$m, so $C=0$.
+\begin{equation*}
+	x(t) = 0.4t^3 + 5t.
+\end{equation*}
+\indent
+So, at $t=8$, $x(t) = 0.4(8)^3 + 5(8) = 244.8$m.
+We could have also tackled this problem with definite integrals.
+\begin{align*}
+	\Delta x = \int_{0}^{8}{v(t)\d{t}} &= 244.8\text{m} \implies \text{Net Displacement} = x_0 + \Delta x = 244.8\text{m} \\
+	\Delta v = \int_{0}^{8}{a(t)\d{t}} &= 76.8\text{m/s} \implies \text{Net Velocity} = v_0 + \Delta v = 81.8\text{m/s}
+\end{align*}
+
+\subsection{Work}
+Work is defined as
+\begin{equation*}
+	W = Fd
+\end{equation*}
+where $F$ is force and $d$ is displacement.
+The force applied by stretching or compressing a spring beyond its natural length is given by Hooke's Law
+\begin{equation*}
+	F = kx
+\end{equation*}
+where $k$ is some spring constant and $x$ is the displacement beyond the spring's natural length.
+We can apply ideas as integrals representing net change to find the work needed to compress or stretch a spring.
+
+\begin{example}
+	It takes 10N of force to stretch a spring 2m beyond its natural length.
+	How much work is done stretching the spring 4m beyond its natural length?
+\end{example}
+We can use the first bit of information to get the spring constant.
+\begin{align*}
+	F &= kx \\
+	10\text{N} &= k(2\text{m}) \\
+	k &= 5\text{N/m}.
+\end{align*}
+\indent
+So, $F(x)=5x\text{N}$.
+If we stretch the spring by $\Delta x$, the work done over this interval is approximately $\Delta W = F(x)\Delta x= 5x\Delta x$.
+In the limit, $\d{W} = 5x\d{x}$.
+Integrating both sides from $x=0$ to $x=4$,
+\begin{equation*}
+	W = \int_{0}^{4}{\d{W}} = \int_{0}^{4}{5x\d{x}} = 40\text{Nm}.
+\end{equation*}
+
+\noindent
+We can even bring in other concepts to these problems, like related rates.
+\begin{example}
+	An inverted conical tank with a height of 10ft and a base radius of 5ft is filled to within 2ft of the top with a liquid with a density of 57lbs/ft$^3$.
+	How much work does it take to fill the remaining 2ft of the tank with liquid, assuming you only have to pump the liquid to the current liquid level in the tank?
+\end{example}
+Let $V$ be the volume of the tank and $x$ the height of the liquid.
+Imagine we pump in some liquid that changes the height of the liquid in the tank by $\Delta x$.
+Then
+\begin{align*}
+	\Delta V &= \pi r^2 \Delta x \\
+	\d{V} &= \pi r^2 \d{x}.
+\end{align*}
+\indent
+Since the height of the tank is 10ft and the base radius 5ft, the radius of the liquid level will always be half the liquid depth.
+\begin{align*}
+	r &= x/2 \\
+	\d{V} &= \pi (x/2)^2 \d{x}.
+\end{align*}
+\indent
+Since weight in pounds is already a unit of force, we can multiply $\d{V}$ by the density of the liquid to get $F$.
+\begin{equation*}
+	F = 57\pi(x/2)^2 \d{x}.
+\end{equation*}
+\indent
+The displacement of the liquid is the current height of the liquid $x$, getting us $\d{W}$.
+\begin{align*}
+	\d{W} &= 57\pi x(x/2)^2 \d{x} \\
+	W &= \int_{8}^{10}{57\pi x(x/2)^2 \d{x}} \\
+	&= 21033\pi \text{ft lbs}.
+\end{align*}
+

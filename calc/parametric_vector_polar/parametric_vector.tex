@@ -1,0 +1,109 @@
+\section{Parametric \& Vector Functions}
+Up to this point, almost all the graphs we have worked with have been of the form $y=f(x)$, defining the $y$ coordinate in terms of the $x$ coordinate.
+These sorts of functions are limited in the types of graphs they can draw.
+If we instead let both the $x$ and $y$ coordinates be defined in terms of another variable $t$, like $(x(t),y(t))$, then we can draw much more interesting graphs.
+For example, a unit circle, which can't be defined with a single function $y=f(x)$, would be $(\cos{t}, \sin{t})$. \\
+
+\noindent
+We are always able to translate a function of the form $y=f(x)$ into a parametric function as $(t, f(t))$.
+Sometimes, but not always, we are also able to translate parametric functions into $y$ as a function of $x$.
+
+\begin{example}
+	Given the following parametric function, find $y$ as a function of $x$.
+	\begin{equation*}
+		(\sqrt{t}, t-2).
+	\end{equation*}
+\end{example}
+Squaring both sides of the $x$ equation,
+\begin{equation*}
+	x^2 = t.
+\end{equation*}
+\indent
+Substituting our expressing for $t$ in terms of $x$ into the $y$ equation,
+\begin{equation*}
+	y = x^2 - 2.
+\end{equation*}
+
+\subsection{Vector Functions}
+Vector and parametric functions are essentially the same thing.
+In fact, in multivariable calculus, we drop the idea of parametric functions almost completely and exclusively talk about vector-valued functions.
+Both can graph the exact same functions.
+Visually, you might imagine an arrow rooted at the origin tracing out the graph of a vector function. 
+You're more likely to see vector functions written in the following form
+\begin{equation*}
+	\vec{r}(t) = \langle x(t), y(t) \rangle.
+\end{equation*}
+\noindent
+All the normal vector operations, like addition and subtraction, scalar multiplication, and dot products work exactly the same.
+If we think of $\vec{r}(t)$ as a position function,
+\begin{align*}
+	\textbf{Velocity: }& \vec{v}(t) = \vec{r^\prime}(t) = \langle x^\prime(t), y^\prime(t) \rangle \\
+	\textbf{Speed: }& \abs{\vec{v}(t)} = \sqrt{\left(x^\prime(t)\right)^2 + \left(y^\prime(t)\right)^2} \\
+	\textbf{Acceleration: }& \vec{a}(t) = \vec{v^\prime}(t) = \langle x^{\prime\prime}(t), y^{\prime\prime}(t) \rangle \\
+	\textbf{Direction: }& \frac{\vec{t}(t)}{\abs{\vec{v}(t)}} \\
+\end{align*}
+
+\subsection{Slope \& Concavity}
+Just like with functions like $y=f(x)$, we can find the slope and concavity of parametric functions using first and second derivatives respectively.
+We just apply the chain rule.
+\begin{align*}
+	\dd{y}{x} &= \frac{\dd{y}{t}}{\dd{x}{t}} \\
+	\dd{^2y}{x^2} &= \dd{y^\prime}{x} = \frac{\d{y^\prime}/\d{t}}{\d{x}/\d{t}}.
+\end{align*}
+
+\begin{example}
+	Consider the following parametric function:
+	\begin{equation*}
+		(t^2-5, 2\sin{t}), 0\leq t\leq\pi.
+	\end{equation*}
+	Find the first and second derivatives of $y$ with respect to $x$.
+\end{example}
+Differentiating both $x$ and $y$ with respect to $t$,
+\begin{align*}
+	x^\prime(t) &= 2t \\
+	y^\prime(t) &= 2\cos{t} \\
+	\dd{y}{x} &= \frac{2\cos{t}}{2t} = \frac{\cos{t}}{t}.
+\end{align*}
+Finding the drivative of $y^\prime$ with respect to $t$,
+\begin{align*}
+	\dd{}{t}y^\prime &= \dd{}{t}\frac{\cos{t}}{t} \\
+	&= \frac{-t\sin{t}-\cos{t}}{t^2} \\
+	\dd{^2y}{x^2} &= \frac{\d{y^\prime}/\d{t}}{\d{x}/\d{t}} \\
+	&= \frac{\frac{-t\sin{t}-\cos{t}}{t^2}}{2t} \\
+	&= -\frac{t\sin{t}+\cos{t}}{2t^3}.
+\end{align*}
+
+\subsection{Arc Length}
+Remember that we had the following formula for $\d{s}$ when deriving arc length.
+\begin{equation*}
+	\d{s} = \sqrt{\left(\d{x}\right)^2 + \left(\d{y}\right)^2}.
+\end{equation*}
+Since we now have $x$ and $y$ as functions of $t$, we can rewrite this formula to get a formula for arc length of a parametric function.
+\begin{align*}
+	\d{s} &= \sqrt{\left(\dd{x}{t}\right)^2 + \left(\dd{y}{t}\right)^2}\d{t} \\
+	s &= \int_{a}^{b}{\sqrt{\left(\dd{x}{t}\right)^2 + \left(\dd{y}{t}\right)^2}\d{t}}.
+\end{align*}
+\noindent
+When talking about vector-valued functions or working in a more physics-based context, you might hear the term ``distance traveled" instead of arc length and see the following formula.
+They are equivalent ideas.
+\begin{equation*}
+	s = \int_{a}^{b}{\abs{\vec{v}(t)}\d{t}}.
+\end{equation*}
+
+\begin{example}
+	A circle of radius $r$ is defined parametrically as
+	\begin{equation*}
+		(r\cos{t}, r\sin{t}), 0 \leq t \leq 2\pi.
+	\end{equation*}
+	Use this definition to find its circumference.
+\end{example}
+\begin{align*}
+	\dd{x}{t} &= -r\sin{t} \\
+	\left(\dd{x}{t}\right)^2 &= r^2\sin^2{t} \\
+	\dd{y}{t} &= r\cos{t} \\
+	\left(\dd{y}{t}\right)^2 &= r^2\cos^2{t} \\
+	C &= \int_{0}^{2\pi}{\sqrt{r^2\sin^2{t}+r^2\cos^2{t}}\d{t}} \\
+	&= \int_{0}^{2\pi}{r\sqrt{\sin^2{t}+\cos^2{t}}\d{t}} \\
+	&= \int{0}^{2\pi}{r\d{t}} \\
+	&= 2\pi r.
+\end{align*}

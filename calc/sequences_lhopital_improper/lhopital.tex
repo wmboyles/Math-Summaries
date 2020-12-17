@@ -1,0 +1,174 @@
+\section{L'H\^{o}pital's Rule}
+\subsection{Indeterminate Form 0/0}
+If both $f(x)$ and $g(x)$ are 0 at $x=a$, then the limit
+\begin{equation*}
+	\lim_{x\to a}{\frac{f(x)}{g(x)}}.
+\end{equation*}
+is an indeterminate form of 0/0, meaning we can't substitute $x=a$ to evaluate the limit.
+However, L'\^{o}pital's Rule allows us to modify this limit to get another limit, which might not have this indeterminate form but is guaranteed to have the same limit.
+
+\begin{theorem}[L'H\^{o}pital's Rule, Weaker Form]
+	If $f(a) = g(a) = 0$; $f^\prime(a)$ and $g^\prime(a) \neq 0$ exist, then
+	\begin{equation*}
+		\lim_{x\to a}{\frac{f(x)}{g(x)}} = \frac{f^\prime(a)}{g^\prime(a)}.
+	\end{equation*}
+\end{theorem}
+\begin{proof}
+	\begin{align*}
+		\lim_{x\to a}{\frac{f(x)}{g(x)}} &= \lim_{x\to a}{\frac{f(x)-0}{g(x)-0}} \\
+		&= \lim_{x\to a}{\frac{f(x)-f(x)}{g(x)-g(a)}} \\
+		&= \lim_{x\to a}{\frac{\frac{f(x)-f(a)}{x-a}}{\frac{g(x)-g(a)}{x-a}}} \\
+		&= \frac{\lim_{x\to a}{\frac{f(x)-f(a)}{x-a}}}{\lim_{x\to a}{\frac{g(x)-g(a)}{x-a}}} \\
+		&= \frac{f^\prime(a)}{g^\prime(a)}.
+	\end{align*}
+\end{proof}
+
+\begin{example}
+	Find $\lim_{x\to 2}{\frac{x^2-4}{x-2}}$ using L'H\^{o}pital's Rule.
+\end{example}
+\begin{equation*}
+	\lim_{x\to 2}{\frac{x^2-4}{x-2}} = \frac{2(2)}{1} = 4.
+\end{equation*}
+\indent
+Note that we get the same answer if we didn't use L'H\^{o}pital's Rule and instead factored.
+\begin{equation*}
+	\lim_{x\to 2}{\frac{x^2-4}{x-2}} = \lim_{x\to 2}{\frac{(x+2)(x-2)}{x-2}} \lim_{x\to 2}{x+2} = 4.
+\end{equation*}
+
+\noindent
+It's possible that $f^\prime(a) = g^\prime(a) = 0$, meaning we're still left with the indeterminate form 0/0.
+However, we can use a stringer form of L'H\^{o}pital's Rule that allows us to not have to immediate substitute $x=a$ and allows us to apply the rule multiple times if needed.
+\begin{theorem}[L'H\^{o}pital's Rule, Stronger Form]
+	If $f(a)=g(a)=0$; $f$ and $g$ are differentiable on an open interval $I$ that contains $a$; $g^\prime(x)\neq 0$ if $x\neq a$, then
+	\begin{equation*}
+		\lim_{x\to a}{\frac{f(x)}{g(x)}} = \lim_{x\to a}{\frac{f^\prime(x)}{g^\prime(x)}}
+	\end{equation*}
+	if the right-hand limit exists.
+\end{theorem}
+
+\begin{example}
+	Find the following limit or show that it doesn't exist.
+	\begin{equation*}
+		\lim_{x\to 0}{\frac{\cos{x}-1}{e^x - x - 1}}.
+	\end{equation*}
+\end{example}
+$\cos{0}-1 = 0 = e^0 - 0 - 1$; $e^x - x - 1 \neq 0$ if $x\neq 0$ on all real numbers.
+\begin{equation*}
+	\lim_{x\to 0}{\frac{\cos{x}-1}{e^x - x - 1}} = \lim_{x\to 0}{\frac{-\sin{x}}{e^x - 1}}.
+\end{equation*}
+\indent
+$-\sin{0} = 0 = e^0 - 1$; $e^x - 1 \neq 0$ if $x\neq 0$ on all real numbers.
+\begin{equation*}
+	\lim_{x\to 0}{\frac{-\sin{x}}{e^x - 1}} = \lim_{x\to 0}{\frac{-\cos{x}}{e^x}} = \frac{-1}{1} = -1.
+\end{equation*}
+
+\subsection{Indeterminate Forms $\infty/\infty$, $\infty\cdot 0$, \& $\infty - \infty$}
+\subsubsection{$\infty/\infty$}
+L'H\^{o}pital's still applies as written for the indeterminate form $\infty/\infty$.
+
+\begin{example}
+	Find the following limit or show that it doesn't exist.
+	\begin{equation*}
+		\lim_{x\to\pi/2}\frac{\tan{x}}{1+\tan{x}}.
+	\end{equation*}
+\end{example}
+Applying L'H\^{o}pital's Rule,
+\begin{equation*}
+	\lim_{x\to\pi/2}{\frac{\tan{x}}{1+\tan{x}}} = \lim_{x\to\pi/2}\frac{\sec^2{x}}{\sec^2{x}} = 1.
+\end{equation*}
+
+\subsubsection{$\infty\cdot 0$}
+We need to rearrange the limit into a 0/0 or $\infty/\infty$ indeterminate form.
+\begin{example}
+	Find the following limit or show that it doesn't exist.
+	\begin{equation*}
+		\lim_{x\to\infty}{x\sin{\frac{1}{x}}}.
+	\end{equation*}
+\end{example}
+Rearranging,
+\begin{equation*}
+	\lim_{x\to\infty}{x\sin{\frac{1}{x}}} = \lim_{x\to\infty}\frac{\sin{\frac{1}{x}}}{\frac{1}{x}}.
+\end{equation*}
+\indent
+Since the limit now has indeterminate form 0/0, we can apply L'H\^{o}pital's Rule.
+\begin{equation*}
+	\lim_{x\to\infty}\frac{\sin{\frac{1}{x}}}{\frac{1}{x}} = \lim_{x\to\infty}\frac{\frac{-1}{x^2}\cos{\frac{1}{x}}}{\frac{-1}{x^2}} = cos(0) = 1.
+\end{equation*}
+
+\subsubsection{$\infty - \infty$}
+We need to rearrange the limit into a 0/0 or $\infty/\infty$ indeterminate form.
+\begin{example}
+	Find the following limit or show that it doesn't exist.
+	\begin{equation*}
+		\lim_{x\to 1}{\frac{1}{\ln{x}} - \frac{1}{x-1}}.
+	\end{equation*}
+\end{example}
+Rearranging,
+\begin{equation*}
+	\lim_{x\to 1}{\frac{1}{\ln{x}} - \frac{1}{x-1}} = \lim_{x\to 1}{\frac{x-1-\ln{x}}{(x-1)\ln{x}}}.
+\end{equation*}
+Since the limit now has indeterminate form 0/0, we can apply L'H\^{o}pital's Rule.
+\begin{equation*}
+	\lim_{x\to 1}{\frac{x-1-\ln{x}}{(x-1)\ln{x}}} = \lim_{x\to 1}{\frac{1-\frac{1}{x}}{(x-1)\frac{1}{x} + \ln{x}}} = \lim_{x\to 1}{\frac{\frac{1}{x^2}}{\frac{1}{x} - (x-1)\frac{1}{x^2} + \frac{1}{x}}} = \frac{1}{1-0+1} = \frac{1}{2}.
+\end{equation*}
+
+\subsection{Indeterminate Forms $1^\infty$, $0^0$, \& $\infty^0$}
+For indeterminate forms with exponents, we should take the natural log of the limit, solve that limit, and then expotentiate.
+
+\subsubsection{$1^\infty$}
+\begin{example}
+	Find the following limit or show that it doesn't exist.
+	\begin{equation*}
+		\lim_{x\to \infty}{\left(1+\frac{1}{x}\right)^x}.
+	\end{equation*}
+\end{example}
+Let $L$ be the value of the limit.
+\begin{align*}
+	L &= \lim_{x\to \infty}{\left(1+\frac{1}{x}\right)^x} \\
+	\ln{L} &= \lim_{x\to\infty}{\ln{\left(\left(1+\frac{1}{x}\right)^x\right)}} \\
+	&= \lim_{x\to\infty}{x\ln{\left(1+\frac{1}{x}\right)}} \text{ (indeterminate form $\infty\cdot 0$)} \\
+	&= \lim_{x\to\infty}{\frac{\ln{\left(1+\frac{1}{x}\right)}}{\frac{1}{x}}} \text{ (indeterminate form $0/0$)} \\
+	&= \lim_{x\to\infty}{\frac{\frac{1}{1+\frac{1}{x}}\frac{-1}{x^2}}{\frac{-1}{x^2}}} \\
+	&= \lim_{x\to\infty}{\frac{1}{1+\frac{1}{x}}} \\
+	&= 1 \\
+	e^{\ln{L}} &= e^1 \\
+	L &= e.
+\end{align*}
+
+\subsubsection{$0^0$}
+\begin{example}
+	Find the following limit or show that it doesn't exist.
+	\begin{equation*}
+		\lim_{x\to 0^+}{x^x}.
+	\end{equation*}
+\end{example}
+Let $L$ be the value of the limit.
+\begin{align*}
+	L &= \lim_{x\to 0^+}{x^x} \\
+	\ln{L} &= \lim_{x\to 0^+}{x\ln{x}} \text{ (indeterminate form $0\cdot-\infty$)} \\
+	&= \lim_{x\to 0^+}{\frac{\ln{x}}{\frac{1}{x}}} \text{ (indeterminate form $-\infty/\infty$)} \\
+	&= \lim_{x\to 0^+}{\frac{\frac{1}{x}}{\frac{-1}{x^2}}} \\
+	&= \lim_{x\to 0^+}{\frac{1}{\frac{-1}{x}}} \\
+	&= \lim_{x\to 0^+}{-x} \\
+	&= 0 \\
+	e^{\ln{L}} &= e^0 \\
+	L &= 1.
+\end{align*}
+
+\subsubsection{$\infty^0$}
+\begin{example}
+	Find the following limit or show that it doesn't exist.
+	\begin{equation*}
+		\lim_{x\to\infty}{x^{\frac{1}{x}}}.
+	\end{equation*}
+\end{example}
+Let $L$ be the value of the limit.
+\begin{align*}
+	L &= \lim_{x\to\infty}{x^{\frac{1}{x}}} \\
+	\ln{L} &= \lim_{x\to\infty}{\frac{1}{x}\ln{x}} \text{ (indeterminate form $0\cdot\infty$)} \\
+	&= \lim_{x\to\infty}{\frac{\ln{x}}{x}} \text{ (indeterminate form $\infty/\infty$)} \\
+	&= \lim_{x\to\infty}{\frac{\frac{1}{x}}{1}} \\
+	&= 0 \\
+	e^{\ln{L}} &= e^0 \\
+	L &= 1.
+\end{align*}

@@ -1,0 +1,187 @@
+\section{Sequences}
+\begin{definition}
+	A sequence $\left\{a_n\right\} = \left\{a_1, a_2, \ldots, a_n\right\}$ is an ordered list of numbers.
+	Each element of a sequences is called a term and is identified by its index in the sequence.
+	Sequences can be finite or infinite.
+\end{definition}
+
+\begin{example}
+	The nth term of a sequence is defined by the following formula:
+	\begin{equation*}
+		a_n = \frac{(-1)^n}{n^2+1}.
+	\end{equation*}
+	Find the 1st, 2nd, and 100th terms of the sequence.
+\end{example}
+\begin{align*}
+	a_1 &= \frac{(-1)^1}{1^2 + 1} = \frac{-1}{2} \\
+	a_2 &= \frac{(-1)^2}{2^2 + 1} = \frac{1}{5} \\
+	a_{100} &= \frac{(-1)^{100}}{100^2 + 1} = \frac{1}{10001}.
+\end{align*}
+
+\noindent
+The above sequence was defined explicitly, meaning that we have a formula for the nth term of the sequence only in terms of n.
+However, sequences can also be defined recursively, meaning the formula for subsequent terms of the sequence contains previous terms.
+For a recursive sequence to be properly defined, there need to be one or more base terms that aren't defined recursively.
+For example, the Fibonacci sequence, one of the most famous recursive sequences, as $a_1$ and $a_2$ as base terms.
+\begin{equation*}
+	a_n = \begin{cases}
+		1 & n = 1, 2 \\
+		a_{n-1} + a_{n-2} & n \geq 3
+	\end{cases}.
+\end{equation*}
+
+\subsection{Common Types of Sequences}
+There are some common types of sequences that you should be familiar with.
+You might recognize these types of sequences and some of the formulas surrounding them from previous math classes.
+
+\subsubsection{Arithmetic Sequences}
+\begin{definition}
+	An arithmetic sequence is one where $a_{n+1} - a_{n} = d$, a common difference, for all terms.
+\end{definition}
+\noindent
+That is, to get the next term, we simply add some number $d$ (which could be negative) to the previous term.
+Arithmetic sequences can be defined either explicitly or recursively.
+Let $a_0$ be the starting term of the sequence.
+\begin{align*}
+	a_n &= dn + a_0 \\
+	&= \begin{cases}
+		a_0 & n = 0 \\
+		d + a_{n-1} & n \geq 1
+	\end{cases}.
+\end{align*}
+As we can see from the explicit formula, if we graphed values of an arithmetic sequence on in the plane with $x$ coordinate $n$ and $y$ coordinate $a_n$, all points would lie on a line with slope $d$ and $y$ intercept $a_0$.
+
+\begin{example}
+	Write an explicit formula for the following arithmetic sequence.
+	\begin{equation*}
+		\left\{\ln{2}, \ln{6}, \ln{18}, \ldots\right\}.
+	\end{equation*}
+\end{example}
+Since we are given that this sequence is arithmetic, we'll find the common difference.
+\begin{equation*}
+	d = \ln{6} - \ln{2} = \ln{\frac{6}{2}} = \ln{3}.
+\end{equation*}
+\indent
+So, applying the explicit formula for an arithmetic sequence with starting term $\ln{2}$ and common difference $\ln{3}$,
+\begin{equation*}
+	a_n = \ln{(3)}n + \ln{2}, n\geq 0.
+\end{equation*}
+\indent
+We might have also noticed that each term inside the $\ln$ is triple the previous one, meaning we can write an explicit formula and then simplify to the same answer as before.
+\begin{align*}
+	a_n &= \ln{(3^{n}\cdot 2)}, n\geq 0 \\
+	&= \ln{3^n} + \ln{2}, n \geq 0 \\
+	&= \ln{(3)}n + \ln{2}, n \geq 0.
+\end{align*}
+
+\subsubsection{Geometric Sequences}
+\begin{definition}
+	A geometric sequence is one where $\frac{a_{n+1}}{a_n} = r$, a common ratio, for all terms.
+\end{definition}
+\noindent
+That is, to get the next term, we simply multiply some number $r$ (which could be negative) by the previous term.
+Geometric sequences can also be defined explicitly or recursively.
+Let $a_0$ be the starting term of the sequence.
+\begin{align*}
+	a_n &= a_0(r)^n \\
+	&= \begin{cases}
+		a_0 & n = 0 \\
+		ra_{n-1} & n \geq 1
+	\end{cases}.
+\end{align*}
+\noindent
+As we can see with the explicit formula, if we graphed terms of a geometric sequence for positive $r$, the points would lie on an exponential curve with $y$ intercept $a_0$ and exponential base $r$.
+
+\begin{example}
+	Write an explicit formula for the following geometric sequence.
+	\begin{equation*}
+		\left\{2,-6,18,-54,\ldots\right\}.
+	\end{equation*}
+\end{example}
+Since we are given that this sequence is geometric, we'll find the common ratio.
+\begin{equation*}
+	r = \frac{-6}{2} = 3.
+\end{equation*}
+\indent
+So, applying the explicit formula for a geometric sequence with starting term 2 and common ratio -3,
+\begin{equation*}
+	a_n = 2(-3)^n.
+\end{equation*}
+
+\subsection{Limits of a Sequence}
+Once we have a formula for a sequence, we might be interested to know if $a_n$ tends towards some value as $n$ gets large.
+\begin{definition}
+	Let $L$ be a real number, the sequence $\left\{a_n\right\}$ as limit $L$ as $n$ approaches infinity if given any real $\epsilon > 0$, there is some index $m$ such that for all $n > m$
+	\begin{equation*}
+		\abs{a_n - L} < \epsilon.
+	\end{equation*}
+	We notate this as 
+	\begin{equation*}
+		\lim_{n\to\infty}{a_n} = L
+	\end{equation*}
+	and say the sequence converges to $L$.
+	If the sequence does not have a limit, then we say the sequences diverges.
+\end{definition}
+
+\noindent
+The following rules we gave for limits of a function: Sum and Difference Rule, Product Rule, Constant Multiple Rule, and Quotient Rule, all still apply to limits of sequences.
+The only rule that doesn't still hold is the Power Rule because of the following sort of problem:
+\begin{align*}
+	a_n &= (-1)^n \\
+	\lim_{n\to\infty}{a_n^2} &= 1 \\
+	\left(\lim_{n\to\infty}{a_n}\right)^2 &= \text{DNE} \\
+	1 &\neq \text{DNE}.
+\end{align*}
+
+\subsubsection{The Sandwich Theorem for Sequences}
+\begin{theorem}[Sandwich Theorem for Sequences]
+	If $\lim_{n\to\infty}{a_n} = \lim_{n\to\infty}{c_n} = L$ and there is an integer $m$ such that $a_n \leq b_n \leq c_n$ for all $n > m$, then $\lim_{n\to\infty}{b_n} = L$.
+\end{theorem}
+\noindent
+This is essentially the same as the Sandwich Theorem for limits of a function.
+The only added caveat is that we have to find some index $m$ for which the sandwiching inequality always holds for terms after the $m$th.
+
+\begin{example}
+	Determine if the following sequence converges or diverges.
+	If it converges, find its limit.
+	\begin{equation*}
+		a_n = (-1)^n\frac{n-1}{2}, n\geq 1.
+	\end{equation*}
+\end{example}
+We see that as $n$ grows large $\abs{a_n}$ approaches 1.
+However, $a_n$ bounces between 1 and -1 depending on whether $n$ is even or odd.
+Thus, we could let $\epsilon = 1/2$, which would show that the limit diverges.
+
+\begin{example}
+	Determine if the following sequences converges or diverges.
+	If it converges, find its limit.
+	\begin{equation*}
+		a_n = \frac{\cos{n}}{n}, n\geq 1.
+	\end{equation*}
+\end{example}
+It might at first seem that this limit diverges because $\cos$ bounces between -1 and 1.
+However, we can use the Sandwich Theorem to show that the limit converges.
+\begin{align*}
+	\frac{-1}{n} &\leq \frac{\cos{n}}{n} \leq \frac{1}{n}, n\geq 1 \\
+	\lim_{n\to\infty}{\frac{-1}{n}} &\leq \lim_{n\to\infty}{\frac{\cos{n}}{n}} \leq \lim_{n\to\infty}{\frac{1}{n}} \\
+	0 &\leq \lim_{n\to\infty}{\frac{\cos{n}}{n}} \leq 0 \\
+	\lim_{n\to\infty}{\frac{\cos{n}}{n}} &= 0.
+\end{align*}
+
+\subsubsection{Absolute Value Theorem}
+We can apply the Sandwich Theorem to show that sequences whose absolute value converges to 0 must also converge to 0.
+\begin{theorem}[Absolute Value Theorem]
+	If $\lim_{n\to\infty}{\abs{a_n}} = 0$, then $\lim_{n\to\infty}{a_n} = 0$.
+\end{theorem}
+\begin{proof}
+	For all $n$,
+	\begin{equation*}
+		-\abs{a_n} \leq a_n \leq \abs{a_n}.
+	\end{equation*}
+	Applying the Sandwich Theorem and limit properties,
+	\begin{align*}
+		-\lim_{n\to\infty}{\abs{a_n}} &\leq \lim_{n\to\infty}{a_n} \leq \lim_{n\to\infty}{\abs{a_n}} \\
+		-0 &\leq \lim_{n\to\infty}{a_n} \leq 0 \\
+		\lim_{n\to\infty}{a_n} &= 0.
+	\end{align*}
+\end{proof}

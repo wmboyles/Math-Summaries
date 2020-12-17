@@ -1,0 +1,222 @@
+\section{Improper Integrals}
+Now that we've developed the tools to deal with limits as they approach infinity and the possible indeterminate forms that may arise, we can apply these ideas to integrals, allowing us to have $-\infty$ and $\infty$ as limits of integration.
+We call these integrals with $\pm\infty$ as limits of integration, and functions that become $\pm\infty$ somewhere within the interval we're integrating on improper integrals.
+
+\subsection{Infinite Integration Limits}
+\begin{definition}
+	If $f$ is continuous on $[a,\infty)$, then
+	\begin{equation*}
+		\int_{a}^{\infty}{f(x)\d{x}} = \lim_{b\to\infty}{\int_{a}^{b}{f(x)\d{x}}}.
+	\end{equation*}
+	If $f$ is continuous on $(-\infty,b]$, then
+	\begin{equation*}
+		\int_{\infty}^{b}{f(x)\d{x}} = \lim_{a\to-\infty}{\int_{a}^{b}{f(x)\d{x}}}.
+	\end{equation*}
+	If $f$ is continuous on $(-\infty,\infty)$, then
+	\begin{equation*}
+		\int_{-\infty}^{\infty}{f(x)\d{x}} = \int_{-\infty}^{c}{f(x)\d{x}} + \int_{c}^{\infty}{f(x)\d{x}}
+	\end{equation*}
+	for any real constant $c$.
+	If these limits exist, then the integral converges and has a value.
+	Otherwise, the integral diverges and does not have a value.
+\end{definition}
+
+\begin{example}
+	Evaluate the following integral or state that it diverges.
+	\begin{equation*}
+		\int_{2}^{\infty}{\frac{3}{x^2-x}\d{x}}.
+	\end{equation*}
+\end{example}
+Applying the definition,
+\begin{align*}
+	\int_{2}^{\infty}{\frac{3}{x^2-x}\d{x}} &= \lim_{b\to\infty}{\int_{2}^{b}{\frac{3}{x^2-x}\d{x}}} \\
+	&= \lim_{b\to\infty}{3\int_{2}^{b}{\left(\frac{1}{x-1}-\frac{1}{x}\right)\d{x}}} \\
+	&= \lim_{b\to\infty}{3\ln{\bigg\lvert\frac{x-1}{x}\bigg\rvert}\Biggr\rvert_{2}^{b}} \\
+	&= \lim_{b\to\infty}{3\ln{\bigg\lvert\frac{b-1}{b}\bigg\rvert}} - 3\ln{\bigg\lvert\frac{1}{2}\bigg\rvert} \\
+	&= 0 + 3\ln{2} \\
+	&= 3\ln{2}.
+\end{align*}
+
+\begin{example}
+	Evaluate the following integral or state that it diverges.
+	\begin{equation*}
+		\int_{1}^{\infty}{\frac{\d{x}}{\sqrt[4]{x}}}.
+	\end{equation*}
+\end{example}
+Applying the definition,
+\begin{align*}
+	\int_{1}^{\infty}{\frac{\d{x}}{\sqrt[4]{x}}} &= \lim_{b\to\infty}{\int_{1}^{b}{\frac{\d{x}}{\sqrt[4]{x}}}} \\
+	&= \lim_{b\to\infty}{\frac{4}{3}\sqrt[4]{x^3}\biggr\rvert_{1}^{b}} \\
+	&= \lim_{b\to\infty}{\frac{4}{3}\sqrt[4]{b^3}} - \frac{4}{3}\sqrt[4]{1^3} \\
+	&= \infty - \frac{4}{3} \\
+	&= \text{diverges}.
+\end{align*}
+
+\subsection{Infinite Discontinuities}
+An infinite discontinuity occurs when a function takes on a value of $\pm\infty$ on the interval we're integrating on.
+In this case, we'll need to split the integral into pieces, evaluating the limit as we approach this infinite discontinuity from both sides.
+\begin{definition}
+	If $f$ is continuous on $(a,b]$, then
+	\begin{equation*}
+		\int_{a}^{b}{f(x)\d{x}} = \lim_{c\to a^+}{\int_{c}^{b}{f(x)\d{x}}}.
+	\end{equation*}
+	If $f$ is continuous on $[a,b)$, then
+	\begin{equation*}
+		\int_{a}^{b}{f(x)\d{x}} = \lim_{c\to b^-}{\int_{a}^{c}{f(x)\d{x}}}.
+	\end{equation*}
+	If $f$ is continuous on $[a,c) \cup (c,b]$, then
+	\begin{equation*}
+		\int_{a}^{b}{f(x)\d{x}} = \int_{a}^{c}{f(x)\d{x}} + \int_{c}^{b}{f(x)\d{x}}.
+	\end{equation*}
+	If these limits exist, then the integral converges and has a value.
+	Otherwise, the integral diverges and does not have a value.
+\end{definition}
+
+\begin{example}
+	Evaluate the following integral or state that it diverges.
+	\begin{equation*}
+		\int_{0}^{1}{\frac{\d{x}}{x^2}}.
+	\end{equation*}
+\end{example}
+We see that we have an infinite discontinuity at $x=0$.
+Applying the definition,
+\begin{align*}
+	\int_{0}^{1}{\frac{\d{x}}{x^2}} &= \lim_{c\to 0^+}{\int_{c}^{1}{\frac{\d{x}}{x^2}}} \\
+	&= \lim_{c\to 0^+}{\frac{-1}{x}\biggr\rvert_{c}^{1}} \\
+	&= \frac{-1}{1} + \lim_{c\to 0^+}{\frac{1}{c}} \\
+	&= -1 + \infty \\
+	&= \text{diverges}.
+\end{align*}
+
+\begin{example}
+	Evaluate the following integral or state that it diverges.
+	\begin{equation*}
+		\int_{0}^{1}{\frac{\d{x}}{x^{1/2}}}.
+	\end{equation*}
+\end{example}
+We see that we have an infinite discontinuity at $x=0$.
+Applying the definition,
+\begin{align*}
+	\int_{0}^{1}{\frac{\d{x}}{x^{1/2}}} &= \lim_{c\to 0^+}{\int_{c}^{1}{\frac{\d{x}}{x^{1/2}}}} \\
+	&= \lim_{c\to 0^+}{2x^{1/2}\biggr\rvert_{c}^{1}} \\
+	&= 2 - \lim_{c\to 0^+}{2c^{1/2}} \\
+	&= 2 - 0 \\
+	&= 2.
+\end{align*}
+
+\subsection{Convergence Tests}
+\subsubsection{P-Test}
+\begin{lemma}
+	The following integral will converge when $p > 1$ and diverge if $0 < p \leq 1$.
+	\begin{equation*}
+		\int_{1}^{\infty}{\frac{\d{x}}{x^p}}.
+	\end{equation*}
+\end{lemma}
+
+\begin{example}
+	Evaluate the following integral or state that it diverges.
+	\begin{equation*}
+		\int_{1}^{\infty}{\frac{\d{x}}{x}}.
+	\end{equation*}
+\end{example}
+We have an integral where $p=1$.
+So, by the P-Test, the integral diverges.
+
+\begin{example}
+	Evaluate the following integral or state that it diverges.
+	\begin{equation*}
+		\int_{1}^{\infty}{\frac{\d{x}}{x^{1.001}}}.
+	\end{equation*}
+\end{example}
+We have an integral where $p=1.001$.
+So, by the P-Test, the integral converges.
+\begin{align*}
+	\int_{1}^{\infty}{\frac{\d{x}}{x^{1.001}}} &= \lim_{b\to\infty}{\int_{1}^{b}{\frac{\d{x}}{x^{1.001}}}} \\
+	&= \lim_{b\to\infty}{-1000x^{-0.001}\biggr\rvert_{1}^{b}} \\
+	&= \lim_{b\to\infty}{-1000b^{-0.001}} + 1000(1)^{-0.001} \\
+	&= 0 + 1000 \\
+	&= 1000.
+\end{align*}
+
+\subsubsection{Direct Comparison Test}
+\begin{lemma}
+	Let $f$ and $g$ be continuous on $[a,\infty)$ with $0 \leq f(x) \leq g(x)$ for all $x \geq a$.
+	\begin{align*}
+		\int_{a}^{\infty}{f(x)\d{x}} &\text{ converges if } \int_{a}^{\infty}{g(x)\d{x}} \text{ converges.} \\
+		\int_{a}^{\infty}{g(x)\d{x}} &\text{ diverges if } \int_{a}^{\infty}{f(x)\d{x}} \text{ diverges.}
+	\end{align*}
+\end{lemma}
+\noindent
+That is, if a larger function converges, then so will a smaller funtion; if a smaller function diverges, then so will a larger function. \\
+
+\noindent
+The hardest part of the Direct Comparison Test is deciding what function you should compare to.
+A general rule is to pick a function that is similar to, but simpler than then given function.
+
+\begin{example}
+	Evaluate the following integral or state that it diverges.
+	\begin{equation*}
+		\int_{1}^{\infty}{\frac{\d{x}}{x^2-0.1}}.
+	\end{equation*}
+\end{example}
+If the 0.1 wasn't inside the square root, the function would simplify to $1/x$.
+Since the 0.1 is subtracted, the denominator is smaller than $1/x$.
+So, $1/x$ is a function that is smaller on $[1,\infty)$, meaning if it diverges, then so will the original function.
+We know by the P-Test that the integral of $1/x$ from 1 to $\infty$ will diverge, so the original function also diverges.
+
+\begin{example}
+	Evaluate the following integral or state that it diverges.
+	\begin{equation*}
+		\int_{1}^{\infty}{e^{-x^2}\d{x}}.
+	\end{equation*}
+\end{example}
+Since the exponent is negative, a smaller exponent would mean a larger value.
+So, $e^{-x}$ is a larger function on $[1,\infty)$.
+\begin{equation*}
+	\int_{1}^{\infty}{e^{-x}\d{x}} = \frac{1}{e},
+\end{equation*}
+meaning it converges, so the original function also converges.
+
+\subsubsection{Limit Comparison Test}
+\begin{lemma}
+	If positive functions $f$ and $g$ are continuous on $[a,\infty)$ and
+	\begin{equation*}
+		\lim_{x\to\infty}{\frac{f(x)}{g(x)}}
+	\end{equation*}
+	converges to a positive real number, then
+	\begin{equation*}
+		\int_{a}^{\infty}{f(x)\d{x}} \text { and } \int_{a}^{\infty}{g(x)\d{x}}
+	\end{equation*}
+	both converge or both diverge.
+\end{lemma}
+
+\noindent
+Many functions to which you can apply the Limit Comparison Test you can also apply the Direct Comparison Test.
+The practical use of the limit comparison test is to take an uglier function, that may be tedious to integrate and compare it to a function that is easy to determine whether it diverges using something like the P-Test.
+A common strategy, especially for rational functions, is to look at their end behavior model.
+
+\begin{example}
+	Evaluate the following integral or state that it diverges.
+	\begin{equation*}
+		\int_{1}^{\infty}{\frac{\d{x}}{1+x^2}}.
+	\end{equation*}
+\end{example}
+Although you might recognize this as the derivative of $\arctan$, let's continue with the Direct Comparison Test.
+This function looks very similar to $1/x^2$, which we know by the P-Test will converge on $[1,\infty)$.
+\begin{equation*}
+	\lim_{x\to\infty}{\frac{\frac{1}{x^2}}{\frac{1}{1+x^2}}} = \lim_{x\to\infty}{\frac{1+x^2}{x^2}} = 1.
+\end{equation*}
+Since 1 is a positive real constant and the integral of $1/x^2$ converges, then the original integral also converges by the Limit Comparison Test.
+
+\begin{example}
+	Evaluate the following integral or state that it diverges.
+	\begin{equation*}
+		\int_{1}^{\infty}{\frac{3x+6}{1-5x+7x^2}\d{x}}.
+	\end{equation*}
+\end{example}
+Looking at this rational function, we see a degree 1 polynomial in the numerator and a degree 2 polynomial in the denominator.
+So, we'd expect this rational function to have the same end behavior model as $1/x$, which we know by the P-Test diverges.
+\begin{equation*}
+	\lim_{x\to\infty}{\frac{\frac{3x+6}{1-5x+7x^2}}{\frac{1}{x}}} = \lim_{x\to\infty}{\frac{3x^2+6x}{7x^2-5x+1}} = \frac{3}{7}.
+\end{equation*}
+Since 3/7 is a positive real constant and the integral of $1/x$ diverges, the the original integral also diverges by the Limit Comparison Test.

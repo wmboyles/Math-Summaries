@@ -14,18 +14,20 @@ In many practical applications, like the run times of computer algorithms for ex
 \end{definition}
 
 \begin{example}
-	Compare $e^x$ and $x^100$.
+	Compare $e^x$ and $x^{100}$.
 	Does one grow faster than the other, or do they grow at the same rate?
 \end{example}
-\begin{align*}
-	\lim_{x\to\infty}{\frac{e^x}{x^{100}}} &= \lim_{x\to\infty}{\frac{e^x}{100x^{99}}} \\
-	&= \vdots \text{ (after many applications of L'H\^{o}pital's Rule)} \\
-	&= \lim_{x\to\infty}{\frac{e^x}{100!}}
-	&= \infty.
-\end{align*}
-\indent
-So, $e^x$ grows faster than $x^{100}$.
-In fact, any exponential $b^x$ grows faster than any polynomial, as long as $b > 1$.
+\begin{answer}
+	\begin{align*}
+		\lim_{x\to\infty}{\frac{e^x}{x^{100}}} &= \lim_{x\to\infty}{\frac{e^x}{100x^{99}}} \\
+		&= \vdots \text{ (after many applications of L'H\^{o}pital's Rule)} \\
+		&= \lim_{x\to\infty}{\frac{e^x}{100!}}
+		&= \infty.
+	\end{align*}
+	
+	So, $e^x$ grows faster than $x^{100}$.
+	In fact, any exponential $b^x$ grows faster than any polynomial, as long as $b > 1$.
+\end{answer}
 
 \subsection{Transitive Grow Rates}
 For sufficiently large $x$, growth rates are transitive.
@@ -34,28 +36,30 @@ That is, if $f$ grows the same/faster/slower/ than $g$, and $g$ grows the same/s
 \begin{example}
 	Show that $f(x)=\sqrt{x^2+5}$ and $g(x)=\left(2\sqrt{x}-1\right)^2$ grow at the same rate.
 \end{example}
-We'll show that both $f$ and $g$ grow at the same rate as $h(x)=x$.
-Starting with $f$ and $h$,
-\begin{align*}
-	\lim_{x\to\infty}{\frac{f(x)}{h(x)}} &= \lim_{x\to\infty}{\frac{\sqrt{x^2+5}}{x}} \\
-	&= \lim_{x\to\infty}{\sqrt{\frac{x^2+5}{x^2}}} \\
-	&= \sqrt{\lim_{x\to\infty}{\frac{x^2+5}{x^2}}} \text{ (by the Power Rule)} \\
-	&= \sqrt{1} \\
-	&= 1.
-\end{align*}
-\indent
-So, $f$ and $h$ grow at the same rate.
-Moving on to $g$ and $h$,
-\begin{align*}
-	\lim_{x\to\infty}{\frac{g(x)}{h(x)}} &= \lim_{x\to\infty}{\frac{\left(2\sqrt{x}-1\right)^2}{x}} \\
-	&= \lim_{x\to\infty}{\left(\frac{2\sqrt{x}-1}{\sqrt{x}}\right)^2} \\
-	&= \left(\lim_{x\to\infty}{\frac{2\sqrt{x}-1}{\sqrt{x}}}\right)^2 \text{ (by the Power Rule)} \\
-	&= \left(2\right)^2 \\
-	&= 4.
-\end{align*}
-\indent
-So, $g$ and $h$ grow at the same rate.
-Since $f$ and $g$ both grow at the same rate as $h$, $f$ and $g$ must grow at the same rate as each other.
+\begin{answer}
+	We'll show that both $f$ and $g$ grow at the same rate as $h(x)=x$.
+	Starting with $f$ and $h$,
+	\begin{align*}
+		\lim_{x\to\infty}{\frac{f(x)}{h(x)}} &= \lim_{x\to\infty}{\frac{\sqrt{x^2+5}}{x}} \\
+		&= \lim_{x\to\infty}{\sqrt{\frac{x^2+5}{x^2}}} \\
+		&= \sqrt{\lim_{x\to\infty}{\frac{x^2+5}{x^2}}} \text{ (by the Power Rule)} \\
+		&= \sqrt{1} \\
+		&= 1.
+	\end{align*}
+	
+	So, $f$ and $h$ grow at the same rate.
+	Moving on to $g$ and $h$,
+	\begin{align*}
+		\lim_{x\to\infty}{\frac{g(x)}{h(x)}} &= \lim_{x\to\infty}{\frac{\left(2\sqrt{x}-1\right)^2}{x}} \\
+		&= \lim_{x\to\infty}{\left(\frac{2\sqrt{x}-1}{\sqrt{x}}\right)^2} \\
+		&= \left(\lim_{x\to\infty}{\frac{2\sqrt{x}-1}{\sqrt{x}}}\right)^2 \text{ (by the Power Rule)} \\
+		&= \left(2\right)^2 \\
+		&= 4.
+	\end{align*}
+	
+	So, $g$ and $h$ grow at the same rate.
+	Since $f$ and $g$ both grow at the same rate as $h$, $f$ and $g$ must grow at the same rate as each other.
+\end{answer}
 
 \subsection{Growth Rate Hierarchy ($n^n$FEPL)}
 For most of the common types of functions we see, we can establish families of functions and rank these families by their growth rates from fastest-growing to slowest-growing.
@@ -72,13 +76,13 @@ These families are summarized by the acronym $n^n$FEPL\footnote{You might recogn
 		For example, $x^2$ grows faster than $x$, which grows faster than $\sqrt{x}$.
 	\item[\textbf{L}ogarithms] These are functions that have a log of a polynomial.
 \end{itemize}
-\noindent
+
 Although these rules are indeed true, don't just apply them blindly.
 You should try to simplify a function first before figuring out to which family it belongs.
 For example, although $\ln{x^x}$ contains an $x^x$ and a $\ln$, it's neither in the $n^n$ family nor in the logarithms family.
 In fact, although this function is not a polynomial, it grows faster than $x$ but slower than $x^2$. \\
 
-\noindent
+
 A function belongs to the family of its fastest-growing positive term.
 Negative terms can either be ignored or used to simplify other terms.
 For example, although $x^3 + e^x$ contains a polynomial $x^3$ term, for very large $x$, the $e^x$ term dominates the growth, meaning this function is part of the exponentials family.

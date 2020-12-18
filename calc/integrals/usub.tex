@@ -7,15 +7,17 @@ So, if we see that we are integrating a function that contains within it a funct
 		\int{x^2\cdot 2x\d{x}}.
 	\end{equation*}
 \end{example}
-Since we know that $\dd{x^2}{x} = 2x$, or in differential form $\d{x^2} = 2x\d{x}$, we can make a substitution.
-Letting $u = x^2$,
-\begin{align*}
-	\int{x^2\cdot 2x\d{x}} &= \int{u\d{u}} \\
-	&= \frac{u^2}{2} + C \\
-	&= \frac{x^4}{2} + C.
-\end{align*}
+\begin{answer}
+	Since we know that $\dd{x^2}{x} = 2x$, or in differential form $\d{x^2} = 2x\d{x}$, we can make a substitution.
+	Letting $u = x^2$,
+	\begin{align*}
+		\int{x^2\cdot 2x\d{x}} &= \int{u\d{u}} \\
+		&= \frac{u^2}{2} + C \\
+		&= \frac{x^4}{2} + C.
+	\end{align*}
+\end{answer}
 
-\noindent
+
 Sometimes the derivative itself won't be there, but a constant multiple of the derivative.
 \begin{example}
 	Solve the following indefinite integral:
@@ -23,17 +25,19 @@ Sometimes the derivative itself won't be there, but a constant multiple of the d
 		\int{\frac{x^2}{1-x^3}\d{x}}.
 	\end{equation*}
 \end{example}
-A good way to spot that there might be the possibility of a $u$-substitution here is the fact that the denominator is a polynomial of one higher degree than the numerator.
-So, if we took the derivative of the denominator, we'd get a polynomial of the same degree as the numerator.
-Let $u = 1-x^3$.
-Then $\d{u} = -3x^2\d{x}$; $x^2\d{x} = -\d{u}/3$.
-\begin{align*}
-	\int{\frac{x^2}{1-x^3}\d{x}} &= \int{\frac{-\d{u}}{u}} \\
-	&= -\ln{\abs{u}} + C \\
-	&= -\ln{\abs{1-x^3}} + C.
-\end{align*}
+\begin{answer}
+	A good way to spot that there might be the possibility of a $u$-substitution here is the fact that the denominator is a polynomial of one higher degree than the numerator.
+	So, if we took the derivative of the denominator, we'd get a polynomial of the same degree as the numerator.
+	Let $u = 1-x^3$.
+	Then $\d{u} = -3x^2\d{x}$; $x^2\d{x} = -\d{u}/3$.
+	\begin{align*}
+		\int{\frac{x^2}{1-x^3}\d{x}} &= \int{\frac{-\d{u}}{u}} \\
+		&= -\ln{\abs{u}} + C \\
+		&= -\ln{\abs{1-x^3}} + C.
+	\end{align*}
+\end{answer}
 
-\noindent
+
 We can also apply $u$-substitutions to definite integrals.
 We'll need to change the bounds of integration to be in terms of $u$ before we evaluate.
 \begin{example}
@@ -42,16 +46,18 @@ We'll need to change the bounds of integration to be in terms of $u$ before we e
 		\int_{0}^{1}{15x^2\sqrt{5x^3+4}\d{x}}.
 	\end{equation*}
 \end{example}
-Let $u = 5x^3 + 4$.
-Then $\d{u} = 15x^2\d{x}$.
-When $x=1$, $u=5(0)^3 + 4 = 4$; when $x=1$, $u = 5(1)^3  +4 = 9$.
-\begin{align*}
-	\int_{0}^{1}{15x^2\sqrt{5x^3+4}\d{x}} &= \int_{4}^{9}{\sqrt{u}\d{u}} \\
-	&= \frac{2u\sqrt{u}}{3} \biggr\rvert_{4}^{9} \\
-	&= \frac{2(9)\sqrt{9}}{3} - \frac{2(4)\sqrt{4}}{3} \\
-	&= \frac{54}{3} - \frac{16}{3} \\
-	&= \frac{38}{3}.
-\end{align*}
+\begin{answer}
+	Let $u = 5x^3 + 4$.
+	Then $\d{u} = 15x^2\d{x}$.
+	When $x=1$, $u=5(0)^3 + 4 = 4$; when $x=1$, $u = 5(1)^3  +4 = 9$.
+	\begin{align*}
+		\int_{0}^{1}{15x^2\sqrt{5x^3+4}\d{x}} &= \int_{4}^{9}{\sqrt{u}\d{u}} \\
+		&= \frac{2u\sqrt{u}}{3} \biggr\rvert_{4}^{9} \\
+		&= \frac{2(9)\sqrt{9}}{3} - \frac{2(4)\sqrt{4}}{3} \\
+		&= \frac{54}{3} - \frac{16}{3} \\
+		&= \frac{38}{3}.
+	\end{align*}
+\end{answer}
 
 \subsubsection{Trig Functions}
 We can get the integrals of some of the trig functions by simply applying the derivatives for trig functions in reverse.
@@ -63,7 +69,7 @@ We can get the integrals of some of the trig functions by simply applying the de
 	\end{center}
 \end{table}
 
-\noindent
+
 We can get the integrals of $\tan{x}$ and $\cot{x}$ using basic $u$-substitutions.
 \begin{align*}
 	\int{\tan{x}\d{x}} &= \int{\frac{\sin{x}}{\cos{x}}\d{x}} \\
@@ -80,7 +86,7 @@ We can get the integrals of $\tan{x}$ and $\cot{x}$ using basic $u$-substitution
 	&= \ln{\abs{\sin{x}}} + C.
 \end{align*}
 
-\noindent
+
 We can also get the integrals of $\sec{x}$ and $\csc{x}$ using $u$-substitutions, but we have to be a bit more clever and multiply the integrand by a strange-looking fraction that equals 1.
 \begin{align*}
 	\int{\sec{x}\d{x}} &= \int{\sec{x}\frac{\sec{x} + \tan{x}}{\tan{x}+\sec{x}}\d{x}} \\

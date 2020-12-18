@@ -23,7 +23,7 @@ Putting substituting this definition for $e$ into our work,
 \end{align*}
 Amazingly, this function is equal to it's own derivative. In fact, aside from the trivial example of $0$, $e^x$ is the only function with this property. \\
 
-\noindent
+
 We can apply the chain rule to find the derivative of $b^x$ for real, positive values of $b$.
 \begin{equation*}
 	f(x) = b^x	= e^{x\ln{b}}.
@@ -43,15 +43,17 @@ Applying the chain rule,
 \begin{example}
 	Find the derivative of $f(x) = 2^{x^2}$.
 \end{example}
-Let $u(x) = x^2$
-\begin{equation*}
-	f(x) = e^u(x).
-\end{equation*}
-Using the exponential and chain rules,
-\begin{align*}
-	f^\prime(x) &= \dd{f}{u} \hspace{3pt} \dd{u}{x} \\
-	&= \dd{}{u}e^u \hspace{3pt} \dd{}{x}x^2 \\
-	&= 2^u \ln{(2)} 2x \\
-	&= 2^{x^2} \ln{(2)} 2x \\
-	&=  2x\ln{(2)}2^{x^2}.
-\end{align*}
+\begin{answer}
+	Let $u(x) = x^2$.
+	\begin{equation*}
+		f(x) = e^u(x).
+	\end{equation*}
+	Using the exponential and chain rules,
+	\begin{align*}
+		f^\prime(x) &= \dd{f}{u} \hspace{3pt} \dd{u}{x} \\
+		&= \dd{}{u}e^u \hspace{3pt} \dd{}{x}x^2 \\
+		&= 2^u \ln{(2)} 2x \\
+		&= 2^{x^2} \ln{(2)} 2x \\
+		&=  2x\ln{(2)}2^{x^2}.
+	\end{align*}
+\end{answer}

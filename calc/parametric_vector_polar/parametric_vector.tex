@@ -4,7 +4,7 @@ These sorts of functions are limited in the types of graphs they can draw.
 If we instead let both the $x$ and $y$ coordinates be defined in terms of another variable $t$, like $(x(t),y(t))$, then we can draw much more interesting graphs.
 For example, a unit circle, which can't be defined with a single function $y=f(x)$, would be $(\cos{t}, \sin{t})$. \\
 
-\noindent
+
 We are always able to translate a function of the form $y=f(x)$ into a parametric function as $(t, f(t))$.
 Sometimes, but not always, we are also able to translate parametric functions into $y$ as a function of $x$.
 
@@ -14,15 +14,17 @@ Sometimes, but not always, we are also able to translate parametric functions in
 		(\sqrt{t}, t-2).
 	\end{equation*}
 \end{example}
-Squaring both sides of the $x$ equation,
-\begin{equation*}
-	x^2 = t.
-\end{equation*}
-\indent
-Substituting our expressing for $t$ in terms of $x$ into the $y$ equation,
-\begin{equation*}
-	y = x^2 - 2.
-\end{equation*}
+\begin{answer}
+	Squaring both sides of the $x$ equation,
+	\begin{equation*}
+		x^2 = t.
+	\end{equation*}
+	
+	Substituting our expressing for $t$ in terms of $x$ into the $y$ equation,
+	\begin{equation*}
+		y = x^2 - 2.
+	\end{equation*}
+\end{answer}
 
 \subsection{Vector Functions}
 Vector and parametric functions are essentially the same thing.
@@ -33,7 +35,7 @@ You're more likely to see vector functions written in the following form
 \begin{equation*}
 	\vec{r}(t) = \langle x(t), y(t) \rangle.
 \end{equation*}
-\noindent
+
 All the normal vector operations, like addition and subtraction, scalar multiplication, and dot products work exactly the same.
 If we think of $\vec{r}(t)$ as a position function,
 \begin{align*}
@@ -58,20 +60,22 @@ We just apply the chain rule.
 	\end{equation*}
 	Find the first and second derivatives of $y$ with respect to $x$.
 \end{example}
-Differentiating both $x$ and $y$ with respect to $t$,
-\begin{align*}
-	x^\prime(t) &= 2t \\
-	y^\prime(t) &= 2\cos{t} \\
-	\dd{y}{x} &= \frac{2\cos{t}}{2t} = \frac{\cos{t}}{t}.
-\end{align*}
-Finding the derivative of $y^\prime$ with respect to $t$,
-\begin{align*}
-	\dd{}{t}y^\prime &= \dd{}{t}\frac{\cos{t}}{t} \\
-	&= \frac{-t\sin{t}-\cos{t}}{t^2} \\
-	\dd{^2y}{x^2} &= \frac{\d{y^\prime}/\d{t}}{\d{x}/\d{t}} \\
-	&= \frac{\frac{-t\sin{t}-\cos{t}}{t^2}}{2t} \\
-	&= -\frac{t\sin{t}+\cos{t}}{2t^3}.
-\end{align*}
+\begin{answer}
+	Differentiating both $x$ and $y$ with respect to $t$,
+	\begin{align*}
+		x^\prime(t) &= 2t \\
+		y^\prime(t) &= 2\cos{t} \\
+		\dd{y}{x} &= \frac{2\cos{t}}{2t} = \frac{\cos{t}}{t}.
+	\end{align*}
+	Finding the derivative of $y^\prime$ with respect to $t$,
+	\begin{align*}
+		\dd{}{t}y^\prime &= \dd{}{t}\frac{\cos{t}}{t} \\
+		&= \frac{-t\sin{t}-\cos{t}}{t^2} \\
+		\dd{^2y}{x^2} &= \frac{\d{y^\prime}/\d{t}}{\d{x}/\d{t}} \\
+		&= \frac{\frac{-t\sin{t}-\cos{t}}{t^2}}{2t} \\
+		&= -\frac{t\sin{t}+\cos{t}}{2t^3}.
+	\end{align*}
+\end{answer}
 
 \subsection{Arc Length}
 Remember that we had the following formula for $\d{s}$ when deriving arc length.
@@ -83,7 +87,7 @@ Since we now have $x$ and $y$ as functions of $t$, we can rewrite this formula t
 	\d{s} &= \sqrt{\left(\dd{x}{t}\right)^2 + \left(\dd{y}{t}\right)^2}\d{t} \\
 	s &= \int_{a}^{b}{\sqrt{\left(\dd{x}{t}\right)^2 + \left(\dd{y}{t}\right)^2}\d{t}}.
 \end{align*}
-\noindent
+
 When talking about vector-valued functions or working in a more physics-based context, you might hear the term ``distance traveled" instead of arc length and see the following formula.
 They are equivalent ideas.
 \begin{equation*}
@@ -97,13 +101,15 @@ They are equivalent ideas.
 	\end{equation*}
 	Use this definition to find its circumference.
 \end{example}
-\begin{align*}
-	\dd{x}{t} &= -r\sin{t} \\
-	\left(\dd{x}{t}\right)^2 &= r^2\sin^2{t} \\
-	\dd{y}{t} &= r\cos{t} \\
-	\left(\dd{y}{t}\right)^2 &= r^2\cos^2{t} \\
-	C &= \int_{0}^{2\pi}{\sqrt{r^2\sin^2{t}+r^2\cos^2{t}}\d{t}} \\
-	&= \int_{0}^{2\pi}{r\sqrt{\sin^2{t}+\cos^2{t}}\d{t}} \\
-	&= \int{0}^{2\pi}{r\d{t}} \\
-	&= 2\pi r.
-\end{align*}
+\begin{answer}
+	\begin{align*}
+		\dd{x}{t} &= -r\sin{t} \\
+		\left(\dd{x}{t}\right)^2 &= r^2\sin^2{t} \\
+		\dd{y}{t} &= r\cos{t} \\
+		\left(\dd{y}{t}\right)^2 &= r^2\cos^2{t} \\
+		C &= \int_{0}^{2\pi}{\sqrt{r^2\sin^2{t}+r^2\cos^2{t}}\d{t}} \\
+		&= \int_{0}^{2\pi}{r\sqrt{\sin^2{t}+\cos^2{t}}\d{t}} \\
+		&= \int{0}^{2\pi}{r\d{t}} \\
+		&= 2\pi r.
+	\end{align*}
+\end{answer}

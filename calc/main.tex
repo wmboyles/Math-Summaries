@@ -14,6 +14,7 @@
 
 \usepackage{float}							% For making sure tables and figures stay in place
 \usepackage{fullpage}						% Create ~1" margins
+\usepackage{changepage}						% For setting up indents after examples
 \usepackage[bottom,flushmargin]{footmisc}	% Put footnotes at bottom of page; don't intent footnotes
 \usepackage[titletoc]{appendix}
 
@@ -30,12 +31,22 @@
 % ------------------------------------------------------------------------------
 
 % ------------------------------------------------------------------------------
-% Theorems, lemmas, definitions and examples should not be numbered
+% Theorems, corollaries, definitions, lemmas, and examples should not be numbered
 \newtheorem*{theorem}{Theorem}
 \newtheorem*{corollary}{Corollary}
 \newtheorem*{definition}{Definition}
 \newtheorem*{lemma}{Lemma}
+% ------------------------------------------------------------------------------
+
+% ------------------------------------------------------------------------------
+% Examples are not numbered. However, the answers that follow examples are indented and have an extra line break.
 \newtheorem*{example}{Example}
+\newenvironment{answer}{\begin{adjustwidth}{15pt}{}}{\end{adjustwidth}}
+% ------------------------------------------------------------------------------
+
+% ------------------------------------------------------------------------------
+% Don't indent paragraphs by default
+\setlength{\parindent}{0pt}
 % ------------------------------------------------------------------------------
 
 % ------------------------------------------------------------------------------

@@ -5,7 +5,7 @@
 		f^\prime(c) = \frac{f(b)-f(a)}{b-a}.
 	\end{equation*}
 \end{theorem}
-\noindent
+
 That is, there's at least one point where the instantaneous rate of change and average rate of change are equal.
 Another way of visualizing this is that there's al least one point where the tangent and secant lines are parallel.
 
@@ -21,15 +21,16 @@ Another way of visualizing this is that there's al least one point where the tan
 	The speed limit along the route is 65 miles per hour.
 	Show that at at least one point, the trucker must have been speeding.
 \end{example}
-We can model the trucker's position along the route $s$ as a function of time $t$ where $s(0)=0$ and $s(2)=150$.
-We know that velocity is the derivative of position, so $v(t) = s^\prime(t)$.
-It's reasonable to assume that $s$ is differentiable on the interval $[0,2]$.
-So, by the Mean Value Theorem, there must exist a point $c$ where
-\begin{equation*}
-	v(t) = \frac{s(2)-s(0)}{2-0} = \frac{150-0}{2} = 75\text{mph}.
-\end{equation*}
-\indent
-At this point, the trucker was exceeding the speed limit of 65 miles per hour.
+\begin{answer}
+	We can model the trucker's position along the route $s$ as a function of time $t$ where $s(0)=0$ and $s(2)=150$.
+	We know that velocity is the derivative of position, so $v(t) = s^\prime(t)$.
+	It's reasonable to assume that $s$ is differentiable on the interval $[0,2]$.
+	So, by the Mean Value Theorem, there must exist a point $c$ where
+	\begin{equation*}
+		v(t) = \frac{s(2)-s(0)}{2-0} = \frac{150-0}{2} = 75\text{mph}.
+	\end{equation*}
+	At this point, the trucker was exceeding the speed limit of 65 miles per hour.
+\end{answer}
 
 \begin{definition}
 	Let $f$ be defined on an interval $I$.
@@ -47,21 +48,21 @@ At this point, the trucker was exceeding the speed limit of 65 miles per hour.
 		\text{If $f^\prime < 0$ at every point on $(a,b)$ then $f$ decreases on $[a,b]$}.
 	\end{align*}
 \end{corollary}
-\noindent
+
 This should make sense given our theorem about local extrema.
 If $f$ could still increase/decrease while its derivative was negative/positive, then we couldn't be sure that $f$ is at a local maxima/minima when $f^\prime=0$.
 
 \begin{corollary}
 	If $f^\prime(x) = 0$ at all points in an interval $I$, then there is some constant $C$ such that $f(x) = C$ for all points in $I$.
 \end{corollary}
-\noindent
+
 This follows from the Mean Value Theorem.
 Since $f^\prime = 0$, the numerator in the Mean Value Theorem, $f(b) - f(a)$, must also be 0, meaning $f(b) = f(a) = C$.
 
 \begin{corollary}
 	If $f^\prime(x) = g^\prime(x)$ at ever point in some interval $I$, then there is come constant $C$ such that $f(x) = g(x) + C$.
 \end{corollary}
-\noindent
+
 That is, functions with the same derivative differ by a constant.
 This should make sense given our constant and sum and difference derivative rules.
 If we let $h^\prime(x) = f^\prime(x) - g^\prime(x) = 0$ and apply the previous corollary, we get $C$.
@@ -69,5 +70,5 @@ If we let $h^\prime(x) = f^\prime(x) - g^\prime(x) = 0$ and apply the previous c
 \begin{definition}
 	A function $F(x)$ is the antiderivative	of $f(x)$ if $F^\prime(x) = f(x)$ for all points in the domain of $f$.
 \end{definition}
-\noindent
+
 As we saw in the previous corollary, a function will have infinitely many antiderivatives that differ by a constant.

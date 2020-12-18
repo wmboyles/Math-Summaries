@@ -10,7 +10,7 @@ Using the limit definition of the derivative,
 	&= \cos{x}.
 \end{align*}
 
-\noindent
+
 We can now use the chain rule to get the derivative of $\cos{x}$.
 \begin{align*}
 	f(x) &= \cos{x} \\
@@ -19,7 +19,7 @@ We can now use the chain rule to get the derivative of $\cos{x}$.
 	&= -\sin{x}.
 \end{align*}
 
-\noindent
+
 The rest of the derivatives of the common trig functions follow from these results and the quotient rule.
 \begin{table}[H]
 	\begin{center}
@@ -34,19 +34,21 @@ The rest of the derivatives of the common trig functions follow from these resul
 \begin{example}
 	Use the identity $\cos{2x} = \cos^2{x} - \sin^2{x}$ to find the derivative of $\cos{2x}$. Express your answer in terms of $\sin{2x}$. Does this answer the same as what you'd expect by finding the derivative using the chain rule?
 \end{example}
-Taking the derivative of $\cos^2{x}$,
-\begin{equation*}
-	\dd{}{x}\cos^2{x} = \cos{x}\cdot-\sin{x} + \cos{x}\cdot-\sin{x} = -2\sin{x}\cos{x} = -\sin{2x}.
-\end{equation*}
-\indent
-Taking the derivative of $\sin^2{x}$,
-\begin{equation*}
-	\dd{}{x}\sin^2{x} = \sin{x}\cos{x} + \sin{x}\cos{x} = 2\sin{x}\cos{x} = \sin{2x}.
-\end{equation*}
-\indent
-Combining these results to get the derivative of $\cos{2x}$,
-\begin{equation*}
-	\dd{}{x}\cos{2x} = \dd{}{x}\cos^2{x} - \dd{}{x}\sin^2{x} = -\sin{2x} - \sin{2x} = -2\sin{2x}.
-\end{equation*}
-\indent
-This answer is indeed the same one we'd expect using the chain rule.
+\begin{answer}
+	Taking the derivative of $\cos^2{x}$,
+	\begin{equation*}
+		\dd{}{x}\cos^2{x} = \cos{x}\cdot-\sin{x} + \cos{x}\cdot-\sin{x} = -2\sin{x}\cos{x} = -\sin{2x}.
+	\end{equation*}
+	
+	Taking the derivative of $\sin^2{x}$,
+	\begin{equation*}
+		\dd{}{x}\sin^2{x} = \sin{x}\cos{x} + \sin{x}\cos{x} = 2\sin{x}\cos{x} = \sin{2x}.
+	\end{equation*}
+	
+	Combining these results to get the derivative of $\cos{2x}$,
+	\begin{equation*}
+		\dd{}{x}\cos{2x} = \dd{}{x}\cos^2{x} - \dd{}{x}\sin^2{x} = -\sin{2x} - \sin{2x} = -2\sin{2x}.
+	\end{equation*}
+	
+	This answer is indeed the same one we'd expect using the chain rule.
+\end{answer}

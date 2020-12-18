@@ -15,7 +15,7 @@ In the limit, we get exactly the area under the curve, which defines the definit
 	where $c_k$ is any arbitrary value in the $k$th sub-interval.
 	This particular type of limit of a sum is called a Riemann Sum.
 \end{definition}
-\noindent
+
 Note that the left, right, and midpoint approximations are all different ways of choosing $c_i$, all of which in the limit give the area under the curve and definite integral from $a$ to $b$.
 
 \begin{example}
@@ -24,17 +24,19 @@ Note that the left, right, and midpoint approximations are all different ways of
 		\int_{0}^{1}{x^2\d{x}}.
 	\end{equation*}
 \end{example}
-We'll use a Riemann sum with a left-endpoint approximation.
-\begin{align*}
-	\int_{0}^{1}{x^2\d{x}} &= \lim_{n\to\infty}{\sum_{i=0}^{n-1}{f\left(0+\frac{i}{n}\right)\frac{1-0}{n}}} \\
-	&= \lim_{n\to\infty}{\sum_{i=0}^{n-1}{\left(\frac{i}{n}\right)^2\frac{1}{n}}} \\
-	&= \lim_{n\to\infty}{\sum_{i=0}^{n-1}{\frac{i^2}{n^3}}} \\
-	&= \lim_{n \to \infty}{\frac{1}{n^3}\left(\frac{n(n-1)(2n-1)}{6}\right)} \\
-	&= \lim_{n\to\infty}{\frac{1}{6}\left(2-\frac{3}{n}+\frac{1}{n^2}\right)} \\
-	&= \frac{1}{3}.
-\end{align*}
+\begin{answer}
+	We'll use a Riemann sum with a left-endpoint approximation.
+	\begin{align*}
+		\int_{0}^{1}{x^2\d{x}} &= \lim_{n\to\infty}{\sum_{i=0}^{n-1}{f\left(0+\frac{i}{n}\right)\frac{1-0}{n}}} \\
+		&= \lim_{n\to\infty}{\sum_{i=0}^{n-1}{\left(\frac{i}{n}\right)^2\frac{1}{n}}} \\
+		&= \lim_{n\to\infty}{\sum_{i=0}^{n-1}{\frac{i^2}{n^3}}} \\
+		&= \lim_{n \to \infty}{\frac{1}{n^3}\left(\frac{n(n-1)(2n-1)}{6}\right)} \\
+		&= \lim_{n\to\infty}{\frac{1}{6}\left(2-\frac{3}{n}+\frac{1}{n^2}\right)} \\
+		&= \frac{1}{3}.
+	\end{align*}
+\end{answer}
 
-\noindent
+
 Note that area below the $x$-axis is counted as negative area.
 In general
 \begin{equation*}
@@ -84,23 +86,25 @@ Much like the Mean Value Theorem for Derivatives, since the function is continuo
 	What what time $t$ does the Mean Value Theorem guarantee that the plane's speed was 1?
 	When is this time?
 \end{example}
-Rather than go through the trouble of evaluating a limit to find the definite integral, we can notice that the graph of the plane's airspeed is a triangle, which we know how to find the area of geometrically.
-\begin{equation*}
-	\text{Area}(t) = \frac{1}{2}tv(t).
-\end{equation*}
-\indent
-Dividing by the length of the interval to get the average airspeed,
-\begin{equation*}
-	\text{Avg}(t) = \frac{1}{t-0}\hspace{3pt}\frac{1}{2}tv(t) = \frac{1}{2}v(t).
-\end{equation*}
-\indent
-Solving for $t$ when $\text{Avg}(t)=1$,
-\begin{equation*}
-	\frac{1}{2}\hspace{3pt}\frac{t}{8} = 1 \implies t = 16.
-\end{equation*}
-\indent
-So, at time $t=16$, the Mean Value Theorem tells us that the plane's speed was 1.
-Looking at the graph, we can see that at time $t=8$ the plane's speed was indeed 1.
+\begin{answer}
+	Rather than go through the trouble of evaluating a limit to find the definite integral, we can notice that the graph of the plane's airspeed is a triangle, which we know how to find the area of geometrically.
+	\begin{equation*}
+		\text{Area}(t) = \frac{1}{2}tv(t).
+	\end{equation*}
+	
+	Dividing by the length of the interval to get the average airspeed,
+	\begin{equation*}
+		\text{Avg}(t) = \frac{1}{t-0}\hspace{3pt}\frac{1}{2}tv(t) = \frac{1}{2}v(t).
+	\end{equation*}
+	
+	Solving for $t$ when $\text{Avg}(t)=1$,
+	\begin{equation*}
+		\frac{1}{2}\hspace{3pt}\frac{t}{8} = 1 \implies t = 16.
+	\end{equation*}
+	
+	So, at time $t=16$, the Mean Value Theorem tells us that the plane's speed was 1.
+	Looking at the graph, we can see that at time $t=8$ the plane's speed was indeed 1.
+\end{answer}
 
 \subsection{Fundamental Theorem of Calculus}
 Although it's nice to be able to evaluate definite integrals for numerical bounds, it'd be more convenient if we only had to do the work of integrating once and could then have a function that would tell us the area like so:
@@ -133,7 +137,7 @@ Since the derivatives are equal, we know the functions must differ by at most a 
 \end{align*}
 So, the integral of the derivative gets us a function that differs from the original by at most a constant.
 
-\noindent
+
 This idea that the integral and derivative undo each other is captured by the Fundamental Theorem of Calculus.
 \begin{theorem}[Fundamental Theorem of Calculus]
 	Let $f$ be a continuous function on the interval $[a,b]$.
@@ -150,7 +154,7 @@ This idea that the integral and derivative undo each other is captured by the Fu
 		\int_{a}^{b}{f(x)\d{x}} = F(b) - F(a).
 	\end{equation*}
 \end{theorem}
-\noindent
+
 This last equation is especially useful for calculating definite integrals.
 Rather than evaluating a limit of a Riemann sum, if we know the antiderivative, we can just evaluate at two points.
 
@@ -160,12 +164,13 @@ Rather than evaluating a limit of a Riemann sum, if we know the antiderivative, 
 		\int_{0}^{1}{\frac{\d{x}}{1+x^2}}.
 	\end{equation*}
 \end{example}
-
-We previously derived that the derivative of $\arctan{x}$ is $\frac{1}{1+x^2}$.
-So, $\arctan{x}$ is the antiderivative of $\frac{1}{1+x^2}$.
-Applying the Fundamental Theorem of Calculus (FTC)
-\begin{align*}
-	\int_{0}^{1}{\frac{\d{x}}{1+x^2}} &= \arctan{1} - \arctan{0} \\
-	&= \frac{\pi}{4} - 0 \\
-	&= \frac{\pi}{4}.
-\end{align*} 
+\begin{answer}
+	We previously derived that the derivative of $\arctan{x}$ is $\frac{1}{1+x^2}$.
+	So, $\arctan{x}$ is the antiderivative of $\frac{1}{1+x^2}$.
+	Applying the Fundamental Theorem of Calculus (FTC)
+	\begin{align*}
+		\int_{0}^{1}{\frac{\d{x}}{1+x^2}} &= \arctan{1} - \arctan{0} \\
+		&= \frac{\pi}{4} - 0 \\
+		&= \frac{\pi}{4}.
+	\end{align*} 
+\end{answer}

@@ -16,41 +16,45 @@ However, we know that differentiable functions are locally linear, so we'd expec
 	Find the linearization of $f(x) = \ln{(x+1)}$ at $x=0$.
 	How accurate is this approximation at $x=0.1$?
 \end{example}
-Following the definition,
-\begin{align*}
-	f(0) = \ln{(0+1)} = 0 \\
-	f^\prime(x) &= \frac{1}{x+1} \\
-	f^\prime(0) &= \frac{1}{0+1} = 1 \\
-	L(x) &= 1(x-0) + 0 = x.
-\end{align*}
-\indent
-Calculating the error at $x=0.1$,
-\begin{align*} 
-	L(0.1) &= 0.1 \\
-	f(0.1) &\approx .0953 \\
-	\text{\% error} &= \frac{\abs{L(0.1)-f(0.1)}}{L(0.1)}100\text{\%} \approx 4.7\text{\%}.
-\end{align*}
-\indent
-So, we can see the linear approximation is pretty good.
+\begin{answer}
+	Following the definition,
+	\begin{align*}
+		f(0) = \ln{(0+1)} = 0 \\
+		f^\prime(x) &= \frac{1}{x+1} \\
+		f^\prime(0) &= \frac{1}{0+1} = 1 \\
+		L(x) &= 1(x-0) + 0 = x.
+	\end{align*}
+	
+	Calculating the error at $x=0.1$,
+	\begin{align*} 
+		L(0.1) &= 0.1 \\
+		f(0.1) &\approx .0953 \\
+		\text{\% error} &= \frac{\abs{L(0.1)-f(0.1)}}{L(0.1)}100\text{\%} \approx 4.7\text{\%}.
+	\end{align*}
+	
+	So, we can see the linear approximation is pretty good.
+\end{answer}
 
-\noindent
+
 We call the difference in $x$ between the point of tangency and the point we're trying to approximate the differential.
 \begin{definition}
 	Let $y=f(x)$ be a differentiable function.
 	The differential $\d{x}$ is an independent variable.
 	The differential $\d{y}$ is $\d{y} = f^\prime(x)\d{x}$.
 \end{definition}
-\noindent
+
 $\mathrm{d}y$ is the approximated change in $y$ expected by the linearization for some given change in $x$, $\d{x}$.
 
 \begin{example}
 	Find $\d{y}$ for $y=\frac{2x}{1+x^2}$, $x=-2$, and $\d{x} = 0.1$.
 \end{example}
-\begin{align*}
-	y^\prime &= \frac{-4x^2}{\left(1+x^2\right)^2} + \frac{2}{1+x^2} \\
-	y^\prime(-2) &= -6/25 \\
-	\d{y} &= (-6/25)(0.1) = -0.024.
-\end{align*}
+\begin{answer}
+	\begin{align*}
+		y^\prime &= \frac{-4x^2}{\left(1+x^2\right)^2} + \frac{2}{1+x^2} \\
+		y^\prime(-2) &= -6/25 \\
+		\d{y} &= (-6/25)(0.1) = -0.024.
+	\end{align*}
+\end{answer}
 
 \subsection{Newton's Method}
 We can use the fact that the tangent line approximates the function to find the zeroes of functions.

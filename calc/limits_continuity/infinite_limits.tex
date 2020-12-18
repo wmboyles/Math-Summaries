@@ -11,7 +11,7 @@ We'll need to add to our limit definition to incorporate infinite values, since 
 		x > N \implies \abs{f(x) - L} < \epsilon.
 	\end{equation}
 \end{definition}
-\noindent
+
 All the same properties that we described for finite limits, like the Sum and Difference Rule, still hold for infinite limits.
 
 \subsection{End Behavior Model}
@@ -65,15 +65,17 @@ There are a few cases to consider
 	\end{center}
 	\end{table}
 \end{example}
-\begin{enumerate}
-	\item Since the numerator degree is bigger than the denominator degree, we'll need to use the end behavior model.
-		The end behavior model tells us that the numerator term dominates and has positive values, so the limit evaluates to $\infty$.
-	\item Since the denominator has higher degree than the numerator, there is a HA at $y=0$, so the limit evaluates to $0$.
-	\item Since the numerator and denominator have the same degree, the limit is the ratio of the highest-degree coefficients, $\frac{-1}{3}$.
-	\item The numerator and denominator have the same degree. For $x > 0$, $\abs{x}+2 = x+2$, so the limit is the ratio of highest-degree coefficients, $3$.
-	\item Looking at the two terms, we can see that as $x$ gets large, $e^{-x}$ gets very small, contributing less and less to the overall value.
-		So, we can say that this function as a right end behavior model of $x$, so the limit is $\infty$.
-	\item Looking at the two terms, we that that as $x$ gets very large and negative, $e^{-x}$ changes much faster than $x$.
-		That is, $e^{-x}$ contributes more and more to the overall value of the function compared to $x$.
-		So, we can say that this function has a left end behavior model of $e^{-x}$, so the limit is $\infty$.
-\end{enumerate}
+\begin{answer}
+	\begin{enumerate}
+		\item Since the numerator degree is bigger than the denominator degree, we'll need to use the end behavior model.
+			The end behavior model tells us that the numerator term dominates and has positive values, so the limit evaluates to $\infty$.
+		\item Since the denominator has higher degree than the numerator, there is a HA at $y=0$, so the limit evaluates to $0$.
+		\item Since the numerator and denominator have the same degree, the limit is the ratio of the highest-degree coefficients, $\frac{-1}{3}$.
+		\item The numerator and denominator have the same degree. For $x > 0$, $\abs{x}+2 = x+2$, so the limit is the ratio of highest-degree coefficients, $3$.
+		\item Looking at the two terms, we can see that as $x$ gets large, $e^{-x}$ gets very small, contributing less and less to the overall value.
+			So, we can say that this function as a right end behavior model of $x$, so the limit is $\infty$.
+		\item Looking at the two terms, we that that as $x$ gets very large and negative, $e^{-x}$ changes much faster than $x$.
+			That is, $e^{-x}$ contributes more and more to the overall value of the function compared to $x$.
+			So, we can say that this function has a left end behavior model of $e^{-x}$, so the limit is $\infty$.
+	\end{enumerate}
+\end{answer}

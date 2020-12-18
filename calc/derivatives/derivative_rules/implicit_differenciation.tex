@@ -12,73 +12,78 @@ You'll need to check if
 \begin{example}
 	Given that $y^2 = x$, find $y^\prime$ using implicit differentiation.
 \end{example}
-Step 1 is already complete by what's given.
-Taking the derivative of both sides, remembering to use the chain rule,
-\begin{equation*}
-	2yy^\prime = 1.
-\end{equation*}
-\indent
-Solving for $y^\prime$,
-\begin{equation*}
-	y^\prime = \frac{1}{2y}.
-\end{equation*}
-\indent
-Looking back at our original equation, we see $y = \pm\sqrt{x}$.
-Substituting back into our work,
-\begin{equation*}
-	y^\prime = \pm\frac{1}{2\sqrt{x}}.
-\end{equation*}
+\begin{answer}
+	Step 1 is already complete by what's given.
+	Taking the derivative of both sides, remembering to use the chain rule,
+	\begin{equation*}
+		2yy^\prime = 1.
+	\end{equation*}
+	
+	Solving for $y^\prime$,
+	\begin{equation*}
+		y^\prime = \frac{1}{2y}.
+	\end{equation*}
+	
+	Looking back at our original equation, we see $y = \pm\sqrt{x}$.
+	Substituting back into our work,
+	\begin{equation*}
+		y^\prime = \pm\frac{1}{2\sqrt{x}}.
+	\end{equation*}
+\end{answer}
 
-\noindent
 Sometimes, it's not possible or is not necessary for what you're working on to complete step 3, meaning you leave your answer for $y^\prime$ in terms of $y$ and input parameters.
 \begin{example}
 	Find the derivative for $y$ with respect to $x$ at $(1,1)$ if $y^4 = x^3 + x + y$.
 \end{example}
-Rearranging to complete step 1,
-\begin{equation*}
-	y^4 - y = x^3 + x.
-\end{equation*}
-\indent
-Taking the derivative of both sides,
-\begin{equation*}
-	(4y^3 - 1)y^\prime = 3x^2 + 1.
-\end{equation*}
-\indent
-Solving for $y^\prime$ and completing step 2,
-\begin{equation*}
-	y^\prime = \frac{3x^2 + 1}{4y^3 - 1}.
-\end{equation*}
-\indent
-Since we have both the $x$ and $y$ coordinates of where we're looking for the slope, we don't need to complete step 3.
-We can simply substitute to find our numerical answer for $y^\prime$.
-\begin{equation*}
-	y^\prime_{(1,1)} = \frac{3 + 1}{4 - 1} = \frac{4}{3}.
-\end{equation*}
+\begin{answer}
+	Rearranging to complete step 1,
+	\begin{equation*}
+		y^4 - y = x^3 + x.
+	\end{equation*}
+	
+	Taking the derivative of both sides,
+	\begin{equation*}
+		(4y^3 - 1)y^\prime = 3x^2 + 1.
+	\end{equation*}
+	
+	Solving for $y^\prime$ and completing step 2,
+	\begin{equation*}
+		y^\prime = \frac{3x^2 + 1}{4y^3 - 1}.
+	\end{equation*}
+	
+	Since we have both the $x$ and $y$ coordinates of where we're looking for the slope, we don't need to complete step 3.
+	We can simply substitute to find our numerical answer for $y^\prime$.
+	\begin{equation*}
+		y^\prime_{(1,1)} = \frac{3 + 1}{4 - 1} = \frac{4}{3}.
+	\end{equation*}
+\end{answer}
 
 Sometimes, we might already be given a formula for $y$, but rearranging and then doing implicit differentiation is easier.
 \begin{example}
 	Find the derivative with respect to $x$ of $y = \ln{x}$.
 \end{example}
-We don't have any way to find the derivative of $\ln$ directly, but we do know how $\ln$ relates to exponential functions, a form we do know how to differentiate.
-Exponentiating both sides with base $e$,
-\begin{equation*}
-	e^y = e^{\ln{x}} = x.
-\end{equation*}
-\indent 
-Implicitly differentiating,
-\begin{equation*}
-	e^{y}y^\prime = 1.
-\end{equation*}
-\indent
-Solving for $y^\prime$,
-\begin{equation*}
-	y^\prime = \frac{1}{e^y}.
-\end{equation*}
-\indent
-Substituting what we were given for $y$,
-\begin{equation*}
-	y^\prime = \frac{1}{e^{\ln{x}}} = \frac{1}{x}.
-\end{equation*}
+\begin{answer}
+	We don't have any way to find the derivative of $\ln$ directly, but we do know how $\ln$ relates to exponential functions, a form we do know how to differentiate.
+	Exponentiating both sides with base $e$,
+	\begin{equation*}
+		e^y = e^{\ln{x}} = x.
+	\end{equation*}
+	 
+	Implicitly differentiating,
+	\begin{equation*}
+		e^{y}y^\prime = 1.
+	\end{equation*}
+	
+	Solving for $y^\prime$,
+	\begin{equation*}
+		y^\prime = \frac{1}{e^y}.
+	\end{equation*}
+	
+	Substituting what we were given for $y$,
+	\begin{equation*}
+		y^\prime = \frac{1}{e^{\ln{x}}} = \frac{1}{x}.
+	\end{equation*}
+\end{answer}
 
 \subsubsection{Logarithmic Differentiation}
 Logarithmic differentiation is a certain type of differentiation where you take to natural log of both sides and then implicitly differentiate.
@@ -86,19 +91,21 @@ It's especially useful when input parameters appear in both the base and exponen
 \begin{example}
 	Find the derivative with respect to $x$ of $y = x^{\ln{x}}$.
 \end{example}
-Taking the natural log of both sides,
-\begin{equation*}
-	\ln{y} = \ln^2{x}.
-\end{equation*}
-\indent
-Implicitly differentiating,
-\begin{align*}
-	\frac{1}{y}y^\prime &= \frac{2\ln{x}}{x} \\
-	y^\prime &= y\frac{2\ln{x}}{x} \\
-	&= x^{\ln{x}}\frac{2\ln{x}}{x}.
-\end{align*}
+\begin{answer}
+	Taking the natural log of both sides,
+	\begin{equation*}
+		\ln{y} = \ln^2{x}.
+	\end{equation*}
+	
+	Implicitly differentiating,
+	\begin{align*}
+		\frac{1}{y}y^\prime &= \frac{2\ln{x}}{x} \\
+		y^\prime &= y\frac{2\ln{x}}{x} \\
+		&= x^{\ln{x}}\frac{2\ln{x}}{x}.
+	\end{align*}
+\end{answer}
 
-\noindent
+
 We now have the tools to prove the power rule for all real exponents.
 \begin{proof}
 	Let $n$ be an real number.

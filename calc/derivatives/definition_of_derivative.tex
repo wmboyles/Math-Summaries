@@ -10,18 +10,20 @@
 \begin{example}
 	Find the derivative of $f(x)=x^2+4$.
 \end{example}
-Applying the definition,
-\begin{align*}
-	f^\prime(x) &= \lim_{h\to 0}{\frac{f(x+h)-f(x)}{h}} \\
-	&= \lim_{h \to 0}{\frac{(x+h)^2+4 - x^2 - 4}{h}} \\
-	&= \lim_{h \to 0}{\frac{x^2 + 2xh + h^2 + 4 - x^2 - 4}{h}} \\
-	&= \lim_{h \to 0}{\frac{2xh + h^2}{h}} \\
-	&= \lim_{h\to 0}{2x + h} \\
-	&= 2x.\footnotemark
-\end{align*}
+\begin{answer}
+	Applying the definition,
+	\begin{align*}
+		f^\prime(x) &= \lim_{h\to 0}{\frac{f(x+h)-f(x)}{h}} \\
+		&= \lim_{h \to 0}{\frac{(x+h)^2+4 - x^2 - 4}{h}} \\
+		&= \lim_{h \to 0}{\frac{x^2 + 2xh + h^2 + 4 - x^2 - 4}{h}} \\
+		&= \lim_{h \to 0}{\frac{2xh + h^2}{h}} \\
+		&= \lim_{h\to 0}{2x + h} \\
+		&= 2x.\footnotemark
+	\end{align*}
+\end{answer}
 \footnotetext{Note that the constant term 4 didn't contribute anything to the outcome. It was canceled immediately when subtracting $f(x)$.}
 
-\noindent
+
 There are a couple different notations that all mean the derivative of $y = f(x)$.
 You should be familiar with all of them.
 \begin{table}[H]
@@ -44,14 +46,16 @@ Instead, we can use a formula to just give us the derivative at one point.
 \begin{example}
 	Find the derivative of $f(x) = \frac{1}{x}$ at $x=2$.
 \end{example}
-Applying the formula for the derivative at a point,
-\begin{align*}
-	f^\prime(2) &= \lim_{x \to 2}{\frac{f(x)-f(2)}{x-2}} \\
-	&= \lim_{x \to 2}{\frac{1/x - 1/2}{x-2}} \\
-	& = \lim_{x \to 2}{\frac{-(x-2)}{2x(x-2)}} \\
-	&= \lim_{x \to 2}{\frac{-1}{2x}} \\
-	&= \frac{-1}{4}.
-\end{align*}
+\begin{answer}
+	Applying the formula for the derivative at a point,
+	\begin{align*}
+		f^\prime(2) &= \lim_{x \to 2}{\frac{f(x)-f(2)}{x-2}} \\
+		&= \lim_{x \to 2}{\frac{1/x - 1/2}{x-2}} \\
+		& = \lim_{x \to 2}{\frac{-(x-2)}{2x(x-2)}} \\
+		&= \lim_{x \to 2}{\frac{-1}{2x}} \\
+		&= \frac{-1}{4}.
+	\end{align*}
+\end{answer}
 
 \subsection{Left \& Right Hand Derivatives}
 The normal derivative is defined in terms of a two-sided limit, meaning that the left and right hand limits are equal.
@@ -67,21 +71,23 @@ However, we can also calculate left and right hand derivatives at every point al
 		\end{cases}.
 	\end{equation*}
 \end{example}
-Evaluating the left hand limit,
-\begin{align*}
-	f^\prime(1^-) &= \lim_{x \to 1^-}{\frac{f(x)-f(1)}{x-1}} \\
-	&= \lim_{x \to 1^-}{\frac{x^2 + x - 2}{x-1}} \\
-	&= \lim_{x \to 1^-}{\frac{(x-1)(x+2)}{x-1}} \\
-	&= \lim_{x \to 1^-}{x+2} \\
-	&= 3.
-\end{align*}
-\indent
-Evaluating the right hand limit,
-\begin{align*}
-	f^\prime(1^+) &= \lim_{x \to 1^+}{\frac{f(x)-f(1)}{x-1}} \\
-	&= \lim_{x \to 1^+}{\frac{x + 1 - 2}{x-1}} \\
-	&= \lim_{x \to 1^+}{\frac{x-1}{x-1}} \\
-	&= 1.
-\end{align*}
-\indent
-Since $f^\prime(1^-) \neq f^\prime(1^+)$, the derivative does not exist at $x=1$.
+\begin{answer}
+	Evaluating the left hand limit,
+	\begin{align*}
+		f^\prime(1^-) &= \lim_{x \to 1^-}{\frac{f(x)-f(1)}{x-1}} \\
+		&= \lim_{x \to 1^-}{\frac{x^2 + x - 2}{x-1}} \\
+		&= \lim_{x \to 1^-}{\frac{(x-1)(x+2)}{x-1}} \\
+		&= \lim_{x \to 1^-}{x+2} \\
+		&= 3.
+	\end{align*}
+	
+	Evaluating the right hand limit,
+	\begin{align*}
+		f^\prime(1^+) &= \lim_{x \to 1^+}{\frac{f(x)-f(1)}{x-1}} \\
+		&= \lim_{x \to 1^+}{\frac{x + 1 - 2}{x-1}} \\
+		&= \lim_{x \to 1^+}{\frac{x-1}{x-1}} \\
+		&= 1.
+	\end{align*}
+	
+	Since $f^\prime(1^-) \neq f^\prime(1^+)$, the derivative does not exist at $x=1$.
+\end{answer}

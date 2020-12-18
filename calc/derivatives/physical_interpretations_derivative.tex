@@ -7,27 +7,29 @@ This idea makes the derivative very useful for describing physical situations.
 		Find the rate of change of the volume of a sphere with respect to its radius in meters.
 		What are these quantities (with appropriate units) when $r=5\text{m}$?
 \end{example}
-Starting with the area of a circle,
-\begin{align*}
-	A &= \pi r^2
-	\dd{A}{r} = 2\pi r.
-\end{align*}
-\indent
-You might recognize this as the formula for the circumference of a circle.\\
-\indent
-Starting with the volume of a sphere,
-\begin{align*}
-	V &= \frac{4}{3}\pi r^3 \\
-	\dd{V}{r} &= 4\pi r^2.
-\end{align*}
-\indent
-You might recognize this as the formula for the surface area of a sphere.\\
-\indent
-When $r=5\text{m}$,
-\begin{align*}
-	\dd{A}{r}\biggr\rvert_{r=5\text{m}} &= 2\pi\left(5\text{m}\right) = 10\pi\text{m}. \\
-	\dd{V}{r}\biggr\rvert_{r=5\text{m}} &= 4\pi\left(5\text{m}\right)^2 = 100\pi\text{m}^2.
-\end{align*}
+\begin{answer}
+	Starting with the area of a circle,
+	\begin{align*}
+		A &= \pi r^2
+		\dd{A}{r} = 2\pi r.
+	\end{align*}
+	
+	You might recognize this as the formula for the circumference of a circle.\\
+	
+	Starting with the volume of a sphere,
+	\begin{align*}
+		V &= \frac{4}{3}\pi r^3 \\
+		\dd{V}{r} &= 4\pi r^2.
+	\end{align*}
+	
+	You might recognize this as the formula for the surface area of a sphere.\\
+	
+	When $r=5\text{m}$,
+	\begin{align*}
+		\dd{A}{r}\biggr\rvert_{r=5\text{m}} &= 2\pi\left(5\text{m}\right) = 10\pi\text{m}. \\
+		\dd{V}{r}\biggr\rvert_{r=5\text{m}} &= 4\pi\left(5\text{m}\right)^2 = 100\pi\text{m}^2.
+	\end{align*}
+\end{answer}
 
 \subsection{Displacement, Velocity, and Acceleration}
 If we have an object whose position is determined by a single variable, like time $t$, then we can model the position as a function.
@@ -55,7 +57,7 @@ Although in everyday language we might use the terms speed and velocity intercha
 	\text{Speed} = \abs{v(t)} = \biggr\lvert \dd{s}{t} \biggr\rvert.
 \end{equation*}
 
-\noindent
+
 Modeling the motion of free-falling bodies was one of the earliest motivations for discovering calculus.
 Through experiments and applications of physics theory, we know that the height of a falling body when dropped from initial height $h_0$ meters is modeled by
 \begin{equation*}
@@ -68,24 +70,26 @@ where $t$ is the time in seconds since the object was released and $g = 9.81m/s^
 	How long does it take for the ball to hit the ground?
 	What speed is the ball traveling when it hits the ground?
 \end{example}
-In this case, $h_0 = 100\text{m}$.
-So,
-\begin{equation*}
-	s(t) = 100\text{m} - \frac{1}{2}gt^2.
-\end{equation*}
-\indent
-We want to solve for $t$ where $s(t)=0$.
-\begin{equation*}
-	t = \sqrt{\frac{200\text{m}}{g}} \approx 4.515\text{s}.
-\end{equation*}
-\indent
-We take take the derivative of $s$ with respect to $t$ and then take the absolute value to get the speed.
-\begin{align*}
-	v(t) &= \dd{}{t}s(t) = -gt. \\
-	\text{Speed}(t) &= \abs{v(t)} = gt.
-\end{align*}
-\indent
-Plugging in the time we got when the ball hits the ground,
-\begin{equation*}
-	\text{Speed}_{\text{Ground}} \approx g(4.515\text{s}) \approx 44.294\text{m/s}.
-\end{equation*}
+\begin{answer}
+	In this case, $h_0 = 100\text{m}$.
+	So,
+	\begin{equation*}
+		s(t) = 100\text{m} - \frac{1}{2}gt^2.
+	\end{equation*}
+	
+	We want to solve for $t$ where $s(t)=0$.
+	\begin{equation*}
+		t = \sqrt{\frac{200\text{m}}{g}} \approx 4.515\text{s}.
+	\end{equation*}
+	
+	We take take the derivative of $s$ with respect to $t$ and then take the absolute value to get the speed.
+	\begin{align*}
+		v(t) &= \dd{}{t}s(t) = -gt. \\
+		\text{Speed}(t) &= \abs{v(t)} = gt.
+	\end{align*}
+	
+	Plugging in the time we got when the ball hits the ground,
+	\begin{equation*}
+		\text{Speed}_{\text{Ground}} \approx g(4.515\text{s}) \approx 44.294\text{m/s}.
+	\end{equation*}
+\end{answer}

@@ -48,7 +48,6 @@ We'll develop several tests that we can apply to check for convergence or diverg
 	However, for $\epsilon \leq \delta/2$, the inequality creates a contradiction.
 \end{proof}
 
-\noindent
 Although the proof has to be a bit specific to cover the case of alternating series, the idea behind the test makes sense.
 If you're adding on terms that don't get smaller in absolute value, then you can't "zero in" on a particular value and converge.
 
@@ -58,18 +57,20 @@ If you're adding on terms that don't get smaller in absolute value, then you can
 		\sum_{i=0}^{\infty}{(-1)^n} = 1 - 1 + 1 - 1 + \ldots.
 	\end{equation*}
 \end{example}
-We see that
-\begin{equation*}
-	\lim_{n\to\infty}{a_n} = \text{DNE} \neq 0.
-\end{equation*}
-\indent
-So, by the nth Term Test for Divergence, the series diverges.
+\begin{answer}
+	We see that
+	\begin{equation*}
+		\lim_{n\to\infty}{a_n} = \text{DNE} \neq 0.
+	\end{equation*}
+	
+	So, by the nth Term Test for Divergence, the series diverges.
+\end{answer}
 
 \subsection{Geometric Series with $\abs{r} < 1$}
 \begin{lemma}
 	If $s$ is a geometric series with common ratio $r$, then $s$ converges if and only if $\abs{r} < 1$.
 \end{lemma}
-\noindent
+
 We already proved this when talking about power series and gave a formula to find its value.
 
 \begin{example}
@@ -78,8 +79,10 @@ We already proved this when talking about power series and gave a formula to fin
 		\sum_{i=0}^{\infty}{\frac{2^n}{3}}.
 	\end{equation*}	
 \end{example}
-This is a geometric series with initial term $1/3$ and common ratio $r=2$.
-Since $\abs{r} > 1$, the series diverges.
+\begin{answer}
+	This is a geometric series with initial term $1/3$ and common ratio $r=2$.
+	Since $\abs{r} > 1$, the series diverges.
+\end{answer}
 
 \subsection{P-Series Test}
 \begin{lemma}
@@ -96,9 +99,11 @@ Since $\abs{r} > 1$, the series diverges.
 		\sum_{i=1}^{\infty}{\frac{1}{i}}.
 	\end{equation*}
 \end{example}
-\indent
-This is a p-series with $p=1$.
-So, by the P-Series Test, the sum diverges.
+\begin{answer}
+	
+	This is a p-series with $p=1$.
+	So, by the P-Series Test, the sum diverges.
+\end{answer}
 
 \subsection{Direct Comparison Test}
 \begin{lemma}
@@ -119,13 +124,15 @@ So, by the P-Series Test, the sum diverges.
 		\sum_{i=0}^{\infty}{\frac{1}{2 + 3^i}}.
 	\end{equation*}
 \end{example}
+\begin{answer}
 We see that this series looks really similar to a geometric series with common ratio 1/3, just with an extra 2 in the denominator.
 For all $n > 0$,
 \begin{equation*}
 	\frac{1}{2+3^n} \leq \frac{1}{3^n}.
 \end{equation*}
-\indent
+
 So, by the Direct Comparison Test, the series converges.
+\end{answer}
 
 \begin{example}
 	Show that the following series diverges:
@@ -133,16 +140,18 @@ So, by the Direct Comparison Test, the series converges.
 		\sum_{i=0}^{\frac{1}{2+\sqrt{i}}}.
 	\end{equation*}
 \end{example}
-Although the sum looks like a p-series with $p=1/2$, we can use that series because our series has smaller terms.
-Instead, we can compare to a p-series where $p=1/2$.
-\begin{align*}
-	0 \leq \frac{1}{n} &\geq \frac{1}{2+\sqrt{n}} \\
-	0 \leq 2 + \sqrt{n} &\leq n \\
-	n & \geq 4.
-\end{align*}
-\indent
-So, for all $n \geq 4$, our series has larger values than the p-series with $p=1$.
-We know the p-series diverges by the P-Test, so by the Direct Comparison Test, our series also diverges.
+\begin{answer}
+	Although the sum looks like a p-series with $p=1/2$, we can use that series because our series has smaller terms.
+	Instead, we can compare to a p-series where $p=1/2$.
+	\begin{align*}
+		0 \leq \frac{1}{n} &\geq \frac{1}{2+\sqrt{n}} \\
+		0 \leq 2 + \sqrt{n} &\leq n \\
+		n & \geq 4.
+	\end{align*}
+	
+	So, for all $n \geq 4$, our series has larger values than the p-series with $p=1$.
+	We know the p-series diverges by the P-Test, so by the Direct Comparison Test, our series also diverges.
+\end{answer}
 
 \subsection{Limit Comparison Test}
 \begin{lemma}
@@ -155,7 +164,7 @@ We know the p-series diverges by the P-Test, so by the Direct Comparison Test, o
 	If the limit converges to 0 and $b$ converges, then $a$ also converges.
 	If the limit goes to $\infty$ and $b$ diverges, then $a$ also diverges.
 \end{lemma}
-\noindent
+
 A common tactic is to select one of $a$ or $b$ to be a geometric or p-series.
 
 \begin{example}
@@ -164,13 +173,15 @@ A common tactic is to select one of $a$ or $b$ to be a geometric or p-series.
 		\sum_{i=2}^{\infty}{\frac{2i}{i^2-i+a}}.
 	\end{equation*}
 \end{example}
-Looking at this rational function, we see a degree 1 term in the numerator and a degree 2 term in the denominator.
-So, we might expect that the series behaves similarly to $1/n$.
-\begin{equation*}
-	\lim_{n\to\infty}{\frac{\frac{2n}{n^2-n+a}}{\frac{1}{n}}} = \lim_{n\to\infty}{\frac{2n^2}{n^2-n+a}} = 2.
-\end{equation*}
-\indent
-Since the limit converges to a finite value greater than 0, and we know that $1/n$ diverges by the P-Test, then the series must also diverge by the Limit Comparison Test.
+\begin{answer}
+	Looking at this rational function, we see a degree 1 term in the numerator and a degree 2 term in the denominator.
+	So, we might expect that the series behaves similarly to $1/n$.
+	\begin{equation*}
+		\lim_{n\to\infty}{\frac{\frac{2n}{n^2-n+a}}{\frac{1}{n}}} = \lim_{n\to\infty}{\frac{2n^2}{n^2-n+a}} = 2.
+	\end{equation*}
+	
+	Since the limit converges to a finite value greater than 0, and we know that $1/n$ diverges by the P-Test, then the series must also diverge by the Limit Comparison Test.
+\end{answer}
 
 \begin{example}
 	Show that the following series converges:
@@ -178,12 +189,14 @@ Since the limit converges to a finite value greater than 0, and we know that $1/
 		\sum_{i=1}^{\infty}{\frac{1}{2^i - 1}}.
 	\end{equation*}
 \end{example}
-This series looks similar to the geometric series $1/2^n$.
-\begin{equation*}
-	\lim_{n\to\infty}{\frac{\frac{1}{2^n}}{\frac{1}{2^n-1}}} = \lim_{n\to\infty}{\frac{2^n - 1}{2^n}} = 1.
-\end{equation*}
-\indent
-Since the limit converges to a finite value greater than 0, and we know that $1/2^n$ converges because it's a geometric series with $r=1/2$, then the series must also converge the the Limit Comparison Test.
+\begin{answer}
+	This series looks similar to the geometric series $1/2^n$.
+	\begin{equation*}
+		\lim_{n\to\infty}{\frac{\frac{1}{2^n}}{\frac{1}{2^n-1}}} = \lim_{n\to\infty}{\frac{2^n - 1}{2^n}} = 1.
+	\end{equation*}
+	
+	Since the limit converges to a finite value greater than 0, and we know that $1/2^n$ converges because it's a geometric series with $r=1/2$, then the series must also converge the the Limit Comparison Test.
+\end{answer}
 
 \subsection{Integral Test}
 \begin{lemma}
@@ -205,12 +218,14 @@ Since the limit converges to a finite value greater than 0, and we know that $1/
 		\sum_{i=1}^{\infty}{\frac{2i}{i^2+1}}.
 	\end{equation*}
 \end{example}
-The function $f(x)=2x/(x^2+1)$ is continuous, positive for all $x \geq 1$, and decreasing.
-\begin{equation*}
-	\int_{1}^{\infty}{\frac{2x}{x^2+1}\d{x}} = (u = x^2+1) \int_{2}^{\infty}{\frac{\d{u}}{u}} = \ln{u}\biggr\rvert_{2}^{\infty} = \text{diverges}.
-\end{equation*}
-\indent
-So, by the Integral Test, the series also diverges.
+\begin{answer}
+	The function $f(x)=2x/(x^2+1)$ is continuous, positive for all $x \geq 1$, and decreasing.
+	\begin{equation*}
+		\int_{1}^{\infty}{\frac{2x}{x^2+1}\d{x}} = (u = x^2+1) \int_{2}^{\infty}{\frac{\d{u}}{u}} = \ln{u}\biggr\rvert_{2}^{\infty} = \text{diverges}.
+	\end{equation*}
+	
+	So, by the Integral Test, the series also diverges.
+\end{answer}
 
 \begin{example}
 	Show that the following series converges:
@@ -218,12 +233,14 @@ So, by the Integral Test, the series also diverges.
 		\sum_{i=1}^{\infty}{\frac{1}{i^2+1}}.
 	\end{equation*}
 \end{example}
-The function $f(x)=1/(x^2+1)$ is continuous, positive for all $x \geq 1$, and decreasing.
-\begin{equation*}
-	\int_{1}^{\infty}{\frac{\d{x}}{x^2+1}} = \arctan{x}\biggr\rvert_{1}^{\infty} = \frac{\pi}{2} - \frac{\pi}{4} = \frac{\pi}{4}.
-\end{equation*}
-\indent
-So, by the Integral Test\footnote{We omitted evaluating the improper integral with limits, but the value is what you would get from doing that.}k the series also converges.
+\begin{answer}
+	The function $f(x)=1/(x^2+1)$ is continuous, positive for all $x \geq 1$, and decreasing.
+	\begin{equation*}
+		\int_{1}^{\infty}{\frac{\d{x}}{x^2+1}} = \arctan{x}\biggr\rvert_{1}^{\infty} = \frac{\pi}{2} - \frac{\pi}{4} = \frac{\pi}{4}.
+	\end{equation*}
+	
+	So, by the Integral Test\footnote{We omitted evaluating the improper integral with limits, but the value is what you would get from doing that.} the series also converges.
+\end{answer}
 
 \subsection{Ratio Test}
 \begin{lemma}
@@ -243,12 +260,14 @@ So, by the Integral Test\footnote{We omitted evaluating the improper integral wi
 		\sum_{i=1}^{\infty}{\frac{i\ln{i}}{2^i}}.
 	\end{equation*}
 \end{example}
-Taking the limit of the ratio of subsequent terms,
-\begin{equation*}
-	\lim_{n\to\infty}{\frac{\frac{(n+1)\ln{(n+1)}}{2^{n+1}}}{\frac{n\ln{n}}{2^n}}} = \lim_{n\to\infty}{\frac{(n+1)\ln{n+1}}{2n\ln{n}}} = \lim_{n\to\infty}{\frac{n+1}{2n}} = \frac{1}{2}.
-\end{equation*}
-\indent
-Since the limit is less than 1, the series converges by the Ratio Test.
+\begin{answer}
+	Taking the limit of the ratio of subsequent terms,
+	\begin{equation*}
+		\lim_{n\to\infty}{\frac{\frac{(n+1)\ln{(n+1)}}{2^{n+1}}}{\frac{n\ln{n}}{2^n}}} = \lim_{n\to\infty}{\frac{(n+1)\ln{n+1}}{2n\ln{n}}} = \lim_{n\to\infty}{\frac{n+1}{2n}} = \frac{1}{2}.
+	\end{equation*}
+	
+	Since the limit is less than 1, the series converges by the Ratio Test.
+\end{answer}
 
 \subsection{nth Root Test}
 \begin{lemma}
@@ -261,7 +280,7 @@ Since the limit is less than 1, the series converges by the Ratio Test.
 	If the limit is greater than 1, the series diverges.
 	If the limit is equal to 1, the test is inconclusive.
 \end{lemma}
-\noindent
+
 This test is most useful for series that look like geometric series, but the common ratio is not a constant.
 
 \begin{example}
@@ -270,12 +289,14 @@ This test is most useful for series that look like geometric series, but the com
 		\sum_{i=1}^{\infty}{\left(\frac{i}{2i-1}\right)^i}.
 	\end{equation*}
 \end{example}
-Taking the limit of the nth root,
-\begin{equation*}
-	\lim_{n\to\infty}{\sqrt[n]{\left(\frac{n}{2n-1}\right)^n}} = \lim_{n\to\infty}{\frac{n}{2n-1}} = \frac{1}{2}.
-\end{equation*}
-\indent
-Since the limit is less than 1, the series converges by the nth Root Test.
+\begin{answer}
+	Taking the limit of the nth root,
+	\begin{equation*}
+		\lim_{n\to\infty}{\sqrt[n]{\left(\frac{n}{2n-1}\right)^n}} = \lim_{n\to\infty}{\frac{n}{2n-1}} = \frac{1}{2}.
+	\end{equation*}
+	
+	Since the limit is less than 1, the series converges by the nth Root Test.
+\end{answer}
 
 \subsection{Alternating Series Test}
 All of the previous 8 tests have tested whether a series converges absolutely.
@@ -305,20 +326,22 @@ Series that converge conditionally do so when they pass the following test.
 		\sum_{i=1}^{\infty}{(-1)^i\frac{1}{i}}.
 	\end{equation*}
 \end{example}
-\begin{enumerate}
-	\item All the terms $1, 1/2, 1/3, \ldots$ are positive.
-	\item All terms are less than the previous term.
-	\item The terms tend to 0, passing the nth Term Test.
-\end{enumerate}
-\indent
-So, by the Alternating Series Test, the series converges conditionally\footnote{You've already seen this series too. It converges to $\ln{2}$.}.
-Note that the series does not converge absolutely because it fails the P-Test. \\
+\begin{answer}
+	\begin{enumerate}
+		\item All the terms $1, 1/2, 1/3, \ldots$ are positive.
+		\item All terms are less than the previous term.
+		\item The terms tend to 0, passing the nth Term Test.
+	\end{enumerate}
+	
+	So, by the Alternating Series Test, the series converges conditionally\footnote{You've already seen this series too. It converges to $\ln{2}$.}.
+	Note that the series does not converge absolutely because it fails the P-Test.
+\end{answer}
 
 \subsubsection{Riemann Rearrangement Theorem}
 \begin{theorem}[Riemann Rearrangement Theorem]
 	If an infinite series is conditionally convergent, but not absolutely convergent, then its terms can be rearranged to form a divergent series or to converge to any constant.
 \end{theorem}
-\noindent
+
 This result may seem counter intuitive, given that we know addition is associative and commutative.
 However, the result stems from the fact that we defined convergence of an infinite series at the limit of partial sums.
 If we rearrange terms of the series, the partial sums and their limits can change, meaning the limit of partial sums can diverge or converge to some other value.

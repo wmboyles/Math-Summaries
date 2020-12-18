@@ -8,7 +8,7 @@ Starting from the product rule\footnote{This justification isn't completely rigo
 	uv &= \int{u\d{v}} + \int{v\d{u}} \\
 	\int{u\d{v}} &= uv - \int{v\d{u}}.
 \end{align*}
-\noindent
+
 Essentially, if we are integrating a function that is a product of something we can differentiate ($u$) and something we can integrate ($\d{v}$), then we can do integration by parts.
 \begin{example}
 	Solve the following indefinite integral:
@@ -16,14 +16,16 @@ Essentially, if we are integrating a function that is a product of something we 
 		\int{x\sin{x}\d{x}}.
 	\end{equation*}
 \end{example}
-Since $x$ and $\sin{x}$ don't have any parts that are related by a derivative, a $u$-substitution wouldn't be helpful.
-However, we know how to differentiate $x$ and integrate $\sin{x}$, so integration by parts is a good strategy to try.
-\begin{align*}
-	u = x &\text{ and } \d{u} = \d{x} \\
-	\d{v} = \sin{x}\d{x} &\text{ and } v =\footnotemark -\cos{x} \\
-	\int{x\sin{x}\d{x}} &= -x\cos{x} - \int{-\cos{x}\d{x}} \\
-	&= -x\cos{x} + \sin{x} + C.
-\end{align*}
+\begin{answer}
+	Since $x$ and $\sin{x}$ don't have any parts that are related by a derivative, a $u$-substitution wouldn't be helpful.
+	However, we know how to differentiate $x$ and integrate $\sin{x}$, so integration by parts is a good strategy to try.
+	\begin{align*}
+		u = x &\text{ and } \d{u} = \d{x} \\
+		\d{v} = \sin{x}\d{x} &\text{ and } v =\footnotemark -\cos{x} \\
+		\int{x\sin{x}\d{x}} &= -x\cos{x} - \int{-\cos{x}\d{x}} \\
+		&= -x\cos{x} + \sin{x} + C.
+	\end{align*}
+\end{answer}
 \footnotetext{We don't include the $+C$ when integrating $\d{v}$. We'll still include one at the end.}
 
 \subsubsection{LIPET (How to choose $u$)}
@@ -46,15 +48,17 @@ You can remember the acronym \textbf{LIPET} as a guide to help you.
 		\int{x^3\ln{x}\d{x}}.
 	\end{equation*}
 \end{example}
-Following LIPET, we select $u = \ln{x}$.
-\begin{align*}
-	u = \ln{x} &\text{ and } \d{u} = \frac{\d{x}}{x} \\
-	\d{v} = x^3\d{x} &\text{ and } v = x^4/4 \\
-	\int{x^3\ln{x}\d{x}} &= \frac{x^4\ln{x}}{4} - \int{\frac{x^3}{4}\d{x}} \\
-	&= \frac{x^4\ln{x}}{4} - \frac{x^4}{16} + C.
-\end{align*}
+\begin{answer}
+	Following LIPET, we select $u = \ln{x}$.
+	\begin{align*}
+		u = \ln{x} &\text{ and } \d{u} = \frac{\d{x}}{x} \\
+		\d{v} = x^3\d{x} &\text{ and } v = x^4/4 \\
+		\int{x^3\ln{x}\d{x}} &= \frac{x^4\ln{x}}{4} - \int{\frac{x^3}{4}\d{x}} \\
+		&= \frac{x^4\ln{x}}{4} - \frac{x^4}{16} + C.
+	\end{align*}
+\end{answer}
 
-\noindent
+
 Sometimes, we might have to do integration by parts multiple times.
 It might seem like integration by parts is leading us in circles, but this can actually be a good thing, allowing us to solve the integral if we're observant.
 \begin{example}
@@ -63,27 +67,29 @@ It might seem like integration by parts is leading us in circles, but this can a
 		\int{e^{-x}\cos{x}\d{x}}.
 	\end{equation*}
 \end{example}
-Following LIPET, $u=e^{-x}$.
-\begin{align*}
-	u = e^{-x} &\text{ and } \d{u} = -e^{-x}\d{x} \\
-	\d{v} = \cos{x}\d{x} &\text{ and } v = \sin{x} \\
-	\int{e^{-x}\cos{x}\d{x}} &= e^{-x}\sin{x} + \int{e^{-x}\sin{x}\d{x}}.
-\end{align*}
-\indent
-Following LIPET, $u = e^{-x}$ again.
-\begin{align*}
-	u = e^{-x} &\text{ and } \d{u} = -e^{-x}\d{x} \\
-	\d{v} = \sin{x}\d{x} &\text{ and } v = -\cos{x} \\
-	e^{-x}\sin{x} + \int{e^{-x}\cos{x}\d{x}} &= e^{-x}\sin{x} - e^{-x}\cos{x} - \int{e^{-x}\cos{x}\d{x}}
-\end{align*}
-\indent
-It might seem like we've hit a dead end, since we're back trying to integrate the exact same function we started with.
-However, if we rearrange our equations a little bit, we'll see that we're actually really close to a solution.
-\begin{align*}
-	\int{e^{-x}\cos{x}\d{x}} &= e^{-x}\sin{x} - e^{-x}\cos{x} - \int{e^{-x}\cos{x}\d{x}} \\
-	2\int{e^{-x}\cos{x}\d{x}} &=\footnotemark\hspace{5pt} e^{-x}\sin{x} - e^{-x}\cos{x} + C \\
-	\int{e^{-x}\cos{x}\d{x}} &= \frac{e^{-x}\sin{x} - e^{-x}\cos{x}}{2} + C.
-\end{align*}
+\begin{answer}
+	Following LIPET, $u=e^{-x}$.
+	\begin{align*}
+		u = e^{-x} &\text{ and } \d{u} = -e^{-x}\d{x} \\
+		\d{v} = \cos{x}\d{x} &\text{ and } v = \sin{x} \\
+		\int{e^{-x}\cos{x}\d{x}} &= e^{-x}\sin{x} + \int{e^{-x}\sin{x}\d{x}}.
+	\end{align*}
+	
+	Following LIPET, $u = e^{-x}$ again.
+	\begin{align*}
+		u = e^{-x} &\text{ and } \d{u} = -e^{-x}\d{x} \\
+		\d{v} = \sin{x}\d{x} &\text{ and } v = -\cos{x} \\
+		e^{-x}\sin{x} + \int{e^{-x}\cos{x}\d{x}} &= e^{-x}\sin{x} - e^{-x}\cos{x} - \int{e^{-x}\cos{x}\d{x}}
+	\end{align*}
+	
+	It might seem like we've hit a dead end, since we're back trying to integrate the exact same function we started with.
+	However, if we rearrange our equations a little bit, we'll see that we're actually really close to a solution.
+	\begin{align*}
+		\int{e^{-x}\cos{x}\d{x}} &= e^{-x}\sin{x} - e^{-x}\cos{x} - \int{e^{-x}\cos{x}\d{x}} \\
+		2\int{e^{-x}\cos{x}\d{x}} &=\footnotemark\hspace{5pt} e^{-x}\sin{x} - e^{-x}\cos{x} + C \\
+		\int{e^{-x}\cos{x}\d{x}} &= \frac{e^{-x}\sin{x} - e^{-x}\cos{x}}{2} + C.
+	\end{align*}
+\end{answer}
 \footnotetext{We need to remember to include a $+C$. Usually it would come from completely solving an integral, but here we just did some rearranging.}
 
 \subsubsection{Inverse Trig Functions}
@@ -99,13 +105,13 @@ We'll also end up applying two different strategies: Integration by parts and $u
 	&= x\arcsin{x} + \sqrt{u} + C \\
 	&= x\arcsin{x} + \sqrt{1-x^2} + C.
 \end{align*}
-\noindent
+
 We can do the exact same thing to find the integral of $\arccos{x}$.
 \begin{equation*}
 	\int{\arccos{x}\d{x}} = x\arccos{x} - \sqrt{1-x^2} + C.
 \end{equation*}
 
-\noindent
+
 The integration by parts into $u$-substitution idea even works for $\arctan{x}$.
 \begin{align*}
 	u = \arctan{x} &\text{ and } \d{u} = \frac{1}{1+x^2} \\
@@ -116,13 +122,13 @@ The integration by parts into $u$-substitution idea even works for $\arctan{x}$.
 	&= x\arctan{x} - \frac{1}{2}\ln{\abs{u}} + C \\
 	&= x\arctan{x} - \frac{1}{2}\ln{\abs{1+x^2}} + C.
 \end{align*}
-\noindent
+
 We can do the same thing to find the integral of $\arccot{x}$.
 \begin{equation*}
 	\int{\arccot{x}\d{x}} = x\arccot{x} + \frac{1}{2}\ln{\abs{1+x^2}} + C.
 \end{equation*}
 
-\noindent
+
 The integrals of $\arcsec{x}$ and $\arccsc{x}$ involve a special type of function you probably haven't seen before, $\text{arccosh}{x}$.
 However, if you're familiar with this function and it's derivative, you can still apply integration by parts to find their antiderivatives.
 \begin{align*}
@@ -134,7 +140,7 @@ However, if you're familiar with this function and it's derivative, you can stil
 If we're trying to integrate a function like $x^4e^{-x}$ using integration by parts, we quickly realize that we'll need to perform integration by parts 4 times, choosing the same value for $\d{v}$ every time.
 Since this would be rather tedious and repetitive, we can extract the essential elements of integration by parts into a table and perform integration by parts many times without needing to repeat ourselves.
 
-\noindent
+
 In integration by parts, we essentially choose one function ($u$) to continually differentiate and another ($\d{v}$) to continually integrate.
 We then alternate signs with each iteration of integration by parts, due to negative signs canceling each other out.
 So, in our table, we'll have three columns, one where we'll continually differentiate a function, usually until its a constant, a column to keep track of the sign, and a final column that we'll continually integrate.
@@ -146,16 +152,18 @@ Then, all we'll have to do is multiply across columns and sum across rows to get
 		\int{x^4e^{-x}\d{x}}.
 	\end{equation*}
 \end{example}
-Following LIPET, $x^4$ is our function to differentiate and $e^{-x}$ is our function to integrate.
-Setting up our table,
-\begin{figure}[H]
-	\label{tabular}
-	\centering
-	\includegraphics[width = 0.5\textwidth]{./integrals/integration_by_parts/tabular.png}
-\end{figure}
-Multiplying across each arrow and summing,
-\begin{align*}
-	\int{x^4e^{-x}\d{x}} &= x^4\left(-e^{-x}\right) + 4x^3(-1)e^{-x} + 12x^2\left(-e^{-x}\right) + 24x(-1)e^{-x} + 24\left(-e^{-x}\right) + C \\
-	&= -x^4e^{-x} - 4x^3e^{-x} - 12x^2e^{-x} - 24xe^{-x} - 24e^{-x} + C \\
-	&= -e^{-x}\left(x^4 + 4x^3 + 12x^2 + 24x + 24\right) + C.
-\end{align*}
+\begin{answer}
+	Following LIPET, $x^4$ is our function to differentiate and $e^{-x}$ is our function to integrate.
+	Setting up our table,
+	\begin{figure}[H]
+		\label{tabular}
+		\centering
+		\includegraphics[width = 0.5\textwidth]{./integrals/integration_by_parts/tabular.png}
+	\end{figure}
+	Multiplying across each arrow and summing,
+	\begin{align*}
+		\int{x^4e^{-x}\d{x}} &= x^4\left(-e^{-x}\right) + 4x^3(-1)e^{-x} + 12x^2\left(-e^{-x}\right) + 24x(-1)e^{-x} + 24\left(-e^{-x}\right) + C \\
+		&= -x^4e^{-x} - 4x^3e^{-x} - 12x^2e^{-x} - 24xe^{-x} - 24e^{-x} + C \\
+		&= -e^{-x}\left(x^4 + 4x^3 + 12x^2 + 24x + 24\right) + C.
+	\end{align*}
+\end{answer}

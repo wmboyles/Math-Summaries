@@ -19,7 +19,6 @@ We'd like to be able to find this interval so we know if we can rightly use Tayl
 	We call this value $r$ the radius of convergence.
 \end{theorem}
 
-\noindent
 Generally, we start by applying the ratio test to determine where the series converges absolutely.
 If we find the series converges for all real numbers of just at $x=a$, we are done.
 Otherwise the series converges for some finite interval and we need to apply a different test to determine convergence at endpoints.
@@ -30,20 +29,22 @@ Otherwise the series converges for some finite interval and we need to apply a d
 		\sum_{i=0}^{\infty}{\frac{ix^i}{10^i}}.
 	\end{equation*}
 \end{example}
-Since this series isn't quite geometric enough for an nth root test but does have all poitive terms, it seems most suited for a ratio test.
-\begin{equation*}
-	\lim_{n\to\infty}{\frac{\frac{(n+1)x^{n+1}}{10^{n+1}}}{\frac{nx^n}{10^n}}} = \lim_{n\to\infty}{\frac{(n+1)x^{n+1}}{10nx^n}} = \lim_{n\to\infty}{\frac{(n+1)x}{10n}} = \frac{x}{10}.
-\end{equation*}
-\indent
-$x$ can be positive or negative.
-Recall that with a ratio test, the series converges if the limit is less than 1.
-\begin{align*}
-	\abs{\frac{x}{10}} &< 1 \\
-	\abs{x} &< 10.
-\end{align*}
-\indent
-So, the radius of convergence is 10.
-Note that this analysis doesn't tell us for sure of the series converges for $x=\pm 10$ (it happens to not converge in this case).
+\begin{answer}
+	Since this series isn't quite geometric enough for an nth root test but does have all poitive terms, it seems most suited for a ratio test.
+	\begin{equation*}
+		\lim_{n\to\infty}{\frac{\frac{(n+1)x^{n+1}}{10^{n+1}}}{\frac{nx^n}{10^n}}} = \lim_{n\to\infty}{\frac{(n+1)x^{n+1}}{10nx^n}} = \lim_{n\to\infty}{\frac{(n+1)x}{10n}} = \frac{x}{10}.
+	\end{equation*}
+	
+	$x$ can be positive or negative.
+	Recall that with a ratio test, the series converges if the limit is less than 1.
+	\begin{align*}
+		\abs{\frac{x}{10}} &< 1 \\
+		\abs{x} &< 10.
+	\end{align*}
+	
+	So, the radius of convergence is 10.
+	Note that this analysis doesn't tell us for sure of the series converges for $x=\pm 10$ (it happens to not converge in this case).
+\end{answer}
 
 \begin{example}
 	Determine the radius of convergence for the following series:
@@ -51,13 +52,15 @@ Note that this analysis doesn't tell us for sure of the series converges for $x=
 		\sum_{i=0}^{\infty}{i!x^i}.
 	\end{equation*}
 \end{example}
-We can again use a ratio test.
-\begin{equation*}
-	\lim_{n\to\infty}{\frac{(n+1)!x^{n+1}}{n!x^n}} = \lim_{n\to\infty}{(n+1)x} = \begin{cases} \infty & x\neq 0 \\ 0 & x = 0 \end{cases}.
-\end{equation*}
-\indent
-We see that the only time the limit is less than 1 is when $x=0$.
-So, the radius of convergence is 0.
+\begin{answer}
+	We can again use a ratio test.
+	\begin{equation*}
+		\lim_{n\to\infty}{\frac{(n+1)!x^{n+1}}{n!x^n}} = \lim_{n\to\infty}{(n+1)x} = \begin{cases} \infty & x\neq 0 \\ 0 & x = 0 \end{cases}.
+	\end{equation*}
+	
+	We see that the only time the limit is less than 1 is when $x=0$.
+	So, the radius of convergence is 0.
+\end{answer}
 
 \begin{example}
 	Determine the radius of convergence for the following series\footnote{You might recognize this as the Maclaurin series for $e^x$.}:
@@ -65,12 +68,14 @@ So, the radius of convergence is 0.
 		\sum_{i=0}^{\infty}{\frac{x^i}{i!}}.
 	\end{equation*}
 \end{example}
-Applying the ratio test,
-\begin{equation*}
-	\lim_{n\to\infty}{\frac{\frac{x^{n+1}}{(n+1)!}}{\frac{x^n}{n!}}} = \lim_{n\to\infty}{\frac{x}{n+1}} = 0.
-\end{equation*}
-\indent
-Since the limit is less than 1 everywhere, the series converges for all real $x$.
+\begin{answer}
+	Applying the ratio test,
+	\begin{equation*}
+		\lim_{n\to\infty}{\frac{\frac{x^{n+1}}{(n+1)!}}{\frac{x^n}{n!}}} = \lim_{n\to\infty}{\frac{x}{n+1}} = 0.
+	\end{equation*}
+	
+	Since the limit is less than 1 everywhere, the series converges for all real $x$.
+\end{answer}
 
 \subsection{Convergence at Endpoints}
 If a series only converges over some finite interval, our method of applying the ratio test is inconclusive.
@@ -83,13 +88,15 @@ The most common tests to use are the direct comparison test, the limit compariso
 		\sum_{i=0}^{\infty}{\frac{ix^i}{10^i}}.
 	\end{equation*}
 \end{example}
-Plugging in $x=\pm10$,
-\begin{equation*}
-	\sum_{i=0}^{\infty}{\frac{i(\pm10)^i}{10^i}} = \sum_{i=0}^{\infty}{(\pm 1)^i i}.
-\end{equation*}
-\indent
-This series diverges by the nth term test for both $x=10$ and $x=-10$.
-So the radius of convergence is $\abs{x} < 10$.
+\begin{answer}
+	Plugging in $x=\pm10$,
+	\begin{equation*}
+		\sum_{i=0}^{\infty}{\frac{i(\pm10)^i}{10^i}} = \sum_{i=0}^{\infty}{(\pm 1)^i i}.
+	\end{equation*}
+	
+	This series diverges by the nth term test for both $x=10$ and $x=-10$.
+	So the radius of convergence is $\abs{x} < 10$.
+\end{answer}
 
 \begin{example}
 	For what values of $x$ does the following series converge:
@@ -97,20 +104,21 @@ So the radius of convergence is $\abs{x} < 10$.
 		\sum_{i=1}^{\infty}{(-1)^{i+1}\frac{x^{2i}}{2i}}.
 	\end{equation*}
 \end{example}
-Applying the ratio test to the absolute series,
-\begin{equation*}
-	\lim_{n\to\infty}{\frac{\frac{x^{2n+2}}{2n+2}}{\frac{x^{2n}}{2n}}} = \lim_{n\to\infty}{\frac{2nx^2}{2n+2}} = x^2.
-\end{equation*}
-\indent
-So, by the ratio test, the series converges absolutely when $\abs{x}<1$.
-The series is the same at $x=1$ and $x=-1$.
-\begin{equation*}
-	\sum_{i=0}^{\infty}{\frac{(-1)^{i+1}}{2i}}.
-\end{equation*}
-\indent
-Since the series, disregarding the $(-1)^{i+1}$ has all terms positive and decreasing and passes the nth term test, it converges by the alternating series test.
-Therefore the interval of convergence is $[-1,1]$. \\
+\begin{answer}
+	Applying the ratio test to the absolute series,
+	\begin{equation*}
+		\lim_{n\to\infty}{\frac{\frac{x^{2n+2}}{2n+2}}{\frac{x^{2n}}{2n}}} = \lim_{n\to\infty}{\frac{2nx^2}{2n+2}} = x^2.
+	\end{equation*}
 
-\noindent
+	So, by the ratio test, the series converges absolutely when $\abs{x}<1$.
+	The series is the same at $x=1$ and $x=-1$.
+	\begin{equation*}
+		\sum_{i=0}^{\infty}{\frac{(-1)^{i+1}}{2i}}.
+	\end{equation*}
+
+	Since the series, disregarding the $(-1)^{i+1}$ has all terms positive and decreasing and passes the nth term test, it converges by the alternating series test.
+	Therefore the interval of convergence is $[-1,1]$.
+\end{answer}
+
 It's important to remember that although a series might converge over some interval it might do so very slowly, especially at endpoints.
 That is why when estimating a function value using a Taylor series we still need to estimate the error.

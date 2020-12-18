@@ -8,7 +8,7 @@ First, we need to define what we mean by an infinite series.
 	\end{equation*}
 	Just like with finite series, each $a_i$ is a term, and $a_n$ is the nth term.
 \end{definition}
-\noindent
+
 We can describe the behavior of an infinite series by looking at how its value behaves after summing a finite number of terms.
 We can define what it means for an infinite sum to have a value by looking at the limit of the partial sums as $n$ grows large.
 \begin{definition}
@@ -29,18 +29,20 @@ We can define what it means for an infinite sum to have a value by looking at th
 		\frac{3}{10} + \frac{3}{100} + \ldots + \frac{3}{10^n} + \ldots.
 	\end{equation*}
 \end{example}
-Looking at the partial sums,
-\begin{align*}
-	s_1 &= 0.3 \\
-	s_2 &= 0.33 \\
-	&\vdots \\
-	s_n &= 0.\underbrace{33333\ldots}_{\text{$n$ total 3's}}
-\end{align*}
-\indent
-So, it seems the limit of the partial sums tends towards a decimal with an infinite number of 3's.
-This value corresponds to the decimal expansion of 1/3, which clearly is real and finite, so the series converges. \\
+\begin{answer}
+	Looking at the partial sums,
+	\begin{align*}
+		s_1 &= 0.3 \\
+		s_2 &= 0.33 \\
+		&\vdots \\
+		s_n &= 0.\underbrace{33333\ldots}_{\text{$n$ total 3's}}
+	\end{align*}
+	
+	So, it seems the limit of the partial sums tends towards a decimal with an infinite number of 3's.
+	This value corresponds to the decimal expansion of 1/3, which clearly is real and finite, so the series converges.
+\end{answer}
 
-\noindent
+
 The above series is a geometric series since each subsequent term is 10 times smaller than the previous one (i.e $r=1/10$).
 \begin{lemma}
 	The geometric series
@@ -103,7 +105,7 @@ So,
 	\end{equation*}
 	also converges for $\abs{x-a} < R$ and is equal to $f^\prime(x)$ on that interval.
 \end{theorem}
-\noindent
+
 Applying the theorem,
 \begin{align*}
 	\frac{-1}{x^2} &= -1 - 2(1-x) - 3(1-x)^2 - \ldots, \abs{1-x} < 1 \\
@@ -123,14 +125,14 @@ Applying the theorem,
 	\end{equation*}
 	also converges for $\abs{x-a} < R$ and represents the antiderivative of $f$ on that interval.
 \end{theorem}
-\noindent
+
 Applying the theorem,
 \begin{align*}
 	\ln{\abs{x}} &= 1 + \frac{(1-x)^2}{2} + \frac{(1-x)^3}{3} + \ldots, \abs{1-x} < 1 \\
 	-\ln{\abs{1-x}} &= x + \frac{x^2}{2} + \frac{x^3}{3} + \ldots, \abs{x} < 1 \\
 	\ln{\abs{1+x}} &= x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \ldots, \abs{x} < 1.
 \end{align*}
-\noindent
+
 This is pretty impressive: we now have an formula for $\ln{x}$ in terms of polynomials.
 This also includes some pretty surprising identities.
 For example\footnote{Technically, we're substituting $x=1$ which isn't in the interval of convergence. However, since we are dealing with an alternating sum, the series will also converge for $x=-1$ and $x=1$.},
@@ -141,29 +143,31 @@ For example\footnote{Technically, we're substituting $x=1$ which isn't in the in
 \begin{example}
 	Find a power series for $\arctan{x}$ and state the interval of convergence.
 \end{example}
-We know that
-\begin{equation*}
-	\dd{}{x}\arctan{x} = \frac{1}{1+x^2}.
-\end{equation*}
-\indent
-So, if we can find a power series that represents $1/(1+x^2)$, we can integrate term-by-term to get a power series for $\arctan{x}$.
-We also already know the following power series.
-\begin{equation*}
-	\frac{1}{1+u} = 1 - u + u^2 - u^3 + \ldots, \abs{u} < 1.
-\end{equation*}
-\indent
-Letting $u=x^2$,
-\begin{align*}
-	\frac{1}{1+x^2} &= 1 - x^2 + x^4 - x^6 + \ldots, \abs{x^2} < 1 \\
-	&= 1 - x^2 + x^4 - x^6 + \ldots, \abs{x} < 1.
-\end{align*}
-\indent
-Integrating term-by-term,
-\begin{align*}
-	\arctan{x} = x - \frac{x^3}{3} + \frac{x^5}{5} + \ldots + (-1)^n\frac{x^{2n+1}}{2n+1} + \ldots, \abs{x} < 1.
-\end{align*}
-\indent
-This power series also gives rise to a pretty interesting identity\footnote{See footnote 1.}.
-\begin{equation*}
-	\arctan{1} = \frac{\pi}{4} = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \ldots + (-1)^n\frac{x^{2n+1}}{2n+1} \ldots.
-\end{equation*}
+\begin{answer}
+	We know that
+	\begin{equation*}
+		\dd{}{x}\arctan{x} = \frac{1}{1+x^2}.
+	\end{equation*}
+	
+	So, if we can find a power series that represents $1/(1+x^2)$, we can integrate term-by-term to get a power series for $\arctan{x}$.
+	We also already know the following power series.
+	\begin{equation*}
+		\frac{1}{1+u} = 1 - u + u^2 - u^3 + \ldots, \abs{u} < 1.
+	\end{equation*}
+	
+	Letting $u=x^2$,
+	\begin{align*}
+		\frac{1}{1+x^2} &= 1 - x^2 + x^4 - x^6 + \ldots, \abs{x^2} < 1 \\
+		&= 1 - x^2 + x^4 - x^6 + \ldots, \abs{x} < 1.
+	\end{align*}
+	
+	Integrating term-by-term,
+	\begin{align*}
+		\arctan{x} = x - \frac{x^3}{3} + \frac{x^5}{5} + \ldots + (-1)^n\frac{x^{2n+1}}{2n+1} + \ldots, \abs{x} < 1.
+	\end{align*}
+	
+	This power series also gives rise to a pretty interesting identity\footnote{See footnote 1.}.
+	\begin{equation*}
+		\arctan{1} = \frac{\pi}{4} = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \ldots + (-1)^n\frac{x^{2n+1}}{2n+1} \ldots.
+	\end{equation*}
+\end{answer}

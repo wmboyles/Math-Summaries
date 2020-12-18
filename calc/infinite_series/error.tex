@@ -1,0 +1,108 @@
+\section{Approximation Error}
+Although knowing these infinite Taylor series is nice, if we want to use them to find function values, we'll need to approximate.
+This means only using some finite number of terms in the Taylor series for our approximation.
+Because we're not using all the terms, we'll naturally have some truncation error.
+We'd like to be able to say how big this truncation error is so we can be sure that our approximation is good enough.
+
+\subsection{Alternating Series Estimation Theorem}
+\begin{theorem}[Alternating Series Estimation Theorem]
+	Let $s$ be a convergent, alternating (i.e the sign of each term alternates) series where the terms of $\abs{s}$ are strictly decreasing.
+	Then the $n$th term truncation error is the same sign as and less than in absolute value the $(n+1)$th term.
+\end{theorem}
+
+\begin{example}
+	Give a bound for the truncation error of using the first 10 terms of the Maclaurin series of $\ln{(1+x)}$ to approximate $\ln{2}$.
+\end{example}
+The Maclaurin series for $\ln{(1+x)}$ is
+\begin{equation*}
+	\ln{(1+x)} = x - \frac{x^2}{2} + \frac{x^3}{3} - \ldots = \sum_{i=0}^{\infty}{(-1)^i\frac{x^{i+1}}{i+1}}, \abs{x} \leq 1,
+\end{equation*}
+\indent
+which is an alternating series.
+We see that to approximate $\ln{2}$, we'd use $x=1$, which is in the interval of convergence, so the series converges.
+The first missing term of the series is $1/11$.
+Let $s_{10}$ be the partial sum of the first 10 terms when $x=1$.
+By the Alternating Series Estimation Theorem,
+\begin{equation*}
+	0 < \ln{2} - s_{10} < \frac{1}{11}. 
+\end{equation*}
+
+\subsection{Taylor's Theorem}
+Although the Alternating Series Estimation Theorem is useful for quickly bounding the error of alternating series, we'd like something that can apply more generally to all Taylor series.
+\begin{theorem}[Taylor's Theorem]
+	Let $f$ be a $k+1$ times differentiable function on an open interval $I$ containing $a$.
+	Then for all $x$ in $I$,
+	\begin{equation*}
+		f(x) = f(a) + f^\prime(a)(x-a) + \frac{f^{\prime\prime}(a)}{2!}(x-a)^2 + \ldots + \frac{f^{(n)}(a)}{n!}(x-a)^n + R_n(x).
+	\end{equation*}
+	where
+	\begin{equation*}
+		\abs{R_n(x)} = \frac{\abs{f^{(n+1)}(c)}}{(n+1)!}\abs{x-a}^{n+1}
+	\end{equation*}
+	for some $c$ between $x$ and $a$.
+\end{theorem}
+\noindent
+We can use this theorem to find the maximum value of $\abs{R_n(x)}$ over some interval.
+We can also be more precise about what it means for a Taylor series to converge to some function over some interval.
+\begin{definition}
+	Let $R_n(x)$ be the remainder of truncating after the degree $n$ term in the Taylor series for $f$ centered at $x=a$.
+	If for all $x$ in some interval $I$ containing $a$,
+	\begin{equation*}
+		\lim_{n\to\infty}{R_n(x)} = 0,
+	\end{equation*}
+	then we say the Taylor series for $f$ at $x=a$ converges to $f$ on $I$.
+\end{definition}
+
+\begin{example}
+	Show that the Maclaurin series for $\sin{x}$ converges to $\sin{x}$ for all real $x$.
+\end{example}
+We need to find the remainder and show that in the limit it goes to 0 as $n$ grows large.
+By Taylor's Theorem,
+\begin{align*}
+	\abs{R_n(x)} &= \frac{\abs{f^{(n+1)}(c)}}{(n+1)!}\abs{x-a}^{n+1} \\
+	&\leq \frac{\abs{x}^{n+1}}{(n+1)!}.
+\end{align*}
+\indent
+The numerator is an exponential function, while the denominator is a factorial function, so using $n^n$FEPL,
+\begin{align*}
+	0 \leq \lim_{n\to\infty}{R_n(x)} &\leq \lim_{n\to\infty}{\frac{\abs{x}^{n+1}}{(n+1)!}} = 0. \\
+	\lim_{n\to\infty}{R_n(x)} &= 0.
+\end{align*}
+\indent
+So, the Maclaurin series converges to $\sin{x}$ for all real $x$.
+
+\subsubsection{Remainder Estimation Theorem}
+Notice that we didn't have to actually find the value of $f^{(n+1)}(c)$.
+We just had to find a suitable upper bound where the limit would still go to 0.
+\begin{theorem}[Remainder Estimation Theorem]
+	If there are positive constants $M$ and $r$ such that
+	\begin{equation*}
+		\abs{f^{(n+1)}(t)} \leq Mr^{(n+1)}
+	\end{equation*}
+	for all $t$ between $a$ and $x$, then $R_n(x)$ satisfies the inequality
+	\begin{equation*}
+		\abs{R_n(x)} \leq M\frac{r^{n+1}\abs{x-a}^{n+1}}{(n+1)!}.
+	\end{equation*}
+\end{theorem}
+
+\begin{example}
+	Give a maximum error bound for using $\ln{(1+x)} = x - x^2/2$ when $\abs{x} \leq 0.1$.
+\end{example}
+We are using the second-order Taylor polynomial, so we need to find $R_2(x)$.
+By Taylor's Theorem,
+\begin{align*}
+	\abs{R_2(x)} &= \frac{\abs{f^{(2+1)}(c)}}{(2+1)!}\abs{x-0}^{2+1}  = \frac{\abs{f^{(3)}(c)}}{3!}\abs{x}^3\\
+	f^{(3)}(x) &= \dd{^3}{x^3}\ln{(1+x)} = \frac{2}{(1+x)^3} \\
+\end{align*}
+\indent
+On $-0.1 \leq x \leq 0.1$, $\abs{f^{(3)}(x)}$ is maximal at $(-0.1, \frac{2000}{729})$.
+\begin{equation*}
+	\abs{R_2(x)} \leq \frac{\frac{2000}{729}}{6}\abs{x}^3.
+\end{equation*}
+\indent
+On $-0.1 \leq x \leq 0.1$, $\abs{x}^3$ is maximal at $(-0.1, \frac{1}{1000})$.
+\begin{equation*}
+	\abs{R_2(x)} \leq \frac{\frac{2000}{729}}{6}\frac{1}{1000} = \frac{1}{2187} \approx 4.572 \times 10^{-4}. 
+\end{equation*}
+\indent
+So, the error of approximating $\ln{(1+x)}$ with $x-x^2/2$ when $-0.1 \leq x \leq 0.1$ is at most $4.572 \times 10^{-4}$.

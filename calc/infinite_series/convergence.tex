@@ -1,0 +1,315 @@
+\section{Convergence}
+We have described what it means for a Taylor series to converge to a function over some interval.
+What if we're given an infinite series that's not a function, just an infinite sum of numbers?
+Can we still check if the series converges or diverges?
+We'll develop several tests that we can apply to check for convergence or divergence.
+
+\subsection{nth Term Test for Divergence}
+\begin{lemma}
+	Let $a_n$ be the nth term of a series $s$.
+	If
+	\begin{equation*}
+		\lim_{n\to\infty}{a_n} \neq 0,
+	\end{equation*}
+	then the series diverges.
+\end{lemma}
+\begin{proof}
+	Assume not.
+	Let $a_n$ be the nth term and $s_n$ the nth partial sum of a convergent series $s$ whose terms do not tend to 0.
+	Since $s$ converges to some value $L$, there exists some positive integer $m$ such that for all  $n > m$ and $\epsilon > 0$,
+	\begin{equation*}
+		\abs{s_n - L} < \epsilon.
+	\end{equation*}
+	We can also say the same for $s_{n+1}$.
+	\begin{equation*}
+		\abs{s_{n+1}-L} < \epsilon.
+	\end{equation*}
+	So, subtracting one inequality from the other,
+	\begin{equation*}
+		\abs{s_{n+1}-s_n} < 2\epsilon.
+	\end{equation*}
+	The difference between the two partial sums is just $a_{n+1}$.
+	So,
+	\begin{equation*}
+		\abs{a_{n+1}} < 2\epsilon.
+	\end{equation*}
+	Since the terms of $s$ don't tend to 0, there exists some positive integer $h$ and real value $\delta > 0$ such that for all $n > h$,
+	\begin{equation*}
+		\abs{a_n} > \delta.
+	\end{equation*}
+	We can also say the same for $a_{n+1}$.
+	\begin{equation*}
+		\abs{a_{n+1}} > \delta.
+	\end{equation*}
+	Combining the two inequalities involving $a_{n+1}$, for all $n > \max{(m,h)}$,
+	\begin{equation*}
+		\delta < \abs{a_{n+1}} < 2\epsilon.
+	\end{equation*}
+	However, for $\epsilon \leq \delta/2$, the inequality creates a contradiction.
+\end{proof}
+
+\noindent
+Although the proof has to be a bit specific to cover the case of alternating series, the idea behind the test makes sense.
+If you're adding on terms that don't get smaller in absolute value, then you can't "zero in" on a particular value and converge.
+
+\begin{example}
+	Show that the following series diverges:
+	\begin{equation*}
+		\sum_{i=0}^{\infty}{(-1)^n} = 1 - 1 + 1 - 1 + \ldots.
+	\end{equation*}
+\end{example}
+We see that
+\begin{equation*}
+	\lim_{n\to\infty}{a_n} = \text{DNE} \neq 0.
+\end{equation*}
+\indent
+So, by the nth Term Test for Divergence, the series diverges.
+
+\subsection{Geometric Series with $\abs{r} < 1$}
+\begin{lemma}
+	If $s$ is a geometric series with common ratio $r$, then $s$ converges if and only if $\abs{r} < 1$.
+\end{lemma}
+\noindent
+We already proved this when talking about power series and gave a formula to find its value.
+
+\begin{example}
+	Show that the following series diverges:
+	\begin{equation*}
+		\sum_{i=0}^{\infty}{\frac{2^n}{3}}.
+	\end{equation*}	
+\end{example}
+This is a geometric series with initial term $1/3$ and common ratio $r=2$.
+Since $\abs{r} > 1$, the series diverges.
+
+\subsection{P-Series Test}
+\begin{lemma}
+	The p-series
+	\begin{equation*}
+		\sum_{i=1}^{\infty}{\frac{1}{i^p}}
+	\end{equation*}
+	converges if and only if $p > 1$.
+\end{lemma}
+
+\begin{example}
+	Show that the Harmonic Series diverges:
+	\begin{equation*}
+		\sum_{i=1}^{\infty}{\frac{1}{i}}.
+	\end{equation*}
+\end{example}
+\indent
+This is a p-series with $p=1$.
+So, by the P-Series Test, the sum diverges.
+
+\subsection{Direct Comparison Test}
+\begin{lemma}
+	Let $s = \sum_{i=0}^{\infty}{a_i}$ be a series where all $a_i \geq 0$.
+	$s$ converges if there exists some convergent series $c = \sum_{i=0}^{\infty}{c_i}$ and positive integer $m$ such that for all $n > m$,
+	\begin{equation*}
+		c_n \geq a_n.
+	\end{equation*}
+	$s$ diverges if there exists some divergent series $d = \sum_{i=0}^{\infty}{d_i}$ and positive integer $m$ such that for all $n > m$,
+	\begin{equation*}
+		a_n \geq d_n.
+	\end{equation*}
+\end{lemma}
+
+\begin{example}
+	Show that the following series converges:
+	\begin{equation*}
+		\sum_{i=0}^{\infty}{\frac{1}{2 + 3^i}}.
+	\end{equation*}
+\end{example}
+We see that this series looks really similar to a geometric series with common ratio 1/3, just with an extra 2 in the denominator.
+For all $n > 0$,
+\begin{equation*}
+	\frac{1}{2+3^n} \leq \frac{1}{3^n}.
+\end{equation*}
+\indent
+So, by the Direct Comparison Test, the series converges.
+
+\begin{example}
+	Show that the following series diverges:
+	\begin{equation*}
+		\sum_{i=0}^{\frac{1}{2+\sqrt{i}}}.
+	\end{equation*}
+\end{example}
+Although the sum looks like a p-series with $p=1/2$, we can use that series because our series has smaller terms.
+Instead, we can compare to a p-series where $p=1/2$.
+\begin{align*}
+	0 \leq \frac{1}{n} &\geq \frac{1}{2+\sqrt{n}} \\
+	0 \leq 2 + \sqrt{n} &\leq n \\
+	n & \geq 4.
+\end{align*}
+\indent
+So, for all $n \geq 4$, our series has larger values than the p-series with $p=1$.
+We know the p-series diverges by the P-Test, so by the Direct Comparison Test, our series also diverges.
+
+\subsection{Limit Comparison Test}
+\begin{lemma}
+	Let $a_n$ and $b_n$ be the nth terms of two series $a$ and $b$ that have all positive terms after some point.
+	If
+	\begin{equation*}
+		\lim_{n\to\infty}{\frac{a_n}{b_n}}
+	\end{equation*}
+	converges to a finite value greater than 0, then $a$ and $b$ either both converge or both diverge.
+	If the limit converges to 0 and $b$ converges, then $a$ also converges.
+	If the limit goes to $\infty$ and $b$ diverges, then $a$ also diverges.
+\end{lemma}
+\noindent
+A common tactic is to select one of $a$ or $b$ to be a geometric or p-series.
+
+\begin{example}
+	Show that the following series diverges:
+	\begin{equation*}
+		\sum_{i=2}^{\infty}{\frac{2i}{i^2-i+a}}.
+	\end{equation*}
+\end{example}
+Looking at this rational function, we see a degree 1 term in the numerator and a degree 2 term in the denominator.
+So, we might expect that the series behaves similarly to $1/n$.
+\begin{equation*}
+	\lim_{n\to\infty}{\frac{\frac{2n}{n^2-n+a}}{\frac{1}{n}}} = \lim_{n\to\infty}{\frac{2n^2}{n^2-n+a}} = 2.
+\end{equation*}
+\indent
+Since the limit converges to a finite value greater than 0, and we know that $1/n$ diverges by the P-Test, then the series must also diverge by the Limit Comparison Test.
+
+\begin{example}
+	Show that the following series converges:
+	\begin{equation*}
+		\sum_{i=1}^{\infty}{\frac{1}{2^i - 1}}.
+	\end{equation*}
+\end{example}
+This series looks similar to the geometric series $1/2^n$.
+\begin{equation*}
+	\lim_{n\to\infty}{\frac{\frac{1}{2^n}}{\frac{1}{2^n-1}}} = \lim_{n\to\infty}{\frac{2^n - 1}{2^n}} = 1.
+\end{equation*}
+\indent
+Since the limit converges to a finite value greater than 0, and we know that $1/2^n$ converges because it's a geometric series with $r=1/2$, then the series must also converge the the Limit Comparison Test.
+
+\subsection{Integral Test}
+\begin{lemma}
+	Let $a$ be a sequence of positive terms where $a_n = f(n)$.
+	If $f$ is continuous, positive after some $m$, and decreasing, then the series
+	\begin{equation*}
+		\sum_{i=m}^{\infty}{a_i}
+	\end{equation*}
+	converges if and only if the integral
+	\begin{equation*}
+		\int_{m}^{\infty}{f(x)\d{x}}
+	\end{equation*}
+	converges.
+\end{lemma}
+
+\begin{example}
+	Show that the following series diverges:
+	\begin{equation*}
+		\sum_{i=1}^{\infty}{\frac{2i}{i^2+1}}.
+	\end{equation*}
+\end{example}
+The function $f(x)=2x/(x^2+1)$ is continuous, positive for all $x \geq 1$, and decreasing.
+\begin{equation*}
+	\int_{1}^{\infty}{\frac{2x}{x^2+1}\d{x}} = (u = x^2+1) \int_{2}^{\infty}{\frac{\d{u}}{u}} = \ln{u}\biggr\rvert_{2}^{\infty} = \text{diverges}.
+\end{equation*}
+\indent
+So, by the Integral Test, the series also diverges.
+
+\begin{example}
+	Show that the following series converges:
+	\begin{equation*}
+		\sum_{i=1}^{\infty}{\frac{1}{i^2+1}}.
+	\end{equation*}
+\end{example}
+The function $f(x)=1/(x^2+1)$ is continuous, positive for all $x \geq 1$, and decreasing.
+\begin{equation*}
+	\int_{1}^{\infty}{\frac{\d{x}}{x^2+1}} = \arctan{x}\biggr\rvert_{1}^{\infty} = \frac{\pi}{2} - \frac{\pi}{4} = \frac{\pi}{4}.
+\end{equation*}
+\indent
+So, by the Integral Test\footnote{We omitted evaluating the improper integral with limits, but the value is what you would get from doing that.}k the series also converges.
+
+\subsection{Ratio Test}
+\begin{lemma}
+	Let $a$ be a series with only positive terms after some index.
+	If the limit
+	\begin{equation*}
+		\lim_{n\to\infty}{\frac{a_{n+1}}{a_n}}
+	\end{equation*}
+	is less than 1, then the series converges.
+	If the limit is greater than 1, then the series diverges.
+	If the limit is equal to 1, then the test is inconclusive.
+\end{lemma}
+
+\begin{example}
+	State whether the following series converges or diverges:
+	\begin{equation*}
+		\sum_{i=1}^{\infty}{\frac{i\ln{i}}{2^i}}.
+	\end{equation*}
+\end{example}
+Taking the limit of the ratio of subsequent terms,
+\begin{equation*}
+	\lim_{n\to\infty}{\frac{\frac{(n+1)\ln{(n+1)}}{2^{n+1}}}{\frac{n\ln{n}}{2^n}}} = \lim_{n\to\infty}{\frac{(n+1)\ln{n+1}}{2n\ln{n}}} = \lim_{n\to\infty}{\frac{n+1}{2n}} = \frac{1}{2}.
+\end{equation*}
+\indent
+Since the limit is less than 1, the series converges by the Ratio Test.
+
+\subsection{nth Root Test}
+\begin{lemma}
+	Let $a$ be a series with all positive terms after some index.
+	If the limit
+	\begin{equation*}
+		\lim_{n\to\infty}{\sqrt[n]{a_n}}
+	\end{equation*}
+	is less than 1, then the series converges.
+	If the limit is greater than 1, the series diverges.
+	If the limit is equal to 1, the test is inconclusive.
+\end{lemma}
+\noindent
+This test is most useful for series that look like geometric series, but the common ratio is not a constant.
+
+\begin{example}
+	State whether the following series converges or diverges:
+	\begin{equation*}
+		\sum_{i=1}^{\infty}{\left(\frac{i}{2i-1}\right)^i}.
+	\end{equation*}
+\end{example}
+Taking the limit of the nth root,
+\begin{equation*}
+	\lim_{n\to\infty}{\sqrt[n]{\left(\frac{n}{2n-1}\right)^n}} = \lim_{n\to\infty}{\frac{n}{2n-1}} = \frac{1}{2}.
+\end{equation*}
+\indent
+Since the limit is less than 1, the series converges by the nth Root Test.
+
+\subsection{Alternating Series Test}
+All of the previous 8 tests have tested whether a series converges absolutely.
+That is, all terms in the series could be made positive and the series would still converge or diverge.
+There are some series that do converge but don't converge absolutely.
+We say that these series converge conditionally.
+You've already seen  few, like the formula for $\pi/4$ using the Maclaurin series for $\arctan{x}$.
+All series that converge absolutely also converge conditionally.
+Series that converge conditionally do so when they pass the following test.
+
+\begin{lemma}
+	The series
+	\begin{equation*}
+		\sum_{i=0}^{\infty}{(-1)^iu_i}
+	\end{equation*}
+	converges if all of the following conditions are satisfied.
+	\begin{enumerate}
+		\item All $u_i$ are positive.
+		\item There exists an integer $m$ such that for all $n > m$, $u_{n+1} \leq u_n$.
+		\item The series of $u$'s pass the nth Term Test.
+	\end{enumerate}
+\end{lemma}
+
+\begin{example}
+	State whether the following series converges or diverges:
+	\begin{equation*}
+		\sum_{i=1}^{\infty}{(-1)^i\frac{1}{i}}.
+	\end{equation*}
+\end{example}
+\begin{enumerate}
+	\item All the terms $1, 1/2, 1/3, \ldots$ are positive.
+	\item All terms are less than the previous term.
+	\item The terms tend to 0, passing the nth Term Test.
+\end{enumerate}
+\indent
+So, by the Alternating Series Test, the series converges conditionally\footnote{You've already seen this series too. It converges to $\ln{2}$.}.
+Note that the series does not converge absolutely because it fails the P-Test. \\

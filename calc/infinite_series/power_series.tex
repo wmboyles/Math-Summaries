@@ -1,0 +1,169 @@
+\section{Power Series}
+\subsection{Geometric Series}
+First, we need to define what we mean by an infinite series.
+\begin{definition}
+	An infinite series is of the form
+	\begin{equation*}
+		a_1 + a_2 + \ldots + a_n + \ldots \text{ or equivalently, } \sum_{i=1}^{\infty}{a_i}.
+	\end{equation*}
+	Just like with finite series, each $a_i$ is a term, and $a_n$ is the nth term.
+\end{definition}
+\noindent
+We can describe the behavior of an infinite series by looking at how its value behaves after summing a finite number of terms.
+We can define what it means for an infinite sum to have a value by looking at the limit of the partial sums as $n$ grows large.
+\begin{definition}
+	The nth partial sum of an infinite series is
+	\begin{equation*}
+		s_n = \sum_{i=1}^{n}{a_i}.
+	\end{equation*}
+	The infinite series converges to value $L$ if
+	\begin{equation*}
+		\lim_{n\to\infty}{s_n} = L.
+	\end{equation*}
+	Otherwise, the series diverges and does not have a value.
+\end{definition}
+
+\begin{example}
+	State if the following infinite series converges or diverges.
+	\begin{equation*}
+		\frac{3}{10} + \frac{3}{100} + \ldots + \frac{3}{10^n} + \ldots.
+	\end{equation*}
+\end{example}
+Looking at the partial sums,
+\begin{align*}
+	s_1 &= 0.3 \\
+	s_2 &= 0.33 \\
+	&\vdots \\
+	s_n &= 0.\underbrace{33333\ldots}_{\text{$n$ total 3's}}
+\end{align*}
+\indent
+So, it seems the limit of the partial sums tends towards a decimal with an infinite number of 3's.
+This value corresponds to the decimal expansion of 1/3, which clearly is real and finite, so the series converges. \\
+
+\noindent
+The above series is a geometric series since each subsequent term is 10 times smaller than the previous one (i.e $r=1/10$).
+\begin{lemma}
+	The geometric series
+	\begin{equation*}
+		\sum_{i=0}^{\infty}{a_0(r)^i}
+	\end{equation*}
+	converges to a value of $a_0/(1-r)$ if $\abs{r} < 1$ and diverges otherwise.
+\end{lemma}
+\begin{proof}
+	We'll first find a formula for the partial sums and then find the limit of the partial sums for $1 < r < 1$.
+	\begin{align*}
+		s_n &= \sum_{i=0}^{n}{a_0(r)^i} \\
+		&= a_0 + a_0r + a_0r^2 + \ldots + a_0r^n \\
+		rs_n &= a_0r + a_0r^2 + a_0r^3 + \ldots + a_0r^n + a_0r^{n+1} \\
+		&= -a_0 + s_n + a_0r^{n+1} \\
+		s_n(r-1) &= a_0\left(r^{n+1} - 1\right) \\
+		s_n &= a_0\frac{r^{n+1}-1}{r-1}.
+	\end{align*}
+	This formula for partial sums holds for all values of $r$.
+	Now we'll take the limit of $s_n$ and see for what values of $r$ the limit exists.
+	\begin{align*}
+		\sum_{i=0}^{\infty}{a_0(r)^n} &= \lim_{n\to\infty}{s_n} \\
+		&= \lim_{n\to\infty}{a_0\frac{r^{n+1}-1}{r-1}} \\
+		&= \frac{-a_0}{r-1}, \abs{r} < 1 \\
+		&= \frac{a_0}{1-r}, \abs{r} < 1.
+	\end{align*}
+\end{proof}
+
+\subsection{Functions from Geometric Series}
+What happens if rather than letting $r$ be some fixed value we know beforehand, we let $r$ be some variable $x$?
+Applying the formula,
+\begin{equation*}
+	a_0 + a_0x + a_0x^2 + \ldots = \frac{a_0}{1-x}, \abs{x} < 1.
+\end{equation*}
+This sort of sum of powers of $x$ is called a power series, and the condition that $\abs{x}<1$ is called the interval of convergence.
+Right now, this power series is centered at $x=0$, but we can generalize it a bit to be centered at $x=h$.
+\begin{equation*}
+	a_0 + a_0(x-h) + a_0(x-h)^2 + \ldots = \frac{a_0}{1-(x-h)}, \abs{x-h} < 1.
+\end{equation*}
+Note that this formula allows us to find the power series of any function $a_0/(mx+b)$.
+\begin{equation*}
+	\frac{a_0}{mx + b} = \frac{a_0}{1-(1-mx-b)} = a_0 + a_0(1-mx+b) + a_0(1-mx+b)^2 + \ldots, \abs{1-mx-b} < 1.
+\end{equation*}
+So,
+\begin{align*}
+	\frac{1}{x} &= 1 + (1-x) + (1-x)^2 + \ldots, \abs{1-x} < 1 \\
+	\frac{1}{1-x} &= 1 + x + x^2 + x^3 + \ldots, \abs{x} < 1 \\
+	\frac{1}{1+x} &= 1 - x + x^2 - x^3 + \ldots, \abs{x} < 1.
+\end{align*}
+
+\subsubsection{Term-By-Term Differentiation}
+\begin{theorem}
+	If the power series
+	\begin{equation*}
+		f(x) = \sum_{i=0}^{\infty}{c_n(x-a)^n} = c_0 + c_1(x-a) + c_2(x-a)^2 + \ldots
+	\end{equation*}
+	converges for $\abs{x-a} < R$, including $R=\infty$, then the power series
+	\begin{equation*}
+		\sum_{i=1}^{\infty}{nc_n(x-a)^{n-1}} = c_1 + 2c_2(x-a) + 3c_3(x-a)^2 + \ldots
+	\end{equation*}
+	also converges for $\abs{x-a} < R$ and is equal to $f^\prime(x)$ on that interval.
+\end{theorem}
+\noindent
+Applying the theorem,
+\begin{align*}
+	\frac{-1}{x^2} &= -1 - 2(1-x) - 3(1-x)^2 - \ldots, \abs{1-x} < 1 \\
+	\frac{1}{(1-x)^2} &= 1 + 2x + 3x^2 + \ldots, \abs{x} < 1 \\
+	\frac{-1}{(1+x)^2} &= -1 + 2x - 3x^2 + \ldots, \abs{x} < 1.
+\end{align*}
+
+\subsubsection{Term-By-Term Integration}
+\begin{theorem}
+	If the power series
+	\begin{equation*}
+		f(x) = \sum_{i=0}^{\infty}{c_n(x-a)^n} = c_0 + c_1(x-a) + c_2(x-a)^2 + \ldots
+	\end{equation*}
+	converges for $\abs{x-a} < R$, including $R=\infty$, then the power series
+	\begin{equation*}
+		\sum_{i=0}^{\infty}{c_n\frac{(x-a)^{n+1}}{n+1}} = c_0(x-a) + c_1\frac{(x-a)^2}{2} + c_2\frac{(x-a)^3}{3} + \ldots
+	\end{equation*}
+	also converges for $\abs{x-a} < R$ and represents the antiderivative of $f$ on that interval.
+\end{theorem}
+\noindent
+Applying the theorem,
+\begin{align*}
+	\ln{\abs{x}} &= 1 + \frac{(1-x)^2}{2} + \frac{(1-x)^3}{3} + \ldots, \abs{1-x} < 1 \\
+	-\ln{\abs{1-x}} &= x + \frac{x^2}{2} + \frac{x^3}{3} + \ldots, \abs{x} < 1 \\
+	\ln{\abs{1+x}} &= x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \ldots, \abs{x} < 1.
+\end{align*}
+\noindent
+This is pretty impressive: we now have an formula for $\ln{x}$ in terms of polynomials.
+This also includes some pretty surprising identities.
+For example\footnote{Technically, we're substituting $x=1$ which isn't in the interval of convergence. However, since we are dealing with an alternating sum, the series will also converge for $x=-1$ and $x=1$.},
+\begin{equation*}
+	\ln{2} = 1 - \frac{1}{2} + \frac{1}{3} - \ldots + \frac{(-1)^{n+1}}{n} + \ldots.
+\end{equation*}
+
+\begin{example}
+	Find a power series for $\arctan{x}$ and state the interval of convergence.
+\end{example}
+We know that
+\begin{equation*}
+	\dd{}{x}\arctan{x} = \frac{1}{1+x^2}.
+\end{equation*}
+\indent
+So, if we can find a power series that represents $1/(1+x^2)$, we can integrate term-by-term to get a power series for $\arctan{x}$.
+We also already know the following power series.
+\begin{equation*}
+	\frac{1}{1+u} = 1 - u + u^2 - u^3 + \ldots, \abs{u} < 1.
+\end{equation*}
+\indent
+Letting $u=x^2$,
+\begin{align*}
+	\frac{1}{1+x^2} &= 1 - x^2 + x^4 - x^6 + \ldots, \abs{x^2} < 1 \\
+	&= 1 - x^2 + x^4 - x^6 + \ldots, \abs{x} < 1.
+\end{align*}
+\indent
+Integrating term-by-term,
+\begin{align*}
+	\arctan{x} = x - \frac{x^3}{3} + \frac{x^5}{5} + \ldots + (-1)^n\frac{x^{2n+1}}{2n+1} + \ldots, \abs{x} < 1.
+\end{align*}
+\indent
+This power series also gives rise to a pretty interesting identity\footnote{See footnote 1.}.
+\begin{equation*}
+	\arctan{1} = \frac{\pi}{4} = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \ldots + (-1)^n\frac{x^{2n+1}}{2n+1} \ldots.
+\end{equation*}

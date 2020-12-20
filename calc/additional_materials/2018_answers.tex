@@ -1,0 +1,226 @@
+\subsection{2018 Free-Response Answers}
+\begin{enumerate}
+	\item \begin{enumerate}
+		\item $r(t)$ tells us the rate at which people enter the line.
+			By integrating $r(t)$ over the given interval, we can find the total number of people who entered the line.
+			Using a calculator,
+			\begin{equation*}
+				\int_{0}^{300}{r(t)\d{t}} = \int_{0}^{300}{44\left(\frac{t}{100}\right)^3\left(1-\frac{t}{300}\right)^7\d{t}} = 270 \text{ people}.
+			\end{equation*}
+		\item We know that at $t=0$, there are already 20 people in line.
+			Combining this fact with our answer from part (a), we know that $270+20=290$ people entered the line in the time interval.
+			We also know that people leave the line at a constant rate of 0.7 people per second.
+			Integrating this rate over the time interval will give us the number of people who left the line.
+			\begin{equation*}
+				\int_{0}^{300}{0.7\d{t}} = 210 \text{ people}.
+			\end{equation*}
+			So, there are $290-210=80$ people in line at $t=30$.
+		\item We know from our answer in (b) that there are 80 people in line at $t=300$.
+			We see from $r(t)$ that no more people are entering the line when $t>300$.
+			So, the only thing that contributes to changing the number of people in line is people constantly leaving at a rate of 0.7 people per second.
+			\begin{equation*}
+				300\text{s} + \frac{80 \text{ people}}{0.7\text{ people/s}} \approx 414.286\text{s}.
+			\end{equation*}
+		\item Combining the fact that there are initially 20 people in line, the inflow rate is given by $r(t)$ and the outflow rate is 0.7, we can get that the number of people in line at time $x$ is modeled by
+		\begin{equation*}
+			20 + \int_{0}^{x}{\left(r(t)-0.7\right)\d{t}}.
+		\end{equation*}
+		Finding when the derivative is 0,
+		\begin{equation*}
+			r(t) - 0.7 = 0 \implies t = 33.013 \text{ or } 166.575.
+		\end{equation*}
+		Finding the number of people in line at these times and the endpoints 0 and 300,
+		\begin{align*}
+			\text{people}_{0} &= 20 \\
+			\text{people}_{33.013} &= 3.803 \\
+			\text{people}_{166.575} &= 158.070 \\
+			\text{people}_{300} &= 80,
+		\end{align*}
+		we see that the fewest number of people occurs when $t\approx 33.013\text{s}$.
+	\end{enumerate}
+
+	\item \begin{enumerate}
+		\item Using a calculator, we see that $p^\prime(25) = -1.17906$.
+			In the context of the problem, this value means that at a depth of 25 meters, the density of plankton is decreasing at a rate of 1.17906 million plankton per cubic meter per meter.
+		\item The vertical density of the plankton in the column is given by $p(h)*3\text{m}^2$.
+			Integrating this density function for $0 \leq h \leq 30\text{m}$, we'll get the total number of plankton on the column.
+			\begin{equation*}
+				\int_{0}^{30}{3p(h)\d{h}} \approx 1675.414.
+			\end{equation*}
+			So, there are 1675.414 million plankton in the column from 0 to 30 meters depth.
+		\item The total number of plankton in the entire vertical column with cross section area $A\text{m}^2$ is given by
+			\begin{equation*}
+				P = \int_{0}^{\infty}{A\text{density}(h)\d{h}}.
+			\end{equation*}
+			We can break this integral up, and we can use $A=3\text{m}^2$ for our particular column.
+			\begin{equation*}
+				P = 3\int_{0}^{30}{p(h)\d{h}} + 3\int_{30}^{\infty}{f(h)\d{h}}.
+			\end{equation*}
+			Since $u(h) \geq f(h)$ for $h \geq 30$, we can write the following inequality, the right side of which we can numerically evaluate:
+			\begin{align*}
+				P &\leq 3\int_{0}^{30}{p(h)\d{h}} + 3\int_{0}^{\infty}{u(h)\d{h}} \\
+				&\leq 1675.414 + 3(105) \\
+				&\leq 1990.414.
+			\end{align*}
+			So, we see that the number of plankton in the entire vertical column is at most 1990.414 million, which is strictly less than 2000 million.
+		\item Since the position of the boat is parametric, we can use the parametric arc length formula to find the total distance traveled for $0 \leq t \leq 1\text{hr}$.
+			\begin{align*}
+				D &= \int_{0}^{1}{\sqrt{(x^\prime(t))^2+(y^\prime(t))^2}\d{t}} \\
+				&= \int_{0}^{1}{\sqrt{\left(662\sin{(5t)}\right)^2 + \left(880\cos{(6t)}\right)^2}\d{t}} \\
+				&\approx 757.456.
+			\end{align*}
+			So, for $0 \leq t \leq 1\text{hr}$, the boat travels a distance of 757.456 meters.
+	\end{enumerate}
+
+	\item \begin{enumerate}
+		\item Trying to treat this like an initial value problem would be too tedious with all the piecewise parts of $g$.
+			Plus, it would be doing more than the question asked because it only wants the value of $f$ at a particular point, not an expression for $f$.
+			Instead, we can use the fact that $g$ is the derivative of $f$ and apply the Fundamental Theorem of Calculus.
+			\begin{equation*}
+				\int_{-5}^{1}{g(x)\d{x}} = f(1) - f(-5) = 3 - f(-5).
+			\end{equation*}
+			Evaluating the integral geometrically,
+			\begin{equation*}
+				\int_{-5}^{1}{g(x)\d{x}} = -(9+\frac{3}{2}) + 1 = \frac{-19}{2}.
+			\end{equation*}
+			Solving for $f(-5)$,
+			\begin{equation*}
+				\frac{-19}{2} = 3 - f(-5) \implies f(-5) = \frac{25}{2}.
+			\end{equation*}
+		\item Evaluating the integral,
+			\begin{align*}
+				\int_{1}^{6}{g(x)\d{x}} &= \int_{1}^{3}{2\d{x}} + \int_{3}^{6}{2(x-4)^2\d{x}} \\
+				&= 2x\biggr\rvert_{1}^{3} + \frac{2}{3}(x-4)^3\biggr\rvert_{3}^{6} \\
+				&= 4 + \frac{18}{3} \\
+				&= 10.
+			\end{align*}
+		\item $f$ is increasing when its first derivative is positive and concave up when its second derivative is positive.
+			Since $g$ is the derivative of $f$, we can also say that $f$ is increasing when $g$ is positive and concave up when $g$ is increasing.
+			$g$ is positive on $(0,4) \cup (4,6]$.
+			$g$ is increasing on $(-2,-1) \cup (0,1) \cup (4,6)$.
+			Taking the intersection of these intervals, we see that $f$ is increasing and concave up on $(0,1) \cup (4,6)$.
+		\item $f$ has an inflection point when its second derivative is equal to 0, changing sign.
+			Since $g$ is the derivative of $f$, we can also say that $f$ has an inflection point when the derivative of $g$ is equal to 0, changing sign.
+			Although we see by looking at the graph that the derivative of $g$ is 0 over several intervals, it does not change sign.
+			The only place the derivative is 0 and changes sign is at $x=4$.
+	\end{enumerate}
+
+	\item \begin{enumerate}
+		\item We can approximate $H^\prime(6)$ as the average rate of change between $t=5$ and $t=7$.
+			\begin{equation*}
+				H^\prime(6) \approx \frac{H(7)-H(5)}{7-5} = \frac{11-6}{7-5} = \frac{5}{2}.
+			\end{equation*}
+			In the context of this problem $H^\prime(6) \approx = \frac{5}{2}$ means that at 6 years, the tree is growing at a rate of 5/2 meters per year.
+		\item Looking at the average rate of change between $t=3$ and $t=5$,
+			\begin{equation*}
+				\bar{H^\prime}_{3,5} = \frac{H(5)-H(3)}{5-3} = \frac{6-2}{5-3} = 2.
+			\end{equation*}
+			Since $H$ is differentiable, it is also continuous.
+			So, by the mean value theorem, there is at least one point $3 \leq c \leq 5$ (which is a sub-interval of $2 \leq t \leq 10$) such that $H^\prime(c) = 2$. 
+		\item We know that the average value of a continous function $f$ over some interval $[a,b]$ is
+			\begin{equation*}
+				\bar{f}_{a,b} = \frac{1}{b-a}\int_{a}^{b}{f(x)\d{x}}.
+			\end{equation*}
+			So, over our interval of $[2,10]$, we need to approximate this integral using trapezoids.
+			Because the sub-interval widths given by the table are not equally-sized, we can't apply the shortcut trapezoidal rule.
+			However, we can still approximate the area using trapezoids.
+			\begin{equation*}
+				\frac{1}{10-2}\int_{2}^{10}{H(x)\d{x}} \approx \frac{1}{8}\left(\frac{1.5+2}{2}1+\frac{2+6}{2}2+\frac{6+11}{2}2+\frac{11+15}{2}3\right) = \frac{1}{8}(65.75) = 8.21875.
+			\end{equation*}
+			So, the average height of the tree between 2 and 10 years is approximately 8.21875 meters.
+		\item Finding the diameter of the base of the tree when it is 50 meters tall according to $G$.
+			\begin{equation*}
+				50 = \frac{100x}{1+x} \implies x = 1.
+			\end{equation*}
+			Differentiating $G$, remembering the chain rule,
+			\begin{equation*}
+				G^\prime(x) = \frac{100(1+x)\dd{x}{t} - 100x\dd{x}{t}}{(1+x)^2}.
+			\end{equation*}
+			Plugging in $x=1$ and $\dd{x}{t}=0.03$,
+			\begin{equation*}
+				G^\prime(1) = \frac{100(1+1)(0.03) - 100(1)(0.03)}{(1+1)^2} = \frac{6-3}{4} = \frac{3}{4}.
+			\end{equation*}
+			So, according to $G$, the tree is growing at 3/4 meters per year when it is 50 meters tall.
+	\end{enumerate}
+
+	\item \begin{enumerate}
+		\item We know the formula for the area between two polar curves is
+			\begin{equation*}
+				A = \frac{1}{2}\int_{\alpha}^{\beta}{\left(f^2(\theta)-g^2(\theta)\right)\d{\theta}}.
+			\end{equation*}
+			Since we want the area inside the circle and outside the lima\c{c}on for $\pi/3 \leq \theta \leq 5\pi/3$,
+			\begin{equation*}
+				A = \frac{1}{2}\int_{\pi/3}^{5\pi/3}{\left((4)^2-(3+2\cos{\theta})^2\right)\d{\theta}}.
+			\end{equation*}
+		\item Remembering that $x=r\cos{\theta}$ and $y=r\sin{\theta}$,
+			\begin{equation*}
+				x = (3+2\cos{\theta})\cos{\theta} \text{, } y = (3+2\cos{\theta})\sin{\theta}.
+			\end{equation*}
+			Differentiating $x$ and $y$ with respect to $\theta$,
+			\begin{equation*}
+				\dd{x}{\theta}=-(3+2\cos{\theta})\sin{\theta} + \cos{\theta}(-2\sin{\theta}) \text{, } \dd{y}{\theta} = (3+2\cos{\theta})\cos{\theta} + \sin{\theta}(-2\sin{\theta}).
+			\end{equation*}
+			Dividing one by the other,
+			\begin{equation*}
+				\dd{y}{x} = \frac{\dd{y}{\theta}}{\dd{x}{\theta}} = \frac{(3+2\cos{\theta})\cos{\theta} + \sin{\theta}(-2\sin{\theta})}{-(3+2\cos{\theta})\sin{\theta} + \cos{\theta}(-2\sin{\theta})}.
+			\end{equation*}
+			At $\theta=\pi/2$,
+			\begin{equation*}
+				\dd{y}{x}_{\theta=\pi/2} = \frac{(3+2\cdot 0)\cdot 0 + 1(-2\cdot 1)}{-(3+2\cdot 0)1 + 0(-2\cdot 1)} = \frac{-2}{-3} = \frac{2}{3}.
+			\end{equation*}
+		\item $r$ is a function of $\theta$, and we're being told that $\theta$ behaves as a function of $t$, due to how the particle moves.
+			So, we can apply the chain rule:
+			\begin{align*}
+				\dd{r}{t} &= \dd{r}{\theta}\cdot\dd{\theta}{t} \\
+				&= -2\sin{\theta}\dd{\theta}{t}.
+			\end{align*}
+			Solving for $\dd{\theta}{t}$,
+			\begin{equation*}
+				\dd{\theta}{t} = \dd{r}{t}\frac{1}{-2\sin{\theta}}.
+			\end{equation*}
+			Moving away from the origin at some rate tell us how $r$ changes.
+			Plugging in $\dd{r}{t}=3$ and $\theta=\pi/3$,
+			\begin{equation*}
+				\dd{\theta}{t} = 3\frac{1}{-2\sin{\left(\pi/3\right)}} = \frac{3}{-\sqrt{3}} = -\sqrt{3}.
+			\end{equation*}
+			So, $\theta$ is changing at a rate of $-\sqrt{3}$ radians per second.
+	\end{enumerate}
+
+	\item \begin{enumerate}
+		\item Starting with the given Maclaurin series,
+			\begin{equation*}
+				\ln{(1+u)} = u - \frac{u^2}{2} + \frac{u^3}{3} - \frac{u^4}{4} + \ldots + (-1)^{n+1}\frac{u^n}{n} + \ldots .
+			\end{equation*}
+			Substituting $u=x/3$,
+			\begin{equation*}
+				\ln{\left(1+\frac{x}{3}\right)} = \frac{x}{3} - \frac{(\frac{x}{3})^4}{2} + \frac{(\frac{x}{3})^4}{3} - \frac{(\frac{x}{3})^4}{4} + \ldots + (-1)^{n+1}\frac{(\frac{x}{3})^n}{n} + \ldots .
+			\end{equation*}
+			Multiplying by $x$,
+			\begin{equation*}
+				x\ln{\left(1+\frac{x}{3}\right)} = x\frac{x}{3} - x\frac{(\frac{x}{3})^4}{2} + x\frac{(\frac{x}{3})^4}{3} - x\frac{(\frac{x}{3})^4}{4} + \ldots + (-1)^{n+1}x\frac{(\frac{x}{3})^n}{n} + \ldots .
+			\end{equation*}
+		\item Applying the ratio test on the absolute terms,
+			\begin{equation*}
+				\lim_{n\to\infty}{\frac{x\frac{(\frac{x}{3})^{n+1}}{n+1}}{x\frac{(\frac{x}{3})^n}{n}}} = \lim_{n\to\infty}{\frac{n\frac{x}{3}}{n+1}} = \frac{x}{3}.
+			\end{equation*}
+			The ratio test tells us the series converges when the limit is less than 1, so we can safely say that $\abs{x} < 3$, and we still need to test the endpoints.
+			When $x=-3$ the series becomes
+			\begin{equation*}
+				\sum_{n=1}^{\infty}{(-1)^{n+1}(-3)\frac{\left(\frac{-3}{3}\right)^n}{n}} = \sum_{n=1}^{\infty}{\frac{3}{n}}
+			\end{equation*}
+			which diverges by the P-Test.
+			When $x=3$, the series becomes
+			\begin{equation*}
+				\sum_{n=1}^{\infty}{(-1)^{n+1}3\frac{\left(\frac{3}{3}\right)^{n}}{n}} = \sum_{n=1}^{\infty}{(-1)^{n+1}\frac{3}{n}}
+			\end{equation*}
+			which converges by the Alternating Series Test.
+			So, the interval of convergence is $-3 < x \leq 3$.
+		\item The Alternating Series Estimation Theorem tells us that the error from an alternating series is at most the value of the first term not included, and the error is the same sign as the first not included term.
+			For $P_4(x)$,
+			\begin{equation*}
+				\abs{P_4(2)-f(2)} \leq \abs{(-1)^5 2\frac{\left(\frac{2}{3}\right)^4}{4}} = \frac{8}{81}.
+			\end{equation*}
+			So, our upper bound on the error is $8/81$.
+	\end{enumerate}
+	
+\end{enumerate}

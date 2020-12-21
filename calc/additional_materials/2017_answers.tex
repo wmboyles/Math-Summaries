@@ -1,0 +1,196 @@
+\subsection{2017 Free Response Answers}
+
+\begin{enumerate}
+	\item \begin{enumerate}
+		\item Using a left Riemann sum,
+			\begin{equation*}
+				\int_{0}^{10}{A(h)\d{h}} \approx (2-0)50.3 + (5-2)14.4 + (10-5)6.5 = 100.6 + 43.2 + 32.5 = 176.3.
+ 			\end{equation*}
+ 			So, we approximate that the volume of the tank is 176.3 cubic feet.
+ 		\item Since we are given that the function is decreasing over the interval, a left Riemann sum will overestimate the volume.
+ 		\item Integrating $f$ from $h=0$ to $h=10$,
+ 			\begin{equation*}
+ 				\int_{0}^{10}{\frac{50.3}{e^{0.2h}+h}\d{h}} \approx 101.325.
+ 			\end{equation*}
+ 			So, the volume of the tank given by $f$ is 101.325 cubic feet.
+ 		\item We know from (c) that
+ 			\begin{equation*}
+ 				V(h) = \int_{0}^{h}{f(x)\d{x}}.
+ 			\end{equation*}
+ 			Differentiating with respect to $t$, and applying the chain rule,
+ 			\begin{equation*}
+ 				\dd{V}{t} = f(h)\cdot\dd{h}{t}.
+ 			\end{equation*}
+ 			Plugging in $h=5$ and $\dd{h}{t}=0.26$,
+ 			\begin{equation*}
+ 				\dd{V}{t}_{h=5} = \frac{50.3}{e^1 + 5}\cdot 0.26 \approx 1.694.
+ 			\end{equation*}
+ 			So, when $h=5$ feet, the volume is changing at a rate of 1.694 cubic feet per minute.
+	\end{enumerate}
+
+	\item \begin{enumerate}
+		\item Finding the area enclosed by $f$ from $\theta=0$ to $\theta=\pi/2$,
+			\begin{equation*}
+				A = \frac{1}{2}\int_{0}^{\pi/2}{\left(1+\sin{\theta}\cos{(2\theta)}\right)^2d\theta} \approx 0.648.
+			\end{equation*}
+		\item Our ray $\theta=k$ will represent a lower bound in one integral and an upper bound in the other.
+			Finding equal areas between $g$ and $f$,
+			\begin{equation*}
+				\frac{1}{2}\int_{0}^{k}{\left(\left(2\cos{\theta}\right)^2-\left(1+\sin{\theta}\cos{(2\theta)}\right)^2\right)d\theta} = \frac{1}{2}\int_{k}^{\pi/2}{\left(\left(2\cos{\theta}\right)^2-\left(1+\sin{\theta}\cos{(2\theta)}\right)^2\right)d\theta}.
+			\end{equation*}
+		\item
+			Since both $f$ and $g$ are polar functions evaluated at $\theta$, the distance between then will simply be the difference in their radii.
+			\begin{equation*}
+				w(\theta) = g(\theta) - f(\theta).
+			\end{equation*} 
+			Finding the average of $w$,
+			\begin{equation*}
+				w_A = \frac{1}{\pi/2 - 0}\int_{0}^{\pi/2}{(2\cos{\theta}-(1+\sin{\theta}\cos{(2\theta)}))\d{\theta}} \approx 0.485.
+			\end{equation*}
+		\item Solving $w(\theta) = w_A$,
+			\begin{equation*}
+				2\cos{\theta}-(1+\sin{\theta}\cos{(2\theta)}) = 0.485 \implies \theta \approx 0.518.
+			\end{equation*}
+			Evaluating $w^\prime(0.518)$,
+			\begin{equation*}
+				w^\prime(0.518) \approx -0.581.
+			\end{equation*}
+			So, $w$ is decreasing at this value.
+	\end{enumerate}
+
+	\item \begin{enumerate}
+		\item Applying the Fundamental Theorem of Calculus,
+			\begin{align*}
+				\int_{-6}^{-2}{f^\prime(x)\d{x}} &= f(-2) - f(-6) = 7 - f(-6) = 4 \implies f(-6) = 3 \\
+				\int_{-2}^{5}{f^\prime(x)\d{x}} &= f(5) - f(-2) = f(5) - 7 = -2\pi + 3 \implies f(5) = 10 - 2\pi.
+			\end{align*}
+		\item $f$ is increasing when its derivative is positive.
+			Looking at the graph of $f^\prime$, we see it is positive on $[-6,2) \cup (2,5)$.
+			So, $f$ is increasing on $[-6,2] \cup [2,5]$\footnote{I personally don't think $f$ is ``increasing" on the open endpoints where the derivative is 0. I think it's neither increasing nor decreasing. However, the test writers and graders feel differently, and I can't say their view is necessarily wrong.}.
+		\item We see that the critical points of $f^\prime$ are $x=-2$ and $x=2$.
+			A minimum can occur at a left/right endpoint that will/was decreasing.
+			So, the two points we need to consider for the absolute minimum are $x=-6$ and $x=2$.
+			We know from (a) that $f(-6)=3$.
+			Applying the Fundamental Theorem of Calculus again,
+			\begin{equation*}
+				\int_{-2}^{2}{f^\prime(x)\d{x}} = f(2) - f(-2) = f(2) - 7 = 2\pi \implies f(2) = 7-2\pi.
+			\end{equation*}
+			Since  $7-2\pi < 3$, the absolute minimum of $f$ is at $x=2$.
+		\item $f^{\prime\prime}(-5) = -\frac{1}{2}$ because $f$ is continuous at -5, and the left and right hand limits are both the slope of the line, which is $-\frac{1}{2}$.
+			$f^{\prime\prime}(3) = \text{DNE}$.
+			The left hand limit is the slope of the left hand line, which is 2, and the right hand limit is the left of the right hand line, which is -1.
+			Since the limits do not agree, $f^\prime$ is not continuous, and hence not differentiable at $x=3$.
+	\end{enumerate}
+
+	\item \begin{enumerate}
+		\item Writing the line in point-slope form and then converting to standard form,
+			\begin{align*}
+				y - y_0 &= m(t-t_0) \\
+				y - H(0) &= \dd{H}{t}_{t=0}(t-0) \\
+				y - 91 &= -16t \\
+				y &= -16t + 91.
+			\end{align*}
+			Using this line to approximate $H(3)$,
+			\begin{equation*}
+				y = -16(3) + 91 = 43.
+			\end{equation*}
+			So, the tangent line at $t=0$ approximates $H(3)$ to be $43^\circ C$.
+		\item Taking the derivative of $\dd{H}{t}$,
+			\begin{equation*}
+				\dd{^2H}{t^2} = -\frac{1}{4}.
+			\end{equation*}
+			Since the graph is concave down at every point, the tangent line at $t=0$ gives an overestimate of $H(3)$.
+		\item This is a separable differential equation.
+			\begin{align*}
+				\dd{G}{t} &= -(G-27)^{2/3} \\
+				\frac{\d{G}}{(G-27)^{2/3}} &= -1\d{t} \\
+				\int{\frac{\d{G}}{(G-27)^{2/3}}} &= \int{-1\d{t}} \\
+				3(G-27)^{1/3} &= -t + C \\
+				(G-27)^{1/3} &= -t/3 + C \\
+				G - 27 &= \left(-t/3 + C\right)^3 \\
+				G &= \left(-t/3 + C\right)^3 + 27.
+			\end{align*}
+			Solving for $C$ using $G(0)=91$,
+			\begin{align*}
+				91 &= \left(-0/3 + C\right)^2 + 27 \\
+				64 &= C^3 \\
+				C &= 4.
+			\end{align*}
+			So, our overall solution for $G$ is
+			\begin{equation*}
+				G(t) = \left(4 - t/3\right)^3 + 27.
+			\end{equation*}
+			Evaluating at $t=3$,
+			\begin{equation*}
+				G(3) = \left(4 - 3/3\right)^3 + 27 = 3^3  + 27 = 54.
+			\end{equation*}
+			So, the internal temperature of the potato at $t=3$ minutes is $54^\circ C$.
+	\end{enumerate}
+
+	\item \begin{enumerate}
+		\item Applying the quotient rule,
+			\begin{equation*}
+				f^\prime(x) = \frac{(2x^2-7x+5)(0)-3(4x-7)}{(2x^2-7x+5)^2} = \frac{-12x+21}{(2x^2-7x+5)^2}.
+			\end{equation*}
+			Evaluating at $x=3$,
+			\begin{equation*}
+				f^\prime(3) = \frac{-12(3)+21}{(2(3)^2-7(3)+5)^2} = -\frac{15}{(18-21+5)^2} = -\frac{15}{4}.
+			\end{equation*}
+		\item $f^\prime(x)=0$ only when the numerator is 0,
+			\begin{equation*}
+				-12x + 21 = 0 \implies x = \frac{7}{4}.
+			\end{equation*}
+			$f^\prime$ is negative to the left of $\frac{7}{4}$ and positive to the right of it.
+			Therefore, $x=\frac{7}{4}$ is a relative maximum by the first derivative test.
+		\item Evaluating the limit using the given partial fraction decomposition,
+			\begin{align*}
+				\int_{5}^{\infty}{f(x)\d{x}} = \int_{5}^{\infty}{\left(\frac{2}{2x-5}-\frac{1}{x-1}\right)\d{x}} \\
+				&= \ln{(2x-5)} - \ln{(x-1)} \biggr\rvert_{5}^{\infty} \\
+				&= \ln{\left(\frac{2x-5}{x-1}\right)} \biggr\rvert_{5}^{\infty} \\
+				&= \lim_{b\to\infty}{\ln{\left(\frac{2b-5}{b-1}\right)}} - \ln{\left(\frac{5}{4}\right)} \\
+				&= \ln{2} - \ln{\left(\frac{5}{4}\right)} \\
+				&= \ln{\left(\frac{8}{5}\right)}.
+			\end{align*}
+		\item For $n \geq 5$, $f(n)$ is positive and decreasing.
+			Using our work from part (c), we know that the integral of $f$ from 5 to $\infty$ converges.
+			So, by the Integral test, the series also converges.
+	\end{enumerate}
+
+	\item \begin{enumerate}
+		\item Calculating the first four derivatives and the general derivative,
+			\begin{align*}
+				f(0) &= 0 \\
+				f^\prime(0) &= 1 \\
+				f^{\prime\prime}(0) &= -1\cdot f^\prime(0) = -1 \\
+				f^{(3)}(0) &= -2\cdot f^{\prime\prime}(0) = 2 \\
+				f^{(4)}(0) &= -3\cdot f^{(3)}(0) = -6.
+				f^{(n+1)}(0) &= -n\cdot f^{(n)}(0) = (-1)^{n+1}n!.
+			\end{align*}
+			Applying the Maclaurin series formula,
+			\begin{align*}
+				P_n(x) &= \frac{f(0)}{0!} + \frac{f^\prime(0)}{1!}x + \frac{f^{\prime\prime}(0)}{2!}x^2 + \ldots + \frac{f^{(n)}(0)}{n!}x^n \\
+				&= \frac{0}{1} + \frac{1}{1}x + \frac{-1}{2}x^2 + \frac{2}{6}x^3 + \frac{-6}{24}x^4 + \ldots + \frac{(-1)^{n+1}(n-1)!}{n!}x^n \\
+				&= x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \ldots + (-1)^{n+1}\frac{x^n}{n}.
+			\end{align*}
+		\item At $x=1$, the series is
+			\begin{equation*}
+				\sum_{n=1}^{\infty}{(-1)^{n+1}\frac{1}{n}}.
+			\end{equation*}
+			This series converges by the Alternating Series test, which determines conditional converges.
+			So, the series converges conditionally at $x=1$.
+		\item Integrating term-by-term,
+			\begin{align*}
+				g(x) &= \int_{0}{x}{f(t)\d{t}} \\
+				&= \int_{0}^{x}{\left(t-\frac{t^2}{2}+\frac{t^3}{3}-\frac{t^4}{4}+\ldots+(-1)^{n+1}\frac{t^n}{n}\right)\d{t}} \\
+				&= \frac{t^2}{2} - \frac{t^3}{6} + \frac{t^4}{12} - \frac{t^5}{20} + \ldots + (-1)^{n+1}\frac{t^{n+1}}{n(n+1)} \biggr\rvert_{0}^{x} \\
+				&= \frac{x^2}{2} - \frac{x^3}{6} + \frac{x^4}{12} - \frac{x^5}{20} + \ldots + (-1)^{n+1}\frac{x^{n+1}}{n(n+1)}.
+			\end{align*}
+		\item The Alternating Series Estimation Theorem tells us that the upper bound for the error is the absolute value of the first not included term.
+			For $P_4$, this term is $-\frac{x^5}{20}$.
+			So,
+			\begin{align*}
+				\biggr\lvert P_4\left(\frac{1}{2}\right) - g\left(\frac{1}{2}\right) \biggr\rvert < \biggr\lvert -\frac{\left(\frac{1}{2}\right)^5}{20} \biggr\rvert = \frac{1}{640} < \frac{1}{500}.
+			\end{align*}
+	\end{enumerate}
+
+\end{enumerate}

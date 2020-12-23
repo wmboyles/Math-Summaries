@@ -4,7 +4,7 @@ First, we need to define what we mean by an infinite series.
 \begin{definition}
 	An infinite series is of the form
 	\begin{equation*}
-		a_1 + a_2 + \ldots + a_n + \ldots \text{ or equivalently, } \sum_{i=1}^{\infty}{a_i}.
+		a_1 + a_2 + \ldots + a_n + \ldots \text{ or equivalently, } \sum_{k=1}^{\infty}{a_k}.
 	\end{equation*}
 	Just like with finite series, each $a_i$ is a term, and $a_n$ is the nth term.
 \end{definition}
@@ -14,7 +14,7 @@ We can define what it means for an infinite sum to have a value by looking at th
 \begin{definition}
 	The nth partial sum of an infinite series is
 	\begin{equation*}
-		s_n = \sum_{i=1}^{n}{a_i}.
+		s_n = \sum_{k=1}^{n}{a_k}.
 	\end{equation*}
 	The infinite series converges to value $L$ if
 	\begin{equation*}
@@ -47,14 +47,14 @@ The above series is a geometric series since each subsequent term is 10 times sm
 \begin{lemma}
 	The geometric series
 	\begin{equation*}
-		\sum_{i=0}^{\infty}{a_0(r)^i}
+		\sum_{k=0}^{\infty}{a_0(r)^k}
 	\end{equation*}
 	converges to a value of $a_0/(1-r)$ if $\abs{r} < 1$ and diverges otherwise.
 \end{lemma}
 \begin{proof}
 	We'll first find a formula for the partial sums and then find the limit of the partial sums for $1 < r < 1$.
 	\begin{align*}
-		s_n &= \sum_{i=0}^{n}{a_0(r)^i} \\
+		s_n &= \sum_{k=0}^{n}{a_0(r)^k} \\
 		&= a_0 + a_0r + a_0r^2 + \ldots + a_0r^n \\
 		rs_n &= a_0r + a_0r^2 + a_0r^3 + \ldots + a_0r^n + a_0r^{n+1} \\
 		&= -a_0 + s_n + a_0r^{n+1} \\
@@ -64,7 +64,7 @@ The above series is a geometric series since each subsequent term is 10 times sm
 	This formula for partial sums holds for all values of $r$.
 	Now we'll take the limit of $s_n$ and see for what values of $r$ the limit exists.
 	\begin{align*}
-		\sum_{i=0}^{\infty}{a_0(r)^n} &= \lim_{n\to\infty}{s_n} \\
+		\sum_{k=0}^{\infty}{a_0(r)^n} &= \lim_{n\to\infty}{s_n} \\
 		&= \lim_{n\to\infty}{a_0\frac{r^{n+1}-1}{r-1}} \\
 		&= \frac{-a_0}{r-1}, \abs{r} < 1 \\
 		&= \frac{a_0}{1-r}, \abs{r} < 1.
@@ -97,11 +97,11 @@ So,
 \begin{theorem}
 	If the power series
 	\begin{equation*}
-		f(x) = \sum_{i=0}^{\infty}{c_n(x-a)^n} = c_0 + c_1(x-a) + c_2(x-a)^2 + \ldots
+		f(x) = \sum_{k=0}^{\infty}{c_k(x-a)^k} = c_0 + c_1(x-a) + c_2(x-a)^2 + \ldots
 	\end{equation*}
 	converges for $\abs{x-a} < R$, including $R=\infty$, then the power series
 	\begin{equation*}
-		\sum_{i=1}^{\infty}{nc_n(x-a)^{n-1}} = c_1 + 2c_2(x-a) + 3c_3(x-a)^2 + \ldots
+		\sum_{k=1}^{\infty}{kc_k(x-a)^{k-1}} = c_1 + 2c_2(x-a) + 3c_3(x-a)^2 + \ldots
 	\end{equation*}
 	also converges for $\abs{x-a} < R$ and is equal to $f^\prime(x)$ on that interval.
 \end{theorem}
@@ -117,11 +117,11 @@ Applying the theorem,
 \begin{theorem}
 	If the power series
 	\begin{equation*}
-		f(x) = \sum_{i=0}^{\infty}{c_n(x-a)^n} = c_0 + c_1(x-a) + c_2(x-a)^2 + \ldots
+		f(x) = \sum_{k=0}^{\infty}{c_k(x-a)^k} = c_0 + c_1(x-a) + c_2(x-a)^2 + \ldots
 	\end{equation*}
 	converges for $\abs{x-a} < R$, including $R=\infty$, then the power series
 	\begin{equation*}
-		\sum_{i=0}^{\infty}{c_n\frac{(x-a)^{n+1}}{n+1}} = c_0(x-a) + c_1\frac{(x-a)^2}{2} + c_2\frac{(x-a)^3}{3} + \ldots
+		\sum_{k=0}^{\infty}{c_k\frac{(x-a)^{k+1}}{k+1}} = c_0(x-a) + c_1\frac{(x-a)^2}{2} + c_2\frac{(x-a)^3}{3} + \ldots
 	\end{equation*}
 	also converges for $\abs{x-a} < R$ and represents the antiderivative of $f$ on that interval.
 \end{theorem}

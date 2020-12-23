@@ -54,7 +54,7 @@ If you're adding on terms that don't get smaller in absolute value, then you can
 \begin{example}
 	Show that the following series diverges:
 	\begin{equation*}
-		\sum_{i=0}^{\infty}{(-1)^n} = 1 - 1 + 1 - 1 + \ldots.
+		\sum_{k=0}^{\infty}{(-1)^k} = 1 - 1 + 1 - 1 + \ldots.
 	\end{equation*}
 \end{example}
 \begin{answer}
@@ -76,7 +76,7 @@ We already proved this when talking about power series and gave a formula to fin
 \begin{example}
 	Show that the following series diverges:
 	\begin{equation*}
-		\sum_{i=0}^{\infty}{\frac{2^n}{3}}.
+		\sum_{k=0}^{\infty}{\frac{2^k}{3}}.
 	\end{equation*}	
 \end{example}
 \begin{answer}
@@ -88,7 +88,7 @@ We already proved this when talking about power series and gave a formula to fin
 \begin{lemma}
 	The p-series
 	\begin{equation*}
-		\sum_{i=1}^{\infty}{\frac{1}{i^p}}
+		\sum_{k=1}^{\infty}{\frac{1}{k^p}}
 	\end{equation*}
 	converges if and only if $p > 1$.
 \end{lemma}
@@ -96,7 +96,7 @@ We already proved this when talking about power series and gave a formula to fin
 \begin{example}
 	Show that the Harmonic Series diverges:
 	\begin{equation*}
-		\sum_{i=1}^{\infty}{\frac{1}{i}}.
+		\sum_{k=1}^{\infty}{\frac{1}{k}}.
 	\end{equation*}
 \end{example}
 \begin{answer}
@@ -107,12 +107,12 @@ We already proved this when talking about power series and gave a formula to fin
 
 \subsection{Direct Comparison Test}
 \begin{lemma}
-	Let $s = \sum_{i=0}^{\infty}{a_i}$ be a series where all $a_i \geq 0$.
-	$s$ converges if there exists some convergent series $c = \sum_{i=0}^{\infty}{c_i}$ and positive integer $m$ such that for all $n > m$,
+	Let $s = \sum_{k=0}^{\infty}{a_k}$ be a series where all $a_k \geq 0$.
+	$s$ converges if there exists some convergent series $c = \sum_{k=0}^{\infty}{c_k}$ and positive integer $m$ such that for all $n > m$,
 	\begin{equation*}
 		c_n \geq a_n.
 	\end{equation*}
-	$s$ diverges if there exists some divergent series $d = \sum_{i=0}^{\infty}{d_i}$ and positive integer $m$ such that for all $n > m$,
+	$s$ diverges if there exists some divergent series $d = \sum_{k=0}^{\infty}{d_k}$ and positive integer $m$ such that for all $n > m$,
 	\begin{equation*}
 		a_n \geq d_n.
 	\end{equation*}
@@ -121,7 +121,7 @@ We already proved this when talking about power series and gave a formula to fin
 \begin{example}
 	Show that the following series converges:
 	\begin{equation*}
-		\sum_{i=0}^{\infty}{\frac{1}{2 + 3^i}}.
+		\sum_{k=0}^{\infty}{\frac{1}{2 + 3^k}}.
 	\end{equation*}
 \end{example}
 \begin{answer}
@@ -137,7 +137,7 @@ So, by the Direct Comparison Test, the series converges.
 \begin{example}
 	Show that the following series diverges:
 	\begin{equation*}
-		\sum_{i=0}^{\infty}{\frac{1}{2+\sqrt{i}}}.
+		\sum_{k=0}^{\infty}{\frac{1}{2+\sqrt{k}}}.
 	\end{equation*}
 \end{example}
 \begin{answer}
@@ -170,7 +170,7 @@ A common tactic is to select one of $a$ or $b$ to be a geometric or p-series.
 \begin{example}
 	Show that the following series diverges:
 	\begin{equation*}
-		\sum_{i=2}^{\infty}{\frac{2i}{i^2-i+a}}.
+		\sum_{k=2}^{\infty}{\frac{2k}{k^2-k+a}}.
 	\end{equation*}
 \end{example}
 \begin{answer}
@@ -203,7 +203,7 @@ A common tactic is to select one of $a$ or $b$ to be a geometric or p-series.
 	Let $a$ be a sequence of positive terms where $a_n = f(n)$.
 	If $f$ is continuous, positive after some $m$, and decreasing, then the series
 	\begin{equation*}
-		\sum_{i=m}^{\infty}{a_i}
+		\sum_{k=m}^{\infty}{a_k}
 	\end{equation*}
 	converges if and only if the integral
 	\begin{equation*}
@@ -215,7 +215,7 @@ A common tactic is to select one of $a$ or $b$ to be a geometric or p-series.
 \begin{example}
 	Show that the following series diverges:
 	\begin{equation*}
-		\sum_{i=1}^{\infty}{\frac{2i}{i^2+1}}.
+		\sum_{k=1}^{\infty}{\frac{2k}{k^2+1}}.
 	\end{equation*}
 \end{example}
 \begin{answer}
@@ -230,7 +230,7 @@ A common tactic is to select one of $a$ or $b$ to be a geometric or p-series.
 \begin{example}
 	Show that the following series converges:
 	\begin{equation*}
-		\sum_{i=1}^{\infty}{\frac{1}{i^2+1}}.
+		\sum_{k=1}^{\infty}{\frac{1}{k^2+1}}.
 	\end{equation*}
 \end{example}
 \begin{answer}
@@ -257,7 +257,7 @@ A common tactic is to select one of $a$ or $b$ to be a geometric or p-series.
 \begin{example}
 	State whether the following series converges or diverges:
 	\begin{equation*}
-		\sum_{i=1}^{\infty}{\frac{i\ln{i}}{2^i}}.
+		\sum_{k=1}^{\infty}{\frac{k\ln{k}}{2^k}}.
 	\end{equation*}
 \end{example}
 \begin{answer}
@@ -281,12 +281,12 @@ A common tactic is to select one of $a$ or $b$ to be a geometric or p-series.
 	If the limit is equal to 1, the test is inconclusive.
 \end{lemma}
 
-This test is most useful for series that look like geometric series, but the common ratio is not a constant.
+This test is most useful for series that looks like geometric series, but the common ratio is not a constant.
 
 \begin{example}
 	State whether the following series converges or diverges:
 	\begin{equation*}
-		\sum_{i=1}^{\infty}{\left(\frac{i}{2i-1}\right)^i}.
+		\sum_{k=1}^{\infty}{\left(\frac{k}{2k-1}\right)^k}.
 	\end{equation*}
 \end{example}
 \begin{answer}
@@ -310,7 +310,7 @@ Series that converge conditionally do so when they pass the following test.
 \begin{lemma}
 	The series
 	\begin{equation*}
-		\sum_{i=0}^{\infty}{(-1)^iu_i}
+		\sum_{k=0}^{\infty}{(-1)^ku_k}
 	\end{equation*}
 	converges if all of the following conditions are satisfied.
 	\begin{enumerate}
@@ -323,7 +323,7 @@ Series that converge conditionally do so when they pass the following test.
 \begin{example}
 	State whether the following series converges or diverges:
 	\begin{equation*}
-		\sum_{i=1}^{\infty}{(-1)^i\frac{1}{i}}.
+		\sum_{k=1}^{\infty}{(-1)^k\frac{1}{k}}.
 	\end{equation*}
 \end{example}
 \begin{answer}

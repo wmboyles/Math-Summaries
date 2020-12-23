@@ -78,11 +78,11 @@ We could extend this idea of derivatives being equal to higher-order derivatives
 	Let $f$ be a $n$ times differentiable function where all derivatives exist at $x=a$.
 	The Taylor series for $f$ at $x=a$ is
 	\begin{equation*}
-		\sum_{i=0}^{\infty}{\frac{f^{(i)}(x)}{i!}(x-a)^i} = f(a) + f^\prime(a)(x-a) + \frac{f^{\prime\prime}(a)}{2!}(x-a)^2 + \ldots + \frac{f^{(n)}(a)}{n!}(x-a)^n + \ldots.
+		\sum_{k=0}^{\infty}{\frac{f^{(k)}(x)}{k!}(x-a)^k} = f(a) + f^\prime(a)(x-a) + \frac{f^{\prime\prime}(a)}{2!}(x-a)^2 + \ldots + \frac{f^{(n)}(a)}{n!}(x-a)^n + \ldots.
 	\end{equation*}
 	The $n$th partial sum of the Taylor Series,
 	\begin{equation*}
-		P_n(x) = \sum_{i=0}^{n}{\frac{f^{(i)}(x)}{i!}(x-a)^i}
+		P_n(x) = \sum_{k=0}^{n}{\frac{f^{(k)}(x)}{k!}(x-a)^k}
 	\end{equation*}
 	is the Taylor polynomial of order $n$ for $f$ at $x=a$.
 \end{definition}
@@ -95,7 +95,7 @@ Like power series, Taylor series have intervals of convergence.
 	Verify using term-by-term differentiation that $e^x$ is its own derivative.
 \end{example}
 \begin{answer}
-	We know that $e^x$ is its own derivative, so $f^{(i)}(0)=e^0 = 1$ for all $i$.
+	We know that $e^x$ is its own derivative, so $f^{(k)}(0)=e^0 = 1$ for all $i$.
 	Applying the definition,
 	\begin{align*}
 		e^x &= e^0 + e^0(x-0) + \frac{e^0}{2!}(x-0)^2 + \frac{e^0}{3!}(x-0)^3 + \ldots + \frac{e^0}{n!}(x-0)^n + \ldots \\
@@ -111,13 +111,13 @@ Like power series, Taylor series have intervals of convergence.
 
 \subsection{Common Maclaurin Series}
 \begin{align*}
-	\frac{1}{1-x} &= 1 + x + x^2 + \ldots = \sum_{i=0}^{\infty}{x^i}, \abs{x} < 1 \\
-	\frac{1}{1+x} &= 1 - x + x^2 - \ldots = \sum_{i=0}^{\infty}{(-1)^ix^i}, \abs{x} < 1 \\
-	e^x &= 1 + x + \frac{x^2}{2!} + \ldots = \sum_{i=0}^{\infty}{\frac{x^i}{i!}}, \text{ all real $x$} \\
-	\sin{x} &= x - \frac{x^3}{3!} + \frac{x^5}{5!} - \ldots = \sum_{i=0}^{\infty}{(-1)^i\frac{x^{2i+1}}{(2i+1)!}}, \text{ all real $x$} \\
-	\cos{x} &= 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \ldots = \sum_{i=0}^{\infty}{(-1)^i\frac{2^{2i}}{(2i)!}}, \text{ all real $x$} \\
-	\ln{(1+x)} &= x - \frac{x^2}{2} + \frac{x^3}{3} - \ldots = \sum_{i=0}^{\infty}{(-1)^i\frac{x^{i+1}}{i+1}}, \abs{x} \leq 1 \\
-	\arctan{x} &= x - \frac{x^3}{3} + \frac{x^5}{5} - \ldots = \sum_{i=0}^{\infty}{(-1)^i\frac{x^{2i+1}}{2i+1}}, \abs{x} \leq 1.
+	\frac{1}{1-x} &= 1 + x + x^2 + \ldots = \sum_{k=0}^{\infty}{x^k}, \abs{x} < 1 \\
+	\frac{1}{1+x} &= 1 - x + x^2 - \ldots = \sum_{k=0}^{\infty}{(-1)^kx^k}, \abs{x} < 1 \\
+	e^x &= 1 + x + \frac{x^2}{2!} + \ldots = \sum_{k=0}^{\infty}{\frac{x^k}{k!}}, \text{ all real $x$} \\
+	\sin{x} &= x - \frac{x^3}{3!} + \frac{x^5}{5!} - \ldots = \sum_{k=0}^{\infty}{(-1)^k\frac{x^{2k+1}}{(2k+1)!}}, \text{ all real $x$} \\
+	\cos{x} &= 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \ldots = \sum_{k=0}^{\infty}{(-1)^k\frac{2^{2k}}{(2k)!}}, \text{ all real $x$} \\
+	\ln{(1+x)} &= x - \frac{x^2}{2} + \frac{x^3}{3} - \ldots = \sum_{k=0}^{\infty}{(-1)^k\frac{x^{k+1}}{k+1}}, \abs{x} \leq 1 \\
+	\arctan{x} &= x - \frac{x^3}{3} + \frac{x^5}{5} - \ldots = \sum_{k=0}^{\infty}{(-1)^k\frac{x^{2k+1}}{2k+1}}, \abs{x} \leq 1.
 \end{align*}
 
 \subsubsection{Euler's Identity}

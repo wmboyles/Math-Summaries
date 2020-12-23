@@ -61,9 +61,9 @@ Although above we've used a left endpoint approximation, we could have also used
 No matter the approximation type, the estimate tends to get closer to the true area as the rectangle width is decreased.
 The formulas for estimating the area of $f$ from $a$ to $b$ with $n$ rectangles are
 \begin{align*}
-	A_\text{left} &= \sum_{i=0}^{n-1}{f\left(a+i\Delta x\right)\Delta x} \\
-	A_\text{right} &= \sum_{i=0}^{n-1}{f\left(a+(i+1)\Delta x\right)\Delta x} \\
-	A_\text{mid} &= \sum_{i=0}^{n-1}{f\left(a+\frac{2i+1}{2}\Delta x\right)\Delta x} \\
+	A_\text{left} &= \sum_{k=0}^{n-1}{f\left(a+k\Delta x\right)\Delta x} \\
+	A_\text{right} &= \sum_{k=0}^{n-1}{f\left(a+(k+1)\Delta x\right)\Delta x} \\
+	A_\text{mid} &= \sum_{k=0}^{n-1}{f\left(a+\frac{2k+1}{2}\Delta x\right)\Delta x} \\
 	\text{where }\Delta x &= \frac{b-a}{n}.
 \end{align*}
 
@@ -76,8 +76,8 @@ Starting from the formula, we can make some simplifications.
 \end{equation*}
 Now summing each of these trapezoids' areas to approximate our function $f$ from $a$ to $b$,
 \begin{align*}
-	A_\text{trap} &= \sum_{i=0}^{n-1}{\frac{1}{2}\left(f(a+i\Delta a) + f(a + (i+1)\Delta x)\right)\Delta x} \\
-	&= \frac{\Delta x}{2}\sum_{i=0}^{n-1}{f(a + i\Delta x) + f(a + (i+1)\Delta x)} \\
+	A_\text{trap} &= \sum_{k=0}^{n-1}{\frac{1}{2}\left(f(a+i\Delta a) + f(a + (i+1)\Delta x)\right)\Delta x} \\
+	&= \frac{\Delta x}{2}\sum_{k=0}^{n-1}{f(a + i\Delta x) + f(a + (i+1)\Delta x)} \\
 	&= \frac{\Delta x}{2}\left(\left(f(a)+f(a+\Delta x)\right)+\left(f(a+\Delta x)+f(a+2\Delta x)\right)+\ldots+\left(f(a+(n-1)\Delta x)+f(a+n\Delta x)\right)\right) \\
 	&= \frac{\Delta x}{2}\left(f(a) + 2f(a+\Delta x) + 2f(a + 2\Delta x) + \ldots + 2f(a+(n-1)\Delta x) + f(a+n\Delta x)\right) \\
 	&= \frac{A_\text{left} + A_\text{right}}{2}.

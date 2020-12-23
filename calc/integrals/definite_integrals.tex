@@ -2,7 +2,7 @@
 
 \subsection{Definition of a Definite Integral}
 We saw several approximations for the areas under any type of curve.
-We also saw how these approximations get better the narrower our "strips".
+We also saw how these approximations get better the narrower our ``strips".
 In the limit, we get exactly the area under the curve, which defines the definite integral.
 
 \begin{definition}
@@ -10,7 +10,7 @@ In the limit, we get exactly the area under the curve, which defines the definit
 	Let this interval be partitioned into $n$ equal\footnote{Technically, the intervals don't need to be of equal size, as long as the width of all intervals goes to 0 in the limit.} sub-intervals, each of length $\Delta x = \frac{b-a}{n}$.
 	The definite integral of $f$ over $[a,b]$ is given by
 	\begin{equation*}
-		\int_{a}^{b}{f(x)\mathrm{d}x} = \lim_{n\to \infty}{\sum_{i=0}^{n-1}{f(c_i)\Delta x}}
+		\int_{a}^{b}{f(x)\mathrm{d}x} = \lim_{n\to \infty}{\sum_{k=0}^{n-1}{f(c_k)\Delta x}}
 	\end{equation*}
 	where $c_k$ is any arbitrary value in the $k$th sub-interval.
 	This particular type of limit of a sum is called a Riemann Sum.
@@ -27,9 +27,9 @@ Note that the left, right, and midpoint approximations are all different ways of
 \begin{answer}
 	We'll use a Riemann sum with a left-endpoint approximation.
 	\begin{align*}
-		\int_{0}^{1}{x^2\d{x}} &= \lim_{n\to\infty}{\sum_{i=0}^{n-1}{f\left(0+\frac{i}{n}\right)\frac{1-0}{n}}} \\
-		&= \lim_{n\to\infty}{\sum_{i=0}^{n-1}{\left(\frac{i}{n}\right)^2\frac{1}{n}}} \\
-		&= \lim_{n\to\infty}{\sum_{i=0}^{n-1}{\frac{i^2}{n^3}}} \\
+		\int_{0}^{1}{x^2\d{x}} &= \lim_{n\to\infty}{\sum_{k=0}^{n-1}{f\left(0+\frac{k}{n}\right)\frac{1-0}{n}}} \\
+		&= \lim_{n\to\infty}{\sum_{k=0}^{n-1}{\left(\frac{k}{n}\right)^2\frac{1}{n}}} \\
+		&= \lim_{n\to\infty}{\sum_{k=0}^{n-1}{\frac{k^2}{n^3}}} \\
 		&= \lim_{n \to \infty}{\frac{1}{n^3}\left(\frac{n(n-1)(2n-1)}{6}\right)} \\
 		&= \lim_{n\to\infty}{\frac{1}{6}\left(2-\frac{3}{n}+\frac{1}{n^2}\right)} \\
 		&= \frac{1}{3}.

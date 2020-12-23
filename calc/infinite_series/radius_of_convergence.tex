@@ -6,7 +6,7 @@ We'd like to be able to find this interval so we know if we can rightly use Tayl
 \begin{theorem}[Convergence Theorem for Power Series]
 	There are three possibilities for any power series of the form
 	\begin{equation*}
-		\sum_{i=0}^{\infty}{c_i(x-a)^i}
+		\sum_{k=0}^{\infty}{c_k(x-a)^k}
 	\end{equation*}
 	with respect to convergence.
 	\begin{enumerate}
@@ -26,7 +26,7 @@ Otherwise the series converges for some finite interval and we need to apply a d
 \begin{example}
 	Determine the radius of convergence for the following series:
 	\begin{equation*}
-		\sum_{i=0}^{\infty}{\frac{ix^i}{10^i}}.
+		\sum_{k=0}^{\infty}{\frac{kx^k}{10^k}}.
 	\end{equation*}
 \end{example}
 \begin{answer}
@@ -49,7 +49,7 @@ Otherwise the series converges for some finite interval and we need to apply a d
 \begin{example}
 	Determine the radius of convergence for the following series:
 	\begin{equation*}
-		\sum_{i=0}^{\infty}{i!x^i}.
+		\sum_{k=0}^{\infty}{k!x^k}.
 	\end{equation*}
 \end{example}
 \begin{answer}
@@ -65,7 +65,7 @@ Otherwise the series converges for some finite interval and we need to apply a d
 \begin{example}
 	Determine the radius of convergence for the following series\footnote{You might recognize this as the Maclaurin series for $e^x$.}:
 	\begin{equation*}
-		\sum_{i=0}^{\infty}{\frac{x^i}{i!}}.
+		\sum_{k=0}^{\infty}{\frac{x^k}{k!}}.
 	\end{equation*}
 \end{example}
 \begin{answer}
@@ -85,13 +85,13 @@ The most common tests to use are the direct comparison test, the limit compariso
 \begin{example}
 	Given that the following series converges by the ratio test for $\abs{x}<10$, determine convergence at the endpoints.
 	\begin{equation*}
-		\sum_{i=0}^{\infty}{\frac{ix^i}{10^i}}.
+		\sum_{k=0}^{\infty}{\frac{kx^k}{10^k}}.
 	\end{equation*}
 \end{example}
 \begin{answer}
 	Plugging in $x=\pm10$,
 	\begin{equation*}
-		\sum_{i=0}^{\infty}{\frac{i(\pm10)^i}{10^i}} = \sum_{i=0}^{\infty}{(\pm 1)^i i}.
+		\sum_{k=0}^{\infty}{\frac{k(\pm10)^k}{10^k}} = \sum_{k=0}^{\infty}{(\pm 1)^k k}.
 	\end{equation*}
 	
 	This series diverges by the nth term test for both $x=10$ and $x=-10$.
@@ -101,7 +101,7 @@ The most common tests to use are the direct comparison test, the limit compariso
 \begin{example}
 	For what values of $x$ does the following series converge:
 	\begin{equation*}
-		\sum_{i=1}^{\infty}{(-1)^{i+1}\frac{x^{2i}}{2i}}.
+		\sum_{k=1}^{\infty}{(-1)^{k+1}\frac{x^{2k}}{2k}}.
 	\end{equation*}
 \end{example}
 \begin{answer}
@@ -113,10 +113,10 @@ The most common tests to use are the direct comparison test, the limit compariso
 	So, by the ratio test, the series converges absolutely when $\abs{x}<1$.
 	The series is the same at $x=1$ and $x=-1$.
 	\begin{equation*}
-		\sum_{i=0}^{\infty}{\frac{(-1)^{i+1}}{2i}}.
+		\sum_{k=0}^{\infty}{\frac{(-1)^{k+1}}{2k}}.
 	\end{equation*}
 
-	Since the series, disregarding the $(-1)^{i+1}$ has all terms positive and decreasing and passes the nth term test, it converges by the alternating series test.
+	Since the series, disregarding the $(-1)^{k+1}$ has all terms positive and decreasing and passes the nth term test, it converges by the alternating series test.
 	Therefore the interval of convergence is $[-1,1]$.
 \end{answer}
 

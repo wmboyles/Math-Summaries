@@ -1,6 +1,21 @@
 # Math-Summaries
 These are LaTeX summaries of various math courses. They are meant to be longer and more in-depth than a formula sheet and also shorter and less formal than a textbook.
 
+## Single Variable Calculus (calc)
+This covers topics you'd find on the AP AB/BC exams, which are the same topics you'd see in undergraduate Calc I and Calc II courses.
+The chapters are:
+1. Background & Review
+2. Limits & Continuity
+3. Derivatives
+4. Applications of the Derivative
+5. Integrals
+6. Applications of Integrals
+7. Parametrics, Vector, & Polar Functions
+8. Sequences L'Hopital's Rule, & Improper Integrals
+9. Infinite Series
+10. Additional Materials
+
+
 ## Multivaraible Calculus (multiCalc)
 This covers topics typically found and an undergraduate multivaraible calculus course, like multiple integrals, Green's Theorems, and Stokes's Theorem.
 The chapters are:

@@ -1,6 +1,12 @@
 # Math-Summaries
 These are LaTeX summaries of various math courses. They are meant to be longer and more in-depth than a formula sheet and also shorter and less formal than a textbook.
 
+# Quick view
+
+* [Single Variable Calculus](https://raw.githubusercontent.com/wmboyles/Math-Summaries/master/calc/main.pdf)
+* [Differential Equations](https://raw.githubusercontent.com/wmboyles/Math-Summaries/master/diffEq/main.pdf)
+* [Multivariable Calculus](https://raw.githubusercontent.com/wmboyles/Math-Summaries/master/multiCalc/main.pdf)
+
 ## Single Variable Calculus (calc)
 This covers topics you'd find on the AP AB/BC exams, which are the same topics you'd see in undergraduate Calc I and Calc II courses.
 The chapters are:

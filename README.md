@@ -52,7 +52,7 @@ $pdflatex main.tex
 ```
 
 ## How to Contribute
-The easiest way to contribute is to fork the repository, make your changes in the LaTeX documents, and submit a pull request. However, if you don't know LaTeX, there are till other ways to contribute. One of the most-needed non-LaTeX items are figures: to avoid copyright claims, images should either be created by contributors themselves the public domain.
+The easiest way to contribute is to fork the repository, make your changes in the LaTeX documents, and submit a pull request. However, if you don't know LaTeX, there are still other ways to contribute. One of the most-needed non-LaTeX items are figures: to avoid copyright claims, images should either be created by contributors themselves the public domain.
 
 ## Notes
 * The differential equations work has the option to not include certain chapters or examples in certain chapters when compiled to a PDF. By default, all chapters and examples are included. If you would like to change these options before compiling change the relevant \\def line in the main.tex file.

@@ -2,8 +2,10 @@
 \noindent
 We'll use induction to show that
 \begin{equation*}
-\Laplace{f^{(n)}(t)} = s^n\Laplace{f(t)} - f^{(n-1)}(0) - sf^{(n-2)}(0) - \ldots - s^{n-1}f(0)
+\Laplace{f^{(n)}(t)} = s^n\Laplace{f(t)} - f^{(n-1)}(0) - sf^{(n-2)}(0) - \ldots - s^{n-1}f(0).
 \end{equation*}
+
+\noindent
 We'll start with the first derivative as a base case. We could use the $0^{th}$ derivative, but this case will give us a little more insight into where the formula comes from.\\
 Let $f$ be a differentiable function.
 \begin{equation*}
@@ -11,37 +13,35 @@ Let $f$ be a differentiable function.
 \end{equation*}
 Integrating by parts and using the fundamental theorem of calculus,
 \begin{equation*}
-	 = \left(\lim\limits_{n\to\infty}{\left(f(n)e^{-sn}\right)} - f(0)e^{-s\cdot 0}\right) + \lim\limits_{n\to\infty}{s\int_{0}^{n}{f(t)e^{-st} \mathrm{d}t}}
+	 = \left(\lim\limits_{n\to\infty}{\left(f(n)e^{-sn}\right)} - f(0)e^{-s\cdot 0}\right) + \lim\limits_{n\to\infty}{s\int_{0}^{n}{f(t)e^{-st} \mathrm{d}t}}.
 \end{equation*}
 Assuming that $f(n)$ grows slower than $e^{-sn}$,
 \begin{equation*}
-	 = \left(0 - f(0)\right) + \lim\limits_{n\to\infty}{s\int_{0}^{n}{f(t)e^{-st} \mathrm{d}t}}
+	 = \left(0 - f(0)\right) + \lim\limits_{n\to\infty}{s\int_{0}^{n}{f(t)e^{-st} \mathrm{d}t}}.
 \end{equation*}
 Since the right part of the expression is just $s$ times the definition of $\Laplace{f}$,
 \begin{equation*}
-	 = s\Laplace{f} - f(0)
+	 = s\Laplace{f} - f(0).
 \end{equation*}
 So,
 \begin{equation*}
-	\Laplace{f'(t)} = s\Laplace{f} - f(0)
+	\Laplace{f'(t)} = s\Laplace{f} - f(0).
 \end{equation*}
 Assuming the following is true,
 \begin{equation*}
-	\Laplace{f^{(n)}(t)} = s^n\Laplace{f(t)} - f^{(n-1)}(0) - sf^{(n-2)}(0) - \ldots - s^{n-1}f(0)
+	\Laplace{f^{(n)}(t)} = s^n\Laplace{f(t)} - f^{(n-1)}(0) - sf^{(n-2)}(0) - \ldots - s^{n-1}f(0).
 \end{equation*}
-we'll show that the $n+1$ case follows.
+We'll show that the $n+1$ case follows.
 \begin{equation*}
 	\Laplace{f^{(n+1)}(t)} = \Laplace{\left(f^{(n)}\right)'}
 \end{equation*}
 Using our first derivative formula,
 \begin{equation*}
-	 = s\Laplace{f^{(n)}(t)} - f^{(n)}(0)
+	 = s\Laplace{f^{(n)}(t)} - f^{(n)}(0).
 \end{equation*}
 Using our general formula,
-\begin{equation*}
-	= s \left(s^n\Laplace{f(t)} - f^{(n-1)}(0) - sf^{(n-2)}(0) - \ldots - s^{n-1}f(0)\right) - f^{(n)}(0)
-\end{equation*}
-\begin{equation*}
- = s^{n+1}\Laplace{f(t)} - f^{(n)}(0) - sf^{(n-1)}(0) s^2f^{(n-2)}(0) - \ldots - s^{n}f(0)
-\end{equation*}
+\begin{align*}
+	&= s \left(s^n\Laplace{f(t)} - f^{(n-1)}(0) - sf^{(n-2)}(0) - \ldots - s^{n-1}f(0)\right) - f^{(n)}(0) \\
+	&= s^{n+1}\Laplace{f(t)} - f^{(n)}(0) - sf^{(n-1)}(0) s^2f^{(n-2)}(0) - \ldots - s^{n}f(0),
+\end{align*}
 which is the $n+1$ case, meaning we have proven the general formula as correct.

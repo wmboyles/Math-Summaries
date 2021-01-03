@@ -9,28 +9,24 @@
 	\end{equation*}
 \end{example}
 \noindent
-Taking the Laplace transform of both side,
-\begin{equation*}
-	\Laplace{y'' - 2y' - 3y} = \Laplace{y''} - 2\Laplace{y'} - 3\Laplace{y} = 0
-\end{equation*}
-\begin{equation*}
-	\left(s^2\Laplace{y} - sy'(0) - y(0)\right) - 2\left(s\Laplace{y} - y(0)\right) - 3\left(\Laplace{y}\right) = 0
-\end{equation*}
-\begin{equation*}
-	= \Laplace{y}\left(s^2 - 2s - 3\right) = s - 1
-\end{equation*}
+Taking the Laplace transform of both sides,
+\begin{align*}
+	\Laplace{y'' - 2y' - 3y} = \Laplace{y''} - 2\Laplace{y'} - 3\Laplace{y} &= 0 \\
+	\left(s^2\Laplace{y} - sy'(0) - y(0)\right) - 2\left(s\Laplace{y} - y(0)\right) - 3\left(\Laplace{y}\right) &= 0 \\
+	= \Laplace{y}\left(s^2 - 2s - 3\right) &= s - 1.
+\end{align*}
 Note how the auxiliary equation appears in terms of $s$ here.\\
 Solving for $\Laplace{y}$,
 \begin{equation*}
-	\Laplace{y} = \frac{s - 1}{s^2 - 2s - 3}
+	\Laplace{y} = \frac{s - 1}{s^2 - 2s - 3}.
 \end{equation*}
-Rearranging the right side into partial fractions
+Rearranging the right side into partial fractions,
 \begin{equation*}
-	\Laplace{y} = \frac{1/2}{s+1} + \frac{1/2}{s-3}
+	\Laplace{y} = \frac{1/2}{s+1} + \frac{1/2}{s-3}.
 \end{equation*}
 Taking the inverse Laplace transform of both sides,
 \begin{equation*}
-	y = \frac{1}{2}e^{-t} + \frac{1}{2}e^{3t}
+	y = \frac{1}{2}e^{-t} + \frac{1}{2}e^{3t}.
 \end{equation*}
 
 \begin{example}
@@ -45,33 +41,31 @@ Taking the inverse Laplace transform of both sides,
 \end{example}
 \noindent
 Taking the Laplace transform of both sides and solving for $\Laplace{y}$,
-\begin{equation*}
-	\Laplace{y''} + 2\Laplace{y'} + 5\Laplace{y} = 0
-\end{equation*}
-\begin{equation*}
-	\Laplace{y}\left(s^2 + 2s + 5\right) - y'(0) - sy(0) - 2y(0) = 0
-\end{equation*}
-\begin{equation*}
-	\Laplace{y}\left(s^2 + 2s + 5\right) = s + 7
-\end{equation*}
-\begin{equation*}
-	\Laplace{y} = \frac{s + 7}{s^2 + 2s + 5}
-\end{equation*}
-The denominator of the right hand side cannot be factored into linear terms. Instead, we'll complete the square.
+\begin{align*}
+	\Laplace{y''} + 2\Laplace{y'} + 5\Laplace{y} &= 0 \\
+	\Laplace{y}\left(s^2 + 2s + 5\right) - y'(0) - sy(0) - 2y(0) &= 0 \\
+	\Laplace{y}\left(s^2 + 2s + 5\right) &= s + 7 \\
+	\Laplace{y} &= \frac{s + 7}{s^2 + 2s + 5}.
+\end{align*}
+The denominator of the right hand side cannot be factored into linear terms.
+Instead, we'll complete the square.
 \begin{equation*}
 	= \frac{s + 7}{(s+1)^2 + 2^2}
 \end{equation*}
-If the numerator was $s+1$, we'd have a $\cos$ that's been shifted left by 1 in the $s$ domain by -1. If the numerator were a multiple of 2, we'd have a $\sin$ that's been similarly shifted. We can rewrite the right hand side as two terms: one for $\cos$ and the other for $\sin$ with the appropriate numerators.
+If the numerator was $s+1$, we'd have a $\cos$ that's been shifted left by 1 in the $s$ domain by -1.
+If the numerator were a multiple of 2, we'd have a $\sin$ that's been similarly shifted.
+We can rewrite the right hand side as two terms: one for $\cos$ and the other for $\sin$ with the appropriate numerators.
 \begin{equation*}
 	= \frac{s+1}{(s+1)^2 + 2^2} + 3\frac{2}{(s+1)^2 + 2^2}
 \end{equation*}
 Taking the inverse Laplace transform of both sides,
 \begin{equation*}
-	y = e^{-t}\cos{(2t)} + 3e^{-t}\sin{(2t)}
+	y = e^{-t}\cos{(2t)} + 3e^{-t}\sin{(2t)}.
 \end{equation*}
 
 \noindent
-We can also use the Laplace transform on non-homogeneous equations. The method will even take care of the cases where what would be our guess for the particular solution is already included in the homogeneous solution.
+We can also use the Laplace transform on non-homogeneous equations.
+The method will even take care of the cases where what would be our guess for the particular solution is already included in the homogeneous solution.
 \begin{example}
 	Solve the following IVP using a Laplace transform.
 	\begin{equation*}
@@ -84,19 +78,17 @@ We can also use the Laplace transform on non-homogeneous equations. The method w
 \end{example}
 \noindent
 This equation is the same as the previous example except for the $e^{-t}$, so we can use some of our previous work.
-\begin{equation*}
-	\Laplace{y}(s^2 + 2s + 5) = s + 7 + \frac{1}{s+1}
-\end{equation*}
-\begin{equation*}
-	 \Laplace{y} = \frac{s^2 + 8s + 8}{(s+1)(s^2 + 2s + 5)}
-\end{equation*}
+\begin{align*}
+	\Laplace{y}(s^2 + 2s + 5) &= s + 7 + \frac{1}{s+1} \\
+	\Laplace{y} &= \frac{s^2 + 8s + 8}{(s+1)(s^2 + 2s + 5)}.
+\end{align*}
 Rearranging the right hand side into partial fractions with completed squares,
 \begin{equation*}
-	\Laplace{y} = \frac{1}{4}\left(\frac{1}{s+1}\right) + \frac{1}{4}\left(3\frac{s+1}{(s+1)^2 + 2^2} + 9\frac{2}{(s+1)^2 + 2^2}\right)
+	\Laplace{y} = \frac{1}{4}\left(\frac{1}{s+1}\right) + \frac{1}{4}\left(3\frac{s+1}{(s+1)^2 + 2^2} + 9\frac{2}{(s+1)^2 + 2^2}\right).
 \end{equation*}
 Taking the inverse Laplace transform of both sides,
 \begin{equation*}
-	y = \frac{1}{4}e^{-t} + \frac{3}{4}e^{-t}\cos{(2t)} + 3e^{-t}\sin{(2t)}
+	y = \frac{1}{4}e^{-t} + \frac{3}{4}e^{-t}\cos{(2t)} + 3e^{-t}\sin{(2t)}.
 \end{equation*}
 
 \begin{example}
@@ -112,25 +104,25 @@ Taking the inverse Laplace transform of both sides,
 \noindent
 Rearranging the equation into the standard form for a linear heterogeneous ODE,
 \begin{equation*}
-	y'' + 4y = 8\cos{(2t)}
+	y'' + 4y = 8\cos{(2t)}.
 \end{equation*}
-Taking the Laplace transform of both sides
+Taking the Laplace transform of both sides,
 \begin{equation*}
-	s^2\Laplace{y} - y'(0) - sy(0) + 4\Laplace{y} = 8\frac{s}{s^2 + 2^2}
+	s^2\Laplace{y} - y'(0) - sy(0) + 4\Laplace{y} = 8\frac{s}{s^2 + 2^2}.
 \end{equation*}
 Plugging in the values given by the IVP and rearranging,
 \begin{equation*}
-	\Laplace{y}\left(s^2 + 4\right) = \frac{s^3 + 12s}{s^2 + 2^2}
+	\Laplace{y}\left(s^2 + 4\right) = \frac{s^3 + 12s}{s^2 + 2^2}.
 \end{equation*}
 Dividing to solve for $\Laplace{y}$,
 \begin{equation*}
-	\Laplace{y} = \frac{s^3 + 12s}{(s^2 + 2^2)(s^2 + 2^2)}
+	\Laplace{y} = \frac{s^3 + 12s}{(s^2 + 2^2)(s^2 + 2^2)}.
 \end{equation*}
 Rearranging the right side into partial fractions,
 \begin{equation*}
-	\Laplace{y} = \frac{s}{s^2 + 2^2} + 2\frac{2^2s}{(s^2+2^2)^2}
+	\Laplace{y} = \frac{s}{s^2 + 2^2} + 2\frac{2^2s}{(s^2+2^2)^2}.
 \end{equation*}
 Taking the inverse Laplace transform of both sides,
 \begin{equation*}
-	y = \cos{(2t)} + 2t\sin{(2t)}
+	y = \cos{(2t)} + 2t\sin{(2t)}.
 \end{equation*}

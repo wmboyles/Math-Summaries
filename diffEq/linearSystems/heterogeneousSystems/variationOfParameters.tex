@@ -32,34 +32,96 @@ where $\vec{v}$ is a vector of functions of $t$ that we'll have to find.
 \noindent
 Differentiating $\vec{x_p}$,
 \begin{equation*}
-	\vec{x_p}' = X\vec{v}' + X'\vec{v}
+	\vec{x_p}' = X\vec{v}' + X'\vec{v}.
 \end{equation*}
 From the system we're trying to solve we know that
 \begin{equation*}
-	X\vec{v}' + X'\vec{v} = A(X\vec{v}) + \vec{f}
+	X\vec{v}' + X'\vec{v} = A(X\vec{v}) + \vec{f}.
 \end{equation*}
 Since $X' = AX$,
 \begin{equation*}
-	X\vec{v}' = \vec{f}
+	X\vec{v}' = \vec{f}.
 \end{equation*}
 
 \noindent
-Since the columns of $X$ are always linearly independent, we know that $X^{-1}$ always exists.\\
+Since the columns of $X$ are always linearly independent, we know that $X^{-1}$ always exists.
 Multiplying by $X^{-1}$,
 \begin{equation*}
-	\vec{v}' = X^{-1}\vec{f}
+	\vec{v}' = X^{-1}\vec{f}.
 \end{equation*}
 Integrating with respect to $t$,
 \begin{equation*}
-	\vec{v} = \int{X^{-1}\vec{f} \mathrm{d}t}
+	\vec{v} = \int{X^{-1}\vec{f} \mathrm{d}t}.
 \end{equation*}
 So,
 \begin{equation*}
-	\vec{x_p} = X\int{X^{-1}\vec{f} \mathrm{d}t}
+	\vec{x_p} = X\int{X^{-1}\vec{f} \mathrm{d}t},
 \end{equation*}
 and
 \begin{equation*}
-	\vec{x} = X\vec{c} + X\int{X^{-1}\vec{f} \mathrm{d}t}
+	\vec{x} = X\vec{c} + X\int{X^{-1}\vec{f} \mathrm{d}t}.
 \end{equation*}
 
-\input{./linearSystems/heterogeneousSystems/variationOfParameters_example.tex}
+\begin{example}
+	Find the general solution to the system by variation of parameters
+	\begin{equation*}
+		\vec{x}' = \begin{bmatrix}
+			2 & -3 \\
+			1 & -2
+		\end{bmatrix}\vec{x} + \begin{bmatrix}
+			e^{2t} \\
+			1
+		\end{bmatrix}
+	\end{equation*}
+	given the fundamental matrix
+	\begin{equation*}
+		X = \begin{bmatrix}
+			3e^t & e^{-t} \\
+			e^t & e^{-t}
+		\end{bmatrix}.
+	\end{equation*}
+\end{example}
+\noindent
+Finding $\vec{x_h}$ is simply multiplying $X$ by a vector, so we'll save that for the end and focus on $\vec{x_p}$. First we need to find $X^{-1}$. The details are left out, but the process is identical to that for matrices of numbers.
+\begin{equation*}
+	X^{-1} = \begin{bmatrix}
+		\frac{1}{2}e^{-t} & -\frac{1}{2}e^{-t} \\
+		-\frac{1}{2}e^t & \frac{3}{2}e^t
+	\end{bmatrix}
+\end{equation*}
+Multiplying by $\vec{f}$.
+\begin{equation*}
+	X\vec{f} = \begin{bmatrix}
+		\frac{1}{2}e^t - \frac{1}{2}e^{-t} \\
+		-\frac{1}{2}e^{3t} + \frac{3}{2}e^t
+	\end{bmatrix}.
+\end{equation*}
+Integrating with respect to $t$,
+\begin{equation*}
+	\int{X^{-1}\vec{f} \mathrm{d}t} = \begin{bmatrix}
+		\frac{1}{2}e^t + \frac{1}{2}e^{-t} \\
+		-\frac{1}{6}e^{3t} + \frac{3}{2}e^t
+	\end{bmatrix}.
+\end{equation*}
+Note that although we are doing an indefinite integral, we don't have a constant (or in this case a vector) of integration.
+Multiplying by $X$ to obtain $\vec{x_p}$,
+\begin{equation*}
+	\vec{x_p} = X\int{X^{-1}\vec{f} \mathrm{d}t} = \begin{bmatrix}
+		\frac{4}{3}e^{2t} + 3 \\
+		\frac{1}{3}e^{2t} + 2
+	\end{bmatrix}.
+\end{equation*}
+Finding $\vec{x_h}$,
+\begin{equation*}
+	\vec{x_h} = X\vec{c} = \begin{bmatrix}
+		3C_1e^t + C_2e^{-t} \\
+		C_1e^t + C_2e^{-t}
+	\end{bmatrix}.
+\end{equation*}
+Putting $\vec{x_h}$ and $\vec{x_p}$ together to get the general solution,
+\begin{equation*}
+	\vec{x} = \begin{bmatrix}
+		3C_1e^{3t} + C_2e^{-t} + \frac{4}{3}e^{2t} + 3 \\
+		C_1e^t + C_2e^{-t} + \frac{1}{3}e^{2t} + 2
+	\end{bmatrix}.
+\end{equation*}

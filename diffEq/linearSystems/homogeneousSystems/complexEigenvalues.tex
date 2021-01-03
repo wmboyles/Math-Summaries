@@ -3,4 +3,53 @@
 	If an $n \times n$ matrix $A$ is not defective, then for each pair of complex eigenvalues $\alpha \pm \beta i$ with corresponding eigenvectors $\vec{a} \pm i\vec{b}$, the corresponding fundamental solutions are $e^{\alpha t}\left(\cos{(\beta t)}\vec{a}-\sin{(\beta t)\vec{b}}\right)$ and $e^{\alpha t}\left(\sin{(\beta t)}\vec{a}+\cos{(\beta t)\vec{b}}\right)$.
 \end{theorem}
 
-\input{./linearSystems/homogeneousSystems/complexEigenvalues_example.tex}
+\begin{example}
+	Find the general solution to the system
+	\begin{equation*}
+		\vec{x}' = \begin{bmatrix}
+			2 & 3 \\
+			-3 & 2
+		\end{bmatrix} \vec{x}.
+	\end{equation*}
+\end{example}
+\noindent
+Finding the eigenvalues by finding the roots of the characteristic polynomial of $A$,
+\begin{equation*}
+	p(\lambda) = \det{(A - \lambda I)} = (2-\lambda)^2 + 9 \implies \lambda = 2 \pm 3i.
+\end{equation*}
+Finding the eigenvectors for $\lambda = 2 + 3i$, remembering that once we have the two eigenvectors, we don't need to find them for the conjugate,
+\begin{equation*}
+	(A - (2+3i)I)\vec{v} = \vec{0} \implies \vec{v} = C_1\begin{bmatrix}
+		0 \\
+		1
+	\end{bmatrix} + C_2i\begin{bmatrix}
+		-1 \\
+		0
+	\end{bmatrix}.
+\end{equation*}
+So, our solution is
+\begin{equation*}
+	\vec{x} = C_1e^{2t}\left(\cos{(3t)}\begin{bmatrix}
+		0 \\
+		1
+	\end{bmatrix}-\sin{(3t)}\begin{bmatrix}
+		-1 \\
+		0
+	\end{bmatrix}\right) + C_2e^{2t}\left(\sin{(3t)}\begin{bmatrix}
+		0 \\
+		1
+	\end{bmatrix}+\cos{(3t)}\begin{bmatrix}
+		-1 \\
+		0
+	\end{bmatrix}\right).
+\end{equation*}
+We can rewrite this a little more elegantly as
+\begin{equation*}
+	\vec{x} = \begin{bmatrix}
+		\sin{(3t)} & - \cos{(3t)} \\
+		\sin{(3t)} & \cos{(3t)}
+	\end{bmatrix} \begin{bmatrix}
+		C_1 \\
+		C_2
+	\end{bmatrix} e^{2t}.
+\end{equation*}

@@ -10,28 +10,31 @@ Of course, just like with roots of the auxiliary equation, we need to consider t
 % Defective matrices
 \input{./linearSystems/homogeneousSystems/complexEigenvalues.tex}
 % Complex roots
-\input{./linearSystems/homogeneousSystems/defectiveMatrices.tex}
+\input{./linearSystems/homogeneousSystems/defectiveMatrices.tex} \\
+
 
 \noindent
 This final approach for defective matrices actually gives a general way to solve $\vec{x}' = A\vec{x}$ for any real $n \times n$ matrix $A$.
 \begin{enumerate}[label = \arabic*)]
 	\item
-		Compute the characteristic polynomial $p(\lambda) = \det{(A - \lambda I)}$. Find the zeroes of the characteristic to find the distinct eigenvalues $\lambda_1, \ldots, \lambda_k$ with corresponding multiplicities $m_1, \ldots, m_k$.
+		Compute the characteristic polynomial $p(\lambda) = \det{(A - \lambda I)}$.
+		Find the zeroes of the characteristic to find the distinct eigenvalues $\lambda_1, \ldots, \lambda_k$ with corresponding multiplicities $m_1, \ldots, m_k$.
 	\item
 		For each eigenvalue $\lambda_i$ find the $m_i$ corresponding linearly independent eigenvectors of rank $m_i$ by solving the system $(A - \lambda_i)^{m_i}\vec{v_i} = \vec{0}$.
 	\item
 		For each generalized generalized eigenvector $\vec{v_i}$, compute the corresponding fundamental solution
 		\begin{equation*}
-			\vec{x_i} = e^{At}\vec{v_i} = e^{\lambda t}\left(\vec{v_i} + t(A - \lambda I)\vec{v_i} + \frac{t^2}{2!}(A - \lambda I)^2\vec{v_i} + \ldots\right)
+			\vec{x_i} = e^{At}\vec{v_i} = e^{\lambda t}\left(\vec{v_i} + t(A - \lambda I)\vec{v_i} + \frac{t^2}{2!}(A - \lambda I)^2\vec{v_i} + \ldots\right).
 		\end{equation*}
 		Note that this summation terminates is at most $m_i$ terms.
 	\item
-		Combine these fundamental solutions as columns of a a square matrix to obtain the fundamental matrix of the system $X(t)$. The general solution to the system is
+		Combine these fundamental solutions as columns of a a square matrix to obtain the fundamental matrix of the system $X(t)$.
+		The general solution to the system is
 		\begin{equation*}
 			\vec{x} = X(t)\begin{bmatrix}
 				C_1 \\
 				\vdots \\
 				C_n
-			\end{bmatrix}
+			\end{bmatrix}.
 		\end{equation*}
 \end{enumerate}

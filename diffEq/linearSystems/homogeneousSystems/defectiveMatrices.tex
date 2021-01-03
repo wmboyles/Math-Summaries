@@ -1,19 +1,114 @@
 \subsubsection{Defective Matrix}
-If $A$ has an eigenvalue $\lambda$ with multiplicity $k$ that does not generate $k$ corresponding linearly independent eigenvectors, the the matrix $A$ is defective. To generate enough vectors, we need to extend eigenvectors.
+If $A$ has an eigenvalue $\lambda$ with multiplicity $k$ that does not generate $k$ corresponding linearly independent eigenvectors, the the matrix $A$ is defective.
+To generate enough vectors, we need to extend eigenvectors.
 \begin{definition}
-	Let $A$ be a square matrix. A nonzero vector $\vec{v}$ satisfying
+	Let $A$ be a square matrix.
+	A nonzero vector $\vec{v}$ satisfying
 	\begin{equation*}
 		(A-\lambda I)^n \vec{v} = \vec{0}
 	\end{equation*}
 	for some eigenvalue $\lambda$ and some positive integer $n$ is a generalized eigenvector or rank $n$.
 \end{definition}
+\noindent
 These generalized eigenvectors also make up solutions.
 \begin{theorem}
-	Let $\vec{v}$ be an generalized eigenvector of a square matrix $A$ corresponding to an eigenvalue $\lambda$ with multiplicity $k$. Then
+	Let $\vec{v}$ be an generalized eigenvector of a square matrix $A$ corresponding to an eigenvalue $\lambda$ with multiplicity $k$.
+	Then
 	\begin{equation*}
 		e^{At}\vec{v} = e^{\lambda t}\left(\vec{v} + t(A-\lambda I)\vec{v} + \frac{t^2}{2!}(A-\lambda I)^2\vec{v} + \ldots\right)
 	\end{equation*}
-	is the corresponding fundamental solution. Further, the above sequence will terminate after $k$ or fewer terms (all subsequent terms are 0).
+	is the corresponding fundamental solution.
+	Further, the above sequence will terminate after $k$ or fewer terms (all subsequent terms are 0).
 \end{theorem}
 
-\input{./linearSystems/homogeneousSystems/defectiveMatrices_example.tex}
+\begin{example}
+	Find the general solution to the system
+	\begin{equation*}
+		\vec{x}' = \begin{bmatrix}
+			1 & 0 & 0 \\
+			1 & 3 & 0 \\
+			0 & 1 & 1
+		\end{bmatrix} \vec{x}.
+	\end{equation*}
+\end{example}
+\noindent
+Since $A$ is diagonal, the eigenvalues are simply the diagonal entries
+\begin{equation*}
+	\lambda = 3, 1 \text{(double root)}.
+\end{equation*}
+Finding the eigenvector for $\lambda  = 3$,
+\begin{equation*}
+	(A - 3I)\vec{v} = \vec{0} \implies \vec{v} = C_1 \begin{bmatrix}
+		0 \\
+		2 \\
+		1
+	\end{bmatrix}.
+\end{equation*}
+Finding the eigenvector for $\lambda = 1$,
+\begin{equation*}
+	(A - I)\vec{v} = \vec{0} \implies \vec{v} = C_2 \begin{bmatrix}
+		0 \\
+		0 \\
+		1
+	\end{bmatrix}.
+\end{equation*}
+Since $\lambda  =1$ had multiplicity 2, we need to find a generalized eigenvector.
+\begin{equation*}
+	(A - I)^2\vec{v} = \vec{0} \implies \vec{v} = C_2 \begin{bmatrix}
+		0 \\
+		0 \\
+		1
+	\end{bmatrix} + C_3 \begin{bmatrix}
+		-2 \\
+		1 \\
+		0
+	\end{bmatrix}
+\end{equation*}
+Note how then eigenvector showed up again as a generalized eigenvector of rank 2.
+This is because the eigenvector makes $(A - I)\vec{v} = 0$, so $(A - I)^2\vec{v} = (A - I)\vec{0} = \vec{0}$.
+So, our solution is
+\begin{align*}
+	\vec{x} &= C_1e^{3t}\begin{bmatrix}
+		0 \\
+		2 \\
+		1
+	\end{bmatrix} + C_2e^{t}\begin{bmatrix}
+		0 \\
+		0 \\
+		1
+	\end{bmatrix} + C_3e^{t}\left(\begin{bmatrix}
+		-2 \\
+		1 \\
+		0
+	\end{bmatrix} + (A - I)t\begin{bmatrix}
+		-2 \\
+		1 \\
+		0
+	\end{bmatrix}\right) \\
+	&= C_1e^{3t}\begin{bmatrix}
+		0 \\
+		2 \\
+		1
+	\end{bmatrix} + C_2e^{t}\begin{bmatrix}
+		0 \\
+		0 \\
+		1
+	\end{bmatrix} + C_3e^{t}\begin{bmatrix}
+		-2 \\
+		1 \\
+		t
+	\end{bmatrix}.
+\end{align*}
+We can rewrite this a bit more cleanly as
+\begin{equation*}
+	\vec{x} = \begin{bmatrix}
+		0 & 0 & -2e^t \\
+		2e^{2t} & 0 & e^t \\
+		e^{3t} & e^t & te^t
+	\end{bmatrix} \begin{bmatrix}
+		C_1 \\
+		C_2 \\
+		C_3
+	\end{bmatrix}.
+\end{equation*}
+This square matrix is called the fundamental matrix of the system.

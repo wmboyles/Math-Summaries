@@ -7,7 +7,7 @@
 		\end{bmatrix}\vec{x} + \begin{bmatrix}
 			2e^t \\
 			4e^t
-		\end{bmatrix}
+		\end{bmatrix}.
 	\end{equation*}
 \end{example}
 \noindent
@@ -16,23 +16,21 @@ All entries in $\vec{f}$ are exponentials, so we'll guess that
 	\vec{x_p} = e^t\begin{bmatrix}
 		A \\
 		B
-	\end{bmatrix} = e^t\vec{a}
+	\end{bmatrix} = e^t\vec{a}.
 \end{equation*}
-Plugging our guess into the equation
-\begin{equation*}
-	\left(e^t\vec{a}\right)' = \begin{bmatrix}
+Plugging our guess into the equation,
+\begin{align*}
+	\left(e^t\vec{a}\right)' &= \begin{bmatrix}
 		1 & 2 \\
 		3 & 2
 	\end{bmatrix}e^t\vec{a} + \begin{bmatrix}
 		2e^t \\
 		4e^t
-	\end{bmatrix}
-\end{equation*}
-\begin{equation*}
+	\end{bmatrix} \\
 	e^t\begin{bmatrix}
 		A \\
 		B
-	\end{bmatrix} = e^t\begin{bmatrix}
+	\end{bmatrix} &= e^t\begin{bmatrix}
 		1 & 2 \\
 		3 & 2
 	\end{bmatrix}\begin{bmatrix}
@@ -41,8 +39,8 @@ Plugging our guess into the equation
 	\end{bmatrix} + e^t\begin{bmatrix}
 		2 \\
 		4
-	\end{bmatrix}
-\end{equation*}
+	\end{bmatrix} \\
+\end{align*}
 Dividing by $e^t$, which is never 0,
 \begin{equation*}
 	\begin{bmatrix}
@@ -54,7 +52,7 @@ Dividing by $e^t$, which is never 0,
 	\end{bmatrix} + \begin{bmatrix}
 		2 \\
 		4
-	\end{bmatrix}
+	\end{bmatrix}.
 \end{equation*}
 Rearranging,
 \begin{equation*}
@@ -73,14 +71,14 @@ Rearranging,
 	\end{bmatrix} = \begin{bmatrix}
 		-1 \\
 		-1
-	\end{bmatrix}
+	\end{bmatrix}.
 \end{equation*}
 So,
 \begin{equation*}
 	\vec{x_p} = e^t\begin{bmatrix}
 		-1 \\
 		-1
-	\end{bmatrix}
+	\end{bmatrix}.
 \end{equation*}
 
 \noindent
@@ -94,12 +92,12 @@ It's possible that we'll have to solve for multiple vectors of scalars to find $
 		\end{bmatrix}\vec{x} + \begin{bmatrix}
 			-4\cos{t} \\
 			-\sin{t}
-		\end{bmatrix}
+		\end{bmatrix}.
 	\end{equation*}
 \end{example}
 Just like when dealing with $\sin$ and $\cos$ in single equations, we need both $\sin$ and $\cos$ in our guess.
 \begin{equation*}
-	\vec{x_p} = \sin{t}\vec{a} + \cos{t}\vec{b}
+	\vec{x_p} = \sin{t}\vec{a} + \cos{t}\vec{b}.
 \end{equation*}
 Plugging into the equation where $A$ is the matrix of all 2's,
 \begin{equation*}
@@ -109,7 +107,7 @@ Plugging into the equation where $A$ is the matrix of all 2's,
 	\end{bmatrix} + \cos{t}\begin{bmatrix}
 		-4 \\
 		0
-	\end{bmatrix}
+	\end{bmatrix}.
 \end{equation*}
 This gives us a system
 \begin{equation*}
@@ -122,11 +120,11 @@ This gives us a system
 			-4 \\
 			0
 		\end{bmatrix}
-	\end{cases}
+	\end{cases}.
 \end{equation*}
 Substituting,
-\begin{equation*}
-	-\vec{b} = A\left(A\vec{b} + \begin{bmatrix}
+\begin{align*}
+	-\vec{b} &= A\left(A\vec{b} + \begin{bmatrix}
 		-4 \\
 		0
 	\end{bmatrix}\right) + \begin{bmatrix}
@@ -138,23 +136,21 @@ Substituting,
 	\end{bmatrix} - \begin{bmatrix}
 		0 \\
 		-1
-	\end{bmatrix}
-\end{equation*}
-\begin{equation*}
-	A^2 + I = \begin{bmatrix}
+	\end{bmatrix} \\
+	A^2 + I &= \begin{bmatrix}
 		9 & 8 \\
 		8 & 9
 	\end{bmatrix} \text{ and } -A\begin{bmatrix}
-	-4 \\
-	0
+		-4 \\
+		0
 	\end{bmatrix} - \begin{bmatrix}
-	0 \\
-	-1
+		0 \\
+		-1
 	\end{bmatrix} = \begin{bmatrix}
 		8 \\
 		9
-	\end{bmatrix}
-\end{equation*}
+	\end{bmatrix}.
+\end{align*}
 So,
 \begin{equation*}
 	\begin{bmatrix}
@@ -166,7 +162,7 @@ So,
 	\end{bmatrix} \implies \vec{b} = \begin{bmatrix}
 		0 \\
 		1
-	\end{bmatrix}
+	\end{bmatrix},
 \end{equation*}
 and
 \begin{equation*}
@@ -176,7 +172,7 @@ and
 	\end{bmatrix} \implies \vec{a} = \begin{bmatrix}
 		-2 \\
 		2
-	\end{bmatrix}
+	\end{bmatrix}.
 \end{equation*}
 Finally we have $\vec{x_p}$,
 \begin{equation*}
@@ -186,5 +182,5 @@ Finally we have $\vec{x_p}$,
 	\end{bmatrix} + \cos{t}\begin{bmatrix}
 		0 \\
 		1
-	\end{bmatrix}
+	\end{bmatrix}.
 \end{equation*}

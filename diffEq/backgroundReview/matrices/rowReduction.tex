@@ -4,8 +4,8 @@ Row reduction is a way of solving a system of linear equations by representing t
 
 \noindent
 Below is a list of legal row operations. Doing these does not change the solution to the system of equations.
-\begin{enumerate}[label=]
-	\item Multiplying or dividing each item in a row by a scalar.
+\begin{itemize}
+	\item Multiplying or dividing each item in a row by a scalar,
 		\begin{equation*}
 			\begin{bmatrix}
 				1 & 3 & 7 \\
@@ -17,9 +17,9 @@ Below is a list of legal row operations. Doing these does not change the solutio
 				1 & 3 & 7 \\
 				0 & 1 & -1/2 \\
 				2 & 7 & 9
-			\end{bmatrix}
+			\end{bmatrix}.
 		\end{equation*}
-	\item Adding a multiple of one row to another row.
+	\item Adding a multiple of one row to another row,
 		\begin{equation*}
 			\begin{bmatrix}
 				1 & 3 & 7 \\
@@ -31,9 +31,9 @@ Below is a list of legal row operations. Doing these does not change the solutio
 				1 & 3 & 7 \\
 				0 & 2 & -1 \\
 				0 & 1 & -5
-			\end{bmatrix}
+			\end{bmatrix}.
 		\end{equation*}
-	\item Swapping two rows.
+	\item Swapping two rows,
 		\begin{equation*}
 			\begin{bmatrix}
 				1 & 3 & 7 \\
@@ -45,9 +45,9 @@ Below is a list of legal row operations. Doing these does not change the solutio
 				1 & 3 & 7 \\
 				0 & 1 & -5 \\
 				0 & 2 & -1
-			\end{bmatrix}
+			\end{bmatrix}.
 		\end{equation*}
-\end{enumerate}
+\end{itemize}
 
 \noindent
 Using these rules, we solve a system of linear equations using a process called Gauss-Jordan Elimination.\\
@@ -101,7 +101,7 @@ A system may be underdetermined, meaning one or more variables can be any number
 		-4 \\
 		-2 \\
 		1
-	\end{bmatrix} \text{, }\alpha\text{, }\beta \in \R
+	\end{bmatrix} \text{, }\alpha\text{, }\beta \in \R.
 \end{equation*}
 
 \input{./backgroundReview/matrices/rowReduction_example.tex}

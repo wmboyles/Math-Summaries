@@ -6,28 +6,30 @@ We are trying to find a solution to the nth order linear ODE
 \end{equation*}
 assuming that we already know the fundamental solutions for the corresponding homogeneous equation
 \begin{equation*}
-	y_h = C_1y_1 + \ldots + C_ny_n
-\end{equation*}\\
+	y_h = C_1y_1 + \ldots + C_ny_n.
+\end{equation*}
 
 \noindent
 For this method, we'll assume that $y$ can be written as
 \begin{equation*}
-	y = v_1(x)y_1 + \ldots + v_n(x)y_n
+	y = v_1(x)y_1 + \ldots + v_n(x)y_n.
 \end{equation*}
 and we'll try to find $v_1, \ldots, v_n$.\\
 
 \noindent
-Since there are $n$ unknown functions, we'll need $n$ equations to find them all. We can generate these by differentiating $y_p$.
+Since there are $n$ unknown functions, we'll need $n$ equations to find them all.
+We can generate these by differentiating $y_p$.
 \begin{equation*}
-	y' = \left(v_1y_1' + \ldots + v_ny_n'\right) + \left(v_1'y_1 + \ldots + v_n'y_n\right)
+	y' = \left(v_1y_1' + \ldots + v_ny_n'\right) + \left(v_1'y_1 + \ldots + v_n'y_n\right).
 \end{equation*}
 to avoid second derivatives of $v_1, \ldots, v_n$ from entering the formula for $y''$, we also have the condition
 \begin{equation*}
-	v_1'y_1 + \ldots +v_n'y_n = 0
+	v_1'y_1 + \ldots +v_n'y_n = 0.
 \end{equation*}
-We can now continue differentiating to get $n-2$ more equations involving $v_1', \ldots, v_n'$. We also impose a final $n^{\text{th}}$ condition that
+We can now continue differentiating to get $n-2$ more equations involving $v_1', \ldots, v_n'$.
+We also impose a final $n^{\text{th}}$ condition that
 \begin{equation*}
-	v_1'y^{(n-1)} + \ldots + v_n'y_n^{(n-1)} = g
+	v_1'y^{(n-1)} + \ldots + v_n'y_n^{(n-1)} = g.
 \end{equation*}
 This gets us a system of $n$ equations,
 \begin{equation*}
@@ -36,9 +38,9 @@ This gets us a system of $n$ equations,
 		\vdots & \vdots \\
 		v_1'y_1^{(n-2)} + \ldots + v_n'y_n^{(n-2)} & = 0 \\
 		v_1'y_1^{(n-1)} + \ldots + v_n'y_n^{(n-1)} & = g
-	\end{cases} 
+	\end{cases} .
 \end{equation*}
-Hopefully this system look familiar from second order equations.\\
+Hopefully this system looks familiar from second order equations.\\
 
 \noindent
 We can rewrite this system in terms of matrices and vectors.
@@ -70,18 +72,18 @@ It's sufficient to show that a solution to this system exists if the determinant
 			f_1'(x) & \ldots & f_n'(x) \\
 			\vdots &        & \vdots \\
 			f_1^{(n-1)}(x) & \ldots & f_n^{(n-1)}(x)
-		\end{vmatrix} \text{, } x \in I
+		\end{vmatrix} \text{, } x \in I.
 	\end{equation*}
 \end{definition} 
 
 \noindent
 Using the Wronskian, we can solve the system using Cramer's Rule.
 \begin{equation*}
-	v'_i(x) = \frac{g(x)W_i(x)}{W[y_1, \ldots, y_n](x)} \text{, } i = 1, \ldots, n
+	v'_i(x) = \frac{g(x)W_i(x)}{W[y_1, \ldots, y_n](x)} \text{, } i = 1, \ldots, n,
 \end{equation*}
 where $W_i(x)$ is the determinant of the matrix obtained from the Wronskian $W(x)$ by replacing the $i^{\text{th}}$ column with $\text{col}[0, \ldots, 1]$. Using the cofactor expansion along this column, we can write $W_i(x)$ as
 \begin{equation*}
-	W_i(x) = (-1)^{n-i}W[y_1, \ldots, y_{i-1}, y_{i+1}, \ldots, y_n](x) \text{, } i = 1, \ldots, n
+	W_i(x) = (-1)^{n-i}W[y_1, \ldots, y_{i-1}, y_{i+1}, \ldots, y_n](x) \text{, } i = 1, \ldots, n.
 \end{equation*}
 Now with a solution for $v_i'$, we can integrate to get $v_i$.
 \begin{equation*}
@@ -92,4 +94,41 @@ Now with a solution for $v_i$, we can substitute back to find $y(x)$.
 	y(x) = \sum_{i=1}^{n}{y_i(x)\int{\frac{g(x)W_i(x)}{W[y_1, \ldots, y_n](x)} \mathrm{d}x}}
 \end{equation*}
 
-\input{./higherOrder/nonHomeg/variationParameters_higherOrder_example.tex}
+\begin{example}
+	Find the general solution to the equation
+	\begin{equation*}
+		x^3y''' + x^2y'' - 2xy' = x^3\sin{x} \text{, } x > 0
+	\end{equation*}
+	given that $\left\{x, x^{-1}, x^2\right\}$ is the set of fundamental solutions.
+\end{example}
+\noindent
+First we divide by $x^3$ to get a leading coefficient of 1.
+\begin{equation*}
+	y''' + x^{-1}y''' - 2x^{-2}y' = \sin{x} \text{, } x > 0
+\end{equation*}
+Next we calculate the $W(x)$ and each $W_i(x)$ for the fundamental solution set.
+\begin{align*}
+	W[x,x^{-1}, x^2](x) &= \begin{vmatrix}
+		x & x^{-1} & x^2 \\
+		1 & -x^{-2} & 2x \\
+		0 & 2x^{-3} & 2
+	\end{vmatrix} = 6x^{-1} \\
+	W_1(x) &= (-1)^{3-1}W[x^{-1}, x^2](x) = (-1)^{2}\begin{vmatrix}
+		x^{-1} & x^2 \\
+		-x^{-2} & 2x
+	\end{vmatrix} = 3 \\
+	W_2(x) &= (-1)^{3-2}\begin{vmatrix}
+		x & x^{2} \\
+		1 & 2x
+	\end{vmatrix} = -x^2 \\
+	W_2(x) &= (-1)^{3-2}\begin{vmatrix}
+		x & x^{-1} \\
+		1 & -x^{-2}
+	\end{vmatrix} = -2x^{-1}.
+\end{align*}
+Now we can calculate $y$.
+\begin{align*}
+	y(x) &= x\int{\frac{(\sin{x})^3}{-6x^{-1}} \mathrm{d}x} + x^{-1}\int{\frac{(\sin{x})(-x^2)}{-6x^{-1}} \mathrm{d}x} + x^2\int{\frac{(\sin{x})(-2x^{-1})}{-6x^{-1}} \mathrm{d}x} \\
+	&= x\int{\left(\frac{-1}{2}x\sin{x}\right)\mathrm{d}x} + x^{-1}\int{\left(\frac{1}{6}x^3\sin{x}\right)\mathrm{d}x} + x^2\int{\left(\frac{1}{3}\sin{x}\right)\mathrm{d}x} \\
+	&= C_1x + c_2x^{-1} + C_3x^2 + \cos{x} - x^{-1}\sin{x}
+\end{align*}

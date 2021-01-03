@@ -1,11 +1,11 @@
 \section{Integrating Factor Method}
 All 1st order linear differential equations have the form
 \begin{equation*}
-	a_1(x)\dd{y}{x} + a_0(x)y = b_1(x)
+	a_1(x)\dd{y}{x} + a_0(x)y = b_1(x),
 \end{equation*}
 which can be rewritten as
 \begin{equation*}
-	\dd{y}{x} + a(x)y = b(x)
+	\dd{y}{x} + a(x)y = b(x).
 \end{equation*}
 
 \noindent
@@ -20,7 +20,7 @@ If $a_0(x) = a_1'(x)$, then we could rewrite the equation and solve by doing the
 \noindent
 It's possible to rearrange into this form by multiplying the equation by some function. Specifically, what were looking for is a function $\mu(x)$ such that
 \begin{equation*}
-	\mu(x)\dd{y}{x} + \mu(x)a(x)y = \mu(x)b(x) \text{ and } \mu'(x) = \mu(x)a(x)
+	\mu(x)\dd{y}{x} + \mu(x)a(x)y = \mu(x)b(x) \text{ and } \mu'(x) = \mu(x)a(x).
 \end{equation*}
 This equation involving $\mu(x)$ is one that we know how to solve because it's separable.\footnote{Although we are taking an indefinite integral to find $\mu(x)$, we do not have a $+ C$ term.}
 \begin{equation*}
@@ -28,11 +28,25 @@ This equation involving $\mu(x)$ is one that we know how to solve because it's s
 \end{equation*}
 Substituting the solution for $\mu(x)$ back,
 \begin{equation*}
-	e^{\int{a(x) \mathrm{d}x}}\dd{y}{x} + e^{\int{a(x) \mathrm{d}x}}a(x)y = e^{\int{a(x) \mathrm{d}x}}b(x) \implies e^{\int{a(x) \mathrm{d}x}}\dd{y}{x} + \mu'(x)y = e^{\int{a(x) \mathrm{d}x}}b(x)
+	e^{\int{a(x) \mathrm{d}x}}\dd{y}{x} + e^{\int{a(x) \mathrm{d}x}}a(x)y = e^{\int{a(x) \mathrm{d}x}}b(x) \implies e^{\int{a(x) \mathrm{d}x}}\dd{y}{x} + \mu'(x)y = e^{\int{a(x) \mathrm{d}x}}b(x).
 \end{equation*}
 Applying the product rule in reverse,
 \begin{equation*}
-	y = \frac{\int{\mu(x)} b(x) \mathrm{d}x}{\mu(x)} \text{, } \mu(x) = e^{\int{a(x) \mathrm{d}x}}
+	y = \frac{\int{\mu(x)} b(x) \mathrm{d}x}{\mu(x)} \text{, } \mu(x) = e^{\int{a(x) \mathrm{d}x}}.
 \end{equation*}
 
-\input{./1stOrderLinearODE/integratingFactor/integratingFactor_example.tex}
+\begin{example}
+	Solve the following 1st order linear ODE.
+	\begin{equation*}
+		y^\prime - y = 2e^{x}
+	\end{equation*}
+\end{example}
+\noindent
+$a(x) = -1$, so
+\begin{equation*}
+	\mu(x) = e^{\int{-1 \mathrm{d}x}} = e^{-x}
+\end{equation*}
+Applying to our equation and solving,
+\begin{equation*}
+	y^\prime e^{-x} - ye^{-x} = 2 \implies \left(ye^{-x}\right)^\prime = 2 \implies ye^{-x} = 2x + C \implies y = \frac{2x + C}{e^{-x}}.
+\end{equation*}

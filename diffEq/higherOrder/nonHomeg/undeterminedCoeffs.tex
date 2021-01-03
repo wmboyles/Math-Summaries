@@ -1,12 +1,15 @@
 \subsection{Method of Undetermined Coefficients}
 \noindent
-The type of equation we're trying to solve is a heterogeneous linear ODE with constant coefficients. These have the form
+The type of equation we're trying to solve is a heterogeneous linear ODE with constant coefficients.
+These have the form
 \begin{equation*}
-	a_ny^{(n)} + a_{n-1}y^{(n-1)} + \ldots + a_1y' + a_0y = b(x)
+	a_ny^{(n)} + a_{n-1}y^{(n-1)} + \ldots + a_1y' + a_0y = b(x).
 \end{equation*}
 We will assume that the solution has the form $y = y_h + y_p$, where $y_h$ is the general solution to the homogeneous equation ($b(x) = 0$), and $y_p$ is the particular solution.\\
 
 \noindent
-We know how to solve for $y_h$ exactly without guessing. However, we will make a guess for the form of $y_p$ based on the form of $b(x)$ and the form of $y_h$ using the rules described in the below examples. For each term in our guess for $y_p$, we will solve for a constant.\\
+We know how to solve for $y_h$ exactly without guessing.
+However, we will make a guess for the form of $y_p$ based on the form of $b(x)$ and the form of $y_h$ using the rules described in the below examples.
+For each term in our guess for $y_p$, we will solve for a constant.\\
 
 \input{./higherOrder/nonHomeg/undeterminedCoeffs_examples.tex}

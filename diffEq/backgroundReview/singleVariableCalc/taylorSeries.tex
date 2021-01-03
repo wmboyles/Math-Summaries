@@ -1,29 +1,40 @@
 \subsection{Taylor Series}
 \noindent
-A Taylor series as a way of approximating a function about a point $x=a$ using polynomials. The first approximation just keeps the same value at $x=a$, the second approximation keep the same value and first derivative, etc.
+A Taylor series as a way of approximating a function about a point $x=a$ using polynomials.
+The first approximation just keeps the same value at $x=a$, the second approximation keeps the same value and first derivative at $x=a$, etc.
 \begin{definition}
 	\begin{equation*}
 		f(x) = f(a)+f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \ldots +  \frac{f^{(n)}(a)}{n!}(x-a)^n + \ldots
 	\end{equation*}
 \end{definition}
+
 \noindent
 If we approximate a function about $x=0$, we call this a Maclaurin series. Below are some common Maclaurin series, and their radii of convergence if applicable.
-\begin{enumerate}[label=]
-	\item \begin{equation*}
-		e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \ldots
-	\end{equation*}
-	\item \begin{equation*}
-		\sin{x} = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \ldots
-	\end{equation*}
-	\item \begin{equation*}
-		\cos{x} = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \ldots
-	\end{equation*}
-	\item \begin{equation*}
-		\frac{1}{1+x} = 1 - x + x^2 - \ldots \text{, where } \abs{x} < 1
-	\end{equation*}
-	\item \begin{equation*}
-		\ln{(1+x)} = x - \frac{x^2}{2} + \frac{x^3}{3} - \ldots \text{, where } \abs{x} < 1
-	\end{equation*}
-\end{enumerate}
+\begin{align*}
+	e^x &= 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \ldots \\
+	\sin{x} &= x - \frac{x^3}{3!} + \frac{x^5}{5!} - \ldots \\
+	\cos{x} &= 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \ldots \\
+	\frac{1}{1+x} &= 1 - x + x^2 - \ldots \text{, where } \abs{x} < 1 \\
+	\ln{(1+x)} &= x - \frac{x^2}{2} + \frac{x^3}{3} - \ldots \text{, where } \abs{x} < 1
+\end{align*}
 
-\input{./backgroundReview/singleVariableCalc/eulersIdentity.tex}
+\subsubsection{Euler's Identity}
+\noindent
+Let's see what happens when we look at the Maclaurin series for $e^{ix}$.
+\begin{align*}
+	e^{ix} &= 1 + (ix) + \frac{(ix)^2}{2!} + \frac{(ix)^3}{3!} + \frac{(ix)^4}{4!} + \frac{(ix)^5}{5!} \ldots \\
+	&= 1 + ix - \frac{x^2}{2!} - i\frac{x^3}{3!} + \frac{x^4}{4!} + i\frac{x^5}{5!} - \ldots \\
+	&= \left(1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \ldots \right) + i\left(x - \frac{x^3}{3!} + \frac{x^5}{5!} - \ldots \right)
+\end{align*}
+The two expressions in parenthesis are exactly the Maclaurin series for $\cos{x}$ and $\sin{x}$. So,
+\begin{equation*}
+	e^{ix} = \cos{x} + i\sin{x}.
+\end{equation*}
+In the case that $x = \pi$,
+\begin{equation*}
+	e^{i\pi} = \cos{\pi} + i\sin{\pi} = -1 + 0.
+\end{equation*}
+So,
+\begin{equation*}
+	e^{i\pi} + 1 = 0.
+\end{equation*}

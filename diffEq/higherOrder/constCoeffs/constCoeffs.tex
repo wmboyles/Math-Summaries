@@ -1,14 +1,45 @@
 \section{Constant Coefficients}
-The general form of an nth order linear equation is
-\begin{equation*}
-	a_n(x)y^{(n)} + a_{n-1}y^{(n-1)} + \ldots + a_1(x)y' + a_0y = b(x)
-\end{equation*}
-If each $a_i(x)$ is a constant, then the equation has constant coefficients.\\
+\begin{definition}
+	The general form of an nth order linear equation is
+	\begin{equation*}
+		a_n(x)y^{(n)} + a_{n-1}y^{(n-1)} + \ldots + a_1(x)y' + a_0y = b(x)
+	\end{equation*}
+	If each $a_i(x)$ is a constant, then the equation has constant coefficients.
+\end{definition}
 
 \noindent
 We already know how to solve linear first order differential equations using an integrating factor, but let's see if we can develop a method that can solve any order linear, homogeneous differential equation with constant coefficients.
 
-\input{./higherOrder/constCoeffs/constCoeffs_example.tex}
+\begin{example}
+	Let's try to solve the following equation by guessing and checking likely solutions.
+	\begin{equation*}
+		y'' - 3y' + 2y = 0
+	\end{equation*}
+\end{example}
+\noindent
+Exponentials seem like good guesses. Let's try an exponential of the form $y = Ce^{rx}$ first.
+\begin{equation*}
+	\left(Ce^{rx}\right)'' - 3\left(Ce^{rx}\right)' + 2\left(Ce^{rx}\right) =  0
+\end{equation*}
+\begin{equation*}
+	Cr^2e^{rx} - 3rCe^{rx} + 2Ce^{rx} = Ce^{rx}\left(r^2 - 3r + 2\right) = 0
+\end{equation*}
+Since $Ce^{rx} \neq 0$ unless $C = 0$, we only need to solve the quadratic.
+Note that the coefficients of the quadratic are the same as the coefficients in the original differential equation.
+\begin{equation*}
+	r^2 - 3r + 2 = 0 \implies r = 1 \text{, } 2
+\end{equation*}
+So, our two fundamental solutions are
+\begin{equation*}
+	\begin{cases}
+		y = C_1e^{x} \\
+		y = C_2e^{2x}
+	\end{cases}.
+\end{equation*}
+Since these two fundamental solutions are linearly independent, the general solution is the sum of the fundamental solutions.
+\begin{equation*}
+	y = C_1e^{x} + C_2e^{2x}
+\end{equation*}
 
 % Auxillary Equation
 \input{./higherOrder/constCoeffs/auxillaryEquation.tex}

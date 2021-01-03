@@ -1,30 +1,33 @@
 \subsection{The Auxiliary Equation}
 \noindent
-It's not a coincidence that the coefficients of the polynomial that we had to find the 0's of in the above example matched the coefficients of the differential equation. We call this polynomial the auxiliary equation, and it can help us solve linear, homogeneous differential equations with constant coefficients of any order.
+It's not a coincidence that the coefficients of the polynomial that we had to find the 0's of in the above example matched the coefficients of the differential equation.
+We call this polynomial the auxiliary equation, and it can help us solve linear, homogeneous differential equations with constant coefficients of any order.
 \begin{definition}
 	A nth order, linear, homogeneous differential equation with constant coefficients has the form
 	\begin{equation*}
-		a_ny^{(n)} + a_{n-1}y^{(n-1)} + \ldots + a_1y' + a_0y = 0
+		a_ny^{(n)} + a_{n-1}y^{(n-1)} + \ldots + a_1y' + a_0y = 0.
 	\end{equation*}
 	The corresponding auxiliary equation is
 	\begin{equation*}
-		a_nr^n + a_{n-1}r^{n-1} + \ldots + a_1r + a_0 = 0
+		a_nr^n + a_{n-1}r^{n-1} + \ldots + a_1r + a_0 = 0.
 	\end{equation*}
 \end{definition}
 
 \noindent
 We now have a method for solving these equations with the roots of the auxiliary equation are all unique. 
 \begin{theorem}
-	Let $\left\{r_1, \ldots, r_n\right\}$ be the set of unique roots to an auxiliary equation corresponding to a nth order, linear, homogeneous differential equation with constant coefficients. The set of fundamental solutions are $\left\{C_1e^{r_1x}, \ldots, C_ne^{r_nx}\right\}$, and the general solution is
+	Let $\left\{r_1, \ldots, r_n\right\}$ be the set of unique roots to an auxiliary equation corresponding to a nth order, linear, homogeneous differential equation with constant coefficients.
+	The set of fundamental solutions are $\left\{C_1e^{r_1x}, \ldots, C_ne^{r_nx}\right\}$, and the general solution is
 	\begin{equation*}
-		y = C_1e^{r_1x} + \ldots + C_ne^{r_nx}
+		y = C_1e^{r_1x} + \ldots + C_ne^{r_nx}.
 	\end{equation*}
 \end{theorem}
 
 \noindent
 We can easily extend this method to deal with roots of higher multiplicities.
 \begin{theorem}
-	Let $\alpha$ be a root with multiplicity $k$ to an auxiliary equation corresponding to a nth order, linear, homogeneous differential equation with constant coefficients. Then $e^{\alpha x}, xe^{\alpha x}, \ldots, x^{k-1}e^{\alpha x}$ are fundamental solutions.
+	Let $\alpha$ be a root with multiplicity $k$ to an auxiliary equation corresponding to a nth order, linear, homogeneous differential equation with constant coefficients.
+	Then $e^{\alpha x}, xe^{\alpha x}, \ldots, x^{k-1}e^{\alpha x}$ are fundamental solutions.
 \end{theorem}
 
 \input{./higherOrder/constCoeffs/complexRoots.tex}

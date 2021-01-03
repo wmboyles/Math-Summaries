@@ -5,4 +5,26 @@
 \noindent
 Although this definition seems straightforward it gives us a formal way to check if a function is a solution to a differential equation.
 
-\input{./basics/solutions/solutions_example.tex}
+\begin{example}
+	Check that $y = t^2\ln{t}$ ($t > 0$) and $y = t^2$  are solutions to the differential equation
+	\begin{equation*}
+		t^2y'' - 3ty' + 4y = 0.
+	\end{equation*}
+\end{example}
+\noindent
+We'll check $y= t^2\ln{t}$ ($t > 0$) first.
+\begin{align*}
+	t^2\left(t^2\ln{t}\right)'' - 3t\left(t^2\ln{t}\right)' + 4\left(t^2\ln{t}\right) &= 0 \text{, } t > 0 \\
+	t^2\left(3 + 2\ln{t}\right) - 3t\left(t + 2t\ln{t}\right) + 4\left(t^2\ln{t}\right) &= 0 \text{, } t > 0 \\
+	3t^2 + 2t^2\ln{t} - 3t^2 - 6t^2\ln{t} + 4t^2\ln{t} &= 0 \text{, } t > 0 \\
+	0 &= 0.
+\end{align*}
+So $y = t^2\ln{t}$ ($t > 0$) is a solution.
+Now we'll check $y= t^2$.
+\begin{align*}
+	t^2\left(t^2\right)'' - 3t\left(t^2\right)' + 4\left(t^2\right) &= 0 \\
+	t^2\left(2\right) - 3t\left(2t\right) + 4t^2 &= 0 \\
+	2t^2 - 6t^2 + 4t^2 &= 0 \\
+	0 &= 0.
+\end{align*}
+So $y = t^2$ is also a solution.

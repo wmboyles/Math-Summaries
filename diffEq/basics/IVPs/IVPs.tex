@@ -2,20 +2,55 @@
 \noindent
 We can see that since solving a differential equation will mean integrating to get rid of derivatives, the $+ C$ from integration will gives us multiple solutions. We call these sets of solutions that differ only in these constants "solution families". If we want to find one specific solution, we need more information about the value of the function and it's derivatives. This type of problem where a differential equation is coupled with function values is called an initial value problem (IVP).\\
 
+\begin{definition}
+	An initial value problem has the general form.
+	\begin{equation*}
+		\begin{cases}
+			a_ny^{(n)} + a_{n-1}y^{(n-1)} + \ldots + a_0y = f(x) \\
+			y(x_0) = y_0 \\
+			y'(x_1) = y_1 \\
+			\vdots \\
+			y^{(n)}(x_n) = y_n
+		\end{cases}.
+	\end{equation*}
+	Often, each $x_i$ is 0.
+\end{definition}
+
+
+\begin{example}
+	The general solution to the IVP
+	\begin{equation*}
+		\begin{cases}
+			y^{\prime\prime} - 5y^\prime + 6y = 0 \\
+			y(0) = 3 \\
+			y^\prime(0) = 1
+		\end{cases}
+	\end{equation*}
+	is $y = c_1e^{2x} + c_2e^{3x}$. Find the specific solution.
+\end{example}
 \noindent
-An initial value problem has the general form.
+Evaluating $y$ at $x = 0$,
+\begin{equation*}
+	y(0) = c_1 + c_2 = 3.
+\end{equation*}
+Evaluating $y^\prime$ at $x = 0$,
+\begin{equation*}
+	y^\prime(0) = 2c_1 + 3c_2 = 1.
+\end{equation*}
+To find $c_1$ and $c_2$, we need to solve the system of linear equations
 \begin{equation*}
 	\begin{cases}
-		a_ny^{(n)} + a_{n-1}y^{(n-1)} + \ldots + a_0y = f(x) \\
-		y(x_0) = y_0 \\
-		y'(x_1) = y_1 \\
-		\vdots \\
-		y^{(n)}(x_n) = y_n
-	\end{cases}
+		c_1 + c_2 = 3 \\
+		2c_1 + 3c_2 = 1
+	\end{cases} \implies \begin{cases}
+		c_1 = 8 \\
+		c_2 = -5
+	\end{cases}.
 \end{equation*}
-Often, each $x_i$ is 0.
-
-\input{./basics/IVPs/IVPs_example1.tex}
+So, our specific solution to the IVP is
+\begin{equation*}
+	y = 8e^{2x} - 5e^{3x}.
+\end{equation*}
 
 \begin{theorem}[Existence and Uniqueness of Solutions to 1st Order IVPs]
 	Consider the IVP
@@ -23,9 +58,31 @@ Often, each $x_i$ is 0.
 		\begin{cases}
 			\dd{x}{y} = f(x,y) \\
 			y(x_0) = y_0
-		\end{cases}
+		\end{cases}.
 	\end{equation*}
 	If $f(x,y)$ and $\frac{\partial}{\partial y}f$ are both continuous on some rectangular region containing the point $(x_0, y_0)$, then the IVP has a unique solution $y = y(x)$ on some open interval containing $x_0$.
 \end{theorem}
 
-\input{./basics/IVPs/IVPs_example2.tex}
+\begin{example}
+	Does a solution to the following IVP exist? Is it unique?
+	\begin{equation*}
+		\begin{cases}
+			\dd{y}{x} = x^2 - xy^3 \\
+			y(1) = 6
+		\end{cases}
+	\end{equation*}
+\end{example}
+\noindent
+$f(x,y) = x^2 - xy^3$ and $\frac{\partial f}{\partial y} = -3xy^2$ are continuous on all of $\R^2$. So, the existence and uniqueness theorem tells us that the IVP has a unique solution on an open interval containing $x_0 = 1$.
+
+\begin{example}
+	Does a solution to the following IVP exist? Is it unique?
+	\begin{equation*}
+		\begin{cases}
+			\dd{y}{x} = 3y^{2/3} \\
+			y(2) = 0
+		\end{cases}
+	\end{equation*}
+\end{example}
+\noindent
+$f(x,y) = 3y^{2/3}$ is continuous on $y \in \R$, and $\frac{\partial f}{\partial y} = 2y^{-1/3}$ is continuous on $x \in \left(-\infty, 0\right) \cup \left(0, \infty\right)$. Since $\frac{\partial f}{\partial y}$ is not continuous on a domain containing $(2,0)$, the existence and uniqueness theorem does not guarantee a solution.

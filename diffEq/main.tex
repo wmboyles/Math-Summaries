@@ -54,34 +54,7 @@
 \newcommand{\inverseLaplace}[1]{\mathcal{L}^{-1}\left\{ #1 \right\}\left(t\right)}	% Inverse Laplace Transform
 % ------------------------------------------------------------------------------
 
-
-% ------------------------------------------------------------------------------
-% Macros for including certain parts of the document. 1 for true, 0 for false.
-\def\includeBackgroundReview{1}					% Should the background/review chapter be included?
-	\def\includeBackgroundReviewExamples{1}		% Should examples be included in the background/review chapter?
-	
-\def\includeBasics{1}							% Should the introduction/basics chapter be included?
-	\def\includeBasicsExamples{1}				% Should examples be included in the basics chapter?
-	
-\def\includeFirstOrderLinearODE{1}				% Should the 1st order linear ODE chapter be included?
-	\def\includeFirstOrderLinearODEExamples{1}	% Should examples be included in the 1st order linear ODEs chapter?
-	
-\def\includeHigherOrder{1}						% Should the higher order ODE chapter be included?
-	\def\includeHigherOrderExamples{1}			% Should examples be included in the higher order ODE chapter?
-	
-\def\includeLinearSystems{1}					% Should the linear systems of DiffEq's chapter be included?
-	\def\includeLinearSystemsExamples{1}		% Should examples be included in the linear systems chapter?
-	
-\def\includeLaplaceTransforms{1}				% Should the Laplace transforms chapter be included?
-	\def\includeLaplaceTransformExamples{1}		% Should examples be included in the Laplace transforms chapter?
-
-\def\includeAdditionalResources{1}				% Should the additional resources chapter be included?
-
-\def\includeAppendix{1}							% Should the appendix be included?
-
-% ------------------------------------------------------------------------------
-
-
+% -----------------------------------------------------------------------------
 \begin{document}
 	% Title page setup
 	\title{Intro to Differential Equations: A Summary}
@@ -93,16 +66,16 @@
 		\tableofcontents
 	
 	\mainmatter
-		\ifodd\includeBackgroundReview\input{./backgroundReview/backgroundReview.tex}\fi 			% Background and Review
-		\ifodd\includeBasics\input{./basics/basics.tex} 											% Introduction / Basics	
-		\ifodd\includeFirstOrderLinearODE\input{./1stOrderLinearODE/1stOrderLinearODE.tex}\fi 		% 1st order linear ODE's
-		\ifodd\includeHigherOrder\input{./higherOrder/higherOrder.tex}\fi 							% Higher (mostly 2nd) Order linear ODE's
-		\ifodd\includeLinearSystems\input{./linearSystems/linearSystems.tex}\fi 					% Linear Systems of DiffEq's
-		\ifodd\includeLaplaceTransforms\input{./laplaceTransforms/laplaceTransforms.tex}\fi 		% Laplace Transforms
-		\ifodd\includeAdditionalResources\input{./additionalResources/additionalResources.tex}\fi	% Additional Resources
+		\input{./backgroundReview/backgroundReview.tex} 		% Background and Review
+		\input{./basics/basics.tex} 							% Introduction / Basics	
+		\input{./1stOrderLinearODE/1stOrderLinearODE.tex} 		% 1st order linear ODE's
+		\input{./higherOrder/higherOrder.tex} 					% Higher (mostly 2nd) Order linear ODE's
+		\input{./linearSystems/linearSystems.tex} 				% Linear Systems of DiffEq's
+		\input{./laplaceTransforms/laplaceTransforms.tex} 		% Laplace Transforms
+		\input{./additionalResources/additionalResources.tex}	% Additional Resources
 		
 	\appendix
-		\ifodd\includeAppendix\input{./appendix/appendixA.tex}\fi	%  Appendix
+		\input{./appendix/appendixA.tex}						%  Appendix
 		
 	\backmatter
 \end{document}

@@ -64,15 +64,6 @@
 					&= \frac{se(s+1) + se(s-3) -2e(s+1)(s-3)}{(s+1)(s-3)} \\
 					&= \frac{2e(s+3)}{(s+1)(s-3)}
 				\end{align*}
-%			\item
-%				\begin{align*}
-%					\Laplace{\lim\limits_{a \to 0}{\frac{1}{\abs{t}\sqrt{\pi}}e^{(t/a)^2}}} &= \int_{0}^{\infty}{e^{-st}\lim\limits_{a \to 0}{\frac{1}{\abs{t}\sqrt{\pi}}e^{(t/a)^2}} \mathrm{d}t} \\
-%					&= \frac{1}{\sqrt{\pi}}\int_{0}^{\infty}{\lim\limits_{a\to 0}\frac{e^{(t/a)^2 - s}}{t} \mathrm{d}t} \text{, } t > 0
-%				\end{align*}
-%				Let $u = (t/a)^2 - s$, so $\mathrm{d}u = \frac{2}{a^2}t\mathrm{d}t$.
-%				\begin{align*}
-%					&= \frac{1}{\sqrt{\pi}}\int_{-s}^{\infty}{}
-%				\end{align*}
 		\end{enumerate}
 	\item
 		\begin{enumerate}[label=(\alph*)]
@@ -97,38 +88,36 @@
 				\end{align*}
 		\end{enumerate}
 	\item
-		We'll use method of undetermined coefficients. Extracting and solving the axillary equation,
+		We'll use method of undetermined coefficients.
+		Extracting and solving the axillary equation,
 		\begin{equation*}
-			2r^2 - 3r + 1 = 0 \implies r = \frac{1}{2} \text{, } 1
+			2r^2 - 3r + 1 = 0 \implies r = \frac{1}{2} \text{, } 1.
 		\end{equation*}
 		So, our homogeneous solution is
 		\begin{equation*}
-			y_h = C_1e^{\frac{x}{2}} + C_2e^{x}
+			y_h = C_1e^{\frac{x}{2}} + C_2e^{x}.
 		\end{equation*}
 		We'll guess that the particular solution has the form
-		\begin{equation*}
-			y_p = A\sin{x} + B\cos{x}
-		\end{equation*}
-		\begin{equation*}
-			2y_p'' - 3y_p' + y_p = 10\sin{x} \implies A = -1 \text{, } B = 3 
-		\end{equation*}
+		\begin{align*}
+			y_p &= A\sin{x} + B\cos{x} \\
+			2y_p'' - 3y_p' + y_p &= 10\sin{x} \implies A = -1 \text{, } B = 3.
+		\end{align*}
 		So,
 		\begin{equation*}
-			y_p = -\sin{x} + 3\cos{x}
+			y_p = -\sin{x} + 3\cos{x},
 		\end{equation*}
-		And our general solution is
+		and our general solution is
 		\begin{equation*}
-			y = C_1e^{\frac{x}{2}} + C_2e^{x} -\sin{x} + 3\cos{x}
+			y = C_1e^{\frac{x}{2}} + C_2e^{x} -\sin{x} + 3\cos{x}.
 		\end{equation*}
 		Now we'll use Laplace transform. Taking the Laplace transform of both sides,
 		\begin{align*}
 			\Laplace{2y'' - 3y' + y} &= \Laplace{10\sin{x}} \\
 			\Laplace{y} \cdot (2s^2 - 3s + 1) &= \frac{10}{s^2+1} + 2y'(0) + 3y(0) -2sy(0) \\
 			\Laplace{y} \cdot (2s^2 - 3s + 1) &= \frac{10 + 3y(0)s^2 + 3y(0) - 2s^3y(0) - 2sy(0) + 2s^2y'(0) + 2y'(0)}{s^2+1} \\
-%			& = \frac{C_1s^3 + C_1s^2 + C_2s^2 + C_1s + C_1 + C_2 + 10}{s^2+1} \\
 			\Laplace{y} &= \frac{-2y(0)s^3 + (3y(0)+2y'(0))s^2 -2sy(0) + 3y(0) + 2y'(0) + 10}{\left(s^2+1\right)\left(2s^2-3s+1\right)} \\
 			&= \frac{-2y(0)s^3 + (3y(0)+2y'(0))s^2 -2sy(0) + 3y(0) + 2y'(0) + 10}{\left(s^2+1\right)\left(2s-1\right)\left(s-1\right)} \\
-			&= \frac{-4(y(0)+y'(0)+4)}{2s-1} + \frac{y(0)+2y'(0)+5}{s-1} + \frac{3s-1}{s^2+1}
+			&= \frac{-4(y(0)+y'(0)+4)}{2s-1} + \frac{y(0)+2y'(0)+5}{s-1} + \frac{3s-1}{s^2+1}.
 		\end{align*}
 		Let $C_1 = -2(y(0)+y'(0)+4)$ and $C_2 = y(0) + 2y'(0) + 5$.
 		\begin{equation*}
@@ -136,7 +125,7 @@
 		\end{equation*}
 		Taking the inverse Laplace transform of both sides,
 		\begin{equation*}
-			y = C_1e^{\frac{x}{2}} + C_2e^x -\sin{x} + 3\cos{x}
+			y = C_1e^{\frac{x}{2}} + C_2e^x -\sin{x} + 3\cos{x}.
 		\end{equation*}
 		We can see that we have the same solution for $y$ in both methods.
 	\item
@@ -147,14 +136,14 @@
 			\Laplace{y} \cdot (2s^2 + 4s - 6) - 2s - 4 &= \frac{1}{(s+3)^2} \\
 			\Laplace{y} \cdot (2s^2 + 4s - 6) &= \frac{1}{(s+3)^2} + 2s + 4 \\
 			&= \frac{2s^3 + 16s^2 + 42s + 37}{(s+3)^2} \\
-			\Laplace{y} &= \frac{2s^3 + 16s^2 + 42s + 37}{2(s+3)^3(s-1)}
+			\Laplace{y} &= \frac{2s^3 + 16s^2 + 42s + 37}{2(s+3)^3(s-1)}.
 		\end{align*}
 		Converting the right side to partial fractions,
 		\begin{equation*}
-			\Laplace{y} = \frac{31}{128(s+3)} - \frac{1}{32(s+3)^2} - \frac{1}{8(s+3)^3} + \frac{97}{128(s-1)}
+			\Laplace{y} = \frac{31}{128(s+3)} - \frac{1}{32(s+3)^2} - \frac{1}{8(s+3)^3} + \frac{97}{128(s-1)}.
 		\end{equation*}
 		Taking the inverse Laplace transform of both sides to solve for $y$,
 		\begin{equation*}
-			y = \frac{31}{128}e^{-3t} - \frac{1}{32}te^{-3t} - \frac{1}{16}t^2e^{-3t} + \frac{97}{128}e^{t}
+			y = \frac{31}{128}e^{-3t} - \frac{1}{32}te^{-3t} - \frac{1}{16}t^2e^{-3t} + \frac{97}{128}e^{t}.
 		\end{equation*}
 \end{enumerate}

@@ -1,32 +1,35 @@
 \subsection{Test 2 Answers}
 \begin{enumerate}[label=\arabic*.]
 	\item
-		For both (a) and (b), we'll need to compute the general solution to make sure any terms that we'd guess as part of the particular solution aren't already part of the general solution. The auxiliary equation and its roots are
+		For both (a) and (b), we'll need to compute the general solution to make sure any terms that we'd guess as part of the particular solution aren't already part of the general solution.
+		The auxiliary equation and its roots are
 		\begin{equation*}
-			r^2 + 10r + 25 \implies r = -5 \text{ (double root)}
+			r^2 + 10r + 25 \implies r = -5 \text{ (double root)}.
 		\end{equation*}
 		So, the general solution is
 		\begin{equation*}
-			C_1e^{-5t} + C_2te^{5t}
+			C_1e^{-5t} + C_2te^{5t}.
 		\end{equation*}
 		\begin{enumerate}[label=(\alph*)]
 			\item
 				We have a trig term and a linear term times a trig term, so the particular solution has the form
 				\begin{equation*}
-					y_p = A\cos{(-5t)} + B\sin{(-5t)} + Ct\cos{(-5t)} + Dt\sin{(-5t)}
+					y_p = A\cos{(-5t)} + B\sin{(-5t)} + Ct\cos{(-5t)} + Dt\sin{(-5t)}.
 				\end{equation*}
 				So, without solving for $A$, $B$, $C$, and $D$, the general form of a particular solution is
 				\begin{equation*}
-					C_1e^{-5t} + C_2te^{5t} + A\cos{(-5t)} + B\sin{(-5t)} + Ct\cos{(-5t)} + Dt\sin{(-5t)}
+					C_1e^{-5t} + C_2te^{5t} + A\cos{(-5t)} + B\sin{(-5t)} + Ct\cos{(-5t)} + Dt\sin{(-5t)}.
 				\end{equation*}
 			\item
-				We have a linear term time $e^{-5t}$. However, up to linear terms are already represented in the general solution, so we need to include another factor of $t$. So, the particular solution has the form
+				We have a linear term time $e^{-5t}$.
+				However, up to linear terms are already represented in the general solution, so we need to include another factor of $t$.
+				So, the particular solution has the form
 				\begin{equation*}
-					y_p = At^2e^{-5t}
+					y_p = At^2e^{-5t}.
 				\end{equation*}
 				So, without solving for $A$, the general form of a particular solution is
 				\begin{equation*}
-					C_1e^{-5t} + C_2te^{5t} + At^2e^{-5t}
+					C_1e^{-5t} + C_2te^{5t} + At^2e^{-5t}.
 				\end{equation*}
 		\end{enumerate}
 	\item
@@ -36,11 +39,11 @@
 				1 & 0 & 6 \\
 				3 & 1 & 3 \\
 				-3 & 3 & -8
-			\end{bmatrix} = -\lambda^3 - 6\lambda^2 + 6\lambda + 55
+			\end{bmatrix} = -\lambda^3 - 6\lambda^2 + 6\lambda + 55.
 		\end{equation*}
 		So, $p(\lambda) = 0$ when
 		\begin{equation*}
-			\lambda = -5, \frac{-1 \pm 3\sqrt{5}}{2}
+			\lambda = -5, \frac{-1 \pm 3\sqrt{5}}{2}.
 		\end{equation*}
 		We'll find the eigenvector for $\lambda = -5$.
 		\begin{equation*}
@@ -68,48 +71,50 @@
 			\item
 				The auxiliary equation and its roots are
 				\begin{equation*}
-					r^2 - 5r + 6 = 0 \implies r = 2, 3
+					r^2 - 5r + 6 = 0 \implies r = 2, 3.
 				\end{equation*}
 				So, the homogeneous solution is
 				\begin{equation*}
-					y_h = C_1e^{2t} + C_2e^{3t}
+					y_h = C_1e^{2t} + C_2e^{3t}.
 				\end{equation*}
-				We use the method of undetermined coefficients to find $y_p$. We'll guess that $y_p$ has the form
+				We use the method of undetermined coefficients to find $y_p$.
+				We'll guess that $y_p$ has the form
 				\begin{equation*}
-					y_p = Ae^{4t} + Be^{t}
+					y_p = Ae^{4t} + Be^{t}.
 				\end{equation*}
 				Solving for $A$ and $B$\footnote{The algebra of solving for $A$ and $B$ have been omitted for brevity.},
 				\begin{equation*}
-					y_p'' - 5y_p' + 6y_p = 6e^{4t} - 10e^t \implies A = 3, B = -5
+					y_p'' - 5y_p' + 6y_p = 6e^{4t} - 10e^t \implies A = 3, B = -5.
 				\end{equation*}
 				So, we can write the particular solution
 				\begin{equation*}
-					y_p = 3e^{4t} - 5e^{t}
+					y_p = 3e^{4t} - 5e^{t}.
 				\end{equation*}
 				So, the general solution is
 				\begin{equation*}
-					y = C_1e^{2t} + C_2e^{3t} + 3e^{4t} - 5e^{t}
+					y = C_1e^{2t} + C_2e^{3t} + 3e^{4t} - 5e^{t}.
 				\end{equation*}
 			\item
-				Although this is a second-order equation, we'll do the version of variation of parameters that also works for higher orders too. First, we need to find our fundamental solutions that are part of the homogeneous solution by finding the roots of the auxiliary equation.
+				Although this is a second-order equation, we'll do the version of variation of parameters that also works for higher orders too.
+				First, we need to find our fundamental solutions that are part of the homogeneous solution by finding the roots of the auxiliary equation.
 				\begin{equation*}
 					r^2 + 9 = 0 \implies r = \pm 3i
 				\end{equation*}
 				So, the homogeneous solution is
 				\begin{equation*}
-					y_h = C_1\cos{(3t)} + C_2\sin{(3t)}
+					y_h = C_1\cos{(3t)} + C_2\sin{(3t)},
 				\end{equation*}
 				and the fundamental solutions are
 				\begin{align*}
-					y_1 = \cos{(3t)} \\
-					y_2 = \sin{(3t)}
+					y_1 &= \cos{(3t)} \\
+					y_2 &= \sin{(3t)}.
 				\end{align*}
 				So, the Wronskian matrix and its determinant are
 				\begin{equation*}
 					\left[W\right] = \begin{bmatrix}
 						\cos{(3t)} & \sin{(3t)} \\
 						-3\sin{(3t)} & 3\cos{(3t)}
-					\end{bmatrix} \text{, } W = 3\cos^2{(3t)} + 3\sin^2{(3t)} = 3
+					\end{bmatrix} \text{, } W = 3\cos^2{(3t)} + 3\sin^2{(3t)} = 3.
 				\end{equation*}
 				The sub-matrices are
 				\begin{align*}
@@ -120,17 +125,17 @@
 					 W_2 &= \det\begin{bmatrix}
 						\cos{(3t)} & 0 \\
 						-3\sin{(3t)} & 1
-					\end{bmatrix} = \cos{(3t)}
+					\end{bmatrix} = \cos{(3t)}.
 				\end{align*}
 				Solving for $v_1$ and $v_2$,
 				\begin{align*}
 					v_1 &= \int{\frac{-\csc{(3t)}\sin{(3t)}}{3} \mathrm{d}t} = \frac{-1}{3}t + C_1 \\
-					v_2 &= \int{\frac{\csc{(3t)}\cos{(3t)}}{3} \mathrm{d}t} = \frac{1}{9}\ln{\abs{\sin{(3t)}}} + C_2
+					v_2 &= \int{\frac{\csc{(3t)}\cos{(3t)}}{3} \mathrm{d}t} = \frac{1}{9}\ln{\abs{\sin{(3t)}}} + C_2.
 				\end{align*}
 				Solving for $y$,
 				\begin{align*}
 					y &= \cos{(3t)}\left(\frac{-1}{3}t + C_1\right) + \sin{(3t)}\left(\frac{1}{9}\ln{\abs{\sin{(3t)}}} + C_2\right) \\
-					&= C_1\cos{(3t)} + C_2\sin{(3t)} - \frac{1}{3}t\cos{(3t)} + \frac{1}{9}\sin{(3t)}\ln{\abs{\sin{(3t)}}}
+					&= C_1\cos{(3t)} + C_2\sin{(3t)} - \frac{1}{3}t\cos{(3t)} + \frac{1}{9}\sin{(3t)}\ln{\abs{\sin{(3t)}}}.
 				\end{align*}
 		\end{enumerate}
 		\item
@@ -164,42 +169,44 @@
 							y'' + 6y' + 8y = 8\sin{(2t)} \\
 							y'(0) = 1 \\
 							y(0) = 0
-						\end{cases}
+						\end{cases}.
 					\end{equation*}
 					Solving the auxiliary equation,
 					\begin{equation*}
-						r^2 + 6r + 8 = 0 \implies r = -4, -2
+						r^2 + 6r + 8 = 0 \implies r = -4, -2.
 					\end{equation*}
 					So, our homogeneous solution is
 					\begin{equation*}
-						y_h = C_1e^{-4t} + C_2e^{-2t}
+						y_h = C_1e^{-4t} + C_2e^{-2t}.
 					\end{equation*}
-					We'll use the method of undetermined coefficients to find $y_p$. We'll guess that $y_p$ has the form
+					We'll use the method of undetermined coefficients to find $y_p$.
+					We'll guess that $y_p$ has the form
 					\begin{equation*}
-						y_p = A\cos{(2t)} + B\sin{(2t)}
+						y_p = A\cos{(2t)} + B\sin{(2t)}.
 					\end{equation*}
 					Solving for $A$ and $B$\footnote{The algebra of solving for $A$ and $B$ has been omitted for brevity.},
 					\begin{equation*}
-						y_p'' + 6y_p' + 8y_p = 8\sin{(2t)} \implies A = \frac{-3}{5}, B = \frac{1}{5}
+						y_p'' + 6y_p' + 8y_p = 8\sin{(2t)} \implies A = \frac{-3}{5}, B = \frac{1}{5}.
 					\end{equation*}
 					So, our particular solution is
 					\begin{equation*}
-						y_p = \frac{-3}{5}\cos{(2t)} + \frac{1}{5}\sin{(2t)}
+						y_p = \frac{-3}{5}\cos{(2t)} + \frac{1}{5}\sin{(2t)},
 					\end{equation*}
 					and our general solution is
 					\begin{equation*}
-						y = C_1e^{-4t} + C_2e^{-2t} - \frac{3}{5}\cos{(2t)} + \frac{1}{5}\sin{(2t)}
+						y = C_1e^{-4t} + C_2e^{-2t} - \frac{3}{5}\cos{(2t)} + \frac{1}{5}\sin{(2t)}.
 					\end{equation*}
 					Plugging in our initial condition to solve for $C_1$ and $C_2$\footnote{The algebra of solving for $C_1$ and $C_2$ has been omitted for brevity.},
 					\begin{equation*}
-						y'(0) = 1, y(0) = 0 \implies C_1 = \frac{-9}{10}, C_2 = \frac{3}{2}
+						y'(0) = 1, y(0) = 0 \implies C_1 = \frac{-9}{10}, C_2 = \frac{3}{2}.
 					\end{equation*}
 					So, our solution to the IVP is
 					\begin{equation*}
-						y(t) = \frac{-9}{10}e^{-4t} + \frac{3}{2}e^{-2t} - \frac{3}{5}\cos{(2t)} + \frac{1}{5}\sin{(2t)} \text{ m}
+						y(t) = \frac{-9}{10}e^{-4t} + \frac{3}{2}e^{-2t} - \frac{3}{5}\cos{(2t)} + \frac{1}{5}\sin{(2t)} \text{ m}.
 					\end{equation*}
 				\item
-					As $t$ grows large, the exponential terms will decrease to 0 and have minimal effect. So, the steady-state solution $y_{ss}$ is just the terms with $\cos$ and $\sin$.
+					As $t$ grows large, the exponential terms will decrease to 0 and have minimal effect.
+					So, the steady-state solution $y_{ss}$ is just the terms with $\cos$ and $\sin$.
 					\begin{equation*}
 						y_{ss}(t) = \frac{-3}{5}\cos{(2t)} + \frac{1}{5}\sin{(2t)} \text{ m}
 					\end{equation*}
@@ -212,7 +219,7 @@
 						A &= \sqrt{\frac{2}{5}} \text{ m} \\
 						f &= \frac{1}{\pi} \text{ Hz} \\
 						T &= \pi \text{ secs} \\
-						\phi &= \arctan{\left(\frac{1}{3}\right)} + \pi
+						\phi &= \arctan{\left(\frac{1}{3}\right)} + \pi.
 					\end{align*}
 			\end{enumerate}
 		\item
@@ -229,7 +236,7 @@
 								\end{bmatrix}\vec{x} \text{, } \vec{x}(0) = \begin{bmatrix}
 									2 \\
 									3
-								\end{bmatrix}
+								\end{bmatrix}.
 							\end{equation*}
 						\item
 							We'll check the first vector.
@@ -274,14 +281,14 @@
 								\end{bmatrix} + C_2 \begin{bmatrix}
 									-e^{-t} \\
 									-e^{-t}
-								\end{bmatrix} 
+								\end{bmatrix}. 
 							\end{equation*}
 							Applying the initial conditions\footnote{The algebra of solving for $C_1$ and $C_2$ has been omitted for brevity},
 							\begin{equation*}
 								\vec{x}(0) = \begin{bmatrix}
 									2 \\
 									3
-								\end{bmatrix} \implies C_1 = \frac{-1}{2}, C_2 = \frac{-7}{2}
+								\end{bmatrix} \implies C_1 = \frac{-1}{2}, C_2 = \frac{-7}{2}.
 							\end{equation*}
 							So, the solution to the IVP is
 							\begin{equation*}
@@ -291,11 +298,12 @@
 								\end{bmatrix} - \frac{7}{2} \begin{bmatrix}
 									-e^{-t} \\
 									-e^{-t}
-								\end{bmatrix} 
+								\end{bmatrix}. 
 							\end{equation*}
 					\end{enumerate}
 				\item
-					Since the eigenvalues are a complex conjugate pair, we only need to consider one eigenvalue to find both corresponding eigenvectors. We'll use $\lambda = -2 + i$.
+					Since the eigenvalues are a complex conjugate pair, we only need to consider one eigenvalue to find both corresponding eigenvectors.
+					We'll use $\lambda = -2 + i$.
 					\begin{equation*}
 						\left[
 							\begin{array}{cc|c}
@@ -323,7 +331,7 @@
 						\end{bmatrix}, \begin{bmatrix}
 						1 \\
 						0
-						\end{bmatrix}
+						\end{bmatrix}.
 					\end{equation*}
 					Remembering our solution form for complex eigenvalues, we get the solution
 					\begin{equation*}
@@ -340,13 +348,14 @@
 							-1 \\
 							1
 						\end{bmatrix}
-						\right)
+						\right).
 					\end{equation*}
 			\end{enumerate}
 		\item
-			We'll use the method of undetermined coefficients for systems to find $\vec{x_p}$. We'll guess that $\vec{x_p}$ has the form
+			We'll use the method of undetermined coefficients for systems to find $\vec{x_p}$.
+			We'll guess that $\vec{x_p}$ has the form
 			\begin{equation*}
-				\vec{x_p} = \vec{a}t + \vec{b}
+				\vec{x_p} = \vec{a}t + \vec{b}.
 			\end{equation*}
 			Solving for $\vec{a}$ and $\vec{b}$\footnote{The algebra of solving for $\vec{a}$ and $vec{b}$ has been omitted for brevity.},
 			\begin{equation*}
@@ -359,7 +368,7 @@
 				\end{bmatrix}, \vec{b} = \begin{bmatrix}
 					1 \\
 					3
-				\end{bmatrix}
+				\end{bmatrix}.
 			\end{equation*}
 			So, we have our solution for $\vec{x_p}$,
 			\begin{equation*}
@@ -369,7 +378,7 @@
 				\end{bmatrix} + \begin{bmatrix}
 					1 \\
 					3
-				\end{bmatrix}
+				\end{bmatrix}.
 			\end{equation*}
 			The general solution is thus
 			\begin{equation*}
@@ -385,6 +394,6 @@
 				\end{bmatrix} + \begin{bmatrix}
 					1 \\
 					3
-				\end{bmatrix} 
+				\end{bmatrix}.
 			\end{equation*}
 \end{enumerate}

@@ -1,0 +1,106 @@
+\section{Convolutions}
+\subsection{Motivation}
+Taking Laplace transforms can be difficult.
+We already have some basic formulas derived from linearity properties of integrals that allow us to not evaluate an integral every time.\\
+
+\noindent
+One sort of formula that would be nice to have is one relating products of functions.
+If we know that
+\begin{equation*}
+	H(s) = F(s)G(s),
+\end{equation*}
+where $F$ and $G$ are the Laplace transforms of $f$ and $g$, it'd be nice if we could find the inverse Laplace transform of $H$ to get $h$.
+This is one way to define the convolution.
+
+\subsection{Definition \& Convolution Theorem}
+\begin{definition}
+	Let $F(s)$ and $G(s)$ be the Laplace transforms of functions $f(t)$ and $g(t)$.
+	Then
+	\begin{equation*}
+		F(s)G(s) = \Laplace{f \star g}.
+	\end{equation*}
+\end{definition}
+\noindent
+Note how using this definition we can see that $\star$, the convolution operator, is commutative.
+
+\noindent
+Defining this function that works like multiplication over Laplace transforms is only really useful if we have a formula for it, so let's derive one.
+Starting from the left-hand side of the equation in the definition and applying the integral definition of the Laplace transform,
+\begin{equation*}
+	F(s)G(s) = \int_{0}^{\infty}{e^{-su}f(u)\d{u}} \cdot \int_{0}^{\infty}{e^{-sv}f(v)\d{v}}.
+\end{equation*}
+Making this product of integrals into a double integral (we usually do this in reverse when simplifying a double integral),
+\begin{equation*}
+	= \int_{0}^{\infty}{\int_{0}^{\infty}{e^{-s(u+v)}f(u)g(v)\d{u}}\d{v}}.
+\end{equation*}
+Letting $t = u+v$,
+\begin{equation*}
+	= \int_{0}^{\infty}{\int_{0}^{t}{e^{-st}f(u)g(t-u)\d{u}}\d{t}}.
+\end{equation*}
+Bringing $e^{-st}$ outside of the innermost integral,
+\begin{equation*}
+	= \int_{0}^{\infty}{e^{-st}\left[\int_{0}^{t}{f(u)g(t-u)\d{u}}\right]\d{t}}.
+\end{equation*}
+We see that we have the Laplace transform of the expression in the square brackets.
+So,
+\begin{equation*}
+	f \star g = \int_{0}^{t}{f(u)g(t-u)\d{u}}.
+\end{equation*}
+This is an equivalent way to define the convolution.
+
+\begin{example}
+	Compute the convolution of $t^2$ with $t$.
+\end{example}
+\noindent
+Applying the formula we just derived,
+\begin{align*}
+	t^2 \star t &= \int_{0}^{t}{u^2(t-u)\d{u}} \\
+	&= t\frac{u^3}{3} - \frac{u^4}{4} \bigg\rvert_{0}^{t} \\
+	&= \frac{t^4}{3} - \frac{t^4}{4} \\
+	&= \frac{t^4}{12}. 
+\end{align*}
+
+\subsection{Properties}
+Convolution inherits all the linearity properties of integration.
+Let $f(t)$, $g(t)$, and $h(t)$ be piecewise continuous on $[0,\infty)$.
+Let $a$ be a real constant.
+Then
+\begin{enumerate}[label=]
+	\item \textbf{Commutativity} -- $f \star = g \star f$
+	\item \textbf{Associativity} -- $(f \star g) \star h = f \star (g \star h)$
+	\item \textbf{Distributivity over Addition} -- $f \star (g + h) = (f \star g) + (f \star h)$
+	\item \textbf{Associativity over Scalar Multiplication} -- $a(f \star g) = (af) \star g$
+\end{enumerate}
+
+\subsection{Applications}
+When we're using Laplace transforms to solve a differential equation, if we recognize $\Laplace{y}$ as the product of two functions for which we know the inverse Laplace transforms, we can compute a convolution to find $y$.
+
+\begin{example}
+	Solve the following differential equation using Laplace transforms and convolutions.
+	Let $a$ and $c$ be real constants where $a \neq c$.
+	\begin{equation*}
+		y' - ay = e^{ct}.\footnotemark
+	\end{equation*}
+\end{example}
+\footnotetext{When we're taking the Laplace transform of both sides, we implicitly use that $y(0)=0$.}
+\noindent
+Taking the Laplace transform of both sides,
+\begin{align*}
+	s\Laplace{y} - a\Laplace{y} &= \frac{1}{s-c} \\
+	\Laplace{y}(s-a) &= \frac{1}{s-c}.
+\end{align*}
+Solving for $\Laplace{y}$,
+\begin{equation*}
+	\Laplace{y} = \frac{1}{s-c} \cdot \frac{1}{s-a}.
+\end{equation*}
+Recognizing the right-hand side of the equation as the product of the Laplace transforms of $e^{ct}$ and $e^{at}$, we can solve for $y$ by finding the convolution of $e^{ct}$ and $e^{at}$.
+Applying our formula,
+\begin{align*}
+	F(s) = \frac{1}{s-c} &\text{ and } G(s) = \frac{1}{s-a} \\
+	f(t) = e^{ct} &\text{ and } g(t) = e^{at}. \\
+	y(t) &= f(t) \star g(t) \\
+	&= \int_{0}^{t}{e^{cu}e^{a(t-u)}\d{u}} \\
+	&= e^{at}\int_{0}^{t}{e^{u(c-a)}\d{u}} \\
+	&= e^{at}\left(\frac{e^{(c-a)t}}{c-a} - \frac{1}{c-a}\right) \\
+	&= \frac{e^{ct} - e^{at}}{c-a}.
+\end{align*}

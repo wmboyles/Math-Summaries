@@ -1,0 +1,82 @@
+% This file contains all the items that are common to every main.tex.
+% Ideally, a main.tex should only need to include this file and then begin the document.
+
+\documentclass[oneside, 12pt]{book}
+
+% ------------------------------------------------------------------------------
+% Table of Contents
+
+\setcounter{tocdepth}{3} 	    % TOC should label down to subsubsections
+\setcounter{secnumdepth}{2}	    % TOC should not number further than a subsection number
+\setcounter{chapter}{-1}        % Start with chapter 0
+\usepackage[titletoc]{appendix} % Include optional appendix
+% ------------------------------------------------------------------------------
+
+
+% ------------------------------------------------------------------------------
+% General
+
+\usepackage[english]{babel}
+
+\usepackage{amsfonts, amsmath, amsthm, amssymb} % Formatting symbols, theorems, lemmas, definitions, and examples
+\usepackage{float}							    % For making sure tables and figures stay in place
+\usepackage{fullpage}						    % Create ~1" margins
+\usepackage{changepage}							% For setting up indents after examples
+\usepackage[bottom,flushmargin]{footmisc}	    % Put footnotes at bottom of page; don't intent footnotes
+\setlength{\parindent}{0pt}                     % Don't indent paragraphs by default
+
+\usepackage{enumitem} 					        % For listing items and sub-items
+\usepackage{hyperref} 					        % For inserting links
+\usepackage{graphicx} 					        % For inserting images
+\usepackage{float}						        % For specifying image location
+% ------------------------------------------------------------------------------
+
+
+% ------------------------------------------------------------------------------
+% Tikz
+
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary{calc,patterns,decorations.pathmorphing,decorations.markings}
+% ------------------------------------------------------------------------------
+
+
+% ------------------------------------------------------------------------------
+% Setup for specially named sections
+
+% Don't number these items
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{corollary}{Corollary}
+\newtheorem*{definition}{Definition}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{example}{Example}
+
+% Answers (usually below examples) are indented
+\newenvironment{answer}{\begin{adjustwidth}{15pt}{}}{\end{adjustwidth}}
+% ------------------------------------------------------------------------------
+
+
+% ------------------------------------------------------------------------------
+% Command Shortcuts
+
+\renewcommand{\qedsymbol}{$\blacksquare$}                                           % QED symbol at end of proof is a black square
+
+\renewcommand{\d}[1]{\mathrm{d} #1}                                                 % Use non-italicized d for differentials
+\newcommand{\dd}[2]{\frac{\d{#1}}{\d{#2}}}                                          % d[] / d[]
+\newcommand{\pp}[2]{\frac{\partial #1}{\partial #2}}								% partial[] / partial[]
+
+
+\newcommand{\abs}[1]{\big\lvert #1 \big\rvert}                                      % Absolute value
+\newcommand{\norm}[1]{\abs{\abs{#1}}} 	                                            % Double-bar for vector magnitude
+
+
+\DeclareMathOperator{\arcsec}{arcsec}			                                    % arcsec
+\DeclareMathOperator{\arccot}{arccot}			                                    % arccot
+\DeclareMathOperator{\arccsc}{arccsc}			                                    % arccsc
+
+\newcommand{\R}{\mathbb{R}}						                                    % Real numbers
+
+\newcommand{\Laplace}[1]{\mathcal{L}\left\{ #1 \right\}\left(s\right)}				% Laplace Transform
+\newcommand{\inverseLaplace}[1]{\mathcal{L}^{-1}\left\{ #1 \right\}\left(t\right)}	% Inverse Laplace Transform
+% ------------------------------------------------------------------------------
+

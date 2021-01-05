@@ -24,7 +24,7 @@ The chapters are:
 9. Infinite Series
 10. Additional Materials
 
-## Multivaraible Calculus (multiCalc)
+## Multivariable Calculus (multiCalc)
 
 This covers topics typically found and an undergraduate multivaraible calculus course, like multiple integrals, Green's Theorems, and Stokes's Theorem.
 The chapters are:

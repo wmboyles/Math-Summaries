@@ -7,7 +7,7 @@ name: Compile
 on:
     # Triggers the workflow on push events but only for the py-test branch
     push:
-        branches: [automated-compile]
+        branches: [master]
 
     # Allows you to run this workflow manually from the Actions tab
     workflow_dispatch:

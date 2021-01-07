@@ -3,12 +3,16 @@
 Parameterized surfaces are a natural of VVFs that map $\mathbb{R}^n \to \mathbb{R}^m$ where usually $n<m$.\\
 
 \noindent
-For example, a cylinder of radius 1 can be parameterized as $\vec{r}(u,v) = \langle\sin{u}, \cos{u}, v\rangle$. This particular surface maps $\mathbb{R}^2 \to \mathbb{R}^3$.\\
+For example, a cylinder of radius 1 can be parameterized as $\vec{r}(u,v) = \langle\sin{u}, \cos{u}, v\rangle$.
+This particular surface maps $\mathbb{R}^2 \to \mathbb{R}^3$.
 The paraboloid $z = x^2 + y^2$ can be parameterized as $\vec{r}(u,v)=\langle u, v, u^2+v^2 \rangle$.\\
 
 \noindent
-A general trick when trying to parameterize a surface is to substitute $u$ and $v$ for two variables like $x$ and $y$ and find an expression for the third variable in terms of the $u$ and $v$. Although this doesn’t always lead to the most useful parameterization, it can be a good starting point.\\
+A general trick when trying to parameterize a surface is to substitute $u$ and $v$ for two variables like $x$ and $y$ and find an expression for the third variable in terms of the $u$ and $v$.
+Although this does not always lead to the most useful parameterization, it can be a good starting point.\\
 
 \noindent
-For example, if we wanted to parameterize the surface $y^2=x^2+z^2$ from $y=1$ to $y=9$, we could use the general trick and get $\vec{r}(u,v) = \langle u,\sqrt{u^2+v^2},v\rangle$ where $1\leq u^2+v^2\leq 9^2$. Although this parameterization is technically correct, it is difficult to work with because the bounds for $u$ and $v$ are not independent.\\
-Instead, we can recognize that the surface we are trying to parameterize has radial symmetry about the $y$-axis, and instead let $u$ be and angle and $v$ be a radius to get $\vec{r}(u,v) = \langle v\cos{u}, v, v\sin{u}\rangle$ where $0\leq u\leq 2\pi$ and $1\leq v\leq 9$. The parameterization now has independent bounds, which will make operations like integration much easier.
+For example, if we wanted to parameterize the surface $y^2=x^2+z^2$ from $y=1$ to $y=9$, we could use the general trick and get $\vec{r}(u,v) = \langle u,\sqrt{u^2+v^2},v\rangle$ where $1\leq u^2+v^2\leq 9^2$.
+Although this parameterization is technically correct, it is difficult to work with because the bounds for $u$ and $v$ are not independent.\\
+Instead, we can recognize that the surface we are trying to parameterize has radial symmetry about the $y$-axis and instead let $u$ be and angle and $v$ be a radius to get $\vec{r}(u,v) = \langle v\cos{u}, v, v\sin{u}\rangle$ where $0\leq u\leq 2\pi$ and $1\leq v\leq 9$.
+The parameterization now has independent bounds, which will make operations like integration much easier.

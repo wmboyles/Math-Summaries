@@ -36,7 +36,7 @@ jobs:
 
             # Run python script to credit contributors
             - name: Make Contributors
-              run: python test_maker.py
+              run: python make_contributors.py
 
             # Compile calc work
             - name: Compile Calculus

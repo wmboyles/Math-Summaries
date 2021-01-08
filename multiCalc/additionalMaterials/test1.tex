@@ -23,22 +23,22 @@
 	\begin{enumerate}[label=\alph*.]
 		\item Compute the unit tangent vector $\hat{T}(t)$ and the unit normal vector $\hat{N}(t)$.
 		\begin{equation*}
-			\hat{T} = \frac{\vec{r^\prime}(t)}{\norm{\vec{r^\prime}(t)}}	
+			\hat{T} = \frac{\vec{r^\prime}(t)}{\norm{\vec{r^\prime}(t)}}
 		\end{equation*}
 		\begin{equation*}
-			\vec{r^\prime}(t) = \langle 10, -7\sin{t}, 7\cos{t} \rangle	
+			\vec{r^\prime}(t) = \langle 10, -7\sin{t}, 7\cos{t} \rangle
 		\end{equation*}
 		\begin{equation*}
-			\norm{\vec{r^\prime}(t)} = \sqrt{10^2 + (-7\sin{t})^2 + (7\cos{t})^2} = \sqrt{149}	
+			\norm{\vec{r^\prime}(t)} = \sqrt{10^2 + (-7\sin{t})^2 + (7\cos{t})^2} = \sqrt{149}
 		\end{equation*}
 		\begin{equation*}
-			\hat{T}(t) = \frac{1}{\sqrt{149}}\langle 10, -7\sin{t}, 7\cos{t} \rangle	
+			\hat{T}(t) = \frac{1}{\sqrt{149}}\langle 10, -7\sin{t}, 7\cos{t} \rangle
 		\end{equation*}
 		\begin{equation*}
-			\hat{N}(t) = \frac{\mathrm{d}\hat{T}/\mathrm{d}t}{\norm{\mathrm{d}\hat{T}/\mathrm{d}t}}	
+			\hat{N}(t) = \frac{\mathrm{d}\hat{T}/\mathrm{d}t}{\norm{\mathrm{d}\hat{T}/\mathrm{d}t}}
 		\end{equation*}
 		\begin{equation*}
-			\frac{\mathrm{d}\hat{T}}{\mathrm{d}t} = \frac{1}{\sqrt{149}} \langle 0, -7\cos{t}, -7\sin{t} \rangle	
+			\frac{\mathrm{d}\hat{T}}{\mathrm{d}t} = \frac{1}{\sqrt{149}} \langle 0, -7\cos{t}, -7\sin{t} \rangle
 		\end{equation*}
 		\begin{equation*}
 			\norm{\frac{\mathrm{d}\hat{T}}{\mathrm{d}t}} = \frac{1}{\sqrt{149}}\sqrt{(-7\cos{t})^2 + (-7\sin{t})^2} = \frac{7}{\sqrt{149}}
@@ -61,26 +61,26 @@
 		\item Starting with a constant acceleration function $\vec{a} = \langle 0, -g \rangle$, find the velocity and position functions ($\vec{r^\prime}(t) \text{ and } \vec{r}(t)$ respectively) of the cannonball if the cannon is fired from an angle $\theta$ with respect to the horizontal. Assume the cannonball is initially positioned at the origin.\\
 		We know that velocity is the integral of acceleration.
 		\begin{equation*}
-			\vec{v}(t) = \vec{r^\prime}(t) = \langle c_1, c_2-gt \rangle	
+			\vec{v}(t) = \vec{r^\prime}(t) = \langle c_1, c_2-gt \rangle.
 		\end{equation*}
 		We are given that the initial speed is $20 \text{ m} / \text{s}$ at an angle $\theta$.
 		\begin{equation*}
-			\vec{v_0} = 20\langle \cos{\theta}, \sin{\theta} \rangle	
+			\vec{v_0} = 20\langle \cos{\theta}, \sin{\theta} \rangle
 		\end{equation*}
 		\begin{equation*}
-			\vec{v}(t) = \langle 20\cos{\theta}, 20\sin{\theta}-gt \rangle	
+			\vec{v}(t) = \langle 20\cos{\theta}, 20\sin{\theta}-gt \rangle.
 		\end{equation*}
 		We know that position is the integral of velocity.
 		\begin{equation*}
-			\vec{r}(t) = \langle 20t\cos{\theta} + c_1, 20t\sin{\theta} - \frac{1}{2}gt^2 + c_2 \rangle
+			\vec{r}(t) = \langle 20t\cos{\theta} + c_1, 20t\sin{\theta} - \frac{1}{2}gt^2 + c_2 \rangle.
 		\end{equation*}
 		We are given that the cannonball starts at the origin.
 		\begin{equation*}
-			\vec{r}(t) = \langle 20t\cos{\theta}, 20t\sin{\theta} - \frac{1}{2}gt^2 \rangle	
+			\vec{r}(t) = \langle 20t\cos{\theta}, 20t\sin{\theta} - \frac{1}{2}gt^2 \rangle.
 		\end{equation*}
 		Taking $g = 10 \text{m} / \text{s}^2$,\\
 		\begin{equation*}
-			\vec{r}(t) = \langle 20t\cos{\theta}, 20t\sin{\theta}-5t^2 \rangle	
+			\vec{r}(t) = \langle 20t\cos{\theta}, 20t\sin{\theta}-5t^2 \rangle
 		\end{equation*}
 			
 		\item What angle $\theta$ should the cannon be fired to hit a target on the ground at a distance $40\text{ m}$ away?\\
@@ -91,7 +91,7 @@
 			20\cos{\theta} \cdot 4\sin{\theta} &= 40 \\
 			2\sin{\theta}\cos{\theta} &= 1 \\
 			\sin{(2\theta)}=1, 2\theta &= \pi/2 \\
-			\implies \theta &= \pi/4			
+			\implies \theta &= \pi/4
 		\end{align*}
 	\end{enumerate}
 	
@@ -105,11 +105,11 @@
 		&= e^{t}\sqrt{R^2 + \frac{h^2}{4\pi^2}}
 	\end{align*}
 	\begin{equation*}
-		s(t) = \int_{0}^{t}{e^{\tau}\sqrt{R^2 + \frac{h^2}{4\pi^2}}\mathrm{d}\tau} = \sqrt{R^2 + \frac{h^2}{4\pi^2}(e^{t} - 1)}
+		s(t) = \int_{0}^{t}{e^{\tau}\sqrt{R^2 + \frac{h^2}{4\pi^2}}\mathrm{d}\tau} = \sqrt{R^2 + \frac{h^2}{4\pi^2}(e^{t} - 1)}.
 	\end{equation*}
 	Solving for $t$,
 	\begin{equation*}
-		t = \ln{\left(\frac{s}{\sqrt{R^2 + \frac{h^2}{4\pi^2}}} + 1\right)}	
+		t = \ln{\left(\frac{s}{\sqrt{R^2 + \frac{h^2}{4\pi^2}}} + 1\right)}
 	\end{equation*}
 	\begin{equation*}
 		\vec{r}(s) = \left< R\cos{\left(\frac{s}{\sqrt{R^2 + \frac{h^2}{4\pi^2}}} + 1\right)}, R\sin{\left(\frac{s}{\sqrt{R^2 + \frac{h^2}{4\pi^2}}} + 1\right)}, \frac{h}{2\pi}\left(\frac{s}{\sqrt{R^2 +\frac{h^2}{4\pi^2}}} + 1\right) \right>
@@ -118,10 +118,10 @@
 	\item Let $\vec{r}(t)$ be the position function of a particle trapped on the surface of a sphere centered at the origin. Show that $\vec{r}(t)\perp\frac{\mathrm{d}}{\mathrm{d}t}\vec{r}(t)$ for all $t$.\\
 	Since $\vec{r}(t)$ is on a sphere, $\norm{\vec{r}(t)} = R$ and $\vec{r}(t) \cdot \vec{r}(t) = R^2$.
 	\begin{equation*}
-		\frac{\mathrm{d}}{\mathrm{d}t}(\vec{r}(t) \cdot \vec{r}(t)) = 2\vec{r}(t) \cdot \vec{r^\prime}(t)	
+		\frac{\mathrm{d}}{\mathrm{d}t}(\vec{r}(t) \cdot \vec{r}(t)) = 2\vec{r}(t) \cdot \vec{r^\prime}(t)
 	\end{equation*}
 	\begin{equation*}
-		\frac{\mathrm{d}}{\mathrm{d}t}(\vec{r}(t) \cdot \vec{r}(t)) = \frac{\mathrm{d}}{\mathrm{d}t}R^2 = 0
+		\frac{\mathrm{d}}{\mathrm{d}t}(\vec{r}(t) \cdot \vec{r}(t)) = \frac{\mathrm{d}}{\mathrm{d}t}R^2 = 0.
 	\end{equation*}
 	So, 
 	\begin{equation*}
@@ -129,9 +129,9 @@
 	\end{equation*}
 	and 
 	\begin{equation*}
-		\vec{r}(t) \cdot \vec{r^\prime}(t) = 0	
+		\vec{r}(t) \cdot \vec{r^\prime}(t) = 0
 	\end{equation*}
 	\begin{equation*}
-		\implies \vec{r}(t)\perp\vec{r^\prime}(t)	
+		\implies \vec{r}(t)\perp\vec{r^\prime}(t)
 	\end{equation*}
 \end{enumerate}

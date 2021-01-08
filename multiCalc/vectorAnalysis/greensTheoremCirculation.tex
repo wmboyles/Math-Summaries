@@ -22,7 +22,7 @@ This theorem also relates the idea of path independence and curl of a conservati
 \begin{proof}[Partial Proof]
 	We will prove the 2D case, but the underlying argument is easily generalized.
 	\begin{equation*}
-		\oint\limits_{C}{\vec{F} \cdot \mathrm{d}\vec{r}} = \oint\limits_{c}{\langle P(x,y), 0 \rangle \cdot \mathrm{d}\vec{r}} + \oint\limits_{C}{\langle 0, Q(x,y) \rangle \cdot \mathrm{d}\vec{r}}
+		\oint\limits_{C}{\vec{F} \cdot \mathrm{d}\vec{r}} = \oint\limits_{c}{\langle P(x,y), 0 \rangle \cdot \mathrm{d}\vec{r}} + \oint\limits_{C}{\langle 0, Q(x,y) \rangle \cdot \mathrm{d}\vec{r}}.
 	\end{equation*}
 	If $D$ is convex, we an break $C$ into 2 curves on the same interval, $C_1$ and $C_2$ such that $C_1 : \vec{r} \langle x, h_1(x) \rangle$ and $C_2 : \vec{r} \langle x, h_2(x) \rangle$, where $x \in [a,b]$.
 	
@@ -46,18 +46,18 @@ This theorem also relates the idea of path independence and curl of a conservati
 \noindent
 For example, let's use Green's Theorem for Circulation to compute $\oint\limits_{C}{\vec{F} \cdot \mathrm{d}\vec{r}}$ where $\vec{F} = \langle x^2, xy + x^2 \rangle$ and $C$ is the unit circle.
 \begin{equation*}
-	\oint\limits_{C}{\vec{F} \cdot \mathrm{d}\vec{r}} = \iint\limits_{D}{\nabla \times \vec{F}\mathrm{d}A}	
+	\oint\limits_{C}{\vec{F} \cdot \mathrm{d}\vec{r}} = \iint\limits_{D}{\nabla \times \vec{F}\mathrm{d}A}
 \end{equation*}
 \begin{equation*}
-	\nabla \times \vec{F} = y+2x	
+	\nabla \times \vec{F} = y+2x.
 \end{equation*}
 Since $C$ is the unit circle, we'll evaluate the integral using polar coordinates. So 
 \begin{equation*}
-	\mathrm{d}A = r\mathrm{d}r\mathrm{d}\theta	
+	\mathrm{d}A = r\mathrm{d}r\mathrm{d}\theta
 \end{equation*}
 \begin{align*}
 	\iint\limits_{D}{\nabla \times \vec{F}\mathrm{d}A} &= \int_{0}^{2\pi}{\int_{0}^{1}{(r\sin{\theta} + 2r\cos{\theta})r\mathrm{d}r}\mathrm{d}\theta} \\
-	&= \int_{0}^{2\pi}{\left(\frac{\sin{\theta}}{3} + \frac{2\cos{\theta}}{3}\right)\mathrm{d}\theta} = 0
+	&= \int_{0}^{2\pi}{\left(\frac{\sin{\theta}}{3} + \frac{2\cos{\theta}}{3}\right)\mathrm{d}\theta} = 0.
 \end{align*}
 Note that although this particular circulation is 0, we know that the vector field is not conservative because the curl is not 0.
 

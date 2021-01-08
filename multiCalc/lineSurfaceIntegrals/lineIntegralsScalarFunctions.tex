@@ -5,17 +5,17 @@ Let's say we have a a simple (non-self-intersecting) curve in the xy-plane $C$ p
 	\mathrm{d}A &= f(x,y) \cdot \mathrm{d}s	\\
 	s &= \int{\norm{\vec{r^\prime}(t)}\mathrm{d}t} \\
 	\mathrm{d}s &= \norm{\vec{r'}(t)}\mathrm{d}t \\
-	\implies A &= \int\limits_{C}{f(x,y)\mathrm{d}s} = \int{(f\circ\vec{r})(t) \cdot \norm{\vec{r^\prime}(t)}\mathrm{d}t}
+	\implies A &= \int\limits_{C}{f(x,y)\mathrm{d}s} = \int{(f\circ\vec{r})(t) \cdot \norm{\vec{r^\prime}(t)}\mathrm{d}t}.
 \end{align*}
 This is the line integral of $\vec{r}$ on $f$. $(f\circ\vec{r})$ is called the ``pullback.''
 
 \noindent
 For example, let's find the line integral of $y = x^2$ for $x \leq x \leq \sqrt{2}$ in $f(x,y) = 2x$.
 \begin{equation*}
-	\vec{r}(t) = \langle t, t^2 \rangle, 0 \leq t \leq \sqrt{2}	
+	\vec{r}(t) = \langle t, t^2 \rangle, 0 \leq t \leq \sqrt{2}
 \end{equation*}
 \begin{equation*}
-	\int\limits_{C}{f(x,y)\mathrm{d}s} = \int_{0}^{\sqrt{2}}{(2x \circ \langle t, t^2\rangle) \cdot \norm{\vec{r^\prime}(t)}\mathrm{d}t} = \int_{0}^{\sqrt{2}}{2t\sqrt{1 + 4t^2}\mathrm{d}t}
+	\int\limits_{C}{f(x,y)\mathrm{d}s} = \int_{0}^{\sqrt{2}}{(2x \circ \langle t, t^2\rangle) \cdot \norm{\vec{r^\prime}(t)}\mathrm{d}t} = \int_{0}^{\sqrt{2}}{2t\sqrt{1 + 4t^2}\mathrm{d}t}.
 \end{equation*}
 Let $u = 1+4t^2$, $\mathrm{d}u = 8t\mathrm{d}t$.
 \begin{equation*}

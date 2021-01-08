@@ -4,7 +4,7 @@
 	\begin{enumerate}[label=\alph*.]
 		\item $\vec{F} = \langle xz, x^2z, xy^2z \rangle$ and $C$ given by $\vec{r}(t) = \langle t, e^{-t}, e^t\rangle, 0 \leq t \leq 1$.
 		\begin{equation*}
-			\nabla \times \vec{F} = \langle 2xyz-x^2, x-y^2z, 2xz \rangle	
+			\nabla \times \vec{F} = \langle 2xyz-x^2, x-y^2z, 2xz \rangle.
 		\end{equation*}
 		Since $\nabla \times \vec{F} \neq \vec{0}$, $\vec{F}$ isn't conservative.
 		\begin{align*}
@@ -17,7 +17,7 @@
 		\begin{align*}
 			\int\limits_{C}{\vec{F} \cdot \mathrm{d}\vec{r}} &= \int_{0}^{1}{\left(te^t - t^2 + t\right)\mathrm{d}t} \\
 			&= \frac{1}{2} - \frac{1}{3} + \lvert te^t\rvert_{0}^{1} - \int_{0}^{1}{e^t\mathrm{d}t} \\
-			&= 1 + \frac{1}{2} - \frac{1}{3} = \frac{7}{6}	
+			&= 1 + \frac{1}{2} - \frac{1}{3} = \frac{7}{6}
 		\end{align*}
 		
 		\item $\vec{F} = \left< \sqrt{\frac{yz}{x}}, \sqrt{\frac{xz}{y}}, \sqrt{\frac{xy}{z}} \right>$ and $C$ given by $\vec{r} = \langle \cos{t}, \sin{t}, \sin{(4t)} \rangle, 0 \leq t \leq 2\pi$.
@@ -25,7 +25,7 @@
 			\vec{F} = \nabla(2\sqrt{xyz}) \implies \vec{F}  \text{ is conservative.}
 		\end{equation*}
 		\begin{equation*}
-			\vec{r}(0) = \vec{r}(2\pi) \implies C \text{ is a circulation.}
+			\vec{r}(0) = \vec{r}(2\pi) \implies C \text{ is a circulation.}.
 		\end{equation*}
 		Since $\vec{F}$ is conservative and $C$ is a circulation,
 		\begin{equation*}
@@ -46,52 +46,52 @@
 		\item Parameterize $S = \vec{r}(u,v)$ with appropriate bounds for $u$ and $v$.
 		The paraboloid is above the xy-plane when $z \geq 0$.
 		\begin{equation*}
-			8 - \frac{x^2}{2} - \frac{y^2}{2} = \geq 0	
+			8 - \frac{x^2}{2} - \frac{y^2}{2} = \geq 0
 		\end{equation*}
 		\begin{equation*}
-			x^2 + y^2 \leq 16	
+			x^2 + y^2 \leq 16.
 		\end{equation*}
 		This a circle with radius 4. So, we'll describe the region in polar form.\\
 		\begin{equation*}
-			S = \left\{ (r,\theta) \mid 0 \leq r \leq 4, 0 \leq \theta \leq 2\pi \right\}	
+			S = \left\{ (r,\theta) \mid 0 \leq r \leq 4, 0 \leq \theta \leq 2\pi \right\}
 		\end{equation*}
 		\begin{equation*}
-			\vec{r}(u,v) = \langle u\cos{v}, u\sin{v}, 8 - \frac{1}{2}u^2 \rangle, 0 \leq u \leq 4  \text{ and } 0 \leq v \leq 2\pi	
+			\vec{r}(u,v) = \langle u\cos{v}, u\sin{v}, 8 - \frac{1}{2}u^2 \rangle, 0 \leq u \leq 4  \text{ and } 0 \leq v \leq 2\pi
 		\end{equation*}
 		
 		\item Compute the surface area of $S$.\\
 		\begin{equation*}
-			A = \iint\limits_{D}{\norm{\vec{r_u} \times \vec{r_v}}\mathrm{d}A}	
+			A = \iint\limits_{D}{\norm{\vec{r_u} \times \vec{r_v}}\mathrm{d}A}
 		\end{equation*}
 		\begin{equation*}
-			\vec{r_u} = \langle \cos{v}, \sin{u}, -u \rangle	
+			\vec{r_u} = \langle \cos{v}, \sin{u}, -u \rangle
 		\end{equation*}
 		\begin{equation*}
-			vec{r_v} = \langle -u\sin{v}, u\cos{v}, 0 \rangle	
+			vec{r_v} = \langle -u\sin{v}, u\cos{v}, 0 \rangle
 		\end{equation*}
 		\begin{equation*}
-			\vec{r_u} \times \vec{r_v} = \langle u^2\cos{v}, u^2\sin{v}, u\rangle	
+			\vec{r_u} \times \vec{r_v} = \langle u^2\cos{v}, u^2\sin{v}, u\rangle
 		\end{equation*}
 		\begin{equation*}
-			\norm{\vec{r_u} \times \vec{r_v}} = u\sqrt{1 + u^2}	
+			\norm{\vec{r_u} \times \vec{r_v}} = u\sqrt{1 + u^2}
 		\end{equation*}
 		\begin{align*}
 			A &= \int_{0}^{2\pi}{int_{0}^{4}{u\sqrt{1 + u^2}\mathrm{d}u}\mathrm{d}v} \\
 			&= 2\pi\int_{0}^{4}{u\sqrt{1 + u^2}\mathrm{d}u} \\
 			&= \pi\int_{1}^{17}{\sqrt{w}\mathrm{d}w} \\
-			&= \pi\frac{34\sqrt{17} - 2}{3}		
+			&= \pi\frac{34\sqrt{17} - 2}{3}
 		\end{align*}
 		
 		\item Compute the flux, $\Phi$, of $\vec{F}$ through $S$.\\
 		We will assume that the surface is outward-oriented, so that $\Phi$ is positive.
 		\begin{equation*}
-			\Phi = \iint\limits_{D}{\left(\vec{F}\circ\vec{r}\right) \cdot \left(\vec{r_u} \times \vec{r_v}\right)\mathrm{d}A}	
+			\Phi = \iint\limits_{D}{\left(\vec{F}\circ\vec{r}\right) \cdot \left(\vec{r_u} \times \vec{r_v}\right)\mathrm{d}A}
 		\end{equation*}
 		\begin{equation*}
 			\vec{F}\circ\vec{r} = \langle \cos{v}\sin{v}, 0 \rangle
 		\end{equation*}
 		\begin{equation*}
-			\left(\vec{F}\circ\vec{r}\right) \cdot \left(\vec{r_u} \times \vec{r_v}\right) = u^2	
+			\left(\vec{F}\circ\vec{r}\right) \cdot \left(\vec{r_u} \times \vec{r_v}\right) = u^2
 		\end{equation*}
 		\begin{align*}
 			\Phi &= \int_{0}^{2\pi}{\int_{0}^{4}{u^2\mathrm{d}u}\mathrm{d}v} \\
@@ -102,12 +102,12 @@
 	\item Consider a 3D vector field $\vec{F}(x,y,z) = \langle P(x,y,z), Q(x,y,z), R(x,y,z) \rangle$ and a scalar function of two variables $f(x,y)$. Determine which of the following expressions is defined. If it is defined, evaluate it. If it is not defined, explain why. If you can deduce the value of the expression from a theorem, do so and state the theorem.
 	\begin{enumerate}[label=\alph*.]
 		\item \begin{equation*}
-			\nabla f \cdot \vec{F}
+			\nabla f \cdot \vec{F}.
 		\end{equation*}
 		This operation is not defined because $\nabla f$ is a 2D vector, and the output of $\vec{F}$ is a 3D vector.\\
 		
 		\item \begin{equation*}
-			\nabla \times \nabla f
+			\nabla \times \nabla f.
 		\end{equation*}
 		If we allow the cross product in 2D to return a scalar that is the signed area spanned by the two vectors, then
 		\begin{equation*}
@@ -115,17 +115,17 @@
 		\end{equation*}
 		
 		\item \begin{equation*}
-			\nabla\times(\nabla\cdot\vec{F})	
+			\nabla\times(\nabla\cdot\vec{F}).
 		\end{equation*}
 		This operation is not defined because $\nabla \cdot \vec{F}$ results in a scalar function, and the curl of a scalar function is not defined.\\
 		
 		\item \begin{equation*}
-			\nabla \cdot (\nabla \times \vec{F})	
+			\nabla \cdot (\nabla \times \vec{F}).
 		\end{equation*}
 		This operation is defined and always has a value of 0 if $\vec{F}$ is twice differentiable. The proof of which is below.\\
 		Let 
 		\begin{equation*}
-			\vec{F}(x,y,z) = \langle P(x,y,z), Q(x,y,z), R(x,y,z) \rangle	
+			\vec{F}(x,y,z) = \langle P(x,y,z), Q(x,y,z), R(x,y,z) \rangle
 		\end{equation*}
 		\begin{align*}
 			\nabla \cdot (\nabla \times \vec{F}) &= \nabla \cdot \langle R_y-Q_z, P_z-R_x, Q_x-P_y \rangle \\
@@ -142,7 +142,7 @@
 			x' = -z \\
 			y' = 2y \\
 			z' = x
-		\end{cases}	
+		\end{cases}
 	\end{equation*}
 	$y(t) = Ce^{2t}$ and applying initial conditions, $y(t) = e^{2t}$
 	\begin{equation*}
@@ -154,7 +154,7 @@
 	$z(t) = A\cos{t} + B\sin{t}$ and $x(t) = B\cos{t} - A\sin{t}$\\
 	Applying initial conditions, $z(t) = 5\sin{t}$ and $x(t) = 5\cos{t}$. So, 
 	\begin{equation*}
-		\vec{r}(t) = \langle 5\cos{t}, e^{2t}, 5\sin{t}\rangle	
+		\vec{r}(t) = \langle 5\cos{t}, e^{2t}, 5\sin{t}\rangle
 	\end{equation*}
 	
 	\item State and prove the Fundamental Theorem of Calculus for Line Integrals.\\
@@ -168,7 +168,7 @@
 		\begin{align*}
 			\int\limits_{C}{\nabla f \cdot \mathrm{d}\vec{r}} &= \int_{a}^{b}{(\nabla f\circ\vec{r}) \cdot \vec{r^\prime}\mathrm{d}t} \\
 			&= \int_{a}^{b}{\frac{\mathrm{d}}{\mathrm{d}t}(f\circ\vec{r})\mathrm{d}t} \\
-			&= f(\vec{r}(b)) - f(\vec{r}(a))		
+			&= f(\vec{r}(b)) - f(\vec{r}(a))
 		\end{align*}
 	\end{proof}
 \end{enumerate}

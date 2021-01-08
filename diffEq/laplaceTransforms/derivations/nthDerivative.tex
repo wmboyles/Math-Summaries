@@ -9,7 +9,7 @@ We'll use induction to show that
 We'll start with the first derivative as a base case. We could use the $0^{th}$ derivative, but this case will give us a little more insight into where the formula comes from.\\
 Let $f$ be a differentiable function.
 \begin{equation*}
-\Laplace{f'(t)} = \lim\limits_{n\to\infty}{\int_{0}^{n}{f'(t)e^{-st}\mathrm{d}t}}
+\Laplace{f'(t)} = \lim\limits_{n\to\infty}{\int_{0}^{n}{f'(t)e^{-st}\mathrm{d}t}}.
 \end{equation*}
 Integrating by parts and using the fundamental theorem of calculus,
 \begin{equation*}
@@ -33,7 +33,7 @@ Assuming the following is true,
 \end{equation*}
 We'll show that the $n+1$ case follows.
 \begin{equation*}
-	\Laplace{f^{(n+1)}(t)} = \Laplace{\left(f^{(n)}\right)'}
+	\Laplace{f^{(n+1)}(t)} = \Laplace{\left(f^{(n)}\right)'}.
 \end{equation*}
 Using our first derivative formula,
 \begin{equation*}

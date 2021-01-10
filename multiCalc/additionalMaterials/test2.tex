@@ -7,13 +7,13 @@
 		\begin{align*}
 			x^2 - 2x + y^2 - 4y + 7 &= C
 			x^2 - 2x + 1 + y^2 - 4y + 4 &= C-2
-			(x-1)^2 + (y-2)^2 &= C-2			
+			(x-1)^2 + (y-2)^2 &= C-2		.
 		\end{align*}
 		A circle of radius $\sqrt{C-2}$ centered at $(1,2)$.
 		For $C = 1$, the level curve does not exist because the circle would have a radius of $\sqrt{2-1} = \sqrt{-1}$.
 		For $C = 3$, the level curve is 
 		\begin{equation*}
-			(x-1)^2 + (y-2)^2 = 1	
+			(x-1)^2 + (y-2)^2 = 1
 		\end{equation*}
 		
 		\begin{figure}[H]
@@ -23,16 +23,16 @@
 		
 		\item Compute $\nabla f$.
 		\begin{equation*}
-			\nabla f = \langle f_x, f_y\rangle = \langle 2x-2, 2y-4 \rangle	
+			\nabla f = \langle f_x, f_y\rangle = \langle 2x-2, 2y-4 \rangle
 		\end{equation*}
 		
 		\item Find the equation of the plane tangent to the surface $z = f(x,y)$ at the point $(x_0, y_0, z_0) = (2,4,7)$.
 		\begin{equation*}
-			\vec{n} = \langle f_x, f_y, -1\rangle = \langle 2x-2, 2y-4, -1 \rangle	
+			\vec{n} = \langle f_x, f_y, -1\rangle = \langle 2x-2, 2y-4, -1 \rangle.
 		\end{equation*}
 		At $(2,4,7)$, $\vec{n} = \langle 2, 7, -1 \rangle$. So, the plane equation is 
 		\begin{equation*}
-			\langle 2, 7, -1 \rangle \cdot \langle x-2, y-4, z-7 \rangle = 0	
+			\langle 2, 7, -1 \rangle \cdot \langle x-2, y-4, z-7 \rangle = 0
 		\end{equation*}
 		
 		\item Perform one iteration of gradient descent on $f(x,y)$ with a learning rate $delta = 1/4$ starting from the point $(x_0,y_0) = (2,4)$.\\
@@ -48,7 +48,7 @@
 	\begin{enumerate}[label=\alph*.]
 		\item Prove the statement "The gradient is the direction of steepest ascent" by showing that the directional derivative $D_{\hat{u}}f$ is maximized when $\hat{u}\parallel\nabla f$.
 		\begin{equation*}
-			D_{\hat{u}}f = \nabla f \cdot \hat{u}=\norm{\nabla f}\norm{\hat{u}}\cos{\theta} = \norm{\nabla f}\cos{\theta}	
+			D_{\hat{u}}f = \nabla f \cdot \hat{u}=\norm{\nabla f}\norm{\hat{u}}\cos{\theta} = \norm{\nabla f}\cos{\theta}.
 		\end{equation*}
 		This value is maximized when $\theta$ is a multiple of $2\pi$, meaning that the angle between $\nabla f$ and $\hat{u}$ is 0. This means that the maximum value of the directional derivative, the direction of steepest ascent, is in the same direction as $\nabla f$.\\
 			
@@ -67,13 +67,13 @@
 		\item Constraint Equation: $g(x,y) = x^2 + y^2 = 1$, $x \geq 0$ and $y \geq 0$
 	\end{itemize}
 	\begin{equation*}
-		F(x,y,\lambda) = xy + \lambda(1-x^2-y^2)	
+		F(x,y,\lambda) = xy + \lambda(1-x^2-y^2)
 	\end{equation*}
 	\begin{equation*}
 		\frac{\partial F}{\partial x} = y-2\lambda x, \frac{\partial F}{\partial y} = x-2\lambda y \text{ and } \frac{\partial F}{\partial\lambda} = 1-x^2-y^2
 	\end{equation*}
 	\begin{equation*}
-		\langle y-2\lambda x, x-2 \lambda y, 1-x^2-y^2 \rangle = \vec{0}	
+		\langle y-2\lambda x, x-2 \lambda y, 1-x^2-y^2 \rangle = \vec{0}
 	\end{equation*}
 	\begin{equation*}
 		\begin{cases}
@@ -84,14 +84,14 @@
 			\lambda = 1/2 \\
 			x = 1/\sqrt{2} \\
 			y = 1/\sqrt{2}
-		\end{cases}
+		\end{cases}.
 	\end{equation*}
 	So, the maximum product is $\frac{1}{\sqrt{2}} \cdot \frac{1}{\sqrt{2}} = \frac{1}{2}$ at $\left(\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}\right)$\\
 	
 	\item The function $p(x,y) = \frac{1}{\pi}\exp{\left(-(x-a)^2 - (y-b)^2\right)}$ is the probability density function of a bivariate normal distribution with mean $(a,b)$ and standard deviation $\frac{1}{\sqrt{2}}$. Show that the global maximum of $p(x,y)$ occurs at $(a,b)$.
 	\begin{align*}
 		p_x &= \frac{1}{\pi}(-2(x-a))\exp{(-((x-a)^2 + (y-b)^2))} \\
-		p_y &= \frac{1}{\pi}(-2(y-b))\exp{(-((x-a)^2 + (y-b)^2))}	
+		p_y &= \frac{1}{\pi}(-2(y-b))\exp{(-((x-a)^2 + (y-b)^2))}
 	\end{align*}
 	$p_x = 0$ when $x=a$ and $p_y = 0$ when $y=b$
 	$\implies (a,b)$ is a critical point.
@@ -118,20 +118,20 @@
 	\item Let the C-level curve of the function $f(x,y)$ be parameterized by the VVF $\vec{r}(t) = \langle x(t), y(t) \rangle$. Use the chain rule to show that $\nabla f(\vec{r}(t))\perp\vec{r^\prime}(t)$ for all $t$.\\
 	Since $\vec{r}(t)$ parameterizes a C-level curve of $f$,
 	\begin{equation*}
-		f\circ\vec{r}(t) = C
+		f\circ\vec{r}(t) = C.
 	\end{equation*}
 	Where $C$ is a constant.
 	\begin{equation*}
-		\frac{\mathrm{d}}{\mathrm{d}t}(f\circ\vec{r}(t)) = \frac{\mathrm{d}}{\mathrm{d}t}C	
+		\frac{\mathrm{d}}{\mathrm{d}t}(f\circ\vec{r}(t)) = \frac{\mathrm{d}}{\mathrm{d}t}C
 	\end{equation*}
 	\begin{equation*}
-		\frac{\partial f}{\partial x}\frac{\mathrm{d}x}{\mathrm{d}t} + \frac{\partial f}{\partial y}\frac{\mathrm{d}y}{\mathrm{d}t} = 0	
+		\frac{\partial f}{\partial x}\frac{\mathrm{d}x}{\mathrm{d}t} + \frac{\partial f}{\partial y}\frac{\mathrm{d}y}{\mathrm{d}t} = 0
 	\end{equation*}
 	\begin{equation*}
 		\left<\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}\right> \cdot \left<\frac{\mathrm{d}x}{\mathrm{d}t}, \frac{\mathrm{d}y}{\mathrm{d}t}\right> = 0
 	\end{equation*}
 	\begin{align*}
 		\nabla f(\vec{r}(t)) &\cdot \vec{r^\prime}(t) = 0 \\
-		&\implies \nabla f(\vec{r}(t))\perp\vec{r^\prime}(t)	
+		&\implies \nabla f(\vec{r}(t))\perp\vec{r^\prime}(t)
 	\end{align*}
 \end{enumerate}

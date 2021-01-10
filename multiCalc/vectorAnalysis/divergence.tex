@@ -7,11 +7,11 @@ In 2D we define the divergence of a vector field $\vec{F}(x,y) = \langle P(x,y),
 \noindent
 This operation extends into higher dimensions. We define the "del operator" as
 \begin{equation*}
-	\nabla = \left< \frac{\partial}{\partial x}, \frac{\partial}{\partial y},\ldots\right> \text{ so that } \text{div}(\vec{F}) = \nabla \cdot \vec{F}
+	\nabla = \left< \frac{\partial}{\partial x}, \frac{\partial}{\partial y},\ldots\right> \text{ so that } \text{div}(\vec{F}) = \nabla \cdot \vec{F}.
 \end{equation*}
 The del operator is not coordinate system independent. The above version only works for Cartesian coordinates. For spherical coordinates,
 \begin{equation*}
-	\nabla \cdot \vec{F} = \frac{1}{\rho^2}\frac{\partial(\rho^2 F_\rho)}{\partial\rho} + \frac{1}{\rho\sin{\theta}}\frac{\partial}{\partial\theta}(F_\theta \sin{\theta}) + \frac{1}{\rho\sin{\theta}}\frac{\partial}{\partial\phi}F_\phi  \text{ where } \vec{F} = \langle F_\rho, F_\theta, F_\phi \rangle
+	\nabla \cdot \vec{F} = \frac{1}{\rho^2}\frac{\partial(\rho^2 F_\rho)}{\partial\rho} + \frac{1}{\rho\sin{\theta}}\frac{\partial}{\partial\theta}(F_\theta \sin{\theta}) + \frac{1}{\rho\sin{\theta}}\frac{\partial}{\partial\phi}F_\phi  \text{ where } \vec{F} = \langle F_\rho, F_\theta, F_\phi \rangle.
 \end{equation*}
 Thankfully, vector fields in spherical coordinates are rare, and it's usually easier to convert to Cartesian coordinates before doing any calculations.\\
 

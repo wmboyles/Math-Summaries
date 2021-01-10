@@ -1,19 +1,21 @@
 \subsection{Cross Products}
 \noindent
-A cross product is a way of multiplying two vectors so that the result is a vector. Although the cross product technically only works for 3D vectors, we will first look a a "fake" 2D version to build an intuition.
+A cross product is a way of multiplying two vectors so that the result is a vector.
+Although the cross product technically only works for 3D vectors, we will first look a a "fake" 2D version to build an intuition.
 \begin{equation*}
-	\vec{a}\times\vec{b} = a_1b_1-a_2b_2
+	\vec{a}\times\vec{b} = a_1b_1-a_2b_2.
 \end{equation*}
-This "fake" 2D cross product gives the area of the parallelogram spanned by $\vec{a}$ and $\vec{b}$.
+This ``fake'' 2D cross product gives the area of the parallelogram spanned by $\vec{a}$ and $\vec{b}$.
 \begin{equation*}
-	\vec{a}\times\vec{b} = \norm{\vec{a}}\norm{\vec{b}}\sin{\theta}	
+	\vec{a}\times\vec{b} = \norm{\vec{a}}\norm{\vec{b}}\sin{\theta}
 \end{equation*}
-where $\theta$ is the angle between $\vec{a}$ and $\vec{b}$.\\
+where $\theta$ is the angle between $\vec{a}$ and $\vec{b}$.
 Another way to think of the magnitude of the cross product, both in 2D and 3D, is as a measure of how perpendicular two vectors are.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.5]{Images/backgroundReview/CrossProduct}
+	\includegraphics[width=0.5\textwidth]{./Images/backgroundReview/CrossProduct.png}
+	\caption{Visualization of the cross product}
 \end{figure}
 
 \noindent
@@ -25,38 +27,39 @@ and
 \begin{equation*}
 	\norm{\vec{a}\times\vec{b}}=\norm{\vec{a}}\norm{\vec{b}}\sin{\theta}
 \end{equation*}
-where $\theta$ is the angle between $\vec{a}$ and $\vec{b}$.\\
-Each component of $\vec{a}\times\vec{b}$ gives the area of the parallelogram spanned by $\vec{a}$ and $\vec{b}$ in some plane: The x-component of $\vec{a}\times\vec{b}$ gives the area in the yz-plane (x = 0 plane).\\
+where $\theta$ is the angle between $\vec{a}$ and $\vec{b}$.
+Each component of $\vec{a}\times\vec{b}$ gives the area of the parallelogram spanned by $\vec{a}$ and $\vec{b}$ in some plane:
+The $x$-component of $\vec{a}\times\vec{b}$ gives the area in the yz-plane ($x$ = 0 plane).
 $\vec{a}\times\vec{b}$ is perpendicular, also called "normal," to the plane containing $\vec{a}$ and $\vec{b}$. It's direction, is determined by the right hand rule.\\
 
 \noindent
-The cross product table of the standard basis vectors is useful for providing some insight into the properties of the cross product.
+This cross product table of the standard basis vectors is useful for providing some insight into the properties of the cross product.
 \begin{table}[H]
 	\centering
 	\renewcommand{\arraystretch}{1.5}
-	\begin{tabular}{|l|l|l|l|}
+	\begin{tabular}{|c||c|c|c|}
 		\hline
-		$\overrightarrow{\text{row}}\times\overrightarrow{\text{col}}$ & $\hat{i}$  & $\hat{j}$  & $\hat{k}$  \\ \hline
+		$\overrightarrow{\text{row}}\times\overrightarrow{\text{col}}$ & $\hat{i}$  & $\hat{j}$  & $\hat{k}$  \\ \hline\hline
 		$\hat{i}$                                & $0$        & $\hat{k}$  & $-\hat{j}$ \\ \hline
 		$\hat{j}$                                & $-\hat{k}$ & $0$        & $\hat{i}$  \\ \hline
 		$\hat{k}$                                & $\hat{j}$  & $-\hat{i}$ & $0$        \\ \hline
 	\end{tabular}
 \end{table}
 
-\begin{itemize}
-	\item \textbf{NOT} Commutative, but is antisymmetric
-	\begin{equation*}
-		\vec{a}\times\vec{b} = -\left(\vec{b}\times\vec{a}\right)
-	\end{equation*}
-	\item Scalar Associative
-	\begin{equation*}
-		\left(c\cdot\vec{a}\right)\times\vec{b}=\vec{a}\times\left(c\cdot\vec{b}\right)
-	\end{equation*}
-	\item Distributive
-	\begin{equation*}
-		\vec{a}\times\left(\vec{b}\times\vec{c}\right) = \vec{a}\times\vec{b} + \vec{a}\times\vec{c}
-	\end{equation*}
-\end{itemize}
+\begin{enumerate}[label=]
+	\item \textbf{\underline{NOT} Commutative}, but is antisymmetric
+		\begin{equation*}
+			\vec{a}\times\vec{b} = -\left(\vec{b}\times\vec{a}\right)
+		\end{equation*}
+	\item \textbf{Scalar Associative}
+		\begin{equation*}
+			\left(c\cdot\vec{a}\right)\times\vec{b}=\vec{a}\times\left(c\cdot\vec{b}\right)
+		\end{equation*}
+	\item \textbf{Distributive}
+		\begin{equation*}
+			\vec{a}\times\left(\vec{b}\times\vec{c}\right) = \vec{a}\times\vec{b} + \vec{a}\times\vec{c}
+		\end{equation*}
+\end{enumerate}
 
 \noindent
 One can also think of the cross product as the determinant of a matrix.

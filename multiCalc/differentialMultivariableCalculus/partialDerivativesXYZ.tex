@@ -5,15 +5,15 @@ It's common to look at the derivative when slicing a surface in the yz, xz, and 
 \noindent
 To compute $\frac{\partial}{\partial x}{f(x,y)}$, we take the derivative with respect to $x$ as if $y$ is constant. Formally,
 \begin{equation*}
-	\frac{\partial}{\partial x}f(x,y) = \lim_{h \to 0}{\frac{f(x+h,y)-f(x,y)}{h}}
+	\frac{\partial}{\partial x}f(x,y) = \lim_{h \to 0}{\frac{f(x+h,y)-f(x,y)}{h}},
 \end{equation*} 
 and 
 \begin{equation*}
-	\frac{\partial}{\partial y}f(x,y) = \lim_{h \to 0}{\frac{f(x,y+h)-f(x,y)}{h}}
+	\frac{\partial}{\partial y}f(x,y) = \lim_{h \to 0}{\frac{f(x,y+h)-f(x,y)}{h}}.
 \end{equation*}
 
 \noindent
-We also use the shorthand $\frac{\partial}{\partial x}=f_x$ and $\frac{\partial}{\partial y}=f_y$. This shorthand can be extended to higher-order derivatives so that $\frac{\partial}{\partial y}\left(\frac{\partial}{\partial x}f(x,y)\right)=f_{xy}$.
+We also use the shorthand $\frac{\partial}{\partial x}=f_x$ and $\frac{\partial}{\partial y}=f_y$. This shorthand can be extended to higher-order derivatives so that $\frac{\partial}{\partial y}\left(\frac{\partial}{\partial x}f(x,y)\right)=f_{xy}$.\\
 
 \noindent
 \textbf{Fubini's Theorem} (also called Tonelli's or Clairaut's Theorem) says $f_{xy} = f_{yx}$, $f_{xz} = f_{zx}$, and $f_{yz} = f_{zy}$. It extends into higher-order mixed partial derivatives, saying that two mixed partial derivatives of a function are equal as long as they both differentiate the same number of variables the same number of times. So, $f_{abcdab} = f_{aacdbb}$.

@@ -1,26 +1,28 @@
 \section{Directional Derivatives}
 \noindent
-We already saw that partial derivatives in the $x$, $y$, and $z$ directions. However, we can take the derivative coming from other directions. These are called directional derivatives, $D_{\hat{u}}{f}$, where $\hat{u}$ is the direction.
+We already saw partial derivatives in the $x$, $y$, and $z$ directions.
+However, we can take the derivative coming from other directions.
+These are called directional derivatives, $D_{\hat{u}}{f}$, where $\hat{u}$ is the direction.
 \begin{equation*}
 	D_{\hat{u}}{f} = \lim_{h \to 0}{\frac{f(\vec{p_0} + h\hat{u})}{h}}
 \end{equation*}
 \noindent
 If $\hat{u} = \langle a, b \rangle$, 
 \begin{equation*}
-	D_{\hat{u}}{f} = \lim_{h \to 0}{\frac{f(x+ah, y+bh) - f(x,y)}{h}}	
+	D_{\hat{u}}{f} = \lim_{h \to 0}{\frac{f(x+ah, y+bh) - f(x,y)}{h}}.
 \end{equation*}
 Note that
 \begin{equation*}
-	D_{\hat{i}}{f} = \lim{h \to 0}{\frac{f(x+h, y) - f(x, y)}{h}} = f_x \text{ and } D_{\hat{j}}{f} = f_y	
+	D_{\hat{i}}{f} = \lim_{h \to 0}{\frac{f(x+h, y) - f(x, y)}{h}} = f_x \text{ and } D_{\hat{j}}{f} = f_y.
 \end{equation*}
 Let's look at $D_{\hat{u}}{f}$.
 \begin{align*}
 	D_{\hat{u}}{f} &= \lim_{h \to 0}{\frac{f(x+ah, y+bh) - f(x+ah, y) + f(x+ah, y) - f(x, y)}{h}} \\
 	&= b\lim_{h \to 0}{\frac{f(x+ah, y+bh)-f(x+ah, y)}{bh}} + a\lim_{h \to 0}{\frac{f(x+ah, y) - f(x, y)}{ah}} \\
 	&= b\frac{\partial f}{\partial y} + a\frac{\partial f}{\partial x} \\
-	&= af_x + bf_y
+	&= af_x + bf_y.
 \end{align*}
 So, 
 \begin{equation*}
-	D_{\hat{u}}{f} =\nabla f \cdot \hat{u}
+	D_{\hat{u}}{f} =\nabla f \cdot \hat{u}.
 \end{equation*}

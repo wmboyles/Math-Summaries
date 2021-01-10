@@ -1,5 +1,7 @@
 \subsection{Boundary Points, Open \& Closed Sets}
 \noindent
-Given some set $\Omega \subset \mathbb{R}^n$, $x$ is an interior point to $\Omega$ if $\exists \delta \mid N(x, \delta) \subset \Omega$. That is, $x$ is an interior point to $\Omega$ if you can draw a circle of non-zero radius around $x$ such that the entire circle is inside of $\Omega$.\\
-All points that are not interior points are boundary points. Formally, $x$ is a boundary point of $\Omega$ if $\forall \delta \mid N(x,\delta) \not\subset \Omega$.\\
+Given some set $\Omega \subset \mathbb{R}^n$, $x$ is an interior point to $\Omega$ if there exists some $\delta$ such that $N(x, \delta) \subset \Omega$.
+That is, $x$ is an interior point to $\Omega$ if you can draw a circle of non-zero radius around $x$ such that the entire circle is inside of $\Omega$.
+All points that are not interior points are boundary points.
+Formally, $x$ is a boundary point of $\Omega$ if for all $\delta$,  $N(x,\delta) \not\subset \Omega$.
 Using our definitions of interior and boundary points, we can define and open set as one that doesn't contain any of its boundary points and a closed set as one that contains all of its boundary point. Note that a set that contains some of its boundary points is neither open nor closed.

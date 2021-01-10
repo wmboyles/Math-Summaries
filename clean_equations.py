@@ -17,9 +17,9 @@ for filename in files:
                 lastchar = lines[i - 1][-2]
                 firstchar = lines[i + 1].replace('\t', '')[0]
 
-                if lastchar == ' ' or lastchar == '\t':
+                while lastchar in [' ', '\t']:
                     lines[i - 1] = lines[i - 1][:-2] + '\n'
-                    print('Removed extra space/tab on line', i, 'in', filename)
+                    print('Removed trailing whitespace on line', i, 'in', filename)
                     lastchar = lines[i - 1][-2]
 
                 if lastchar != '.' and firstchar.isupper():

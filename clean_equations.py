@@ -1,7 +1,7 @@
 import glob
 
 # get all relevant tex files
-exceptions = ['./main_common.tex', './contributors.tex']
+exceptions = ['./common/main_common.tex', './common/contributors.tex']
 files = [f for f in glob.glob("./**/*.tex", recursive=True) if f not in exceptions]
 
 for filename in files:

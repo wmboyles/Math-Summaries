@@ -31,7 +31,7 @@ for contributor in contributors:
 
 
 # Create the contributors.tex page
-with open("contributors.tex", 'w') as f:
+with open("common/contributors.tex", 'w') as f:
     f.write("""\section{Contributors}
 Special thanks to everyone who made contributions to this project on \href{https://github.com/wmboyles/Math-Summaries}{Github}.
 They are listed in order of number of commits as \\texttt{name (GitHub username)}.

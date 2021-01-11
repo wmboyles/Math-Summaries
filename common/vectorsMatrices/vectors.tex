@@ -1,4 +1,4 @@
-\section{Vectors}
+\subsection{Vectors}
 \noindent
 A vector is a quantity with both direction and magnitude.
 One can think of it as a directed line segment.
@@ -13,7 +13,7 @@ Say we have a 2D vector, $\vec{v} = \langle v_x, v_y \rangle$.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.5]{./Images/backgroundReview/VectorAddition.png}
+	\includegraphics[scale=0.5]{../common/vectorsMatrices/VectorAddition.png}
 	\caption{The $x$ and $y$ components of a vector $v$}
 \end{figure}
 
@@ -37,7 +37,7 @@ Visually, you can think of $\vec{v}+\vec{w}$ as the vector connecting the tail o
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.33]{./Images/backgroundReview/Parallelogram.png}
+	\includegraphics[scale=0.33]{../common/vectorsMatrices/Parallelogram.png}
 	\caption{Visualization of $\vec{v}+\vec{w}$ and $\vec{v} - \vec{w}$}
 \end{figure}
 
@@ -46,7 +46,7 @@ We can also multiply vectors by scalars and get another vector as a result. We d
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.5]{./Images/backgroundReview/ScalarMultiples.png}
+	\includegraphics[scale=0.5]{../common/vectorsMatrices/ScalarMultiples.png}
 	\caption{A vector $\vec{v}$ scaled by different constants}
 \end{figure}
 
@@ -62,12 +62,12 @@ Together, $\hat{i}$, $\hat{j}$, and $\hat{k}$ are called the standard basis vect
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.33]{./Images/backgroundReview/UnitVectors.png}
+	\includegraphics[scale=0.33]{../common/vectorsMatrices/UnitVectors.png}
 	\caption{The standard basis vectors $\hat{i}$, $\hat{j}$, and $\hat{k}$}
 \end{figure}
 
-\input{./backgroundReview/dotProducts}
-\input{./backgroundReview/crossProducts}
+\input{../common/vectorsMatrices/dotProducts.tex}
+\input{../common/vectorsMatrices/crossProducts.tex}
 
 \noindent
 Now that we have defined the dot product and cross product, we can put the two together as the scalar triple product, which gives the volume of the parallelepiped spanned by $\vec{a}$, $\vec{b}$, and $\vec{c}$.
@@ -81,6 +81,6 @@ Now that we have defined the dot product and cross product, we can put the two t
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\textwidth]{./Images/backgroundReview/Parallelipiped.png}
+	\includegraphics[width=0.5\textwidth]{../common/vectorsMatrices/Parallelipiped.png}
 	\caption{Scalar triple product gives volume of parallelepiped spanned by three vectors.}
 \end{figure}

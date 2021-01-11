@@ -5,7 +5,7 @@ exceptions = ['./common/main_common.tex', './common/contributors.tex']
 files = [f for f in glob.glob("./**/*.tex", recursive=True) if f not in exceptions]
 
 for filename in files:
-    with open(filename) as f:
+    with open(filename, encoding="utf-8") as f:
         lines = f.readlines()
 
         for i, line in enumerate(lines):
@@ -19,18 +19,18 @@ for filename in files:
 
                 while lastchar in [' ', '\t']:
                     lines[i - 1] = lines[i - 1][:-2] + '\n'
-                    print('Removed trailing whitespace on line', i, 'in', filename)
+                    print(f"Removed trailing whitespace at {filename}:{i}")
                     lastchar = lines[i - 1][-2]
 
                 if lastchar != '.' and firstchar.isupper():
                     lines[i - 1] = lines[i - 1][:-1] + '.\n'
-                    print('Added period on line', i, 'in', filename)
+                    print(f"Added period at {filename}:{line}")
                 elif lastchar == '.' and firstchar.islower():
                     lines[i - 1] = lines[i - 1][:-2] + '\n'
-                    print('Removed extra period on line', i, 'in', filename)
+                    print(f"Removed extra period at {filename}:{i}")
 
             # replace LF newlines with CRLF
             line = line.replace('\n', '\r\n')
 
-    with open(filename, 'w', newline='\r\n') as f:
+    with open(filename, 'w', encoding="utf-8", newline='\r\n') as f:
         f.writelines(lines)

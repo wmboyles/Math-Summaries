@@ -47,7 +47,7 @@ They are listed in order of number of commits as \\texttt{name (GitHub username)
         else:
             f.write("\t")
         
-        f.write(f"{contributor['name']} (\\href{{{contributor['url']}}}{{{contributor['login']}}})")
+        f.write(f"{contributor['name']} (\\href{{{contributor['html_url']}}}{{{contributor['login']}}})")
 
         if i % 3 == 2:
             f.write(" \\\\\n\t")

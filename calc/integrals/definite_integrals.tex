@@ -174,3 +174,33 @@ Rather than evaluating a limit of a Riemann sum, if we know the antiderivative, 
 		&= \frac{\pi}{4}.
 	\end{align*} 
 \end{answer}
+
+\subsection{Integrals of Symmetric Functions}
+Suppose f is continuous on $[-a, a]$. Then we have
+\begin{equation*}
+	\int_{-a}^{a}{f(x)\d{x}} = 2 \int_{0}^{a}{f(x)\d{x}}
+\end{equation*}
+if f is even and
+\begin{equation*}
+	\int_{-a}^{a}{f(x)\d{x}} = 0
+\end{equation*}
+if f is odd.\bigskip
+
+\noindent
+Intuitively, since even functions are symmetric about the $y$-axis, it should make sense that the area under the curve from $-a$ to $a$ should be twice the area under the curve from 0 to $a$. 
+Likewise, odd functions are symmetric about the origin, so any area under the curve above the $x$-axis will be canceled out by some corresponding area underneath the $x$-axis on the opposite side of the axis.
+
+\begin{example}
+	Evaluate the following definite integral.
+	\begin{equation*}
+		\int_{-1}^{1}{\frac{\tan{x}}{1 + x^2 + x^4}}
+	\end{equation*}
+\end{example}
+\begin{answer}
+	At first, this looks like a nasty integral to evaluate. 
+	However, we notice that $f(-x) = -\frac{\tan{x}}{1 + x^2 + x^4}$.
+	Since $f(-x) = -f(x)$, the function is odd, and since the limits of integration are additive inverses of one another, we have
+	\begin{equation*}
+		\int_{-1}^{1}{\frac{\tan{x})}{1 + x^2 + x^4}} = 0.
+	\end{equation*}
+\end{answer}

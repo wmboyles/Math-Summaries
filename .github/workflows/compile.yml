@@ -1,4 +1,4 @@
-# This action runs a python script that generates a .tex file which thanks contributors.
+# This action runs a python script that generates a .tex file which thanks contributors and several more that clean up files.
 # This action then compiles each main.tex document and pushes all the documents in one commit.
 
 name: Compile
@@ -37,6 +37,12 @@ jobs:
             # Run python script to credit contributors
             - name: Make Contributors
               run: python make_contributors.py
+
+            # Clean up files
+            - name: Clean Files
+              run: |
+                  python clean_equations.py
+                  python clean_quotes.py
 
             # Compile calc work
             - name: Compile Calculus

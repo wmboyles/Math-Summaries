@@ -1,0 +1,71 @@
+\subsection{Functions}
+\begin{definition}
+    A function $f$ is a rule between a pair of sets, denoted $f: D \to C$, that assigns values from the first set, the domain $D$, to the second set, the codomain $C$.
+\end{definition}
+
+We call the subset of the codomain $C$ that constitutes all values $f$ can actually attain the range $R \subseteq C$. 
+Note that when we draw a graph of a function, all we are doing is drawing all ordered pairs $\{(x, f(x)) \mid x \in D\}$.
+
+\begin{example}
+    Find the domain of the following function:
+    \begin{equation*}
+        f(x) = \frac{1}{(1 - x)\sqrt{5 - x^2}}
+    \end{equation*}
+\end{example}
+
+\begin{answer}
+    We know that $\frac{n}{0}$ is undefined for all $n \in \mathbb{R}$ and $\sqrt{x}$ is only defined for $x \geq 0$. 
+    The first condition applies to the first term in the denominator and both conditions apply to the second, giving us
+    \begin{equation*}
+        (1 - x) \neq 0 \text{ and } 5 - x^2 > 0
+    \end{equation*}
+    The first condition implies $x \neq 1$ while the second implies $|x| < \sqrt{5}$.
+    Putting these together, we find that the domain is
+    \begin{equation*}
+        \{x \mid x \neq 1, |x| < \sqrt{5}\} \text{ or } (-\sqrt{5}, 1) \cup (1, \sqrt{5})
+    \end{equation*}
+\end{answer}
+
+We can also compose two functions, such that the ouput of one function is the input of another: 
+\begin{equation*}
+    (f \circ g)(x) = f(g(x))
+\end{equation*}
+
+\begin{definition}
+    A function $g$ is called an inverse function of $f$ if $f(g(x)) = x$ for all x in the domain of g and $g(f(x))$ for all x in the domain of f. 
+    We write this as $g = f^{-1}$.
+\end{definition}
+
+One common algorithm for finding an inverse function is to set $y = f(x)$, substitute all $x$'s for $y$'s, and then solve for y.
+\begin{example}
+    Find the inverse function of 
+    \begin{equation*}
+        f(x) = \frac{5x + 2}{4x - 3}.
+    \end{equation*}
+\end{example}
+\begin{answer}
+    We first make the substitutions to set up the algorithm:
+    \begin{equation*}
+        y = \frac{5x + 2}{4x - 3} \text{ followed by }
+        x = \frac{5y + 2}{4y - 3}
+    \end{equation*}
+    After multiplying both sides by the denominator and simplifying, we have
+    \begin{equation*}
+        \implies 4xy - 3x = -5y - 2 \\
+        \implies y = f^{-1}(x) = \frac{3x - 2}{4x + 5}.
+    \end{equation*}
+\end{answer}
+
+We say that a function $f$ is even if it satisfies $f(-x) = f(x)$ for all $x \in D$.
+Likewise, we say that a function $f$ is odd if it satisfies $f(-x) = -f(x)$ for all $x \in D$. 
+Geometrically, we can see that the graph of an even function is symmetric with respect to the $y$-axis, while the graph of an odd function is symmetric with respect to the origin. 
+
+\begin{example}
+    Is $f(x) = 2x - x^2$ even, odd, or neither?
+\end{example}
+\begin{answer}
+    \begin{equation*}
+        f(-x) = 2(-x) - (-x)^2 = -2x - x^2
+    \end{equation*}
+    Since $f(-x) \neq f(x)$ and $f(-x) \neq -f(x)$, the function is neither even nor odd.
+\end{answer}

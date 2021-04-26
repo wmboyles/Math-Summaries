@@ -97,38 +97,33 @@ Now with a solution for $v_i$, we can substitute back to find $y(x)$.
 \begin{example}
 	Find the general solution to the equation
 	\begin{equation*}
-		x^3y''' + x^2y'' - 2xy' = x^3\sin{x} \text{, } x > 0
+		x^3y'' + x^2y' - xy = x^3\sin{x} \text{, } x > 0
 	\end{equation*}
-	given that $\left\{x, x^{-1}, x^2\right\}$ is the set of fundamental solutions.
+	given that $\left\{x, x^{-1}\right\}$ is the set of fundamental solutions.
 \end{example}
 \noindent
 First we divide by $x^3$ to get a leading coefficient of 1.
 \begin{equation*}
-	y''' + x^{-1}y''' - 2x^{-2}y' = \sin{x} \text{, } x > 0.
+	y'' + x^{-1}y' - x^{-2}y = \sin{x} \text{, } x > 0.
 \end{equation*}
 Next we calculate the $W(x)$ and each $W_i(x)$ for the fundamental solution set.
-\begin{align*}
-	W[x,x^{-1}, x^2](x) &= \begin{vmatrix}
-		x & x^{-1} & x^2 \\
-		1 & -x^{-2} & 2x \\
-		0 & 2x^{-3} & 2
-	\end{vmatrix} = 6x^{-1} \\
-	W_1(x) &= (-1)^{3-1}W[x^{-1}, x^2](x) = (-1)^{2}\begin{vmatrix}
-		x^{-1} & x^2 \\
-		-x^{-2} & 2x
-	\end{vmatrix} = 3 \\
-	W_2(x) &= (-1)^{3-2}\begin{vmatrix}
-		x & x^{2} \\
-		1 & 2x
-	\end{vmatrix} = -x^2 \\
-	W_2(x) &= (-1)^{3-2}\begin{vmatrix}
+\begin{alignat*}{3}
+	W[x,x^{-1}](x) &= \begin{vmatrix}
 		x & x^{-1} \\
-		1 & -x^{-2}
-	\end{vmatrix} = -2x^{-1}.
-\end{align*}
+		1 & -x^{-2} \\
+	\end{vmatrix} &&= -2x^{-1} \\
+	W_1(x) &= (-1)^{2-1}W[x^{-1}] &&= (-1)^{1}\begin{vmatrix}
+		x^{-1}
+	\end{vmatrix} &&= -x^{-1} \\
+	W_2(x) &= (-1)^{2-2}W[x] &&= (-1)^{1}\begin{vmatrix}
+		x
+	\end{vmatrix} &&= x.
+\end{alignat*}
 Now we can calculate $y$.
 \begin{align*}
-	y(x) &= x\int{\frac{(\sin{x})^3}{-6x^{-1}} \mathrm{d}x} + x^{-1}\int{\frac{(\sin{x})(-x^2)}{-6x^{-1}} \mathrm{d}x} + x^2\int{\frac{(\sin{x})(-2x^{-1})}{-6x^{-1}} \mathrm{d}x} \\
-	&= x\int{\left(\frac{-1}{2}x\sin{x}\right)\mathrm{d}x} + x^{-1}\int{\left(\frac{1}{6}x^3\sin{x}\right)\mathrm{d}x} + x^2\int{\left(\frac{1}{3}\sin{x}\right)\mathrm{d}x} \\
-	&= C_1x + c_2x^{-1} + C_3x^2 + \cos{x} - x^{-1}\sin{x}
+	y(x) &= x\int{\frac{(\sin{x})(-x^{-1})}{-2x^{-1}} \mathrm{d}x} + x^{-1}\int{\frac{(\sin{x})(x)}{-2x^{-1}} \mathrm{d}x} \\
+	&= \frac{x}{2}\int{\sin{(x)}\mathrm{d}x} - \frac{1}{2x}\int{x^2\sin{(x)}\mathrm{d}x} \\
+	&= \frac{x}{2}\left(-\cos{x}+C_1\right) - \frac{1}{2x}\left(2x\sin{x} - (x^2-2)\cos{x} + C_2\right) \\
+	&= C_1x + \frac{C_2}{x} -\frac{x\cos{x}}{2} - \sin{x} + \frac{(x^2-2)\cos{x}}{2x} \\
+	&= C_1x + C_2x^{-1} - \frac{\cos{x}}{x} - \frac{x\sin{x}}{x}.
 \end{align*}

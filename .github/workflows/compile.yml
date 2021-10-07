@@ -6,8 +6,6 @@ name: Clean and Compile
 on:
   push:
     branches: [master]
-  pull_request:
-    branches: [master]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -64,14 +62,9 @@ jobs:
           working_directory: ./diffEq
 
       # Push all compiled documents
-      - name: Commit Files
+      - name: Push Files
         run: |
           git config --global user.name 'Github Actions [BOT]'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m "Compile LaTeX files" -a
-
-      - name: Push Changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+          git commit -am "Compile LaTeX files"
+          git push

@@ -4,92 +4,92 @@
 name: Clean and Compile
 
 on:
-    push:
-        branches: [master]
-    pull_request:
-        branches: [master]
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
 
-    # Allows you to run this workflow manually from the Actions tab
-    workflow_dispatch:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 # Jobs run in parallel
 jobs:
-    # Use python to automate generating some .tex files
-    python-generation:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
+  # Use python to automate generating some .tex files
+  python-generation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
 
-            - name: Setup Python
-              uses: actions/setup-python@v2
-              with:
-                python-version: "3.x"
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
 
-            - name: Install Python Dependencies
-              run: |
-                pip install --upgrade pip
-                pip install requests
+      - name: Install Python Dependencies
+        run: |
+          pip install --upgrade pip
+          pip install requests
 
-            - name: Make Contributors List
-                run: |
-                    python3 make_contributors.py
+      - name: Make Contributors List
+        run: |
+          python make_contributors.py
 
-            - name: Cleanup Files
-                run: |
-                    python clean_equations.py
-                    python clean_quotes.py
+      - name: Cleanup Files
+        run: |
+          python clean_equations.py
+          python clean_quotes.py
 
-    # Compile calculus work
-    compile-calc:
-        runs-on: ubuntu-latest
-        needs: [python-generation]
-        steps:
-            - uses: actions/checkout@v2    
+  # Compile calculus work
+  compile-calc:
+    runs-on: ubuntu-latest
+    needs: [python-generation]
+    steps:
+      - uses: actions/checkout@v2
 
-            - name: Compile Calculus
-              uses: vinay0410/tectonic-action@v1.1.2
-              env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              with:
-                tex_path: ./calc/main.tex
+      - name: Compile Calculus
+        uses: vinay0410/tectonic-action@v1.1.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tex_path: ./calc/main.tex
 
-    # Compile multivariable calculus work
-    compile-multicalc:
-        runs-on: ubuntu-latest
-        needs: [python-generation]
-        steps:
-            - uses: actions/checkout@v2    
+  # Compile multivariable calculus work
+  compile-multicalc:
+    runs-on: ubuntu-latest
+    needs: [python-generation]
+    steps:
+      - uses: actions/checkout@v2
 
-            - name: Compile Multivariable Calculus
-              uses: vinay0410/tectonic-action@v1.1.2
-              env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              with:
-                tex_path: ./multicalc/main.tex
+      - name: Compile Multivariable Calculus
+        uses: vinay0410/tectonic-action@v1.1.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tex_path: ./multicalc/main.tex
 
-    # Compile diffeq work
-    compile-diffeq:
-        runs-on: ubuntu-latest
-        needs: [python-generation]
-        steps:
-            - uses: actions/checkout@v2    
+  # Compile diffeq work
+  compile-diffeq:
+    runs-on: ubuntu-latest
+    needs: [python-generation]
+    steps:
+      - uses: actions/checkout@v2
 
-            - name: Compile DiffEq
-              uses: vinay0410/tectonic-action@v1.1.2
-              env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              with:
-                tex_path: ./diffeq/main.tex
+      - name: Compile DiffEq
+        uses: vinay0410/tectonic-action@v1.1.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tex_path: ./diffeq/main.tex
 
-    # Push all compiled documents
-    push-changes:
-        runs-on: ubuntu-latest
-        needs: [compile-calculus, compile-multicalc, compile-diffeq]
-        steps:
-            - name: Push Changes
-              run: |
-                git config --global user.name 'wmboyles'
-                git config --global user.email 'wmboyles@users.noreply.github.com'
-                git add -A
-                git commit -m "Compile LaTeX files"
-                git push
+  # Push all compiled documents
+  push-changes:
+    runs-on: ubuntu-latest
+    needs: [compile-calculus, compile-multicalc, compile-diffeq]
+    steps:
+      - name: Push Changes
+        run: |
+          git config --global user.name 'wmboyles'
+          git config --global user.email 'wmboyles@users.noreply.github.com'
+          git add -A
+          git commit -m "Compile LaTeX files"
+          git push

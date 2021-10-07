@@ -50,6 +50,8 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: ./calc/main.tex
+          latexmk_use_xelatex: true
+          working_directory: ./calc
 
   # Compile multivariable calculus work
   compile-multicalc:
@@ -62,6 +64,8 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: ./multicalc/main.tex
+          latexmk_use_xelatex: true
+          working_directory: ./multicalc
 
   # Compile diffeq work
   compile-diffeq:
@@ -74,6 +78,8 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: ./diffeq/main.tex
+          latexmk_use_xelatex: true
+          working_directory: ./diffeq
 
   # Push all compiled documents
   push-changes:

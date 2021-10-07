@@ -84,7 +84,7 @@ jobs:
   # Push all compiled documents
   push-changes:
     runs-on: ubuntu-latest
-    needs: [compile-calculus, compile-multicalc, compile-diffeq]
+    needs: [compile-calc, compile-multicalc, compile-diffeq]
     steps:
       - name: Push Changes
         run: |

@@ -61,7 +61,7 @@ jobs:
       - name: Compile Multivariable Calculus
         uses: xu-cheng/latex-action@v2
         with:
-          tex_path: ./multicalc/main.tex
+          root_file: ./multicalc/main.tex
 
   # Compile diffeq work
   compile-diffeq:
@@ -73,7 +73,7 @@ jobs:
       - name: Compile DiffEq
         uses: xu-cheng/latex-action@v2
         with:
-          tex_path: ./diffeq/main.tex
+          root_file: ./diffeq/main.tex
 
   # Push all compiled documents
   push-changes:

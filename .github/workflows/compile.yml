@@ -47,11 +47,9 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Compile Calculus
-        uses: vinay0410/tectonic-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: xu-cheng/latex-action@v2
         with:
-          tex_path: ./calc/main.tex
+          root_file: ./calc/main.tex
 
   # Compile multivariable calculus work
   compile-multicalc:
@@ -61,9 +59,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Compile Multivariable Calculus
-        uses: vinay0410/tectonic-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: xu-cheng/latex-action@v2
         with:
           tex_path: ./multicalc/main.tex
 
@@ -75,9 +71,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Compile DiffEq
-        uses: vinay0410/tectonic-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: xu-cheng/latex-action@v2
         with:
           tex_path: ./diffeq/main.tex
 

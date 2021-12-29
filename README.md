@@ -7,6 +7,7 @@ These are LaTeX summaries of various math courses. They are meant to be longer a
 -   [Single Variable Calculus](https://raw.githubusercontent.com/wmboyles/Math-Summaries/master/calc/main.pdf)
 -   [Differential Equations](https://raw.githubusercontent.com/wmboyles/Math-Summaries/master/diffEq/main.pdf)
 -   [Multivariable Calculus](https://raw.githubusercontent.com/wmboyles/Math-Summaries/master/multiCalc/main.pdf)
+-   [Linear Algebra](https://raw.githubusercontent.com/wmboyles/Math-Summaries/master/linAlg/main.pdf)
 
 ## Single Variable Calculus (calc)
 
@@ -50,6 +51,13 @@ The chapters are:
 5. Linear Systems of Differential Equations
 6. Laplace Transforms
 7. Additional Resources
+
+## Linear Algebra (linAlg)
+This covers topics typically found in an undergraduate linear algebra course.
+The chapters are:
+
+1. Background & Review
+2. TODO TODO TODO
 
 ## How to Compile (make into a PDF)
 

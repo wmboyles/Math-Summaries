@@ -61,6 +61,14 @@ jobs:
           latexmk_use_xelatex: true
           working_directory: ./diffEq
 
+      # Compile diffeq work
+      - name: Compile LinAlg
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: main.tex
+          latexmk_use_xelatex: true
+          working_directory: ./linAlg
+      
       # Push all compiled documents
       - name: Push Files
         run: |

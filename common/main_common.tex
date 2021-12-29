@@ -17,10 +17,15 @@
 % General
 
 \usepackage[english]{babel}
-\usepackage{fontspec}
-\setmainfont{FreeSerif.otf}
+\usepackage{amsmath,amsthm, amssymb,bm} % Formatting symbols, theorems, lemmas, definitions, and examples
+\usepackage{mathspec}
 
-\usepackage{amsmath, amsthm, amssymb, amsfonts} % Formatting symbols, theorems, lemmas, definitions, and examples
+\setmathsfont(Digits,Latin,Greek){FreeSerif}
+
+\setmathrm{FreeSerif}
+
+\setmainfont{FreeSerif}
+
 \usepackage{float}							    % For making sure tables and figures stay in place
 \usepackage{fullpage}						    % Create ~1 inch margins
 \usepackage{changepage}							% For setting up indents after examples

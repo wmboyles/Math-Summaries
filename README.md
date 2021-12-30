@@ -61,10 +61,13 @@ The chapters are:
 
 ## How to Compile (make into a PDF)
 
-Simply download the folders for each work you like to build and compile the main.tex file using a tool like pdflatex. Most LaTeX IDEs (like TeXStudio) have this functionality built-in. You can also use pdflatex to compile directly from the command line by running
+Simply download the folders for each work you like to build and compile the main.tex file.
+You'll need to use a typesetting engine that supports unicode characters, like [XeLaTeX](https://www.tug.org/texlive/download-install.html).
+Most LaTeX IDEs (like TeXStudio) have this functionality built-in.
+You can also use pdflatex to compile directly from the command line by running
 
 ```bash
-$ pdflatex main.tex
+$ xelatex main.tex
 ```
 
 in the appropriate project folder (i.e. `diffEq`)

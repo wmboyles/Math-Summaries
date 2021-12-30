@@ -1,0 +1,30 @@
+\subsection{Properties}
+
+A binary operation may have certain useful properties.
+Let $\circ$ and $\square$ be two binary operations with the same domain.
+Let $a$, $b$, and $c$ be elements of the domain.
+\begin{itemize}
+	\item \textbf{Commutative}: $a \circ b = b \circ a$
+	\item \textbf{Associative}: $(a \circ b) \circ c = a \circ (b \circ c)$
+	\item \textbf{Distributive over $\square$}: $a \circ (b \square c) = (a \circ b) \square (a \circ c)$
+	\item \textbf{Identity}: There exists $I$ in the domain such that $a \circ I = a = I \circ a$
+	\item \textbf{Inverse}: There exists $a^{-1}$ in the domain such that $a \circ a^{-1} = I = a^{-1} \circ a$
+\end{itemize}
+
+Many of the binary operations you're already familiar with satisfy some of these properties.
+\begin{example}
+	\hspace{1pt}
+	\begin{itemize}
+		\item
+			Addition over $\R$ is commutative and associative.
+			Its identity element is $0$, and the inverse of $a$ is $-a$.
+		\item
+			Multiplication over $\R$ is commutative and associative.
+			It is distributive over addition.
+			Its identity element is $1$.
+			It is not invertable, since 0 doesn't have an inverse.
+		\item
+			Division over $\R \setminus \{0\}$ is not commutative, since $1/2 \neq 2/1$.
+			It is not associative, since $(1 \div 2) \div 3 = 1/6 \neq 1 \div (2 \div 3) = 3/2$.
+	\end{itemize}
+\end{example}

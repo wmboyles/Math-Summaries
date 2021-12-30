@@ -1,0 +1,91 @@
+\subsection{Properties}
+Here are several useful properties of vector spaces.
+Most of these likely seem intuitively true.\\
+
+Let $(V,+,\cdot)$ be a vector space.
+
+\begin{theorem}
+	The additive identity is unique.
+\end{theorem}
+\begin{proof}
+	We will show that any two elements of $V$ that behave like the additive identity must be equal.
+	Suppose $V$ has two additive identities $\vec{0}$ and $\vec{0}'$.
+	Since both are additive identities,
+	\begin{align*}
+		\vec{0} &= \vec{0} + \vec{0}' \\
+		\vec{0}' &= \vec{0} + \vec{0}'.
+	\end{align*}
+	Since the expressions on the right of each line are equal, the expressions on the left must also be equal.
+	So $\vec{0} = \vec{0}'$, as desired.
+\end{proof}
+
+\begin{theorem}
+	The additive inverse of an element is unique.
+\end{theorem}
+\begin{proof}
+	Suppose $\vec{v}$ and $\vec{v'}$ are both additive inverses of $\vec{u}$.
+	Then
+	\begin{align*}
+		\vec{u} + \vec{v'} = \vec{0} &\text{ and }\vec{u} + \vec{v} = \vec{0} \\
+		\vec{v} &= \vec{v} + \vec{0} \\
+		&= \vec{v} + \left(\vec{u} + \vec{v'}\right) \\
+		&= (\vec{v} + \vec{u}) + \vec{v'} \\
+		&= \vec{0} + \vec{v'} \\
+		&= \vec{v'},
+	\end{align*}
+	as desired.
+\end{proof}
+
+\begin{theorem}
+	For all $\vec{v} \in V$, $0 \cdot \vec{v} = \vec{0}$.
+\end{theorem}
+\begin{proof}
+	Notice that
+	\begin{align*}
+		0 \cdot \vec{v} &= (0 + 0) \cdot \vec{v} \\
+		&= 0\cdot\vec{v} + 0\cdot\vec{v}.
+	\end{align*}
+	Let $\vec{w}$ be the additive inverse of $0\cdot\vec{v}$.
+	Then
+	\begin{align*}
+		0\cdot\vec{v} + \vec{w} &= 0\cdot\vec{v} + 0\cdot\vec{v} + \vec{w} \\
+		\vec{0} &= 0\cdot\vec{v} + \vec{0} \\
+		\vec{0} &= 0\cdot\vec{v},
+	\end{align*}
+	as desired.
+\end{proof}
+
+\begin{theorem}
+	For all $a \in \R$, $a \cdot \vec{0} = \vec{0}$.
+\end{theorem}
+\begin{proof}
+	Notice that
+	\begin{align*}
+		a\cdot\vec{0} &= a\cdot\left(\vec{0} + \vec{0}\right) \\
+		&= a\cdot\vec{0} + a\cdot\vec{0}.
+	\end{align*}
+	Let $\vec{w}$ be the additive inverse of $a\cdot\vec{0}$.
+	Then
+	\begin{align*}
+		a\cdot\vec{0} + \vec{w} &= a\cdot\vec{0} + a\cdot\vec{0} + \vec{w} \\
+		\vec{0} &= a\cdot\vec{0} + \vec{0} \\
+		\vec{0} &= a\cdot\vec{0},
+	\end{align*}
+	as desired.
+\end{proof}
+
+\begin{theorem}
+	For all $\vec{v} \in V$, $-1 \cdot \vec{v} = -\vec{v}$.
+\end{theorem}
+\begin{proof}
+	Notice,
+	\begin{align*}
+		-1\cdot\vec{v} &= -1\cdot\vec{v} + \vec{0} \\
+		&= -1\cdot\vec{v} + \left(\vec{v} -\vec{v}\right) \\
+		&= \left(-1\cdot\vec{v} + \vec{v}\right) -\vec{v} \\
+		&= \left(-1 + 1\right)\vec{v} -\vec{v} \\
+		&= \vec{0} -\vec{v} \\
+		&= -\vec{v},
+	\end{align*}
+	as desired.
+\end{proof}

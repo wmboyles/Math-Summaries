@@ -1,0 +1,43 @@
+\subsection{Subspaces}
+\begin{definition}
+	A non-empty subset $U$ of a vector space $V$ is a subspace of $V$ if $U$ is a vector space with the operations inherited from $V$.
+\end{definition}
+
+\begin{example}
+	The set of vectors $\left\{\begin{bmatrix}x \\ y \\ 0\end{bmatrix} \mid x,y \in \R\right\}$ is a subspace of $\R^3$.
+\end{example}
+
+\begin{example}
+	The set of vectors $W = \left\{\begin{bmatrix}x\\y\\z\end{bmatrix} \mid x,y,z \in \R, 2x+y-z=-4\right\}$ is not a subspace of $\R^3$ because $\vec{0} \not\in W$.
+\end{example}
+
+It would be tedious to recheck all the vector space conditions when seeing if a set is a subspace.
+Thankfully, we have an easier subspace test
+\begin{theorem}
+	Let $U$ be a non-empty subset of a vector space $V$.
+	$U$ is a subspace of $V$ if and only if $U$ is closed under addition and scalar multiplication.
+\end{theorem}
+\begin{proof}
+	Assume that $U$ is closed under addition and scalar multiplication.
+	Since $U \subseteq V$, the addition properties of commutativity and associativity hold, the multiplicative identity is in $U$, and the distributive properties all hold.
+	Thus, all that remains to check is whether the additive inverse exists, and whether each element of $U$ has an additive inverse. \\
+	
+	Let $\vec{u} \in U$.
+	Since $U \subset V$ and $V$ is a vector space, there exists $-\vec{u} \in V$.
+	By previous result, we know that $-\vec{u} = -1\cdot\vec{u}$.
+	Since $U$ is closed under scalar multiplication, $-\vec{u} \in U$.
+	Further, since $\vec{u} + -\vec{u} = \vec{0}$, and $U$ is closed under addition, $\vec{0} \in U$.
+\end{proof}
+
+\begin{example}
+	Let $U = \left\{\begin{bmatrix}a \\ a+2 \end{bmatrix} \mid a \in \R\right\}$.
+	We see that $U \subseteq \R^2$, and we know that $\R^2$ is a vector space.
+	So, is $U$ a subspace of $\R^2$?
+	Let $\vec{a_1} = \begin{bmatrix}a_1 \\ a_1 + 2\end{bmatrix}$ and $\vec{a_2} = \begin{bmatrix} a_2 \\ a_2 + 2 \end{bmatrix}$ be elements of $U$.
+	\begin{equation*}
+		\vec{a_1} + \vec{a_2} = \begin{bmatrix}
+			a_1 + a_2 \\ a_1 + a_2 + 4
+		\end{bmatrix} \not\in U.
+	\end{equation*}
+	Since $U$ is not closed under addition, is is not a subspace of $\R^2$.
+\end{example}

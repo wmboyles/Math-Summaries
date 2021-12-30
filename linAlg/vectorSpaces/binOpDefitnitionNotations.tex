@@ -1,0 +1,34 @@
+\subsection{Definition \& Notations}
+\begin{definition}
+	For some domain $D$, A binary operation is a function $f: D \times D \to D$.
+	That is, it combines two elements of $D$ to produce another element of $D$.
+\end{definition}
+
+You've already been working with binary operations since elementary school.
+\begin{example}
+	The following are binary operations with domain $\R$.
+	\begin{itemize}
+		\item Addition ($+$)
+		\item Multiplication ($\times$)
+	\end{itemize}
+	Subtraction ($-$) is also a binary operation on $\R$.
+	It is just a special case of addition, since for all $a,b \in \R$, $a - b = a + (-b)$, and $-b \in \R$.
+\end{example}
+
+One needs to specify over which domain a function is a binary operation.
+Functions can be binary operations over some domains but not others.
+\begin{example}
+	\hspace{1pt}
+	\begin{itemize}
+		\item
+		Division ($\div$) is not a binary operation on $\R$ since $0 \in \R$, but dividing by 0 is not defined.
+		However if we consider the domain $\R \setminus \{0\}$, then division is a binary operation, since we no longer have to worry about dividing by 0.
+		\item
+		Although we saw that subtraction was a binary operation over $\R$, it is not over $D = \{x \in \R \mid x \geq 0\}$ because $1,2 \in D$, but $1 - 2 = -1 \not\in D$.
+	\end{itemize}
+\end{example}
+
+For many binary operations, we tend to abandon function notation in favor of an ``infix'' notation.
+For example, we write $a + b$ or $a \times b$ rather than $+(a,b)$ or $\times(a,b)$.
+Sometimes, if the operation is clear from context, we may drop the symbol for the operation entirely and just write the inputs next to each other.
+For example, if $a,b \in \R$, then $ab$ is understood to mean $a \times b$.

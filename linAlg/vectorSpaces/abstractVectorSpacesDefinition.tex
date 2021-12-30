@@ -1,0 +1,69 @@
+\subsection{Definition}
+\begin{definition}
+	A set $V$ is a vector space of a field $F$ (for us, $\R$ or $\mathbb{C}$) provided that the operations $\oplus: V\times V \to V$, called ``addition'', and $\odot: V \times F \to V$, called ``scalar multiplication'', are defined and satisfy the following for all $\vec{u}, \vec{v}, \vec{w} \in V$ and $a,b \in F$: \\
+	
+	\textbf{Addition Properties}
+	\begin{enumerate}
+		\item \textbf{Commutative}: $\vec{u} \oplus \vec{v} = \vec{v} \oplus \vec{u}$
+		\item \textbf{Associative}: $\vec{u} \oplus (\vec{v} \oplus \vec{w}) = (\vec{u} \oplus \vec{v}) \oplus \vec{w}$
+		\item \textbf{Additive Identity}: There exists $\vec{0} \in V$ such that for all $\vec{u} \in V$, $\vec{u} \oplus \vec{0} = \vec{u}$.
+		\item \textbf{Additive Inverse}: For each $\vec{u} \in V$, there exists $-\vec{u} \in V$ such that $\vec{u} \oplus -\vec{u} = \vec{0}$.
+	\end{enumerate}
+	
+	\textbf{Multiplication Properties}
+	\begin{enumerate}
+		\item \textbf{Multiplicatative Identity}: There exists $1 \in F$ such that for all $\vec{u} \in V$, $1 \odot \vec{u} = \vec{u}$.
+	\end{enumerate}
+	
+	\textbf{Distributive Properties}
+	\begin{enumerate}
+		\item \textbf{Left Distributes Over $\oplus$}: $a \odot \left(\vec{u} \oplus \vec{v}\right) = \left(a \odot \vec{u}\right) \oplus \left(a \odot \vec{v}\right)$
+		\item \textbf{Right Distributes Over $\oplus$}: $\left(\vec{u} \oplus \vec{v}\right) \odot a = \left(\vec{u} \odot a\right) \oplus \left(\vec{v} \odot a\right)$
+		\item \textbf{Distributes Over Field Multiplication}: $(ab)\odot\vec{u} = a\odot(b\odot\vec{u})$
+	\end{enumerate}
+\end{definition}
+
+Here are a few examples of vector spaces:
+\begin{example}
+	\hspace{1pt}
+	\begin{itemize}
+		\item
+		$\R^n$ with operations of vector addition and vector-scalar multiplication over the field $\R$
+		\item
+		$\R^2$ where
+		\begin{equation*}
+			\begin{bmatrix}
+				u_1 \\ u_2
+			\end{bmatrix} \oplus \begin{bmatrix}
+				v_1 \\ v_2
+			\end{bmatrix} = \begin{bmatrix}
+				u_1 + v_1 + 1 \\
+				u_2 + v_2 + 1
+			\end{bmatrix} \text{ and } a\odot\begin{bmatrix}
+				u_1 \\ u_2
+			\end{bmatrix} = \begin{bmatrix}
+				au_1 + 1 \\ au_2 - 1
+			\end{bmatrix}
+		\end{equation*}
+		\item
+		All polynomials of degree $n$ with real coefficients
+		\item
+		$\mathbb{Q}$ over the field $\mathbb{Q}$
+		\item
+		All real functions that are continuous on $[0,1]$
+	\end{itemize}
+\end{example}
+
+Not all operations for $\oplus$ and $\odot$ will result in vector spaces.
+\begin{example}
+	$\R$ where
+	\begin{equation*}
+		a \oplus b = 2a + 2b \text { and } k\odot a = ka
+	\end{equation*}
+	is not a vector space because
+	\begin{align*}
+		2 \oplus (3 \oplus 4) = 2 \oplus 14 &= 32, \\
+		(2 \oplus 3) \oplus 4 = 10 \oplus 4 &= 28,
+	\end{align*}
+	so $\oplus$ isn't associative.
+\end{example}

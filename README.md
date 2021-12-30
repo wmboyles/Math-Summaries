@@ -62,7 +62,7 @@ The chapters are:
 ## How to Compile (make into a PDF)
 
 Simply download the folders for each work you like to build and compile the main.tex file.
-You'll need to use a typesetting engine that supports unicode characters, like [XeLaTeX](https://www.tug.org/texlive/download-install.html).
+You'll need to use a typesetting engine that supports unicode characters, like [XeLaTeX](http://xetex.sourceforge.net/).
 Most LaTeX IDEs (like TeXStudio) have this functionality built-in.
 You can also use pdflatex to compile directly from the command line by running
 

@@ -1,0 +1,36 @@
+\subsection{Span Is a Subspace}
+\begin{theorem}
+	Let $S = \{\vec{v_1}, \vec{v_2}, \dots, \vec{v_n}\}$ be a set of $n$ vectors from a vector space $V$.
+	Then $\linspan{S}$ is the smallest subspace of $V$ containing all vectors in $S$.
+\end{theorem}
+\begin{proof}
+	Since $S \subseteq V$, and $V$ is closed under additional and scalar multiplication by virtue of being a vector space, $\linspan{S} \subseteq V$.
+	
+	First we'll show closure under addition.
+	Let $\vec{a}, \vec{b} \in \linspan{S}$.
+	Then
+	\begin{align*}
+		\vec{a} &= a_1\vec{v_1} + a_2\vec{v_2} + \dots + a_n\vec{v_n} \\
+		\vec{b} &= b_1\vec{v_1} + b_2\vec{v_2} + \dots + b_n\vec{v_n}.
+	\end{align*}
+	So,
+	\begin{equation*}
+		\vec{a} + \vec{b} = (a_1 + b_1)\vec{v_1} + (a_2 + b_2)\vec{v_2} + \dots + (a_n + b_n)\vec{v_n}.
+	\end{equation*}
+	Since each $(a_i + b_i)$ is in the associated field, we see that we can write $\vec{a} + \vec{b}$ as a linear combination of vectors from $S$.
+	Thus, $\linspan{S}$ is closed under addition.
+	
+	Now we'll show scalar multiplication.
+	Let $\vec{a} \in \linspan{S}$ and $k$ be an element from the associated field.
+	\begin{equation*}
+		k\vec{a} = (ka_1)\vec{v_1} + (ka_2)\vec{v_2} + \dots + (ka_n)\vec{v_n}.
+	\end{equation*}
+	Since each $ka_i$ is in the associated field, we see that we can write $k\vec{a}$ as a linear combination of vectors from $S$.
+	Thus, $\linspan{S}$ is closed under multiplication.
+	
+	Now that we've show $\linspan{S}$ is a subspace of $V$, we'll show its the smallest one containing all elements from $S$.
+	Suppose $U$ is a subspace of $V$ containing all elements from $S$.
+	Let $\vec{a} \in \linspan{S}$.
+	Since $U$ contains all vectors from $S$ and is a subspace, $\vec{a} \in U$.
+	Thus, $\linspan{S} \subseteq U$.
+\end{proof}

@@ -1,0 +1,26 @@
+\chapter{Finite Dimensional Vector Spaces}
+
+If you've worked with vectors in $\R^2$ before, you might have noticed that we can write any vector using only two vectors and scalar multiplication: one to represent the $x$ component and another to represent the $y$ component.
+\begin{equation*}
+	\begin{bmatrix}
+		v_x \\ v_y
+	\end{bmatrix} = v_x \begin{bmatrix}
+		1 \\ 0
+	\end{bmatrix} + v_y \begin{bmatrix}
+		0 \\ 1
+	\end{bmatrix}.
+\end{equation*}
+Although $\langle 1, 0 \rangle$ and $\langle 0, 1 \rangle$ are probably the most convenient vectors to use to break up any vector, other representations are possible.
+\begin{equation*}
+	\begin{bmatrix}
+		v_x \\ v_y
+	\end{bmatrix} = \frac{v_y + v_x}{2} \begin{bmatrix}
+		1 \\ 1
+	\end{bmatrix} + \frac{v_y - v_x}{2} \begin{bmatrix}
+		-1 \\ 1
+	\end{bmatrix}.
+\end{equation*}
+We'll formalize for vector spaces like $\R^2$ when one can or can't write a vectors in this way, and how many vectors are needed to do so.
+
+\input{./finiteVectorSpaces/linearSpan.tex}
+\input{./finiteVectorSpaces/linearIndependence.tex}

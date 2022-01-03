@@ -1,0 +1,65 @@
+\subsection{Definition}
+
+\begin{definition}
+	Let $S = \{\vec{v_1}, \vec{v_2}, \dots, \vec{v_n}\}$ be a set of $n$ vectors from a vector space $V$. 
+	The set $S$ is said to be linearly independent if the only solution to
+	\begin{equation*}
+		a_1\vec{v_1} + a_2\vec{v_2} + \dots + a_n\vec{v_n} = \vec{0}
+	\end{equation*}
+	is $a_1 = a_2 = \dots = a_n = 0$.
+	Otherwise, $S$ is said to be linearly dependent.
+\end{definition}
+
+In other words, if we can write a vector from $S$ as a linear combination of the other vectors from $S$, then $S$ is linearly dependent.
+Linearly independent sets don't have such redundancies.
+Equivalently, $S$ is linearly independent if and only if every element of $\linspan{S}$ can be written in one and only way as a linear combination of elements from $S$.
+If there were two unique representations, we could subtract them to get a non-zero solution to our equation.
+Notice too that this equation itself is asking for a representation of $\vec{0}$ other than all coefficients set to 0.
+
+\begin{example}
+	Determine whether or not the following sets are linearly independent or dependent
+	\begin{enumerate}
+		\item 
+		\begin{equation*}
+			\left\{1,x,x^2, 2x^2 - x\right\}
+		\end{equation*}
+		\item
+		\begin{equation*}
+			\left\{\begin{bmatrix}
+				1 \\ 0 \\ 1 \\ 2
+			\end{bmatrix}, \begin{bmatrix}
+				0 \\ 1 \\ 1 \\ 2
+			\end{bmatrix}, \begin{bmatrix}
+				1 \\ 1 \\ 1 \\ 3
+			\end{bmatrix}\right\}
+		\end{equation*}
+	\end{enumerate}
+\end{example}
+\begin{answer}
+	\begin{enumerate}
+		\item
+		This set is not linearly independent because
+		\begin{equation*}
+			0(1) + -1(x) + 2(x^2) + 1(2x^2 - x) = 0.
+		\end{equation*}
+		\item
+		Let the three vectors be called $\vec{v_1}$, $\vec{v_2}$, and $\vec{v_3}$ respectively.
+		Let's consider solutions ot the equation 
+		\begin{equation*}
+			a\vec{v_1} + b\vec{v_2} + c\vec{v_3} = \vec{0}.
+		\end{equation*}
+		Since $\vec{v_1}$ and $\vec{v_3}$, both have 1 in their first component, $a+c = 0$.
+		Similarly, looking at $\vec{v_2}$ and $\vec{v_3}$, we find that $b+c = 0$.
+		Thus, $a = b$ and $c = -a$.
+		So, our equation becomes
+		\begin{align*}
+			a\vec{v_1} + a\vec{v_2} - a\vec{v_3} &= \vec{0} \\
+			a\left(\vec{v_1} + \vec{v_2} - \vec{v_3}\right) &= \vec{0} \\
+			a\begin{bmatrix}
+				0 \\ 0 \\ 1 \\ 1
+			\end{bmatrix} &= \vec{0} \\
+			a &= 0.
+		\end{align*}
+		We see that the only solution is $a=b=c=0$, so the set is linearly independent.
+	\end{enumerate}
+\end{answer}

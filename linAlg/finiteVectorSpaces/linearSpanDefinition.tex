@@ -1,0 +1,41 @@
+\subsection{Definition}
+\begin{definition}
+	Let $S = \{\vec{v_1}, \vec{v_2}, \dots, \vec{v_n}\}$ be a set of $n$ vectors from a vector space $V$.
+	A linear combination of vectors from $S$ is any vector $\vec{v}$ such that
+	\begin{equation*}
+		\vec{v} = a_1\vec{v_1} + a_2\vec{v_2} + \dots + a_n\vec{v_n} = \sum_{i=1}^{n}{a_i\vec{v_i}},
+	\end{equation*}
+	where each $a_i$ is from the field associated with $V$.
+\end{definition}
+
+From above we see that any vectors in $\R^2$ can be written as a linear combination of the vectors $\langle 1, 0 \rangle$ and $\langle 0, 1 \rangle$.
+
+\begin{definition}
+	Let $S = \{\vec{v_1}, \vec{v_2}, \dots, \vec{v_n}\}$ be a set of $n$ vectors from a vector space $V$.
+	The span of $S$, written $\linspan{S}$, is the set of all vectors from $V$ that can be written as a linear combination of vectors from $S$.
+\end{definition}
+
+\begin{example}
+	\begin{equation*}
+		\begin{bmatrix}
+			1 \\ 3 \\ 5
+		\end{bmatrix} \in \linspan{\left\{\begin{bmatrix}
+				1 \\ 0 \\ 0
+			\end{bmatrix}, \begin{bmatrix}
+				0 \\ 1 \\ 0	
+			\end{bmatrix}, \begin{bmatrix}
+				0 \\ 0 \\ 1
+			\end{bmatrix}\right\}}= \R^3 \text{; } 2x^2 - 3x + 3 \in \linspan\{2,1-x,1+x^2\}.
+	\end{equation*}
+\end{example}
+\begin{example}
+	\begin{equation*}
+		\linspan\left\{\begin{bmatrix}
+			1 \\ 2 \\ 3
+		\end{bmatrix}, \begin{bmatrix}
+			2 \\ 0 \\ 1
+		\end{bmatrix}\right\} = \left\{\begin{bmatrix}
+			x \\ y \\ z
+		\end{bmatrix} \in \R^3 \mid 2x + 5y - 4z = 0\right\}
+	\end{equation*}
+\end{example}

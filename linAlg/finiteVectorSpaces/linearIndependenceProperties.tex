@@ -1,0 +1,46 @@
+\subsection{Properties}
+\begin{theorem}
+	Let $V$ be a vector space.
+	Let $S \subseteq T \subseteq V$.
+	If $T$ is linearly independent, then so is $S$.
+\end{theorem}
+Notice that since all sets that are not linearly independent are linearly dependent, the contrapositive would be ``If $S$ is linearly dependent, then so is $T$''.
+
+\begin{theorem}
+	Let $S = \{\vec{v_1}, \vec{v_2}, \dots, \vec{v_n}\}$ be a set of $n$ vectors from a vector space $V$. 
+	The set $S$ is linearly dependent if and only if there exists some $\vec{v_j} \in S$ such that $\vec{v_j} \in \linspan{(S \setminus \{\vec{v_j}\})}$.
+	If this is the case, then $\linspan{S} = \linspan{(S \setminus \{\vec{v_j}\})}$.
+\end{theorem}
+
+\begin{theorem}
+	Let $V$ be finite dimensional vector space.
+	The size of any linearly independent set in $V$ is at most the size of a spanning set of $V$.
+\end{theorem}
+\begin{proof}
+	Suppose $U = \{\vec{u_1}, \dots, \vec{v_m}\}$ is linearly independent in $V$.
+	Suppose that $W = \{\vec{w_1}, \dots, \vec{w_n}\}$ spans $V$.
+	
+	Initialize $B = W$, then add $\vec{u_1}$ to $B$
+	Since $W$ spans $V$, adding $\vec{u_1}$ to $B$ ensures that $B$ is linearly dependent.
+	By previous result, we can remove some vector other than $\vec{u_1}$ from $B$ while still ensuring that $B$ spans $V$.
+	Remove one such vector. \\
+	
+	Continue in this way, adding each vector from $U$ to $B$ one at a time.
+	By previous result, we know we can remove one vector from $B$ while still being sure it will span $S$.
+	Since all the vectors from $U$ are linearly independent, we can be sure that this vector will be from $W$. \\
+	
+	After doing this for all vectors in $U$, we see that at each step we were sure there was a vector from $W$ to remove.
+	Thus, there must at least as many elements of $W$ than of $U$.
+\end{proof}
+
+\begin{theorem}
+	Every subspace of a finite dimensional vector space is finite dimensional.
+\end{theorem}
+\begin{proof}
+	Suppose $U$ is a subspace of $V$ where $V$ is finite dimensional.
+	If $U = \{\vec{0}\}$, then we are done; otherwise, select a vector $\vec{v_1} \in U$.
+	Continue in the following way: If $U = \linspan\{\vec{v_1}, \vec{v_2}, ... \vec{v_{j-1}}\}$ then we are done; otherwise, select a vector $\vec{v_j}$ not in this span.
+	Since no vector we selected is in the span of the previous, the set of selected vectors is independent.
+	By previous result, the set of selected vectors cannot be longer than a spanning set of $V$, so we know this process terminates.
+	Thus, the set of selected vectors spans $U$ and is finite, meaning that $U$ is finite dimensional.
+\end{proof}

@@ -1,0 +1,58 @@
+\subsection{Range}
+
+\subsubsection{Definition}
+\begin{definition}
+	For $T: V \to W$, the range of $T$ is the subset of $W$ containing all elements of the form $T\vec{v}$ for some $\vec{v} \in V$.
+	\begin{equation*}
+		\range{T} = \{T\vec{v} \mid \vec{v} \in V\}.
+	\end{equation*}
+\end{definition}
+You may also hear the range referred to as the ``image'' of $V$, while the image of $\vec{v} \in V$ is $T\vec{v}$.
+
+\begin{example}
+	Find the range of the following linear map from $\R^2$ to $\R^3$:
+	\begin{equation*}
+		T\begin{bmatrix}
+			x \\ y
+		\end{bmatrix} = \begin{bmatrix}
+			x \\ y \\ x+y
+		\end{bmatrix}.
+	\end{equation*}
+\end{example}
+\begin{answer}
+	We see from the definition of the transformation that the range is all vectors in $\R^3$ with a $z$ components equal to the sum of the $x$ and $y$ components.
+	\begin{equation*}
+		\range{T} = \left\{\begin{bmatrix}
+			x \\ y \\ z
+		\end{bmatrix} \mid x,y,z \in \R, x+y=z \right\}.
+	\end{equation*}
+\end{answer}
+
+\subsubsection{Properties}
+\begin{theorem}
+	For $T \in \mathcal{L}(V,W)$, $\range{T}$ is a subspace of $W$.
+\end{theorem}
+\begin{proof}
+	Since $T\vec{0} = \vec{0}$, $\vec{0} \in \range{T}$.
+	Suppose $\vec{w_1}, \vec{w_2} \in \range{T}$.
+	Then there exists $\vec{v_1}, \vec{v_2} \in V$ such that $T\vec{v_1} = \vec{w_1}$ and $T\vec{v_2} = \vec{w_2}$.
+	So,
+	\begin{equation*}
+		T(\vec{v_1} + \vec{v_2}) = T\vec{v_1} + T\vec{v_2} = \vec{w_1} + \vec{w_2}.
+	\end{equation*}
+	So, $\vec{w_1} + \vec{w_2} \in \range{T}$.
+	Let $k$ be an element of the associated field.
+	Then
+	\begin{equation*}
+		T(k\vec{v_1}) = kT\vec{v_1} = k\vec{w_1}.
+	\end{equation*}
+	So, $k\vec{w_1} \in \range{T}$.
+	Since $\range{T}$ is non-empty and closed under addition and scalar multiplication, it is a subspace of $W$.
+\end{proof}
+
+Certain linear maps have $\range{T} = W$.
+These are in fact exactly the surjective linear maps.
+\begin{definition}
+	A function $T: V \to W$ is surjective if $\range{T} = W$.
+\end{definition}
+You may also hear surjective functions called ``onto''.

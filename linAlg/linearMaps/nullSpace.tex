@@ -1,0 +1,79 @@
+\subsection{Null Space}
+
+\subsubsection{Definition}
+\begin{definition}
+	For $T \in \mathcal{L}(V,W)$, the null space of $T$, notated $\linnull{T}$, is the set of all vectors from $V$ that are mapped to the zero vector of $W$.
+	\begin{equation*}
+		\linnull{T} = \{\vec{v} \in V \mid T\vec{v} = \vec{0}\}.
+	\end{equation*}
+\end{definition}
+You may also hear the null space referred to as the ``kernel''.
+
+\begin{example}
+	Find the null space of the following linear map from $\R^3$ to $\R^2$:
+	\begin{equation*}
+		T\begin{bmatrix}
+			x \\ y \\ z
+		\end{bmatrix} = \begin{bmatrix}
+			x-z \\ y-z
+	\end{bmatrix}.
+	\end{equation*}
+\end{example}
+\begin{answer}
+	Since we are looking for when the output of the transformation is the zero vector, we want when $x-z = 0$ and $y-z = 0$.
+	Thus, $x=z$ and $y=z$, so $x=y=z$.
+	So,
+	\begin{equation*}
+		\linnull{T} = \left\{x\begin{bmatrix}
+			1 \\ 1 \\ 1
+		\end{bmatrix} \mid x \in \R\right\}.
+	\end{equation*}
+\end{answer}
+
+\subsubsection{Properties}
+\begin{theorem}
+	For $T \in \mathcal{L}(V,W)$, $\linnull{T}$ is a subspace of $V$.
+\end{theorem}
+\begin{proof}
+	By previous result, we know that $\vec{0} \in \linnull{T}$.
+	Suppose $\vec{u}, \vec{v} \in \linnull{T}$.
+	Then
+	\begin{equation*}
+		T(\vec{u} + \vec{v}) = T\vec{u} + T\vec{v} = \vec{0} + \vec{0} = \vec{0}.
+	\end{equation*}
+	So, $\vec{u} + \vec{v} \in \linnull{T}$.
+	Let $k$ be in the field associated with $V$ and $W$.
+	Then
+	\begin{equation*}
+		T(k\vec{u}) = kT\vec{u} = k\vec{0} = \vec{0}.
+	\end{equation*}
+	So, $k\vec{u} \in \linnull{T}$.
+	Since $\linnull{T}$ is non-empty and closed under addition and scalar multiplication, it is a subspace of $V$.
+\end{proof}
+
+Certain linear maps only contain the zero vector in their null space.
+These are in fact exactly the injective linear maps.
+
+\begin{definition}
+	A function $T: V \to W$ is injective if $T\vec{u} = T\vec{v} \implies \vec{u} = \vec{v}$.
+\end{definition}
+That is, injective functions are those that don't map two different elements in the domain to the same element in the codomain.
+You may also hear injective functions called ``one-to-one''.
+
+\begin{theorem}
+	For $T \in \mathcal{L}(V,W)$, $T$ is injective if and only of $\linnull{T} = \{\vec{0}\}$.
+\end{theorem}
+\begin{proof}
+	$\implies$: Suppose $T$ is injective.
+	By previous result $\vec{0} \in \linnull{T}$.
+	Suppose $\vec{v} \in \linnull{T}$.
+	Then $T(\vec{v}) = \vec{0} = T(\vec{0})$.
+	Since $T$ is injective, we must have $\vec{v} = \vec{0}$.
+	Thus, $\vec{0}$ is the only element of $\linnull{T}$. \\
+	
+	$\impliedby$: Suppose $\linnull{T} = \{\vec{0}\}$.
+	Let $\vec{u}, \vec{v} \in V$ with $T\vec{u} = T\vec{v}$.
+	Then $\vec{0} = T\vec{u} - T\vec{v} = T(\vec{u} - \vec{v})$.
+	Since $\vec{0}$ is the only element of $\linnull{T}$, we must have $\vec{u} - \vec{v} = 0$, or $\vec{u} = \vec{v}$.
+	Thus, $T$ is injective.
+\end{proof}

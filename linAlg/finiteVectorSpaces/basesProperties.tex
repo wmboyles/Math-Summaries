@@ -1,0 +1,41 @@
+\subsection{Properties}
+A basis extends the idea of linear independence from just considering the zero vector to all vectors in a vector space.
+\begin{theorem}
+	A set of vectors $\{\vec{v_1}, \vec{v_2}, \dots, \vec{v_n}\}$ from a vector space $V$ is a basis for $V$ if and only every vector $\vec{v} \in V$ can be uniquely written in the form
+	\begin{equation*}
+		\vec{v} = a_1\vec{v_1} + a_2\vec{v_2} + \dots + a_n\vec{v_n},
+	\end{equation*}
+	where $a_1, a_2, \dots, a_n$ are from the field associated with $V$.
+\end{theorem}
+
+\begin{theorem}
+	Every spanning set of a vector space $V$ can be made into a basis for $V$ by removing some elements.
+\end{theorem}
+\begin{proof}
+	To make a spanning set into a basis, we need to remove vectors from the set to make it linearly independent, while still maintaining a spanning set of $V$.
+	Start by removing all zero vectors from the set.
+	Next, continue by removing vector $\vec{v_j}$ from the set if it's in $\linspan\{\vec{v_1}, \dots, \vec{v_{j-1}}\}$.
+	The resulting set is linearly independent because all vectors are not in the span of the previous.
+	The resulting set also still spans $V$ because we only removed vectors that were already in the span of previous vectors.
+	Thus, the resulting set is a basis for $V$.
+\end{proof}
+
+\begin{corollary}
+	Every finite dimensional vector space has a basis.
+\end{corollary}
+\begin{proof}
+	By definition, a finite dimensional vector space has a finite spanning set.
+	So, we simply apply the process described previously to make a basis from the spanning set.
+\end{proof}
+
+Just like we could remove vectors from a spanning set to form a basis, we can also add vectors to a linearly independent set.
+\begin{theorem}
+	Every linearly independent set of vectors from a finite dimensional vector space $V$ can be extend to make a basis for $V$.
+\end{theorem}
+\begin{proof}
+	Let $U = \{\vec{u_1}, \vec{u_2}, \dots, \vec{v_m}\}$ be a linearly independent set of vectors from $V$.
+	Let $W = \{\vec{w_1}, \vec{w_2}, \dots, \vec{w_n}\}$ be a basis of $V$.
+	Then the set $U \cup W = \{\vec{u_1}, \dots, \vec{u_m}, \vec{w_1}, \dots \vec{w_n}\}$ certainly spans $V$.
+	When we apply the procedure to turn this spanning set into a basis for $V$, none of the vectors from $U$ get removed, since they are linearly independent.
+	Thus, our resulting basis is an extension of $U$ with some vectors from $W$, as desired.
+\end{proof}

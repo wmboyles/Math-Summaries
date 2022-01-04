@@ -1,0 +1,21 @@
+\subsection{Definition}
+\begin{definition}
+	Let $V$ be a vector space.
+	A non-empty set $S$ of vectors from $V$ is a basis for $V$ if
+	\begin{enumerate}
+		\item $S$ is a spanning set of $V$.
+		\item $S$ is linearly independent.
+	\end{enumerate}
+\end{definition}
+
+\begin{example}
+	We saw before that the set $\{\langle 1, 0, 0 \rangle, \langle 0, 1, 0 \rangle, \langle 0, 0, 1 \rangle\}$ is linearly independent and spans $\R^3$.
+	Thus, it is a basis for $\R^3$.
+	This is called the ``standard basis'' for $\R^3$, and the same pattern holds for $\R^n$.
+\end{example}
+\begin{example}
+	The set $\{1, x, x^2, \dots\}$ is a basis for the infinite dimensional vector space of polynomials with real coefficients.
+\end{example}
+\begin{example}
+	Although $\{\langle 1, 0, 1, 2 \rangle, \langle 0, 1, 1, 2 \rangle, \langle 1, 1, 1, 3 \rangle \}$ is linearly independent, it does not span $\R^4$ because $\langle 1, 1, 1, 1 \rangle$ is in $\R^4$ but is not in the span of these three vectors.
+\end{example}

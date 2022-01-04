@@ -1,0 +1,43 @@
+
+\subsection{Properties}
+Our results about the length of linearly independent sets and subspaces extend to dimension.
+\begin{theorem}
+	If $U$ is a subspace of a finite dimensional vector space $V$, then $\dim{U} \leq \dim{V}$.
+\end{theorem}
+\begin{proof}
+	A basis for $U$ is linearly independent in $V$, and a basis for $V$ spans $V$.
+	So, applying a previous result and the definition of dimension, $\dim{U} \leq \dim{V}$.
+\end{proof}
+
+Any linearly independent set of vectors with size equal to the dimension is a basis.
+\begin{theorem}
+	Let $V$ be a finite dimensional vector space.
+	Then every linearly independent set of vectors from $V$ with size $\dim{V}$ is a basis for $V$.
+\end{theorem}
+\begin{proof}
+	Let $\dim{V} = n$, and suppose $U = \{\vec{v_1}, \vec{v_2}, \dots, \vec{v_n}\}$ is linearly independent in $V$.
+	We know by previous result that we can extend $U$ to form a basis.
+	This basis must have $n$ elements.
+	Thus, the extension is trivial and adds no vectors, meaning $U$ is a basis for $V$.
+\end{proof}
+
+Similarly, any spanning set of vectors with size equal to the dimension is a basis.
+\begin{theorem}
+	Let $V$ be a finite dimensional vector space.
+	Then every spanning set of vectors from $V$ with size $\dim{V}$ is a basis for $V$
+\end{theorem}
+\begin{proof}
+	Let $\dim{V} = n$, and suppose $S = \{\vec{v_1}, \dots, \vec{v_n}\}$ is a spanning set in $V$.
+	We know by previous result that we can remove vectors from $S$ to form a basis.
+	Thus basis must have $n$ elements.
+	Thus, the removal is trivial and removes no vectors, meaning $S$ is a basis for $V$.
+\end{proof}
+
+\begin{example}
+	Show that $\{\langle 1, 1 \rangle, \langle -1, 1 \rangle\}$ is a basis for $\R^2$.
+\end{example}
+\begin{answer}
+	We showed previously that any vector from $\R^2$ can be written as a linear combination of these vectors.
+	Thus, the set is spanning.
+	Since $\dim{\R^2} = 2$, and our spanning set has 2 elements, it must be a basis.
+\end{answer}

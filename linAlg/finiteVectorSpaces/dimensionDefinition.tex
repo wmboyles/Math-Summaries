@@ -1,0 +1,39 @@
+\subsection{Definition}
+\begin{theorem}
+	Any two bases of the same finite dimensional vector space $V$ have the same size.
+\end{theorem}
+\begin{proof}
+	Let $B_1$ and $B_2$ be two bases for $V$.
+	Since $B_1$ is linearly independent in $V$, and $B_2$ spans $V$,
+	\begin{equation*}
+		\abs{B_1} \leq \abs{B_2},
+	\end{equation*}
+	by previous result.
+	Similarly, since $B_2$ is linearly independent in $V$, and $B_1$ spans $V$,
+	\begin{equation*}
+		\abs{B_1} \leq \abs{B_2},
+	\end{equation*}
+	by previous result.
+	Thus,
+	\begin{equation*}
+		\abs{B_1} = \abs{B_2},
+	\end{equation*}
+	as desired.
+\end{proof}
+
+\begin{definition}
+	Let $V$ be a finite dimensional vector space.
+	The dimension of $V$, denoted $\dim{V}$, is the size of any basis for $V$.
+\end{definition}
+
+\begin{example}
+	Here are the dimension of some vector spaces:
+	\begin{itemize}
+		\item
+		$\dim{\R^n} = n$, since the standard basis has $n$ elements.
+		\item
+		$\mathcal{P}_m$, the set of a polynomials with real coefficients of degree at most $m$, has dimension $m+1$ since $\{1, x, x^2, \dots, x^m\}$ is a basis.
+		\item
+		The set of all $n \times m$ matrices with real coefficients has dimension $nm$ (imagine ``unwrapping'' the matrix to look like a vector in $\R^{nm}$).
+	\end{itemize}
+\end{example}

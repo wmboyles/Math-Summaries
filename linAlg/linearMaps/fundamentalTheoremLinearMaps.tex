@@ -1,0 +1,68 @@
+\section{Fundamental Theorem of Linear Maps}
+
+For finite-dimensional domains, the dimension of the null space and range of and dimension of the range of any linear transformation sum to give the dimension of the domain.
+\begin{theorem}
+	Let $V$ be a finite dimensional vector space and $T \in \mathcal{L}(V,W)$.
+	Then $\range{T}$ is finite dimensional, and
+	\begin{equation*}
+		\dim{V} = \dim{\linnull{T}} + \dim{\range{T}}.
+	\end{equation*}
+\end{theorem}
+\begin{proof}
+	Let $U = \{ \vec{u_1}, \dots, \vec{u_m} \}$ be a basis for $\linnull{T}$, so $\dim{\linnull{T}} = m$.
+	This linearly independent list containing elements from $V$ can be extend to be a basis $U' = \{\vec{u_1}, \dots, \vec{u_m}, \vec{v_1}, \dots \vec{v_n}\}$, which means $\dim{V} = m+n$. \\
+	
+	Now we just need to show that $\dim{\range{T}} = n$.
+	We will do show by showing that $T\vec{v_1}, \dots, T\vec{v_n}$ is a basis for $\range{T}$.
+	Let $\vec{v} \in V$.
+	Since $U'$ spans $V$, we can write
+	\begin{align*}
+		\vec{v} &= a_1\vec{u_1} + \dots + a_m\vec{u_m} + b_1\vec{v_1} + \dots + b_n\vec{v_n} \\
+		T\vec{v} &= T(a_1\vec{u_1}) + \dots + T(a_m\vec{u_m}) + T(b_1\vec{v_1}) + \dots + T(b_n\vec{v_n}) \\
+			&= a_1\vec{0} + \dots + a_m\vec{0} + b_1T\vec{v_1} + \dots + b_n\vec{v_n} \\
+			&= b_1T\vec{v_1} + \dots + b_n\vec{v_n} \\
+	\end{align*}
+	So, we see that $X = \{T\vec{v_1}, \dots, T\vec{v_n}\}$ spans $\range{T}$.
+	Now we just need to show that $X$ is linearly independent.
+	Let $c_1, \dots, c_n$ be from the associated field where
+	\begin{align*}
+		c_1T\vec{v_1} + \dots + c_nT\vec{v_n} &= \vec{0} \\
+		T(c_1\vec{v_1} + \dots + c_n\vec{v_n}) &= \vec{0} \\
+		c_1\vec{v_1} + \dots + c_n\vec{v_n} &\in \linnull{T} \\
+		c_1\vec{v_1} + \dots + c_n\vec{v_n} &= d_1\vec{u_1} + \dots + d_m\vec{u_m}.
+	\end{align*}
+	Since each of the $\vec{v_i}$'s and $\vec{u_i}$'s are linearly independent, the only solution to this equation must be all $c_i$'s and $d_i$'s are 0.
+	Thus, $X$ is a linearly indepepdent set, meaning $\dim{\range{T}} = n$.
+\end{proof}
+
+\begin{corollary}
+	Let $V$ and $W$ be finite dimensional vector spaces with $\dim{V} > \dim{W}$.
+	Then no linear map from $V$ to $W$ is injective.
+\end{corollary}
+\begin{proof}
+	Let $T \in \mathcal{L}(V,W)$.
+	Then
+	\begin{align*}
+		\dim{V} &= \dim{\range{T}} + \dim{\null{T}} \\
+		\dim{\null{T}} &= \dim{V} - \dim{\range{T}} \\
+			&\geq \dim{V} - \dim{W} \\
+			&> 0.
+	\end{align*}
+	Thus, the null space contains something other than $\vec{0}$, meaning $T$ cannot be injective.
+\end{proof}
+
+\begin{corollary}
+	Let $V$ and $W$ be finite dimensional vector spaces with $\dim{V} < \dim{W}$.
+	Then no linear map from $V$ to $W$ is surjective.
+\end{corollary}
+\begin{proof}
+	Let $T \in \mathcal{L}(V,W)$.
+	Then
+	\begin{align*}
+		\dim{V} &= \dim{\range{T}} + \dim{\null{T}} \\
+		\dim{\range{T}} &= \dim{V} - \dim{\null{T}} \\
+			&\leq \dim{V}  \\
+			&< \dim{W}.
+	\end{align*}
+	Since $\dim{\range{T}} < \dim{W}$, $\range{T} \neq W$, so $T$ is not surjective.
+\end{proof}

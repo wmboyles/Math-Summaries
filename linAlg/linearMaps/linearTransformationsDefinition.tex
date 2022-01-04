@@ -1,0 +1,46 @@
+\subsection{Definition}
+\begin{definition}
+	A linear map (linear transformation) from a vector space $V$ to a vector space $W$ is a function $T: V \to W$ that preserves the linearity properties of $V$ and $W$.
+	That is, for all $\vec{u}, \vec{v} \in V$ and $k \in F$, where $F$ is the field associated with $V$ and $W$,
+	\begin{align*}
+		T(\vec{u} + \vec{v}) &= T(\vec{u}) + T(\vec{v}) \\
+		T(k\vec{u}) &= k T(\vec{u}).
+	\end{align*}
+\end{definition}
+Often, we'll drop the parentheses and write $T\vec{u}$.
+
+\begin{example}
+	Show that $T: \R^2 \to \R^2$ defined by $T(\langle x, y \rangle) = \langle x+y, x-y \rangle$ is a linear transformation.
+\end{example}
+\begin{answer}
+	We'll show each of the properties hold.
+	For the first property:
+	\begin{align*}
+		T(\langle x_1, y_1 \rangle + \langle x_2, y_2 \rangle) &= T(\langle x_1+x_2, y_1+y_2 \rangle) \\
+		&= \langle x_1+x_2+y_1+y_2, x_1-x_2+y_1-y_2 \rangle \\
+		&= \langle x_1+y_1, x_1-y_1 \rangle + \langle x_2+y_2, x_2-y_2 \rangle \\
+		&= T(\langle x_1, y_1 \rangle) + T(\langle x_2, y_2 \rangle).
+	\end{align*}
+	For the second property:
+	\begin{align*}
+		T(k \langle x, y \rangle) &= T(\langle kx, ky \rangle) \\
+		&= \langle kx + ky, kx = ky \rangle \\
+		&= k \langle x+y, x-y \rangle \\
+		&= k T(\langle x, y \rangle).
+	\end{align*}
+\end{answer}
+
+\subsubsection{Set of All Linear Maps}
+\begin{definition}
+	The set of all linear maps from $V$ to $W$ is denoted $\mathcal{L}(V,W)$.
+\end{definition}
+
+There are two important elements of this set, which have special notations.
+\begin{itemize}
+	\item \textbf{Zero}
+	This is the transformation that sends all elements to $W$'s zero vector.
+	It is notated as $0$, or as \textbf{0}.
+	\item \textbf{Identity}
+	This map exists when $V = W$ and sends all elements to themselves.
+	It is notated as $I$, or as \textbf{1}.
+\end{itemize}

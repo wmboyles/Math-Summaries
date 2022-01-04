@@ -1,0 +1,74 @@
+\subsection{Properties}
+
+\begin{theorem}
+	A linear transformation $T: V \to W$ is uniquely determined by how is transforms the vectors in a basis for $V$.
+\end{theorem}
+\begin{proof}[Proof Sketch]
+	Let $B = \{\vec{v_1}, \vec{v_2}, \dots, \vec{v_n}\}$ be a basis for $V$.
+	Let $\vec{v} \in V$.
+	Since $B$ is a basis, $\vec{v}$ has a unique representation as a linear combination of vectors from $B$.
+	So,
+	\begin{align*}
+		\vec{v} &= a_1\vec{v_1} + a_2\vec{v_2} + \dots + a_n\vec{v_n} \\
+		T\vec{v} &= T(a_1\vec{v_1} + a_2\vec{v_2} + \dots + a_n\vec{v_n}) \\
+			&= T(a_1\vec{v_1}) + T(a_2\vec{v_2}) + \dots + T(a_n\vec{v_n}) \\
+			&= a_1T\vec{v_1} + a_2T\vec{v_2} + \dots + a_nT\vec{v_n}.
+	\end{align*}
+\end{proof}
+
+\begin{corollary}
+	For any linear transformation $T: V \to W$, $T\vec{0} = \vec{0}$.
+\end{corollary}
+
+\begin{theorem}
+	Let $B = \{\vec{v_1}, \vec{v_2}, \dots, \vec{v_n}\}$ be a basis for $V$ and $\vec{w_1},\dots,\vec{w_n} \in W$.
+	Then there exists a unique linear map $T: V \to W$ such that
+	\begin{equation*}
+		T\vec{v_j} = \vec{w_j}
+	\end{equation*}
+	for $j = 1, 2, \dots, n$.
+	In particular, the transformation is
+	\begin{equation*}
+		T(a_1\vec{v_1} + \dots + a_n\vec{v_n}) = a_1\vec{w_1} + \dots + a_n\vec{w_n}.
+	\end{equation*}
+\end{theorem}
+
+\subsubsection{Operations on Set of Linear Transformations}
+
+We can define addition and scalar multiplication on $\mathcal{L}(V,W)$ and show that we in fact have a vector space.
+\begin{definition}
+	Let $S, T \in \mathcal{L}(V,W)$ and $k$ be a scalar from the associated field.
+	Then for all $\vec{v} \in V$,
+	\begin{equation*}
+		(S+T)(\vec{v}) = S\vec{v} + T\vec{v}
+	\end{equation*}
+	and
+	\begin{equation*}
+		(kT)(\vec{v}) = k(T\vec{v}).
+	\end{equation*}
+\end{definition}
+
+\begin{theorem}
+	The set $\mathcal{L}(V,W)$ with the operations defined above is a vector space.
+\end{theorem}
+
+We can also define the multiplication of two elements as function composition.
+\begin{definition}
+	Let $S \in \mathcal{L}(V,U)$ and $T \in \mathcal{L}(U,W)$.
+	Then for all $\vec{v} \in V$,
+	\begin{equation*}
+		(ST)(\vec{v}) = S(T\vec{v}).
+	\end{equation*}
+\end{definition}
+This is normally notated $ST\vec{v}$.
+Notice that even if the domains and codomains allow $TS\vec{v}$ to be defined, multiplication of linear transformations is not in general commutative: $ST\vec{v} \neq TS\vec{v}$.
+
+There are however some properties of multiplication that hold
+\begin{theorem}
+	The following properties of multiplication of linear transformations holds (assuming the domains and codomains allow the operations to be defined):
+	\begin{itemize}
+		\item \textbf{Associativity}: $(T_1T_2)T_3 = T_1(T_2T_3)$.
+		\item \textbf{Identity}: $TI = IT = T$.
+		\item \textbf{Left \& Right Distributive}: $(T_1 + T_2)T_3 = T_1T_3 + T_2T_3$ and $T_1(T_2 + T_3) = T_1T_2 + T_1T_3$.
+	\end{itemize}
+\end{theorem}

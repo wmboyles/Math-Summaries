@@ -1,0 +1,118 @@
+\subsection{Invertible Functions}
+
+\subsubsection{Generally}
+\begin{definition}
+	A function $T: V \to W$ is invertible if there exists an inverse function $T^{-1}: W \to V$ such that $T \circ T^{-1}$ is the identity on $W$ and $T^{-1} \circ T$ is the identity on $V$.
+\end{definition}
+That is, invertible functions are those that are reversible both ways.
+Notice too that $T$ is the inverse of $T^{-1}$.
+That is, $(T^{-1})^{-1} = T$.
+
+\begin{theorem}
+	The inverse of function is unique.
+\end{theorem}
+\begin{proof}
+	Let $T: V \to W$ be an invertible function.
+	Let $S_1, S_2: W \to V$ be inverses of $T$.
+	Then
+	\begin{equation*}
+		S_1 = S_1 \circ I = S_1 \circ (T \circ S_2) = (S_1 \circ T) \circ S_2 = I \circ S_2 = S_2.
+	\end{equation*}
+	Thus, all inverses of $T$ are in fact the same function, as desired.
+\end{proof}
+This uniqueness property is what allows the notation $T^{-1}$ be be well-defined.
+
+\begin{example}
+	Find the inverse function of the $T: \R^3 \to \R^3$ defined by
+	\begin{equation*}
+		T\begin{bmatrix}
+			x \\ y \\ z
+		\end{bmatrix} = \frac{1}{2}\begin{bmatrix}
+			x+y \\ y+z \\ z+x
+		\end{bmatrix}.
+	\end{equation*}
+\end{example}
+\begin{answer}
+	We'll check that the function $S: \R^3 \to \R^3$ defined by
+	\begin{equation*}
+		S\begin{bmatrix}
+			x \\ y \\ z
+		\end{bmatrix} = \begin{bmatrix}
+			x-y+z \\ x+y-z \\ -x+y+z
+		\end{bmatrix}
+	\end{equation*}
+	is the inverse.
+	\begin{alignat*}{2}
+		(T \circ S)\left(\begin{bmatrix} x \\ y \\ z\end{bmatrix}\right)
+		&= T\left(\begin{bmatrix} x-y+z \\ x+y-z \\ -x+y+z \end{bmatrix}\right) 
+		&= \frac{1}{2} \begin{bmatrix} (x-y+z)+(x+y-z) \\ (x+y-z)+(-x+y+z) \\ (-x+y+z)+(x-y+z)\end{bmatrix} 
+		&= \begin{bmatrix} x \\ y \\ z \end{bmatrix}. \\
+		(S \circ T)\left(\begin{bmatrix} x \\ y \\ z \end{bmatrix}\right)
+		&= S\left(\frac{1}{2}\begin{bmatrix} x+y \\ y+z \\ z+x \end{bmatrix}\right) 
+		&= \frac{1}{2}\begin{bmatrix} (x+y)-(y+z)+(z+x) \\ (x+y)+(y+z)-(z+x) \\ -(x+y)+(y+z)+(z+x) \end{bmatrix} 
+		&= \begin{bmatrix} x \\ y \\ z \end{bmatrix}.
+	\end{alignat*}
+	Since $T \circ S$ and $S \circ T$ are both the identity, $S$ is indeed the inverse of $T$.
+\end{answer}
+
+\begin{definition}
+	If a function $T: V \to W$ is both injective and surjective, then it is bijective.
+	We say then that $T$ is a bijection.
+\end{definition}
+
+\begin{theorem}
+	A function is invertible if and only if it is bijective.
+\end{theorem}
+\begin{proof}
+	Let $T: V \to W$ be a function. \\
+	
+	$\implies$: Suppose $T$ is invertible.
+	We'll show that $T$ is a bijection by showing it's both injective in surjective.
+	Let $u, v \in V$ such taht $T(u) = T(v)$.
+	Then
+	\begin{equation*}
+		u = T^{-1}(T(u)) = T^{-1}(T(v)) = v.
+	\end{equation*}
+	So, $T$ is injective.
+	Let $w \in W$.
+	Since $T$ is invertible, $w = T(T^{-1}(w))$.
+	Hence, $w \in \range{T}$, meaning $\range{T} = W$, so $T$ is surjective. \\
+	
+	$\impliedby$: Suppose $T$ is a bijection.
+	For each element $w \in W$, define $S(w)$ to be the unique element of $V$ such that $(T \circ S)(w) = w$.
+	The existence of $S$ and uniqueness of its output are implied by $T$ being a bijection.
+	We see that by construction, $T \circ S$ is the identity on $W$.
+	So, all that remains is to show that $S \circ T$ is the identity on $V$.
+	Let $v \in V$.
+	Then
+	\begin{equation*}
+		T((S \circ T)(v)) = (T \circ S)(T(v)) = I(T(v)) = T(v).
+	\end{equation*}
+	Since $T$ is injective, this result implies that $(S \circ T)(v) = v$, meaning $S \circ T$ is the identity on $V$.
+\end{proof}
+
+\subsubsection{For Linear Maps}
+Inverse functions behave nicely when looking just at linear maps.
+In particular, the inverse of a linear map is also a linear map.
+
+\begin{theorem}
+	The inverse of a linear map is a linear map.
+\end{theorem}
+\begin{proof}
+	Let $T: U \to V$ be an invertible linear map.
+	Let $x,y \in V$.
+	Then
+	\begin{align*}
+		T^{-1}(x + y) &= T^{-1}\left(T(T^{-1}(x)) + T(T^{-1}(y))\right) \\
+		&= T^{-1}(T(T^{-1}(x) + T^{-1}(y))) \\
+		&= T^{-1}(x) + T^{-1}(y).
+	\end{align*}
+	Let $k$ be from the field associated with $U$ and $V$.
+	Then
+	\begin{align*}
+		T^{-1}(kx) &= T^{-1}(k T(T^{-1}(T(x))) ) \\
+		&= T^{-1}(T(k T^{-1}(x))) \\
+		&= kT^{-1}(x).
+	\end{align*}
+	Thus, $T^{-1}$ is a linear map.
+\end{proof}

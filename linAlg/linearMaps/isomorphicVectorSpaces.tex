@@ -1,0 +1,57 @@
+\subsection{Isomorphic Vector Spaces}
+
+In working on examples, you might have noticed that certain vector spaces seem nearly the same.
+For example, when working with elements as just members of a vector space, there seems to be no difference between $\R^4$ and $\mathcal{M}_{2 \times 2}$, the vector space of $2 \times 2$ matrices with real entries.
+We'll formalize this idea of vector spaces being the same and find that all finite dimensional vector spaces of the same dimension and field are the same.
+
+\begin{definition}
+	An isomorphism between two vector spaces is an invertible linear map.
+	If such a function exists, then the two vector spaces are said to be isomorphic to each other.
+\end{definition}
+
+\begin{theorem}
+	Two finite dimensional vector spaces over the same field are isomorphic if and only if they have the same dimension.
+\end{theorem}
+\begin{proof}
+	$\implies$: Let $T: V \to W$ be the isomorphism between finite dimensional vector spaces $V$ and $W$.
+	So, $\linnull{T} = \{\vec{0}\}$ and $\range{T} = W$, meaning $\dim{\linnull{T}} = 0$ and $\dim{\range{T}} = \dim{W}$.
+	So, by the Fundamental Theorem of Linear Maps, $\dim{V} = \dim{W}$. \\
+	
+	$\impliedby$: Let $V$ and $W$ be finite dimensional vector spaces with the same dimension.
+	Let $\{\vec{v_1}, \dots, \vec{v_n}\}$ be a basis for $V$ and $\{\vec{w_1}, \dots, \vec{w_n}\}$ be a basis for $W$.
+	Define $T: V \to W$ by
+	\begin{equation*}
+		T(c_1\vec{v_1} + \dots + c_2\vec{v_n}) = c_1\vec{w_1} + \dots c_n\vec{w_n}.
+	\end{equation*}
+	The function $T$ is surjective because the $\vec{w}$'s span $W$, meaning we can adjust the scalars to get any vector in $W$ as the output.
+	Further, $T$ is injective because the $\vec{w}$'s are linearly independent, meaning $\null{T} = \{0\}$.
+	Since $T$ is injective and surjective, it is an isomorphism, meaning $V$ and $W$ are isomorphic.
+\end{proof}
+
+\begin{corollary}
+	Let $F$ be a field.
+	Then all vector spaces with field $F$ and dimension $n$ are isomorphic to $F^n$.
+\end{corollary}
+
+\begin{example}
+	Show that $\mathcal{M}_{2 \times 2}$ and $\R^4$ are isomorphic.
+\end{example}
+\begin{answer}
+	Both these vector spaces have dimension 4, so they are isomorphic by previous result.
+	One simple isomorphism between them is
+	\begin{equation*}
+		T\left(\begin{bmatrix}
+			w & x \\ y & z
+		\end{bmatrix}\right) = \begin{bmatrix}
+			w \\ x \\ y \\ z
+		\end{bmatrix}.
+	\end{equation*}
+\end{answer}
+
+\begin{theorem}
+	Let $V$ and $W$ be finite dimensional vector spaces.
+	Then $\mathcal{L}(V,W)$, the vector space of all linear transformations from $V$ to $W$ is finite dimensional with
+	\begin{equation*}
+		\dim{\mathcal{L}(V,W)} = \dim{V} \cdot \dim{W}.
+	\end{equation*}
+\end{theorem}

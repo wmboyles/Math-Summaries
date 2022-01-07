@@ -21,7 +21,7 @@ The determinant is only defined for square matrices. It's easiest to understand 
 We can define $a_{ij}$ as the entry in the ith row and jth column of matrix $A$ and $A_{ij}$ as the adjudicate matrix, which is the matrix $A$ if row $i$ and column $j$ were removed. This allows us to write a general formula for the determinant.
 \begin{definition}
 	\begin{equation*}
-		\det{A} = \sum_{j=1}^{n}{\left(-1\right)^{i+j}a_{ij}A_{ij}} \text{ (for fixed i)} = \sum_{i=1}^{n}{\left(-1\right)^{i+j}a_{ij}A_{ij}} \text{ (for fixed j)}
+		\det{A} = \sum_{j=1}^{n}{\left(-1\right)^{i+j}a_{ij}\abs{A_{ij}}} \text{ (for fixed i)} = \sum_{i=1}^{n}{\left(-1\right)^{i+j}a_{ij}\abs{A_{ij}}} \text{ (for fixed j)}
 	\end{equation*}
 \end{definition}
 \noindent

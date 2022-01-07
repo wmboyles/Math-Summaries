@@ -1,0 +1,68 @@
+\subsection{Definition}
+Matrices of size $m \times n$ can represent a linear map from a space with dimension $m$ to one with dimension $n$.
+\begin{definition}
+	Let $T \in \mathcal{L}(V,W)$.
+	Let $\{\vec{v_1}, \dots, \vec{v_n}\}$ be a basis for $V$ and $\{\vec{w_1}, \dots, \vec{w_m}\}$ be a basis for $W$.
+	The matrix of $T$ with respect to these bases is the $m \times n$ matrix $\mathcal{M}(T)$ whose entries $\mathcal{M}(T)_{j,k}$ are defined by
+	\begin{equation*}
+		T\vec{v_k} = \mathcal{M}(T)_{1,k}\vec{w_1} + \dots + \mathcal{M}(T)_{m,k}\vec{w_m}.
+	\end{equation*}
+\end{definition}
+That is, the $k$th column of $A$ gives the scalars to write $T\vec{v_k}$ as a linear combination of the basis vectors for $W$.
+
+\begin{example}
+	Let $T: \R^2 \to \R^3$ be defined by
+	\begin{equation*}
+		T\begin{bmatrix}
+			x \\ y
+		\end{bmatrix} = \begin{bmatrix}
+			x+3y \\ 2x+5y \\ 7x+9y
+		\end{bmatrix}.
+	\end{equation*}
+	Find $\mathcal{M}(T)$ assuming standard bases.
+\end{example}
+\begin{answer}
+	To find the $k$th column of $\mathcal{M}(T)$, we simply need to calculate $T$ of the $k$th basis vector.
+	\begin{align*}
+		T\begin{bmatrix}
+			1 \\ 0
+		\end{bmatrix} &= \begin{bmatrix}
+			1 \\ 2 \\ 7
+		\end{bmatrix} \\
+		T\begin{bmatrix}
+			0 \\ 1
+		\end{bmatrix} &= \begin{bmatrix}
+			3 \\ 5 \\ 9
+		\end{bmatrix}.
+		\mathcal{M}(T) = \begin{bmatrix}
+			1 & 3 \\
+			2 & 5 \\
+			7 & 9
+		\end{bmatrix}.
+	\end{align*}
+	We can check that this gives the correct result whether we go through $T$ or $\mathcal{M}(T)$.
+	\begin{align*}
+		T\begin{bmatrix}
+			1 \\ 3
+		\end{bmatrix} &= \begin{bmatrix}
+			10 \\ 17 \\ 34
+		\end{bmatrix} \\
+		\mathcal{M}(T)\begin{bmatrix}
+			1 \\ 3
+		\end{bmatrix} &= \begin{bmatrix}
+			1 & 3 \\
+			2 & 5 \\
+			7 & 9
+		\end{bmatrix}\begin{bmatrix}
+			1 \\ 3
+		\end{bmatrix} = \begin{bmatrix}
+			10 \\ 17 \\ 34
+		\end{bmatrix}.
+	\end{align*}
+\end{answer}
+
+Since we can now put any linear transformation between finite dimensional vector spaces int a matrix, we can determine $\dim{\mathcal{L}(V,W)}$.
+\begin{corollary}
+	The $V$ and $W$ be finite dimensional vector spaces with $\dim{V} = m$ and $\dim{W} = n$.
+	Then $\dim{\mathcal{L}(V,W)} = \dim{M_{m\times n}} = mn$.
+\end{corollary}

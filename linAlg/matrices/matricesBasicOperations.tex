@@ -1,0 +1,123 @@
+\section{Basic Operations}
+
+\subsection{Vector Space Operations}
+Two matrices are considered equal if they have the same number of rows and columns and all entries are equal.
+Scalar multiplication works by multiplying each element by the scalar.
+Addition works element by element.
+
+\begin{example}
+	\begin{align*}
+		A &= \begin{bmatrix}
+			1 & 2 \\
+			-1 & 3
+		\end{bmatrix} \text{, } B = \begin{bmatrix}
+			4 & 0 \\
+			-2 & 5
+		\end{bmatrix}. \\
+		A + B &= \begin{bmatrix}
+			1 + 4 & 2 + 0 \\
+			-1 + -2 & 3 + 5
+		\end{bmatrix} = \begin{bmatrix}
+			5 & 2 \\
+			-3 & 8
+		\end{bmatrix} \\
+		3A &= \begin{bmatrix}
+			3\cdot1 & 3\cdot 2 \\
+			3\cdot -1 & 3\cdot 3
+		\end{bmatrix} = \begin{bmatrix}
+			3 & 6 \\
+			-3 & 9
+		\end{bmatrix}.
+	\end{align*}
+\end{example}
+
+Notice addition is commutative, associative, has an additive identity (the all 0's matrix), and has an additive inverse (scalar multiply by -1).
+Further, scalar multiplication has a multiplicative identity (1), is distributive over both addition and field multiplication.
+Thus, the set of all matrices of the same size form a vector space.
+We denote the vector space of all $m \times n$ matrices with real entries as $\mathcal{M}_{m \times n}$.
+
+\subsection{Multiplication}
+We can also define an operation for multiplying two matrices of compatible sizes that outputs another matrix.
+
+\begin{definition}
+	Let $A$ be an $m \times n$ matrix, and let $B$ be and $n \times k$ matrix.
+	Then $C = AB$ is an $m \times k$ matrix where
+	\begin{equation*}
+		C_{i,j} = \sum_{d=1}^{n}{A_{i,d} B_{d,j}}.
+	\end{equation*}
+\end{definition}
+If you're familiar with the concept of dot products, then $C_{i,j}$ is the dot product of the $i$th row of $A$ with the $j$th column of $B$.
+
+\begin{example}
+	\begin{align*}
+		A &= \begin{bmatrix}
+			1 & 2 & 3 \\
+			0 & -1 & 2
+		\end{bmatrix} \text{, } B = \begin{bmatrix}
+			1 & -1 & 0 & 2 \\
+			2 & 0 & 3 & -1 \\
+			0 & 1 & 1 & 5 
+		\end{bmatrix}. \\
+		AB &= \begin{bmatrix}
+			5 & 2 & 9 & 15 \\
+			-2 & 2 & -1 & 11
+		\end{bmatrix}.
+	\end{align*}
+\end{example}
+
+Similar to scalar multiplication, there exists a multiplicative identity matrix.
+However, this matrix only behaves like an identity when the matrix it's being multiplied is $n \times n$ (i.e. a square matrix).
+
+\begin{definition}
+	The $n \times n$ matrix $I_n$ is called the identity matrix and is defined by
+	\begin{equation*}
+		I_{i,j} = \begin{cases}
+			1 & i=j \\
+			0 & \text{otherwise}
+		\end{cases}.
+	\end{equation*}
+\end{definition}
+
+\begin{theorem}
+	Let $A$ be an $n \times n$ matrix.
+	Then $AI_n = I_n A = A$.
+\end{theorem}
+\begin{proof}
+	Let $C = AI_n$.
+	Notice,
+	\begin{align*}
+		C_{i,j} &= \sum_{d=1}^{n}{A_{i,d}(I_{n})_{d,j}} \\
+			&= \sum_{d=1}^{n}{A_{i,d} \begin{cases}
+					1 & d=j \\
+					0 & \text{otherwise}
+			\end{cases}} \\
+			&= \sum_{d=1}^{n}{\begin{cases}
+				A_{i,j} & d=j \\
+				0 & \text{otherwise}
+			\end{cases}} \\
+			&= A_{i,j}.
+	\end{align*}
+	This same line of reasoning works to also show that $I_nA = A$.
+	Since all entries of $A$ and $C$ are equal, $C = AI_n = A$, as desired.
+\end{proof}
+
+Also similar to scalar multiplication, matrix multiplication is associative and distributive.
+\begin{theorem}
+	Let $A$, $B$, and $C$ be matrices.
+	Let $k$ be a scalar.
+	Then the following properties hold (assuming the matrices have the correct dimensions):
+	\begin{itemize}
+		\item \textbf{Associative}: $A(BC) = (AB)C$.
+		\item \textbf{Distributive Over Matrix Multiplication}: $k(AB) = (kA)B = A(kB)$.
+		\item \textbf{Left Distributive Over Addition}: $A(B + C) = AB + AC$.
+		\item \textbf{Right Distributive Over Addition}: $(A + B)C = AC + BC$.
+	\end{itemize}
+\end{theorem}
+
+Unlike scalar multiplication, matrix multiplication is not commutative.
+For one, if $AB$ is defined, $BA$ won't also be defined unless $A$ and $B$ are both square matrices
+Even if this is the case, $AB \neq BA$ in general.
+
+\begin{theorem}
+	An $n \times n$ matrix $A$ commutes only and all matrices in the vector space $\linspan(\{I_n, A\})$.
+\end{theorem}

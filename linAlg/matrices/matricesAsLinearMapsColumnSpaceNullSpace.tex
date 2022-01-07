@@ -1,0 +1,81 @@
+\subsection{Column Space \& Null Space}
+
+\subsubsection{Definitions}
+Since matrices represent linear transformations, we can define a null space.
+\begin{definition}
+	Let $A$ be an $m \times n$ matrix.
+	The null spaces of $A$, notated, $\linnull{A}$, is the set of vectors $\vec{x} \in \R^n$ such that $A\vec{x} = \vec{0}$.
+\end{definition}
+
+We can also define a concept like the range of a linear transformation.
+\begin{definition}
+	Let $A$ be an $m \times n$ matrix.
+	The column space of $A$, notated $\col{A}$, is the set of all linear combinations of the columns of $A$.
+	That is, $\col{A} = \linspan\{\text{columns of } A\}$.
+\end{definition}
+
+\subsubsection{Properties}
+Just like the null space and range of linear transformations, the null space and column space of matrices are subspaces.
+\begin{theorem}
+	Let $A$ be an $m \times n$ matrix.
+	Then $\null{A}$ is a subspace of $\R^n$, and $\col{A}$ is a subspace of $\R^m$ (or whichever field).
+\end{theorem}
+\begin{proof}
+	First we'll show closure under addition.
+	Let $\vec{x}, \vec{y} \in \linnull{A}$.
+	Then 
+	\begin{equation*}
+		A(\vec{x} + \vec{y}) = A\vec{x} + A\vec{y} = \vec{0} + \vec{0} = \vec{0}.
+	\end{equation*}
+	So, $\vec{x} + \vec{y} \in \linnull{A}$.
+	
+	Now let $\vec{x}, \vec{y} \in \col{A}$.
+	Let $\{\vec{v_1}, \dots, \vec{v_n}\}$ be the columns of $A$.
+	Then
+	\begin{align*}
+		\vec{x} &= a_1\vec{v_1} + \dots + a_n\vec{v_n} \\
+		\vec{y} &= b_1\vec{v_1} + \dots + b_n\vec{v_n} \\
+		\vec{x} + \vec{y} &= (a_1 + b_1)\vec{v_1} + \dots + (a_n + b_n)\vec{v_n}.
+	\end{align*}
+	So, $\vec{x} + \vec{y} \in \col{A}$. \\
+	
+	Now we'll show closure under scalar multiplication.
+	Let $x \in \linnull{A}$ and $k$ be a scalar.
+	Then
+	\begin{equation*}
+		A(k\vec{x}) = k(A\vec{x}) = k\vec{0} = \vec{0}.
+	\end{equation*}
+	So, $k\vec{x} \in \linnull{A}$.
+	Now let $\vec{x} \in \col{A}$.
+	Then
+	\begin{align*}
+		\vec{x} &= a_1\vec{v_1} + \dots + a_n\vec{v_n} \\
+		k\vec{x} &= ka_1\vec{v_1} + \dots + ka_n\vec{v_n}.
+	\end{align*}
+	So, $k\vec{x} \in \col{A}$.
+\end{proof}
+
+\begin{theorem}
+	Let $A$ be an $m \times n$ matrix.
+	Then the system $A\vec{x} = \vec{b}$ is consistent (i.e. has a solution) if and only if $\vec{b} \in \col{A}$.
+\end{theorem}
+
+\begin{theorem}
+	The rows/columns of the $n \times n$ matrix $A$ are a basis for $\R^n$ if and only if $A$ is invertible.
+\end{theorem}
+
+
+We also have a version of the Fundamental Theorem of Linear Maps but for matrices.
+\begin{definition}
+	Let $A$ be an $m \times n$ matrix.
+	The rank of $A$, notated $\rank{A}$, is the dimension of the column space of $A$.
+	The nullity of $A$, notated $\nullity{A}$, is the dimension of the null space of $A$.
+\end{definition}
+
+\begin{theorem}
+	Let $A$ be an $m \times n$ matrix.
+	Then
+	\begin{equation*}
+		\rank{A} + \nullity{A} = n.
+	\end{equation*}
+\end{theorem}

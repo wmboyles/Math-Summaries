@@ -57,7 +57,13 @@ This covers topics typically found in an undergraduate linear algebra course.
 The chapters are:
 
 1. Background & Review
-2. TODO TODO TODO
+2. Vector Spaces
+3. Finite Dimensional Vector Spaces
+4. Linear Maps
+5. Matrices
+6. Eigen Stuff
+7. Inner Product Spaces
+8. Additional Resources
 
 ## How to Compile (make into a PDF)
 

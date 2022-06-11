@@ -46,14 +46,14 @@ One common algorithm for finding an inverse function is to set $y = f(x)$, subst
 \begin{answer}
     We first make the substitutions to set up the algorithm:
     \begin{equation*}
-        y = \frac{5x + 2}{4x - 3} \text{ followed by }
-        x = \frac{5y + 2}{4y - 3}
+        y = \frac{5x + 2}{4x - 3} \text{ becomes } x = \frac{5y + 2}{4y - 3}.
     \end{equation*}
     After multiplying both sides by the denominator and simplifying, we have
-    \begin{equation*}
-        \implies 4xy - 3x = -5y - 2 \\
-        \implies y = f^{-1}(x) = \frac{3x - 2}{4x + 5}.
-    \end{equation*}
+    \begin{align*}
+        4xy - 3x &= 5y + 2 \\
+        -3x - 2 &= y(-4x + 5) \\
+        y &= f^{-1}(x) = \frac{3x + 2}{4x - 5}.
+    \end{align*}
 \end{answer}
 
 We say that a function $f$ is even if it satisfies $f(-x) = f(x)$ for all $x \in D$.
